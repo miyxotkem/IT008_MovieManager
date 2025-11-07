@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MovieManager
 {
-    public partial class SignInForm : Form
+    public partial class SignUp : Form
     {
-        public SignInForm()
+        public SignUp()
         {
             InitializeComponent();
-        }
-
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
