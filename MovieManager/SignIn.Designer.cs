@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInForm));
             this.BackgroundPanelSignIn = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.MinimizeButtonSignIn = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -44,6 +45,7 @@
             this.UsernameLabelSignIn = new System.Windows.Forms.Label();
             this.PasswordTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
             this.UsernameTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SignInShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.BackgroundPanelSignIn.SuspendLayout();
             this.SignInPanelSignIn.SuspendLayout();
             this.SignUpPanelSignIn.SuspendLayout();
@@ -195,6 +197,7 @@
             this.SignInButtonSignIn.ForeColor = System.Drawing.Color.Black;
             this.SignInButtonSignIn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.SignInButtonSignIn.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.SignInButtonSignIn.HoverState.ForeColor = System.Drawing.Color.White;
             this.SignInButtonSignIn.Location = new System.Drawing.Point(250, 260);
             this.SignInButtonSignIn.Name = "SignInButtonSignIn";
             this.SignInButtonSignIn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
@@ -305,6 +308,7 @@
         private System.Windows.Forms.Label CreditLabelSignIn;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButtonSignIn;
         private Guna.UI2.WinForms.Guna2CircleButton MinimizeButtonSignIn;
+        private Guna.UI2.WinForms.Guna2ShadowForm SignInShadow;
     }
 }
 

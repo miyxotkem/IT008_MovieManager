@@ -20,7 +20,7 @@ namespace MovieManager
 
         private void SignInForm_Load(object sender, EventArgs e)
         {
-
+            SignInShadow.SetShadowForm(this);
         }
 
         private void ExitButtonSignIn_Click(object sender, EventArgs e)

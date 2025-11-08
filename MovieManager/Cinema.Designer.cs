@@ -29,23 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ExternalPanelCinema = new System.Windows.Forms.Panel();
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.SnackDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.SideBarZoomButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplay = new MovieManager.MovieDisplay();
             this.SnackDisplay = new MovieManager.SnackDisplay();
             this.SideBarPanelCinema.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ExternalPanelCinema
-            // 
-            this.ExternalPanelCinema.Location = new System.Drawing.Point(123, 0);
-            this.ExternalPanelCinema.Name = "ExternalPanelCinema";
-            this.ExternalPanelCinema.Size = new System.Drawing.Size(1797, 46);
-            this.ExternalPanelCinema.TabIndex = 1;
             // 
             // SideBarPanelCinema
             // 
@@ -56,7 +48,7 @@
             this.SideBarPanelCinema.Location = new System.Drawing.Point(0, 0);
             this.SideBarPanelCinema.Name = "SideBarPanelCinema";
             this.SideBarPanelCinema.ShadowDecoration.Enabled = true;
-            this.SideBarPanelCinema.Size = new System.Drawing.Size(101, 1200);
+            this.SideBarPanelCinema.Size = new System.Drawing.Size(100, 1200);
             this.SideBarPanelCinema.TabIndex = 2;
             // 
             // SnackDisplayButtonCinema
@@ -74,9 +66,11 @@
             this.SnackDisplayButtonCinema.FillColor2 = System.Drawing.Color.White;
             this.SnackDisplayButtonCinema.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SnackDisplayButtonCinema.ForeColor = System.Drawing.Color.Black;
-            this.SnackDisplayButtonCinema.Location = new System.Drawing.Point(0, 228);
+            this.SnackDisplayButtonCinema.Image = global::MovieManager.Properties.Resources.fastfood_24dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.SnackDisplayButtonCinema.ImageSize = new System.Drawing.Size(25, 25);
+            this.SnackDisplayButtonCinema.Location = new System.Drawing.Point(0, 250);
             this.SnackDisplayButtonCinema.Name = "SnackDisplayButtonCinema";
-            this.SnackDisplayButtonCinema.Size = new System.Drawing.Size(133, 80);
+            this.SnackDisplayButtonCinema.Size = new System.Drawing.Size(100, 80);
             this.SnackDisplayButtonCinema.TabIndex = 1;
             this.SnackDisplayButtonCinema.CheckedChanged += new System.EventHandler(this.SnackDisplayButtonCinema_CheckedChanged);
             // 
@@ -96,9 +90,11 @@
             this.MovieDisplayButtonCinema.FillColor2 = System.Drawing.Color.White;
             this.MovieDisplayButtonCinema.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MovieDisplayButtonCinema.ForeColor = System.Drawing.Color.Black;
-            this.MovieDisplayButtonCinema.Location = new System.Drawing.Point(0, 148);
+            this.MovieDisplayButtonCinema.Image = global::MovieManager.Properties.Resources.MovieDisplay;
+            this.MovieDisplayButtonCinema.ImageSize = new System.Drawing.Size(25, 25);
+            this.MovieDisplayButtonCinema.Location = new System.Drawing.Point(0, 170);
             this.MovieDisplayButtonCinema.Name = "MovieDisplayButtonCinema";
-            this.MovieDisplayButtonCinema.Size = new System.Drawing.Size(133, 80);
+            this.MovieDisplayButtonCinema.Size = new System.Drawing.Size(100, 80);
             this.MovieDisplayButtonCinema.TabIndex = 1;
             this.MovieDisplayButtonCinema.CheckedChanged += new System.EventHandler(this.MovieDisplayButtonCinema_CheckedChanged);
             // 
@@ -112,12 +108,14 @@
             this.SideBarZoomButtonCinema.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.SideBarZoomButtonCinema.FillColor = System.Drawing.Color.Transparent;
             this.SideBarZoomButtonCinema.FillColor2 = System.Drawing.Color.Transparent;
+            this.SideBarZoomButtonCinema.FocusedColor = System.Drawing.Color.Transparent;
             this.SideBarZoomButtonCinema.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SideBarZoomButtonCinema.ForeColor = System.Drawing.Color.White;
-            this.SideBarZoomButtonCinema.ImageSize = new System.Drawing.Size(30, 30);
-            this.SideBarZoomButtonCinema.Location = new System.Drawing.Point(25, 12);
+            this.SideBarZoomButtonCinema.Image = global::MovieManager.Properties.Resources.SideBar;
+            this.SideBarZoomButtonCinema.ImageSize = new System.Drawing.Size(25, 25);
+            this.SideBarZoomButtonCinema.Location = new System.Drawing.Point(35, 40);
             this.SideBarZoomButtonCinema.Name = "SideBarZoomButtonCinema";
-            this.SideBarZoomButtonCinema.Size = new System.Drawing.Size(50, 50);
+            this.SideBarZoomButtonCinema.Size = new System.Drawing.Size(30, 30);
             this.SideBarZoomButtonCinema.TabIndex = 0;
             this.SideBarZoomButtonCinema.Click += new System.EventHandler(this.ZoomButtonCinema_Click);
             // 
@@ -126,9 +124,9 @@
             this.MovieDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MovieDisplay.Location = new System.Drawing.Point(107, 52);
+            this.MovieDisplay.Location = new System.Drawing.Point(107, 12);
             this.MovieDisplay.Name = "MovieDisplay";
-            this.MovieDisplay.Size = new System.Drawing.Size(1813, 1148);
+            this.MovieDisplay.Size = new System.Drawing.Size(1813, 1188);
             this.MovieDisplay.TabIndex = 0;
             // 
             // SnackDisplay
@@ -136,9 +134,9 @@
             this.SnackDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SnackDisplay.Location = new System.Drawing.Point(107, 52);
+            this.SnackDisplay.Location = new System.Drawing.Point(107, 12);
             this.SnackDisplay.Name = "SnackDisplay";
-            this.SnackDisplay.Size = new System.Drawing.Size(1813, 1148);
+            this.SnackDisplay.Size = new System.Drawing.Size(1813, 1188);
             this.SnackDisplay.TabIndex = 4;
             // 
             // Cinema
@@ -147,7 +145,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1200);
             this.Controls.Add(this.SideBarPanelCinema);
-            this.Controls.Add(this.ExternalPanelCinema);
             this.Controls.Add(this.MovieDisplay);
             this.Controls.Add(this.SnackDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -162,7 +159,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel ExternalPanelCinema;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel SideBarPanelCinema;
         private Guna.UI2.WinForms.Guna2GradientButton SideBarZoomButtonCinema;
         private Guna.UI2.WinForms.Guna2GradientButton SnackDisplayButtonCinema;
