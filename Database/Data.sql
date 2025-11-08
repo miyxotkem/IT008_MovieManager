@@ -178,6 +178,10 @@ CREATE PROC USP_GetMovieList
 AS SELECT * FROM dbo.Movie
 GO
 
+CREATE PROC USP_GetSnackList
+AS SELECT * FROM dbo.Snack
+GO
+
 SET DATEFORMAT dmy;
 GO
 
@@ -252,3 +256,33 @@ GO
 
 SELECT * FROM dbo.Account;
 GO
+
+INSERT INTO Snack (name, price, stock, category)
+VALUES
+(N'Bắp rang truyền thống', 55000, 100, 0),
+(N'Bắp rang phô mai', 59000, 100, 0),
+(N'Bắp rang caramel', 59000, 100, 0),
+(N'Hot dog', 39000, 100, 0),
+(N'Lays', 19000, 100, 0),
+(N'Gà viên', 49000, 100, 0),
+(N'Coca Cola', 39000, 100, 1),
+(N'Sprite', 39000, 100, 1),
+(N'Fanta', 39000, 100, 1),
+(N'Pepsi', 39000, 100, 1),
+(N'Matcha latte', 49000, 100, 1),
+(N'Trà vải', 49000, 100, 1),
+(N'Bạc xỉu', 39000, 100, 1),
+(N'Trà sữa truyền thống', 49000, 100, 1),
+(N'Bánh quy', 25000, 100, 0),
+(N'Croissant truyền thống', 39000, 100, 0),
+(N'Croissant phô mai thịt nguội', 55000, 100, 0),
+(N'Bánh chuối', 39000, 100, 0),
+(N'Bánh waffle', 39000, 100, 0),
+(N'Khoai tây chiên', 35000, 100, 0),
+(N'Cơm chiên', 49000, 100, 0),
+(N'Cơm trắng', 5000, 100, 0),
+(N'Cơm gà sốt phô mai', 59000, 100, 0),
+(N'Cơm bò sốt tiêu đen', 65000, 100, 0),
+(N'Cơm thịt heo chiên xù', 65000, 100, 0);
+
+SELECT * FROM Snack;

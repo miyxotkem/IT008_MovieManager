@@ -29,59 +29,146 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.MovieDisplayFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ShadowCinema = new Siticone.Desktop.UI.WinForms.SiticoneShadowForm(this.components);
-            this.siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.ExternalPanelCinema = new System.Windows.Forms.Panel();
+            this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.SnackDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.SideBarZoomButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.MovieDisplay = new MovieManager.MovieDisplay();
+            this.SnackDisplay = new MovieManager.SnackDisplay();
+            this.SideBarPanelCinema.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MovieDisplayFlowLayoutPanel
+            // ExternalPanelCinema
             // 
-            this.MovieDisplayFlowLayoutPanel.AutoScroll = true;
-            this.MovieDisplayFlowLayoutPanel.Location = new System.Drawing.Point(128, 46);
-            this.MovieDisplayFlowLayoutPanel.Name = "MovieDisplayFlowLayoutPanel";
-            this.MovieDisplayFlowLayoutPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.MovieDisplayFlowLayoutPanel.Size = new System.Drawing.Size(1792, 1154);
-            this.MovieDisplayFlowLayoutPanel.TabIndex = 0;
+            this.ExternalPanelCinema.Location = new System.Drawing.Point(123, 0);
+            this.ExternalPanelCinema.Name = "ExternalPanelCinema";
+            this.ExternalPanelCinema.Size = new System.Drawing.Size(1797, 46);
+            this.ExternalPanelCinema.TabIndex = 1;
             // 
-            // panel1
+            // SideBarPanelCinema
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1920, 46);
-            this.panel1.TabIndex = 1;
+            this.SideBarPanelCinema.Controls.Add(this.SnackDisplayButtonCinema);
+            this.SideBarPanelCinema.Controls.Add(this.MovieDisplayButtonCinema);
+            this.SideBarPanelCinema.Controls.Add(this.SideBarZoomButtonCinema);
+            this.SideBarPanelCinema.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SideBarPanelCinema.Location = new System.Drawing.Point(0, 0);
+            this.SideBarPanelCinema.Name = "SideBarPanelCinema";
+            this.SideBarPanelCinema.ShadowDecoration.Enabled = true;
+            this.SideBarPanelCinema.Size = new System.Drawing.Size(101, 1200);
+            this.SideBarPanelCinema.TabIndex = 2;
             // 
-            // siticonePanel1
+            // SnackDisplayButtonCinema
             // 
-            this.siticonePanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.siticonePanel1.Location = new System.Drawing.Point(0, 46);
-            this.siticonePanel1.Name = "siticonePanel1";
-            this.siticonePanel1.Size = new System.Drawing.Size(133, 1154);
-            this.siticonePanel1.TabIndex = 0;
+            this.SnackDisplayButtonCinema.Animated = true;
+            this.SnackDisplayButtonCinema.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.SnackDisplayButtonCinema.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.SnackDisplayButtonCinema.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.SnackDisplayButtonCinema.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SnackDisplayButtonCinema.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SnackDisplayButtonCinema.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SnackDisplayButtonCinema.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SnackDisplayButtonCinema.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SnackDisplayButtonCinema.FillColor = System.Drawing.Color.White;
+            this.SnackDisplayButtonCinema.FillColor2 = System.Drawing.Color.White;
+            this.SnackDisplayButtonCinema.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SnackDisplayButtonCinema.ForeColor = System.Drawing.Color.Black;
+            this.SnackDisplayButtonCinema.Location = new System.Drawing.Point(0, 228);
+            this.SnackDisplayButtonCinema.Name = "SnackDisplayButtonCinema";
+            this.SnackDisplayButtonCinema.Size = new System.Drawing.Size(133, 80);
+            this.SnackDisplayButtonCinema.TabIndex = 1;
+            this.SnackDisplayButtonCinema.CheckedChanged += new System.EventHandler(this.SnackDisplayButtonCinema_CheckedChanged);
+            // 
+            // MovieDisplayButtonCinema
+            // 
+            this.MovieDisplayButtonCinema.Animated = true;
+            this.MovieDisplayButtonCinema.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.MovieDisplayButtonCinema.Checked = true;
+            this.MovieDisplayButtonCinema.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.MovieDisplayButtonCinema.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.MovieDisplayButtonCinema.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.MovieDisplayButtonCinema.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.MovieDisplayButtonCinema.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MovieDisplayButtonCinema.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MovieDisplayButtonCinema.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.MovieDisplayButtonCinema.FillColor = System.Drawing.Color.White;
+            this.MovieDisplayButtonCinema.FillColor2 = System.Drawing.Color.White;
+            this.MovieDisplayButtonCinema.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MovieDisplayButtonCinema.ForeColor = System.Drawing.Color.Black;
+            this.MovieDisplayButtonCinema.Location = new System.Drawing.Point(0, 148);
+            this.MovieDisplayButtonCinema.Name = "MovieDisplayButtonCinema";
+            this.MovieDisplayButtonCinema.Size = new System.Drawing.Size(133, 80);
+            this.MovieDisplayButtonCinema.TabIndex = 1;
+            this.MovieDisplayButtonCinema.CheckedChanged += new System.EventHandler(this.MovieDisplayButtonCinema_CheckedChanged);
+            // 
+            // SideBarZoomButtonCinema
+            // 
+            this.SideBarZoomButtonCinema.BackColor = System.Drawing.Color.Transparent;
+            this.SideBarZoomButtonCinema.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SideBarZoomButtonCinema.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SideBarZoomButtonCinema.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SideBarZoomButtonCinema.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SideBarZoomButtonCinema.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SideBarZoomButtonCinema.FillColor = System.Drawing.Color.Transparent;
+            this.SideBarZoomButtonCinema.FillColor2 = System.Drawing.Color.Transparent;
+            this.SideBarZoomButtonCinema.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SideBarZoomButtonCinema.ForeColor = System.Drawing.Color.White;
+            this.SideBarZoomButtonCinema.ImageSize = new System.Drawing.Size(30, 30);
+            this.SideBarZoomButtonCinema.Location = new System.Drawing.Point(25, 12);
+            this.SideBarZoomButtonCinema.Name = "SideBarZoomButtonCinema";
+            this.SideBarZoomButtonCinema.Size = new System.Drawing.Size(50, 50);
+            this.SideBarZoomButtonCinema.TabIndex = 0;
+            this.SideBarZoomButtonCinema.Click += new System.EventHandler(this.ZoomButtonCinema_Click);
+            // 
+            // MovieDisplay
+            // 
+            this.MovieDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MovieDisplay.Location = new System.Drawing.Point(107, 52);
+            this.MovieDisplay.Name = "MovieDisplay";
+            this.MovieDisplay.Size = new System.Drawing.Size(1813, 1148);
+            this.MovieDisplay.TabIndex = 0;
+            // 
+            // SnackDisplay
+            // 
+            this.SnackDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SnackDisplay.Location = new System.Drawing.Point(107, 52);
+            this.SnackDisplay.Name = "SnackDisplay";
+            this.SnackDisplay.Size = new System.Drawing.Size(1813, 1148);
+            this.SnackDisplay.TabIndex = 4;
             // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1200);
-            this.Controls.Add(this.siticonePanel1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.MovieDisplayFlowLayoutPanel);
+            this.Controls.Add(this.SideBarPanelCinema);
+            this.Controls.Add(this.ExternalPanelCinema);
+            this.Controls.Add(this.MovieDisplay);
+            this.Controls.Add(this.SnackDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cinema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cinema";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Cinema_Load);
+            this.SideBarPanelCinema.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel MovieDisplayFlowLayoutPanel;
-        private System.Windows.Forms.Panel panel1;
-        private Siticone.Desktop.UI.WinForms.SiticoneShadowForm ShadowCinema;
-        private Siticone.Desktop.UI.WinForms.SiticonePanel siticonePanel1;
+        private System.Windows.Forms.Panel ExternalPanelCinema;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel SideBarPanelCinema;
+        private Guna.UI2.WinForms.Guna2GradientButton SideBarZoomButtonCinema;
+        private Guna.UI2.WinForms.Guna2GradientButton SnackDisplayButtonCinema;
+        private Guna.UI2.WinForms.Guna2GradientButton MovieDisplayButtonCinema;
+        private MovieDisplay MovieDisplay;
+        private SnackDisplay SnackDisplay;
+        private Guna.UI2.WinForms.Guna2ShadowForm CinemaShadow;
     }
 }

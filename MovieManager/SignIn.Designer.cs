@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInForm));
             this.BackgroundPanelSignIn = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.MinimizeButtonSignIn = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -45,7 +44,6 @@
             this.UsernameLabelSignIn = new System.Windows.Forms.Label();
             this.PasswordTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
             this.UsernameTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ShadowSignIn = new Siticone.Desktop.UI.WinForms.SiticoneShadowForm(this.components);
             this.BackgroundPanelSignIn.SuspendLayout();
             this.SignInPanelSignIn.SuspendLayout();
             this.SignUpPanelSignIn.SuspendLayout();
@@ -183,17 +181,20 @@
             // 
             // SignInButtonSignIn
             // 
+            this.SignInButtonSignIn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.SignInButtonSignIn.BorderRadius = 12;
+            this.SignInButtonSignIn.BorderThickness = 1;
             this.SignInButtonSignIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.SignInButtonSignIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.SignInButtonSignIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.SignInButtonSignIn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.SignInButtonSignIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SignInButtonSignIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.SignInButtonSignIn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.SignInButtonSignIn.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.SignInButtonSignIn.FillColor = System.Drawing.Color.Empty;
+            this.SignInButtonSignIn.FillColor2 = System.Drawing.Color.Empty;
             this.SignInButtonSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignInButtonSignIn.ForeColor = System.Drawing.Color.White;
+            this.SignInButtonSignIn.ForeColor = System.Drawing.Color.Black;
+            this.SignInButtonSignIn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.SignInButtonSignIn.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.SignInButtonSignIn.Location = new System.Drawing.Point(250, 260);
             this.SignInButtonSignIn.Name = "SignInButtonSignIn";
             this.SignInButtonSignIn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
@@ -263,6 +264,7 @@
             // 
             // SignInForm
             // 
+            this.AcceptButton = this.SignInButtonSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
@@ -303,7 +305,6 @@
         private System.Windows.Forms.Label CreditLabelSignIn;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButtonSignIn;
         private Guna.UI2.WinForms.Guna2CircleButton MinimizeButtonSignIn;
-        private Siticone.Desktop.UI.WinForms.SiticoneShadowForm ShadowSignIn;
     }
 }
 

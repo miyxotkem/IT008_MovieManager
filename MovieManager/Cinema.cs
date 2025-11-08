@@ -18,69 +18,67 @@ namespace MovieManager
         public Cinema()
         {
             InitializeComponent();
-            LoadMovie();
         }
 
         private void Cinema_Load(object sender, EventArgs e)
         {
-            ShadowCinema.SetShadowForm(this);
+            CinemaShadow.SetShadowForm(this);
         }
 
-        void LoadMovie()
+        bool sidebarzoom = false;
+        private void ZoomButtonCinema_Click(object sender, EventArgs e)
         {
-            List<Movie> movieList =  MovieDAO.Instance.LoadMovieList();
-            string baseDirectory = Application.StartupPath;
-            string imageFolder = Path.Combine(baseDirectory, "Posters");
-            foreach (Movie movie in movieList)
+            if (sidebarzoom == false)
             {
-                Panel pnl = new Panel()
-                { 
-                    Width = MovieDAO.Width,
-                    Height = MovieDAO.Height,
-                    Margin = new Padding(15)
-                };
-                Label lblTitle = new Label()
-                {
-                    Text = movie.Title.ToString() + Environment.NewLine +
-                           movie.Genre.ToString() + Environment.NewLine +
-                           movie.Rated.ToString() + Environment.NewLine +
-                           movie.Language.ToString() + Environment.NewLine +
-                           movie.Duration.ToString() + Environment.NewLine +
-                           movie.Format.ToString(),
-                    Height = 100,
-                    Dock = DockStyle.Bottom,
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    BackColor = Color.FromArgb(175, 62, 62),
-                    ForeColor = Color.White
-                };
-                PictureBox pic = new PictureBox()
-                {
-                    Dock = DockStyle.Fill,
-                    SizeMode = PictureBoxSizeMode.Zoom
-                };
-                try
-                {
-                    string fileName = movie.ID.ToString() + ".jpg";
-                    string fullImagePath = Path.Combine(imageFolder, fileName);
-                    if (File.Exists(fullImagePath))
-                    {
-                        pic.Image = Image.FromFile(fullImagePath);
-                    }
-                    else
-                    {
-                        pic.BackColor = Color.Silver;
-                        Console.WriteLine($"Image not found. Looked for: {fullImagePath}");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error loading image: " + ex.Message);
-                    pic.BackColor = Color.Red;
-                }
-                pnl.Controls.Add(pic);
-                pnl.Controls.Add(lblTitle);
-                lblTitle.BringToFront();
-                MovieDisplayFlowLayoutPanel.Controls.Add(pnl);
+                SideBarZoomButtonCinema.Location = new Point(SideBarZoomButtonCinema.Location.X + 150, SideBarZoomButtonCinema.Location.Y);
+                SideBarPanelCinema.Size = new Size(SideBarPanelCinema.Width + 150, SideBarPanelCinema.Height);
+                ExternalPanelCinema.Size = new Size(ExternalPanelCinema.Width - 150, ExternalPanelCinema.Height);
+                ExternalPanelCinema.Location = new Point(ExternalPanelCinema.Location.X + 150, ExternalPanelCinema.Location.Y);
+                MovieDisplayButtonCinema.Size = new Size(MovieDisplayButtonCinema.Width + 150, MovieDisplayButtonCinema.Height);
+                MovieDisplayButtonCinema.Text = "Movie Display";
+                SnackDisplayButtonCinema.Size = new Size(SnackDisplayButtonCinema.Width + 150, SnackDisplayButtonCinema.Height);
+                SnackDisplayButtonCinema.Text = "Snack Display";
+                MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
+                MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
+                SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
+                SnackDisplay.Location = new Point(SnackDisplay.Location.X + 150, SnackDisplay.Location.Y);
+                sidebarzoom = true;
+            }
+            else
+            {
+                SideBarZoomButtonCinema.Location = new Point(SideBarZoomButtonCinema.Location.X - 150, SideBarZoomButtonCinema.Location.Y);
+                SideBarPanelCinema.Size = new Size(SideBarPanelCinema.Width - 150, SideBarPanelCinema.Height);
+                ExternalPanelCinema.Size = new Size(ExternalPanelCinema.Width + 150, ExternalPanelCinema.Height);
+                ExternalPanelCinema.Location = new Point(ExternalPanelCinema.Location.X - 150, ExternalPanelCinema.Location.Y);
+                MovieDisplayButtonCinema.Size = new Size(MovieDisplayButtonCinema.Width - 150, MovieDisplayButtonCinema.Height);
+                MovieDisplayButtonCinema.Text = "";
+                SnackDisplayButtonCinema.Size = new Size(SnackDisplayButtonCinema.Width - 150, SnackDisplayButtonCinema.Height);
+                SnackDisplayButtonCinema.Text = "";
+                MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
+                MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
+                SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
+                SnackDisplay.Location = new Point(SnackDisplay.Location.X - 150, SnackDisplay.Location.Y);
+                sidebarzoom = false;
+            }
+        }
+
+        private void MovieDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MovieDisplayButtonCinema.Checked)
+            {
+                MovieDisplay.BringToFront();
+                if(sidebarzoom == true)
+                    SideBarZoomButtonCinema.PerformClick();
+            }
+        }
+
+        private void SnackDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SnackDisplayButtonCinema.Checked)
+            {
+                SnackDisplay.BringToFront();
+                if (sidebarzoom == true)
+                    SideBarZoomButtonCinema.PerformClick();
             }
         }
     }
