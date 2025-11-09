@@ -18,9 +18,9 @@ namespace MovieManager
         public MovieDisplay()
         {
             InitializeComponent();
-            LoadMovie();
+            LoadMovie();            
         }
-        void LoadMovie()
+        public void LoadMovie()
         {
             List<Movie> movieList = MovieDAO.Instance.LoadMovieList();
             string baseDirectory = Application.StartupPath;
@@ -51,7 +51,8 @@ namespace MovieManager
                 PictureBox pic = new PictureBox()
                 {
                     Dock = DockStyle.Fill,
-                    SizeMode = PictureBoxSizeMode.StretchImage
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Tag = movie
                 };
                 try
                 {
@@ -71,10 +72,26 @@ namespace MovieManager
                 {
                     Console.WriteLine("Error loading image: " + ex.Message);
                     pic.BackColor = Color.Red;
-                }
+                }                
+                pic.Click += Panel_Click;
                 pnl.Controls.Add(pic);
                 pnl.Controls.Add(lblTitle);
                 MovieDisplayFlowLayoutPanel.Controls.Add(pnl);
+            }
+        }
+        public void Panel_Click(object sender, EventArgs e)
+        {
+            PictureBox clickedPic = sender as PictureBox;
+            if (clickedPic == null) return;
+            Movie selectedMovie = clickedPic.Tag as Movie;
+            if (selectedMovie == null) return;            
+            Control parentContainer = MovieDisplayFlowLayoutPanel.Parent;
+            SelectMovie sm = new SelectMovie(selectedMovie, parentContainer);
+            sm.Dock = DockStyle.Fill;
+            if (parentContainer != null)
+            {
+                parentContainer.Controls.Clear();
+                parentContainer.Controls.Add(sm);
             }
         }
     }

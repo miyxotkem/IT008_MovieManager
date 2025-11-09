@@ -177,8 +177,10 @@
       <DependentUpon>Cinema.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\ShowTime.cs" />
     <Compile Include="DAO\SnackDAO.cs" />
     <Compile Include="DTO\Movie.cs" />
+    <Compile Include="DTO\ShowTime.cs" />
     <Compile Include="DTO\Snack.cs" />
     <Compile Include="ForgetPassword.cs">
       <SubType>Form</SubType>
@@ -196,6 +198,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectMovie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectMovie.Designer.cs">
+      <DependentUpon>SelectMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
@@ -225,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieDisplay.resx">
       <DependentUpon>MovieDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectMovie.resx">
+      <DependentUpon>SelectMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>

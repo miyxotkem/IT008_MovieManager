@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.SnackDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SideBarZoomButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.MovieDisplay = new MovieManager.MovieDisplay();
             this.SnackDisplay = new MovieManager.SnackDisplay();
             this.SideBarPanelCinema.SuspendLayout();
@@ -124,9 +124,9 @@
             this.MovieDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MovieDisplay.Location = new System.Drawing.Point(107, 12);
+            this.MovieDisplay.Location = new System.Drawing.Point(107, 40);
             this.MovieDisplay.Name = "MovieDisplay";
-            this.MovieDisplay.Size = new System.Drawing.Size(1813, 1188);
+            this.MovieDisplay.Size = new System.Drawing.Size(1813, 1160);
             this.MovieDisplay.TabIndex = 0;
             // 
             // SnackDisplay
@@ -134,9 +134,9 @@
             this.SnackDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SnackDisplay.Location = new System.Drawing.Point(107, 12);
+            this.SnackDisplay.Location = new System.Drawing.Point(107, 40);
             this.SnackDisplay.Name = "SnackDisplay";
-            this.SnackDisplay.Size = new System.Drawing.Size(1813, 1188);
+            this.SnackDisplay.Size = new System.Drawing.Size(1813, 1160);
             this.SnackDisplay.TabIndex = 4;
             // 
             // Cinema

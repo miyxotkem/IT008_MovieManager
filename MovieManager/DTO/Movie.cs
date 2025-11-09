@@ -31,67 +31,56 @@ namespace MovieManager.DTO
             get { return title; }
             set { title = value; }
         }
-
         public string Genre
         {
             get { return genre; }
             set { genre = value; }
         }
-
         public string Rated
         {
             get { return rated; }
             set { rated = value; }
         }
-
         public string Release_date
         {
             get { return release_date; }
             set { release_date = value; }
         }
-
         public string Director
         {
             get { return director; }
             set { director = value; }
         }
-
         public string Language
         {
             get { return language; }
             set { language = value; }
         }
-
         public int Duration
         {
             get { return duration; }
             set { duration = value; }
         }
-
         public string Format
         {
             get { return format; }
             set { format = value; }
         }
-
         public string Trailer
         {
             get { return trailer; }
             set { trailer = value; }
         }
-
         public string Actor
         {
             get { return actor; }
             set { actor = value; }
         }
-
         public string Brief
         {
             get { return brief; }
             set { brief = value; }
         }
-
         public Movie(int id, string title, string gerne, string rated, string release_date, string director, string language, int duration, string format, string trailer, string actor, string brief)
         {
             this.ID = id;
@@ -107,7 +96,6 @@ namespace MovieManager.DTO
             this.Actor = actor;
             this.Brief = brief;
         }
-
         public Movie(DataRow row)
         {
             this.ID = (int)row["ID"];
