@@ -16,7 +16,7 @@ namespace MovieManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cinema());
+            Application.Run(new SignUp());
         }
     }
 }

@@ -27,7 +27,8 @@ namespace MovieManager
             title.Text = "Movie Manager";
             title.AutoSize = false;
             title.Size = new Size(200, 100);
-            title.Location = new Point(20, 20);
+            title.Location = new Point(10, 10);
+            title.TextAlign = ContentAlignment.MiddleRight;
             title.BackColor = Color.Transparent;
             title.ForeColor = Color.FromArgb(175, 62, 62);
             title.Font = new Font("Stencil", 20);                
@@ -58,7 +59,6 @@ namespace MovieManager
         {
             if (sidebarzoom == false)
             {
-                SideBarZoomButtonCinema.Location = new Point(SideBarZoomButtonCinema.Location.X + 150, SideBarZoomButtonCinema.Location.Y);
                 SideBarPanelCinema.Size = new Size(SideBarPanelCinema.Width + 150, SideBarPanelCinema.Height);
                 MovieDisplayButtonCinema.Size = new Size(MovieDisplayButtonCinema.Width + 150, MovieDisplayButtonCinema.Height);
                 MovieDisplayButtonCinema.Text = "Movie Display";
@@ -75,7 +75,6 @@ namespace MovieManager
             }
             else
             {
-                SideBarZoomButtonCinema.Location = new Point(SideBarZoomButtonCinema.Location.X - 150, SideBarZoomButtonCinema.Location.Y);
                 SideBarPanelCinema.Size = new Size(SideBarPanelCinema.Width - 150, SideBarPanelCinema.Height);
                 MovieDisplayButtonCinema.Size = new Size(MovieDisplayButtonCinema.Width - 150, MovieDisplayButtonCinema.Height);
                 MovieDisplayButtonCinema.Text = "";

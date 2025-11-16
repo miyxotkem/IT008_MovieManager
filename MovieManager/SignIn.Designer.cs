@@ -127,6 +127,9 @@
             this.SignInPanelSignIn.FillColor = System.Drawing.Color.White;
             this.SignInPanelSignIn.Location = new System.Drawing.Point(250, 220);
             this.SignInPanelSignIn.Name = "SignInPanelSignIn";
+            this.SignInPanelSignIn.ShadowDecoration.BorderRadius = 30;
+            this.SignInPanelSignIn.ShadowDecoration.Enabled = true;
+            this.SignInPanelSignIn.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.SignInPanelSignIn.Size = new System.Drawing.Size(700, 700);
             this.SignInPanelSignIn.TabIndex = 0;
             // 
@@ -220,9 +223,9 @@
             this.UsernameLabelSignIn.AutoSize = true;
             this.UsernameLabelSignIn.Location = new System.Drawing.Point(155, 47);
             this.UsernameLabelSignIn.Name = "UsernameLabelSignIn";
-            this.UsernameLabelSignIn.Size = new System.Drawing.Size(59, 20);
+            this.UsernameLabelSignIn.Size = new System.Drawing.Size(83, 20);
             this.UsernameLabelSignIn.TabIndex = 1;
-            this.UsernameLabelSignIn.Text = "Sign In";
+            this.UsernameLabelSignIn.Text = "Username";
             // 
             // PasswordTextBoxSignIn
             // 
