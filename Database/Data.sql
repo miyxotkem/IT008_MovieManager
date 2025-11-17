@@ -121,7 +121,7 @@ CREATE TABLE Account
 	id INT IDENTITY PRIMARY KEY,
 	username VARCHAR(100),
 	password VARCHAR(100),
-	admin BIT,
+	admin BIT,  -- them thuoc tinh default ben duoi 
 	idStaff INT,
 	accept BIT DEFAULT 0,
 
@@ -151,6 +151,7 @@ CREATE PROC USP_GetShowTimeList
 AS SELECT * FROM dbo.ShowTime
 
 SET DATEFORMAT dmy;
+
 
 -- INSERT
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
@@ -389,3 +390,9 @@ VALUES
 (N'Cơm gà sốt phô mai', 59000, 100, 0),
 (N'Cơm bò sốt tiêu đen', 65000, 100, 0),
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
+
+
+-- Alter 
+Alter table Account 
+add constraint DF_Admin
+default 0 for admin;
