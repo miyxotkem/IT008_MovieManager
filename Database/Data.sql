@@ -1,6 +1,7 @@
 ﻿CREATE DATABASE MovieManager
+GO
 USE MovieManager
-
+GO
 -- Table
 CREATE TABLE Movie
 (
@@ -17,12 +18,14 @@ CREATE TABLE Movie
 	actor NVARCHAR(150),
 	brief NVARCHAR(300)
 )
+GO
 CREATE TABLE Hall
 (
 	id INT IDENTITY PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL,
 	location NVARCHAR(100)
 )
+GO
 CREATE TABLE Screen
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -34,6 +37,7 @@ CREATE TABLE Screen
 
 	FOREIGN KEY (idhall) REFERENCES dbo.Hall(id)
 )
+GO
 CREATE TABLE Seat
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -41,6 +45,7 @@ CREATE TABLE Seat
 	number INT,
 	type NVARCHAR(100)
 )
+GO
 CREATE TABLE Customer
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -49,12 +54,14 @@ CREATE TABLE Customer
 	phone_number VARCHAR(11) DEFAULT NULL,
 	membership INT DEFAULT 0 -- 0: none, 1: bronze, 2: silver, 3: gold, etc.
 )
+GO
 CREATE TABLE ShiftSchedule
 (
 	id INT IDENTITY PRIMARY KEY,
 	start_schedule TIME,
 	end_schedule TIME
 )
+GO
 CREATE TABLE Staff
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -65,6 +72,7 @@ CREATE TABLE Staff
 
 	FOREIGN KEY (idshiftschedule) REFERENCES dbo.Shift_Schedule(id)
 )
+GO
 CREATE TABLE Snack
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -73,6 +81,7 @@ CREATE TABLE Snack
 	stock INT,
 	category INT -- 0: food, 1: beverage
 )
+GO
 CREATE TABLE ShowTime (
 	idmovie INT,
 	idscreen INT,
@@ -86,6 +95,7 @@ CREATE TABLE ShowTime (
 
 	PRIMARY KEY (idmovie, idscreen, idseat, start_time)
 )
+GO
 CREATE TABLE Ticket
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -94,17 +104,13 @@ CREATE TABLE Ticket
 	payment_method NVARCHAR(100),
 	payment_status BIT DEFAULT 1, -- 0: unpaid, 1: paid
 	discount INT DEFAULT 0 CHECK(discount >= 0 AND discount <= 100), -- in percent
-	idseat INT,
 	idcustomer INT,
-	idstaff INT,
-	idsnack INT,
-	idshowtime INT
+	idstaff INT
 
-	FOREIGN KEY (idseat) REFERENCES dbo.Seat(id),
 	FOREIGN KEY (idcustomer) REFERENCES dbo.Customer(id),
 	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
-	FOREIGN KEY (idsnack) REFERENCES dbo.Snack(id)
 )
+GO
 CREATE TABLE TicketSnack
 (
     idticket INT,
@@ -116,6 +122,7 @@ CREATE TABLE TicketSnack
 
 	PRIMARY KEY (idticket, idsnack)
 )
+GO
 CREATE TABLE Account
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -127,6 +134,7 @@ CREATE TABLE Account
 
 	FOREIGN KEY (idStaff) REFERENCES dbo.Staff
 )
+GO
 CREATE TABLE ForgetPassword
 (
 	idStaff INT,
@@ -135,9 +143,9 @@ CREATE TABLE ForgetPassword
 	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
 	PRIMARY KEY (idStaff, verification)
 )
-
+GO
 SET DATEFORMAT dmy;
-
+GO
 -- INSERT
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
 INSERT INTO dbo.Hall (name, location)VALUES (N'Lotte Cinema Thu Duc', N'5th Floor, Giga Mall');
@@ -224,6 +232,7 @@ INSERT INTO Movie (title, genre, rated, release_date, director, language, durati
 UPDATE Movie
 SET duration = 0
 WHERE duration IS NULL;
+GO
 
 INSERT INTO dbo.ShowTime (idmovie, idscreen, idseat, start_time, available)
 VALUES
@@ -388,13 +397,13 @@ AS
 BEGIN
 	SELECT * FROM dbo.Account WHERE username = @username AND password = @password
 END
-
+GO
 CREATE PROC USP_GetMovieList
 AS SELECT * FROM dbo.Movie
-
+GO
 CREATE PROC USP_GetSnackList
 AS SELECT * FROM dbo.Snack
-
+GO
 CREATE PROC USP_GetShowTimeList
 AS SELECT * FROM dbo.ShowTime
 
