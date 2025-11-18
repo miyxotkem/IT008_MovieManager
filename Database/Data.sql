@@ -49,7 +49,7 @@ CREATE TABLE Customer
 	phone_number VARCHAR(11) DEFAULT NULL,
 	membership INT DEFAULT 0 -- 0: none, 1: bronze, 2: silver, 3: gold, etc.
 )
-CREATE TABLE Shift_Schedule
+CREATE TABLE ShiftSchedule
 (
 	id INT IDENTITY PRIMARY KEY,
 	start_schedule TIME,
@@ -136,22 +136,7 @@ CREATE TABLE ForgetPassword
 	PRIMARY KEY (idStaff, verification)
 )
 
--- PROC
-CREATE PROC USP_Login
-@username VARCHAR(100), @password VARCHAR(100)
-AS
-BEGIN
-	SELECT * FROM dbo.Account WHERE username = @username AND password = @password
-END
-CREATE PROC USP_GetMovieList
-AS SELECT * FROM dbo.Movie
-CREATE PROC USP_GetSnackList
-AS SELECT * FROM dbo.Snack
-CREATE PROC USP_GetShowTimeList
-AS SELECT * FROM dbo.ShowTime
-
 SET DATEFORMAT dmy;
-
 
 -- INSERT
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
@@ -396,8 +381,23 @@ VALUES
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
 
 
+-- PROC
+CREATE PROC USP_Login
+@username VARCHAR(100), @password VARCHAR(100)
+AS
+BEGIN
+	SELECT * FROM dbo.Account WHERE username = @username AND password = @password
+END
+
+CREATE PROC USP_GetMovieList
+AS SELECT * FROM dbo.Movie
+
+CREATE PROC USP_GetSnackList
+AS SELECT * FROM dbo.Snack
+
+CREATE PROC USP_GetShowTimeList
+AS SELECT * FROM dbo.ShowTime
+
 -- Ngày 18/11/2025
 -- Đổi row thành varchar(1) với các hàng ghế là A, B, C, D, E
-alter table Snack
-alter column category bit;
- 
+
