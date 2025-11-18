@@ -2,6 +2,7 @@
 GO
 USE MovieManager
 GO
+
 -- Table
 CREATE TABLE Movie
 (
@@ -70,7 +71,7 @@ CREATE TABLE Staff
 	contact_info NVARCHAR(100),
 	idshiftschedule INT,
 
-	FOREIGN KEY (idshiftschedule) REFERENCES dbo.Shift_Schedule(id)
+	FOREIGN KEY (idshiftschedule) REFERENCES dbo.ShiftSchedule(id)
 )
 GO
 CREATE TABLE Snack
@@ -104,9 +105,11 @@ CREATE TABLE Ticket
 	payment_method NVARCHAR(100),
 	payment_status BIT DEFAULT 1, -- 0: unpaid, 1: paid
 	discount INT DEFAULT 0 CHECK(discount >= 0 AND discount <= 100), -- in percent
+	idmovie INT,
 	idcustomer INT,
 	idstaff INT
 
+	FOREIGN KEY (idmovie) REFERENCES dbo.Movie(id),
 	FOREIGN KEY (idcustomer) REFERENCES dbo.Customer(id),
 	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
 )
@@ -146,6 +149,7 @@ CREATE TABLE ForgetPassword
 GO
 SET DATEFORMAT dmy;
 GO
+
 -- INSERT
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
 INSERT INTO dbo.Hall (name, location)VALUES (N'Lotte Cinema Thu Duc', N'5th Floor, Giga Mall');
@@ -340,10 +344,10 @@ VALUES
 (1, 2, 49, '15/12/2025 20:30:00', 1),
 (1, 2, 50, '15/12/2025 20:30:00', 1);
 
-INSERT INTO dbo.Shift_Schedule VALUES('7:30:00', '12:30:00');
-INSERT INTO dbo.Shift_Schedule VALUES('12:30:00', '17:30:00');
-INSERT INTO dbo.Shift_Schedule VALUES('17:30:00', '22:30:00');
-INSERT INTO dbo.Shift_Schedule VALUES('22:30:00', '2:30:00');
+INSERT INTO dbo.ShiftSchedule VALUES('7:30:00', '12:30:00');
+INSERT INTO dbo.ShiftSchedule VALUES('12:30:00', '17:30:00');
+INSERT INTO dbo.ShiftSchedule VALUES('17:30:00', '22:30:00');
+INSERT INTO dbo.ShiftSchedule VALUES('22:30:00', '2:30:00');
 
 INSERT INTO dbo.Staff VALUES(N'Nguyễn Minh Anh', N'Giám đốc marketing', N'mlanhmlanh214@gmail.com', 1);
 INSERT INTO dbo.Staff VALUES(N'Trần Minh Đức', N'Nhân viên', N'minhduct50@gmail.com', 1);
@@ -388,7 +392,6 @@ VALUES
 (N'Cơm gà sốt phô mai', 59000, 100, 0),
 (N'Cơm bò sốt tiêu đen', 65000, 100, 0),
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
-
 
 -- PROC
 CREATE PROC USP_Login
