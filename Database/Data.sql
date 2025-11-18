@@ -37,14 +37,14 @@ CREATE TABLE Screen
 CREATE TABLE Seat
 (
 	id INT IDENTITY PRIMARY KEY,
-	row INT,
+	row varchar(3),
 	number INT,
 	type NVARCHAR(100)
 )
 CREATE TABLE Customer
 (
 	id INT IDENTITY PRIMARY KEY,
-	name NVARCHAR(100) DEFAULT N'Khach',
+	name NVARCHAR(100) DEFAULT N'Guest',
 	email VARCHAR(20) DEFAULT NULL,
 	phone_number VARCHAR(11) DEFAULT NULL,
 	membership INT DEFAULT 0 -- 0: none, 1: bronze, 2: silver, 3: gold, etc.
@@ -165,61 +165,65 @@ INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (5
 
 INSERT INTO dbo.Seat (row, number, type)
 VALUES
--- Row 1 (Normal)
-(1, 1, N'Normal'),
-(1, 2, N'Normal'),
-(1, 3, N'Normal'),
-(1, 4, N'Normal'),
-(1, 5, N'Normal'),
-(1, 6, N'Normal'),
-(1, 7, N'Normal'),
-(1, 8, N'Normal'),
-(1, 9, N'Normal'),
-(1, 10, N'Normal'),
--- Row 2 (Normal)
-(2, 1, N'Normal'),
-(2, 2, N'Normal'),
-(2, 3, N'Normal'),
-(2, 4, N'Normal'),
-(2, 5, N'Normal'),
-(2, 6, N'Normal'),
-(2, 7, N'Normal'),
-(2, 8, N'Normal'),
-(2, 9, N'Normal'),
-(2, 10, N'Normal'),
--- Row 3 (VIP)
-(3, 1, N'VIP'),
-(3, 2, N'VIP'),
-(3, 3, N'VIP'),
-(3, 4, N'VIP'),
-(3, 5, N'VIP'),
-(3, 6, N'VIP'),
-(3, 7, N'VIP'),
-(3, 8, N'VIP'),
-(3, 9, N'VIP'),
-(3, 10, N'VIP'),
--- Row 4 (VIP)
-(4, 1, N'VIP'),
-(4, 2, N'VIP'),
-(4, 3, N'VIP'),
-(4, 4, N'VIP'),
-(4, 5, N'VIP'),
-(4, 6, N'VIP'),
-(4, 7, N'VIP'),
-(4, 8, N'VIP'),
-(4, 9, N'VIP'),
-(4, 10, N'VIP'),
--- Row 5 (Couple & SVIP)
-(5, 1, N'Couple'),
-(5, 2, N'Couple'),
-(5, 3, N'Couple'),
-(5, 4, N'Couple'),
-(5, 5, N'Couple'),
-(5, 6, N'SVIP'),
-(5, 7, N'SVIP'),
-(5, 8, N'SVIP'),
-(5, 9, N'SVIP'),
-(5, 10, N'SVIP');
+-- Row 1 (Row A - Normal)
+('A', 1, N'Normal'),
+('A', 2, N'Normal'),
+('A', 3, N'Normal'),
+('A', 4, N'Normal'),
+('A', 5, N'Normal'),
+('A', 6, N'Normal'),
+('A', 7, N'Normal'),
+('A', 8, N'Normal'),
+('A', 9, N'Normal'),
+('A', 10, N'Normal'),
+
+-- Row 2 (Row B - Normal) -> Đổi số 2 thành 'B'
+('B', 1, N'Normal'),
+('B', 2, N'Normal'),
+('B', 3, N'Normal'), -- Đã sửa lỗi thiếu dấu nháy ở đây
+('B', 4, N'Normal'),
+('B', 5, N'Normal'),
+('B', 6, N'Normal'),
+('B', 7, N'Normal'),
+('B', 8, N'Normal'),
+('B', 9, N'Normal'),
+('B', 10, N'Normal'),
+
+-- Row 3 (Row C - VIP) -> Đổi số 3 thành 'C'
+('C', 1, N'VIP'),
+('C', 2, N'VIP'),
+('C', 3, N'VIP'),
+('C', 4, N'VIP'),
+('C', 5, N'VIP'),
+('C', 6, N'VIP'),
+('C', 7, N'VIP'),
+('C', 8, N'VIP'),
+('C', 9, N'VIP'),
+('C', 10, N'VIP'),
+
+-- Row 4 (Row D - VIP) -> Đổi số 4 thành 'D'
+('D', 1, N'VIP'),
+('D', 2, N'VIP'),
+('D', 3, N'VIP'),
+('D', 4, N'VIP'),
+('D', 5, N'VIP'),
+('D', 6, N'VIP'),
+('D', 7, N'VIP'),
+('D', 8, N'VIP'),
+('D', 9, N'VIP'),
+('D', 10, N'VIP'),
+
+-- Row 5 (Row E - Couple & SVIP) -> Đổi số 5 thành 'E'
+('E', 1, N'Couple'),
+('E', 2, N'Couple'),
+('E', 3, N'Couple'),
+('E', 4, N'Couple'),
+('E', 5, N'Couple'),
+('E', 6, N'SVIP'),
+('E', 7, N'SVIP'),
+('E', 8, N'SVIP'),
+('E', 9, N'SVIP'),
+('E', 10, N'SVIP');
 
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TEE YOD: QUỶ ĂN TẠNG - PHẦN 3', N'N/A', N'N/A', '10/10/2025', N'Narit Yuvaboon', N'Tiếng Thái', 104, N'iMax', N'https://youtu.be/DMOGnGokm4c', N'Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee, ...');
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TAY ANH GIỮ MỘT VÌ SAO', N'N/A', N'N/A', '03/10/2025', N'Kim Sung Hoon', N'Tiếng Hàn', 117, N'N/A', N'https://youtu.be/ZsSYbAy2Ez8', N'Lee Kwang Soo, Hoàng Hà, Duy Khánh, Cù Thị Trà, Um Mun Suk, Lâm Thanh Mỹ, ...');
@@ -390,3 +394,10 @@ VALUES
 (N'Cơm gà sốt phô mai', 59000, 100, 0),
 (N'Cơm bò sốt tiêu đen', 65000, 100, 0),
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
+
+
+-- Ngày 18/11/2025
+-- Đổi row thành varchar(1) với các hàng ghế là A, B, C, D, E
+alter table Snack
+alter column category bit;
+ 
