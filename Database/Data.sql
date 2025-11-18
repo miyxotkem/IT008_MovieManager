@@ -13,9 +13,9 @@ CREATE TABLE Movie
 	language NVARCHAR(50),
 	duration INT, -- minute
 	format NVARCHAR(50) NOT NULL,
-	trailer NVARCHAR(100), -- URL
+	trailer VARCHAR(100), -- URL
 	actor NVARCHAR(150),
-	brief NVARCHAR(1000)
+	brief NVARCHAR(300)
 )
 CREATE TABLE Hall
 (
@@ -121,7 +121,7 @@ CREATE TABLE Account
 	id INT IDENTITY PRIMARY KEY,
 	username VARCHAR(100),
 	password VARCHAR(100),
-	admin BIT,  -- them thuoc tinh default ben duoi 
+	admin BIT DEFAULT 0,
 	idStaff INT,
 	accept BIT DEFAULT 0,
 
@@ -390,9 +390,3 @@ VALUES
 (N'Cơm gà sốt phô mai', 59000, 100, 0),
 (N'Cơm bò sốt tiêu đen', 65000, 100, 0),
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
-
-
--- Alter 
-Alter table Account 
-add constraint DF_Admin
-default 0 for admin;
