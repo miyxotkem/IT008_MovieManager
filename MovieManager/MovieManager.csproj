@@ -322,6 +322,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\fastfood_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\arrow_back_ios_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\Gemini_Generated_Image_hn5b5mhn5b5mhn5b.png" />
+    <None Include="Resources\ChatGPT Image Nov 19, 2025, 09_06_13 PM.png" />
+    <None Include="Resources\ChatGPT_Image_Nov_19__2025__09_06_13_PM-removebg-preview.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -334,6 +338,7 @@
     <None Include="Resources\theaters_24dp_BLACK_FILL0_wght400_GRAD0_opsz241.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\visibility_off_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\X_button.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
