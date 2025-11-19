@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPassword));
             this.PanelForgetPass = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.PreviousButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ResetPassLabelForgetPass = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.UsernameLabelForgetPass = new System.Windows.Forms.Label();
             this.ContinueButtonForgetPass = new Guna.UI2.WinForms.Guna2GradientButton();
             this.UsernameTextboxForgetPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.PreviousButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PanelForgetPass.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,8 +54,37 @@
             this.PanelForgetPass.Location = new System.Drawing.Point(0, 0);
             this.PanelForgetPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelForgetPass.Name = "PanelForgetPass";
-            this.PanelForgetPass.Size = new System.Drawing.Size(1000, 647);
+            this.PanelForgetPass.Size = new System.Drawing.Size(1000, 650);
             this.PanelForgetPass.TabIndex = 0;
+            // 
+            // PreviousButtonForgetVerify
+            // 
+            this.PreviousButtonForgetVerify.BackColor = System.Drawing.Color.Transparent;
+            this.PreviousButtonForgetVerify.BorderColor = System.Drawing.Color.Empty;
+            this.PreviousButtonForgetVerify.BorderRadius = 12;
+            this.PreviousButtonForgetVerify.BorderThickness = 1;
+            this.PreviousButtonForgetVerify.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PreviousButtonForgetVerify.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PreviousButtonForgetVerify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PreviousButtonForgetVerify.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PreviousButtonForgetVerify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PreviousButtonForgetVerify.FillColor = System.Drawing.Color.White;
+            this.PreviousButtonForgetVerify.FillColor2 = System.Drawing.Color.White;
+            this.PreviousButtonForgetVerify.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PreviousButtonForgetVerify.ForeColor = System.Drawing.Color.Black;
+            this.PreviousButtonForgetVerify.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.PreviousButtonForgetVerify.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.PreviousButtonForgetVerify.HoverState.ForeColor = System.Drawing.Color.White;
+            this.PreviousButtonForgetVerify.Image = global::MovieManager.Properties.Resources.arrow_back_ios_24dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.PreviousButtonForgetVerify.Location = new System.Drawing.Point(12, 11);
+            this.PreviousButtonForgetVerify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PreviousButtonForgetVerify.Name = "PreviousButtonForgetVerify";
+            this.PreviousButtonForgetVerify.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.PreviousButtonForgetVerify.ShadowDecoration.BorderRadius = 12;
+            this.PreviousButtonForgetVerify.ShadowDecoration.Enabled = true;
+            this.PreviousButtonForgetVerify.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.PreviousButtonForgetVerify.Size = new System.Drawing.Size(50, 50);
+            this.PreviousButtonForgetVerify.TabIndex = 5;
             // 
             // ResetPassLabelForgetPass
             // 
@@ -80,14 +110,14 @@
             this.guna2CustomGradientPanel1.ShadowDecoration.BorderRadius = 30;
             this.guna2CustomGradientPanel1.ShadowDecoration.Enabled = true;
             this.guna2CustomGradientPanel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(655, 369);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(655, 333);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // UsernameLabelForgetPass
             // 
             this.UsernameLabelForgetPass.AutoSize = true;
             this.UsernameLabelForgetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabelForgetPass.Location = new System.Drawing.Point(102, 78);
+            this.UsernameLabelForgetPass.Location = new System.Drawing.Point(221, 33);
             this.UsernameLabelForgetPass.Name = "UsernameLabelForgetPass";
             this.UsernameLabelForgetPass.Size = new System.Drawing.Size(212, 25);
             this.UsernameLabelForgetPass.TabIndex = 5;
@@ -144,42 +174,14 @@
             this.UsernameTextboxForgetPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextboxForgetPass_KeyPress);
             this.UsernameTextboxForgetPass.Leave += new System.EventHandler(this.FullNameTextBoxSignUp_Leave);
             // 
-            // PreviousButtonForgetVerify
-            // 
-            this.PreviousButtonForgetVerify.BackColor = System.Drawing.Color.Transparent;
-            this.PreviousButtonForgetVerify.BorderColor = System.Drawing.Color.Empty;
-            this.PreviousButtonForgetVerify.BorderRadius = 12;
-            this.PreviousButtonForgetVerify.BorderThickness = 1;
-            this.PreviousButtonForgetVerify.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PreviousButtonForgetVerify.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PreviousButtonForgetVerify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PreviousButtonForgetVerify.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PreviousButtonForgetVerify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PreviousButtonForgetVerify.FillColor = System.Drawing.Color.White;
-            this.PreviousButtonForgetVerify.FillColor2 = System.Drawing.Color.White;
-            this.PreviousButtonForgetVerify.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PreviousButtonForgetVerify.ForeColor = System.Drawing.Color.Black;
-            this.PreviousButtonForgetVerify.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.PreviousButtonForgetVerify.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.PreviousButtonForgetVerify.HoverState.ForeColor = System.Drawing.Color.White;
-            this.PreviousButtonForgetVerify.Image = global::MovieManager.Properties.Resources.arrow_back_ios_24dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.PreviousButtonForgetVerify.Location = new System.Drawing.Point(12, 11);
-            this.PreviousButtonForgetVerify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PreviousButtonForgetVerify.Name = "PreviousButtonForgetVerify";
-            this.PreviousButtonForgetVerify.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.PreviousButtonForgetVerify.ShadowDecoration.BorderRadius = 12;
-            this.PreviousButtonForgetVerify.ShadowDecoration.Enabled = true;
-            this.PreviousButtonForgetVerify.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.PreviousButtonForgetVerify.Size = new System.Drawing.Size(50, 50);
-            this.PreviousButtonForgetVerify.TabIndex = 5;
-            // 
             // ForgetPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 647);
+            this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.PanelForgetPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ForgetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

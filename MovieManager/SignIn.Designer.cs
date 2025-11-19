@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInForm));
             this.BackgroundPanelSignIn = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.ExitButtonSignIn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SignInPanelSignIn = new Guna.UI2.WinForms.Guna2Panel();
             this.CreditLabelSignIn = new System.Windows.Forms.Label();
             this.SignUpPanelSignIn = new System.Windows.Forms.Panel();
@@ -43,16 +42,17 @@
             this.UsernameLabelSignIn = new System.Windows.Forms.Label();
             this.PasswordTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
             this.UsernameTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Logo = new System.Windows.Forms.PictureBox();
+            this.ExitButtonSignIn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SignInShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.epUsernameSignIn = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPassSignIn = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.BackgroundPanelSignIn.SuspendLayout();
             this.SignInPanelSignIn.SuspendLayout();
             this.SignUpPanelSignIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epUsernameSignIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPassSignIn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // BackgroundPanelSignIn
@@ -71,24 +71,6 @@
             this.BackgroundPanelSignIn.Name = "BackgroundPanelSignIn";
             this.BackgroundPanelSignIn.Size = new System.Drawing.Size(1200, 800);
             this.BackgroundPanelSignIn.TabIndex = 0;
-            // 
-            // ExitButtonSignIn
-            // 
-            this.ExitButtonSignIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ExitButtonSignIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ExitButtonSignIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ExitButtonSignIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ExitButtonSignIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ExitButtonSignIn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ExitButtonSignIn.ForeColor = System.Drawing.Color.White;
-            this.ExitButtonSignIn.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ExitButtonSignIn.Location = new System.Drawing.Point(1158, 12);
-            this.ExitButtonSignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ExitButtonSignIn.Name = "ExitButtonSignIn";
-            this.ExitButtonSignIn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ExitButtonSignIn.Size = new System.Drawing.Size(30, 30);
-            this.ExitButtonSignIn.TabIndex = 2;
-            this.ExitButtonSignIn.Click += new System.EventHandler(this.ExitButtonSignIn_Click);
             // 
             // SignInPanelSignIn
             // 
@@ -260,14 +242,6 @@
             this.UsernameTextBoxSignIn.Enter += new System.EventHandler(this.UsernameTextBoxSignIn_Enter);
             this.UsernameTextBoxSignIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextBoxSignIn_KeyPress);
             // 
-            // epUsernameSignIn
-            // 
-            this.epUsernameSignIn.ContainerControl = this;
-            // 
-            // epPassSignIn
-            // 
-            this.epPassSignIn.ContainerControl = this;
-            // 
             // Logo
             // 
             this.Logo.Image = global::MovieManager.Properties.Resources.ChatGPT_Image_Nov_19__2025__09_06_13_PM_removebg_preview;
@@ -277,6 +251,32 @@
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 3;
             this.Logo.TabStop = false;
+            // 
+            // ExitButtonSignIn
+            // 
+            this.ExitButtonSignIn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ExitButtonSignIn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ExitButtonSignIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ExitButtonSignIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ExitButtonSignIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.ExitButtonSignIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ExitButtonSignIn.ForeColor = System.Drawing.Color.White;
+            this.ExitButtonSignIn.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ExitButtonSignIn.Location = new System.Drawing.Point(1158, 12);
+            this.ExitButtonSignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ExitButtonSignIn.Name = "ExitButtonSignIn";
+            this.ExitButtonSignIn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ExitButtonSignIn.Size = new System.Drawing.Size(30, 30);
+            this.ExitButtonSignIn.TabIndex = 2;
+            this.ExitButtonSignIn.Click += new System.EventHandler(this.ExitButtonSignIn_Click);
+            // 
+            // epUsernameSignIn
+            // 
+            this.epUsernameSignIn.ContainerControl = this;
+            // 
+            // epPassSignIn
+            // 
+            this.epPassSignIn.ContainerControl = this;
             // 
             // SignInForm
             // 
@@ -300,9 +300,9 @@
             this.SignInPanelSignIn.PerformLayout();
             this.SignUpPanelSignIn.ResumeLayout(false);
             this.SignUpPanelSignIn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epUsernameSignIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPassSignIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPassVerification));
             this.PanelForgetPassVerify = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.ResetPassLabelForgetVerify = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -60,7 +61,7 @@
             this.PanelForgetPassVerify.Location = new System.Drawing.Point(0, 0);
             this.PanelForgetPassVerify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelForgetPassVerify.Name = "PanelForgetPassVerify";
-            this.PanelForgetPassVerify.Size = new System.Drawing.Size(1015, 654);
+            this.PanelForgetPassVerify.Size = new System.Drawing.Size(1000, 650);
             this.PanelForgetPassVerify.TabIndex = 1;
             // 
             // ResetPassLabelForgetVerify
@@ -68,7 +69,7 @@
             this.ResetPassLabelForgetVerify.AutoSize = true;
             this.ResetPassLabelForgetVerify.BackColor = System.Drawing.Color.Transparent;
             this.ResetPassLabelForgetVerify.Font = new System.Drawing.Font("Stencil", 30F);
-            this.ResetPassLabelForgetVerify.Location = new System.Drawing.Point(238, 75);
+            this.ResetPassLabelForgetVerify.Location = new System.Drawing.Point(231, 75);
             this.ResetPassLabelForgetVerify.Name = "ResetPassLabelForgetVerify";
             this.ResetPassLabelForgetVerify.Size = new System.Drawing.Size(538, 71);
             this.ResetPassLabelForgetVerify.TabIndex = 5;
@@ -80,7 +81,7 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2CustomGradientPanel1.Controls.Add(this.UsernameLabelForgetPass);
             this.guna2CustomGradientPanel1.Controls.Add(this.ResetButtonForgetVerify);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(180, 190);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(173, 190);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(655, 333);
@@ -297,9 +298,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 654);
+            this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.PanelForgetPassVerify);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ForgetPassVerification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
