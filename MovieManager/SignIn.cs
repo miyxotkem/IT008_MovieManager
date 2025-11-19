@@ -131,5 +131,13 @@ namespace MovieManager
         {
             
         }
+
+        private void ForgetPasswordLinkLabelSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgetPassword f = new ForgetPassword();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

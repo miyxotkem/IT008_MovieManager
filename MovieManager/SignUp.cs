@@ -185,9 +185,7 @@ namespace MovieManager
 
         private void ExitButtonSignUp_Click(object sender, EventArgs e)
         {
-            SignInForm f = new SignInForm();
             this.Close();
-            f.ShowDialog();
         }
     }
 }
