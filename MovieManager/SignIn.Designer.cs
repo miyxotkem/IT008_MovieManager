@@ -45,11 +45,13 @@
             this.PasswordTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
             this.UsernameTextBoxSignIn = new Guna.UI2.WinForms.Guna2TextBox();
             this.SignInShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.errorProviderSignIn = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUsernameSignIn = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPassSignIn = new System.Windows.Forms.ErrorProvider(this.components);
             this.BackgroundPanelSignIn.SuspendLayout();
             this.SignInPanelSignIn.SuspendLayout();
             this.SignUpPanelSignIn.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSignIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsernameSignIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassSignIn)).BeginInit();
             this.SuspendLayout();
             // 
             // BackgroundPanelSignIn
@@ -229,6 +231,9 @@
             this.PasswordTextBoxSignIn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PasswordTextBoxSignIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PasswordTextBoxSignIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PasswordTextBoxSignIn.IconRight = ((System.Drawing.Image)(resources.GetObject("PasswordTextBoxSignIn.IconRight")));
+            this.PasswordTextBoxSignIn.IconRightOffset = new System.Drawing.Point(-12, 0);
+            this.PasswordTextBoxSignIn.IconRightSize = new System.Drawing.Size(50, 70);
             this.PasswordTextBoxSignIn.Location = new System.Drawing.Point(133, 136);
             this.PasswordTextBoxSignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBoxSignIn.Name = "PasswordTextBoxSignIn";
@@ -238,8 +243,9 @@
             this.PasswordTextBoxSignIn.Size = new System.Drawing.Size(356, 48);
             this.PasswordTextBoxSignIn.TabIndex = 1;
             this.PasswordTextBoxSignIn.UseSystemPasswordChar = true;
+            this.PasswordTextBoxSignIn.Enter += new System.EventHandler(this.PasswordTextBoxSignIn_Enter);
             this.PasswordTextBoxSignIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBoxSignIn_KeyPress);
-            this.PasswordTextBoxSignIn.Leave += new System.EventHandler(this.FillInformationPassError);
+            this.PasswordTextBoxSignIn.Leave += new System.EventHandler(this.PasswordTextBoxSignIn_Leave);
             // 
             // UsernameTextBoxSignIn
             // 
@@ -253,6 +259,7 @@
             this.UsernameTextBoxSignIn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.UsernameTextBoxSignIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UsernameTextBoxSignIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.UsernameTextBoxSignIn.IconLeftSize = new System.Drawing.Size(50, 50);
             this.UsernameTextBoxSignIn.Location = new System.Drawing.Point(133, 56);
             this.UsernameTextBoxSignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsernameTextBoxSignIn.Name = "UsernameTextBoxSignIn";
@@ -261,12 +268,16 @@
             this.UsernameTextBoxSignIn.SelectedText = "";
             this.UsernameTextBoxSignIn.Size = new System.Drawing.Size(356, 48);
             this.UsernameTextBoxSignIn.TabIndex = 0;
+            this.UsernameTextBoxSignIn.Enter += new System.EventHandler(this.UsernameTextBoxSignIn_Enter);
             this.UsernameTextBoxSignIn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextBoxSignIn_KeyPress);
-            this.UsernameTextBoxSignIn.Leave += new System.EventHandler(this.FillInformationUserError);
             // 
-            // errorProviderSignIn
+            // epUsernameSignIn
             // 
-            this.errorProviderSignIn.ContainerControl = this;
+            this.epUsernameSignIn.ContainerControl = this;
+            // 
+            // epPassSignIn
+            // 
+            this.epPassSignIn.ContainerControl = this;
             // 
             // SignInForm
             // 
@@ -291,7 +302,8 @@
             this.SignInPanelSignIn.PerformLayout();
             this.SignUpPanelSignIn.ResumeLayout(false);
             this.SignUpPanelSignIn.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSignIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsernameSignIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassSignIn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +325,8 @@
         private System.Windows.Forms.Label CreditLabelSignIn;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButtonSignIn;
         private Guna.UI2.WinForms.Guna2ShadowForm SignInShadow;
-        private System.Windows.Forms.ErrorProvider errorProviderSignIn;
+        private System.Windows.Forms.ErrorProvider epUsernameSignIn;
+        private System.Windows.Forms.ErrorProvider epPassSignIn;
     }
 }
 

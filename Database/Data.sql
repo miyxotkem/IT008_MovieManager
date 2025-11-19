@@ -357,13 +357,14 @@ INSERT INTO dbo.Staff VALUES(N'Võ Việt Thy', N'Nhân viên', N'thyvv.a2.2124@
 INSERT INTO dbo.Staff VALUES(N'Lê Phương Thúy', N'Nhân viên', N'thuylp.a2.2124@gmail.com', 3);
 INSERT INTO dbo.Staff VALUES(N'Nguyễn Thanh Hiếu Thảo', N'Nhân viên', N'thaontt.a2.2124@gmail.com', 4);
 
-INSERT INTO dbo.Account VALUES('minhanh2104', 'tpnma@', '1', '1', '1');
-INSERT INTO dbo.Account VALUES('minhduc2303', 'tptmd@', '0', '2', '1');
-INSERT INTO dbo.Account VALUES('dantruong2007', 'tppdt@', '1', '3', '1');
-INSERT INTO dbo.Account VALUES('thinhphat1512', 'tphtp@', '1', '4', '1');
-INSERT INTO dbo.Account VALUES('vietthy1908', 'tpvvt@', '0', '5', '1');
-INSERT INTO dbo.Account VALUES('phuongthuy2505', 'tplpt@', '0', '6', '1');
-INSERT INTO dbo.Account VALUES('hieuthao2103', 'tpntht@', '0', '7', '1');
+INSERT INTO dbo.Account VALUES('minhanh2104', 'tpnma@2006', '1', '1', '1');
+INSERT INTO dbo.Account VALUES('minhduc2303', 'tptmd@2006', '0', '2', '1');
+INSERT INTO dbo.Account VALUES('dantruong2007', 'tppdt@2006', '1', '3', '1');
+INSERT INTO dbo.Account VALUES('thinhphat1512', 'tphtp@2006', '1', '4', '1');
+INSERT INTO dbo.Account VALUES('vietthy1908', 'tpvvt@2006', '0', '5', '1');
+INSERT INTO dbo.Account VALUES('phuongthuy2505', 'tplpt@2006', '0', '6', '1');
+INSERT INTO dbo.Account VALUES('hieuthao2103', 'tpntht@2006', '0', '7', '1');
+
 
 INSERT INTO Snack (name, price, stock, category)
 VALUES

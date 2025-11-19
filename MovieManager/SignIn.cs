@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,8 +48,32 @@ namespace MovieManager
             return AccountDAO.Instance.Login(username, password);
         }
 
+        private bool CheckNeccesaryInfor()
+        {
+            if (UsernameTextBoxSignIn.Text.Length == 0 || PasswordTextBoxSignIn.Text.Length == 0
+                || PasswordTextBoxSignIn.Text.Length <= 8)
+            {
+                return false;
+            }
+            return true;
+        }
         private void SignInButtonSignIn_Click(object sender, EventArgs e)
         {
+            if (!CheckNeccesaryInfor())
+            {
+                if (UsernameTextBoxSignIn.Text.Length == 0)
+                {
+                    UsernameTextBoxSignIn.BorderColor = Color.Red;
+                    epUsernameSignIn.SetError(UsernameTextBoxSignIn, "Please fill the information");
+                }
+                if (PasswordTextBoxSignIn.Text.Length == 0)
+                {
+                    PasswordTextBoxSignIn.BorderColor = Color.Red;
+                    epPassSignIn.SetError(PasswordTextBoxSignIn, "Please fill the information");
+                }
+                MessageBox.Show("Please fill and correct all the information.", "Notification");
+                return;
+            }
             string usr = UsernameTextBoxSignIn.Text;
             string pas = PasswordTextBoxSignIn.Text;
             if (Login(usr, pas))
@@ -75,36 +100,12 @@ namespace MovieManager
         // Dien day du thong tin
         private void FillInformationUserError(object sender, EventArgs e)
         {
-            Guna2TextBox txb = (Guna2TextBox)sender;
-            if (txb.Text.Length == 0)
-            {
-                errorProviderSignIn.SetError(txb, "Please fill the information.");
-                txb.BorderColor = Color.Red;
-            } else
-            {
-                errorProviderSignIn.Clear();
-                txb.BorderColor = DefaultBoderColor;
-            }
+
         }
 
         private void FillInformationPassError(object sender, EventArgs e)
         {
-            Guna2TextBox txb = (Guna2TextBox)sender;
-            string txt = txb.Text;
-            if (txb.Text.Length == 0)
-            {
-                errorProviderSignIn.SetError(txb, "Please fill the information.");
-                txb.BorderColor = Color.Red;
-            }
-            else if (txt.Length <= 8)
-            {
-                errorProviderSignIn.SetError(txb, "Password's length should be greater than 8 characters");
-                txb.BorderColor = Color.Red;
-            } else
-            {
-                errorProviderSignIn.Clear();
-                txb.BorderColor = DefaultBoderColor;
-            }
+
         }
 
         // UserName chi duoc nhap chu va so va mot so ki tu đặc biệt 
@@ -126,11 +127,6 @@ namespace MovieManager
             }
         }
 
-        // Dam bao do dai mat khau
-        private void PasswordTextBoxSignIn_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void ForgetPasswordLinkLabelSignIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -138,6 +134,51 @@ namespace MovieManager
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void UsernameTextBoxSignIn_Enter(object sender, EventArgs e)
+        {
+            UsernameTextBoxSignIn.BorderColor = DefaultBoderColor;
+            epUsernameSignIn.Clear();
+        }
+
+        private void PasswordTextBoxSignIn_Enter(object sender, EventArgs e)
+        {
+            PasswordTextBoxSignIn.BorderColor = DefaultBoderColor;
+            epPassSignIn.Clear();
+        }
+
+        private void PasswordTextBoxSignIn_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTextBoxSignIn_Leave(object sender, EventArgs e)
+        {
+            if (PasswordTextBoxSignIn.Text.Length <= 8 && PasswordTextBoxSignIn.Text.Length > 0)
+            {
+                PasswordTextBoxSignIn.BorderColor = Color.Red;
+                epPassSignIn.SetError(PasswordTextBoxSignIn, "Password must be at least 8 characters");
+            } else
+            {
+                PasswordTextBoxSignIn.BorderColor = DefaultBoderColor;
+                epPassSignIn.Clear();
+            }
+        }
+
+        private void PasswordTextBoxSignIn_IconRightClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTextBoxSignIn_IconLeftClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowPassButtonSignIn_Click(object sender, EventArgs e)
+        {
+            PasswordTextBoxSignIn.UseSystemPasswordChar = !PasswordTextBoxSignIn.UseSystemPasswordChar;
         }
     }
 }
