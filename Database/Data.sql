@@ -420,10 +420,12 @@ begin
 	where username = @username;
 end
 
+-- Lấy idStaff từ username của Account 
 create proc USP_ForgetPassGetIDStaff
 @username varchar(100)
 as select idStaff from Account where username = @username
 
+-- Thêm verification vào bảng Forget
 create proc USP_InsertIntoForgetTable
 @id int, @verify varchar(6)
 as
@@ -432,6 +434,7 @@ begin
 	values (@id, @verify)
 end
 
+-- Lấy email từ username của account 
 create proc USP_GetEmailFromUser
 @username varchar(100)
 as
@@ -439,6 +442,26 @@ begin
 	select email from AccountStaff
 	where username = @username
 end
+
+-- Xóa mã từ bảng Forget 
+create proc USP_EraseVerification
+@id int , @verify varchar(6)
+as 
+begin
+	delete from ForgetPassword
+	where idStaff = @id and verification = @verify
+end 
+
+-- Kiểm tra verificationCode trong Forget
+create proc USP_CheckVerify
+@id int , @verify varchar(6)
+as 
+begin 
+	select idStaff, verification 
+	from ForgetPassword
+	where idStaff = @id and verification = @verify;
+end
+
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as
@@ -455,8 +478,5 @@ from Account ac join Staff st on ac.idStaff = st.id;
 -- Tạo proc cho phần forget 
 -- Tạo một số bảng ảo View
 
-
-
-exec USP_ForgetPassGetIDStaff 'dantruong2007'
 
 select * from ForgetPassword

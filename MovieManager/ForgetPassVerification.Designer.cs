@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPassVerification));
             this.PanelForgetPassVerify = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.ResetPassLabelForgetVerify = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.UsernameLabelForgetPass = new System.Windows.Forms.Label();
             this.ResetButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PreviousButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TimeOut = new System.Windows.Forms.Timer(this.components);
             this.PanelForgetPassVerify.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SignUpPanelSignIn.SuspendLayout();
@@ -111,6 +113,7 @@
             this.ResendLinkLabelForgetPassVerify.TabIndex = 3;
             this.ResendLinkLabelForgetPassVerify.TabStop = true;
             this.ResendLinkLabelForgetPassVerify.Text = "Resend here!";
+            this.ResendLinkLabelForgetPassVerify.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ResendLinkLabelForgetPassVerify_LinkClicked);
             // 
             // EmailResendLabelForgetPassVerify
             // 
@@ -325,6 +328,7 @@
             this.ResetButtonForgetVerify.Size = new System.Drawing.Size(206, 48);
             this.ResetButtonForgetVerify.TabIndex = 3;
             this.ResetButtonForgetVerify.Text = "Enter";
+            this.ResetButtonForgetVerify.Click += new System.EventHandler(this.ResetButtonForgetVerify_Click);
             // 
             // PreviousButtonForgetVerify
             // 
@@ -355,6 +359,11 @@
             this.PreviousButtonForgetVerify.Size = new System.Drawing.Size(44, 40);
             this.PreviousButtonForgetVerify.TabIndex = 4;
             this.PreviousButtonForgetVerify.Click += new System.EventHandler(this.PreviousButtonForgetVerify_Click);
+            // 
+            // TimeOut
+            // 
+            this.TimeOut.Interval = 300000;
+            this.TimeOut.Tick += new System.EventHandler(this.TimeOut_Tick);
             // 
             // ForgetPassVerification
             // 
@@ -396,5 +405,6 @@
         private System.Windows.Forms.Panel SignUpPanelSignIn;
         private System.Windows.Forms.LinkLabel ResendLinkLabelForgetPassVerify;
         private System.Windows.Forms.Label EmailResendLabelForgetPassVerify;
+        private System.Windows.Forms.Timer TimeOut;
     }
 }

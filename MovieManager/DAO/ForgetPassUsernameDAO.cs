@@ -66,5 +66,18 @@ namespace MovieManager.DAO
             }
             return email;
         }
+
+        public void EraseVerificationCode(int id, string verify)
+        {
+            string querry = "Exec USP_EraseVerification @id , @verify";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { id, verify });
+        }
+
+        public bool CheckVerificationCode(int id, string verify)
+        {
+            string querry = "Exec USP_CheckVerify @id , @verify";
+            DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] {id, verify});
+            return data.Rows.Count > 0;
+        }
     }
 }
