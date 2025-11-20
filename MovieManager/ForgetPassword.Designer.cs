@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPassword));
             this.PanelForgetPass = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.PreviousButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -36,8 +37,10 @@
             this.UsernameLabelForgetPass = new System.Windows.Forms.Label();
             this.ContinueButtonForgetPass = new Guna.UI2.WinForms.Guna2GradientButton();
             this.UsernameTextboxForgetPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.epUsernameForgetPass = new System.Windows.Forms.ErrorProvider(this.components);
             this.PanelForgetPass.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsernameForgetPass)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelForgetPass
@@ -52,9 +55,8 @@
             this.PanelForgetPass.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.PanelForgetPass.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.PanelForgetPass.Location = new System.Drawing.Point(0, 0);
-            this.PanelForgetPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PanelForgetPass.Name = "PanelForgetPass";
-            this.PanelForgetPass.Size = new System.Drawing.Size(1000, 650);
+            this.PanelForgetPass.Size = new System.Drawing.Size(889, 520);
             this.PanelForgetPass.TabIndex = 0;
             // 
             // PreviousButtonForgetVerify
@@ -76,24 +78,25 @@
             this.PreviousButtonForgetVerify.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.PreviousButtonForgetVerify.HoverState.ForeColor = System.Drawing.Color.White;
             this.PreviousButtonForgetVerify.Image = global::MovieManager.Properties.Resources.arrow_back_ios_24dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.PreviousButtonForgetVerify.Location = new System.Drawing.Point(12, 11);
+            this.PreviousButtonForgetVerify.Location = new System.Drawing.Point(11, 9);
             this.PreviousButtonForgetVerify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PreviousButtonForgetVerify.Name = "PreviousButtonForgetVerify";
             this.PreviousButtonForgetVerify.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.PreviousButtonForgetVerify.ShadowDecoration.BorderRadius = 12;
             this.PreviousButtonForgetVerify.ShadowDecoration.Enabled = true;
             this.PreviousButtonForgetVerify.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.PreviousButtonForgetVerify.Size = new System.Drawing.Size(50, 50);
+            this.PreviousButtonForgetVerify.Size = new System.Drawing.Size(44, 40);
             this.PreviousButtonForgetVerify.TabIndex = 5;
+            this.PreviousButtonForgetVerify.Click += new System.EventHandler(this.PreviousButtonForgetVerify_Click);
             // 
             // ResetPassLabelForgetPass
             // 
             this.ResetPassLabelForgetPass.AutoSize = true;
             this.ResetPassLabelForgetPass.BackColor = System.Drawing.Color.Transparent;
             this.ResetPassLabelForgetPass.Font = new System.Drawing.Font("Stencil", 30F);
-            this.ResetPassLabelForgetPass.Location = new System.Drawing.Point(231, 75);
+            this.ResetPassLabelForgetPass.Location = new System.Drawing.Point(205, 60);
             this.ResetPassLabelForgetPass.Name = "ResetPassLabelForgetPass";
-            this.ResetPassLabelForgetPass.Size = new System.Drawing.Size(538, 71);
+            this.ResetPassLabelForgetPass.Size = new System.Drawing.Size(448, 59);
             this.ResetPassLabelForgetPass.TabIndex = 5;
             this.ResetPassLabelForgetPass.Text = "PASSWORD RESET";
             // 
@@ -104,22 +107,21 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.UsernameLabelForgetPass);
             this.guna2CustomGradientPanel1.Controls.Add(this.ContinueButtonForgetPass);
             this.guna2CustomGradientPanel1.Controls.Add(this.UsernameTextboxForgetPass);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(173, 190);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(154, 152);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.BorderRadius = 30;
             this.guna2CustomGradientPanel1.ShadowDecoration.Enabled = true;
             this.guna2CustomGradientPanel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(655, 333);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(582, 266);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // UsernameLabelForgetPass
             // 
             this.UsernameLabelForgetPass.AutoSize = true;
             this.UsernameLabelForgetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabelForgetPass.Location = new System.Drawing.Point(221, 33);
+            this.UsernameLabelForgetPass.Location = new System.Drawing.Point(196, 26);
             this.UsernameLabelForgetPass.Name = "UsernameLabelForgetPass";
-            this.UsernameLabelForgetPass.Size = new System.Drawing.Size(212, 25);
+            this.UsernameLabelForgetPass.Size = new System.Drawing.Size(165, 20);
             this.UsernameLabelForgetPass.TabIndex = 5;
             this.UsernameLabelForgetPass.Text = "Enter your username";
             // 
@@ -141,11 +143,11 @@
             this.ContinueButtonForgetPass.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ContinueButtonForgetPass.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.ContinueButtonForgetPass.HoverState.ForeColor = System.Drawing.Color.White;
-            this.ContinueButtonForgetPass.Location = new System.Drawing.Point(211, 212);
+            this.ContinueButtonForgetPass.Location = new System.Drawing.Point(188, 170);
             this.ContinueButtonForgetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContinueButtonForgetPass.Name = "ContinueButtonForgetPass";
             this.ContinueButtonForgetPass.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ContinueButtonForgetPass.Size = new System.Drawing.Size(232, 60);
+            this.ContinueButtonForgetPass.Size = new System.Drawing.Size(206, 48);
             this.ContinueButtonForgetPass.TabIndex = 3;
             this.ContinueButtonForgetPass.Text = "Continue";
             this.ContinueButtonForgetPass.Click += new System.EventHandler(this.ContinueButtonForgetPass_Click);
@@ -162,23 +164,27 @@
             this.UsernameTextboxForgetPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.UsernameTextboxForgetPass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UsernameTextboxForgetPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UsernameTextboxForgetPass.Location = new System.Drawing.Point(92, 105);
+            this.UsernameTextboxForgetPass.Location = new System.Drawing.Point(82, 84);
             this.UsernameTextboxForgetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsernameTextboxForgetPass.Name = "UsernameTextboxForgetPass";
             this.UsernameTextboxForgetPass.PasswordChar = '\0';
             this.UsernameTextboxForgetPass.PlaceholderText = "";
             this.UsernameTextboxForgetPass.SelectedText = "";
-            this.UsernameTextboxForgetPass.Size = new System.Drawing.Size(470, 60);
+            this.UsernameTextboxForgetPass.Size = new System.Drawing.Size(418, 48);
             this.UsernameTextboxForgetPass.TabIndex = 1;
             this.UsernameTextboxForgetPass.Enter += new System.EventHandler(this.UsernameTextboxForgetPass_Enter);
-            this.UsernameTextboxForgetPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextboxForgetPass_KeyPress);
-            this.UsernameTextboxForgetPass.Leave += new System.EventHandler(this.FullNameTextBoxSignUp_Leave);
+            this.UsernameTextboxForgetPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextboxForgetPass_KeyPress_1);
+            this.UsernameTextboxForgetPass.Leave += new System.EventHandler(this.UsernameTextboxForgetPass_Leave);
+            // 
+            // epUsernameForgetPass
+            // 
+            this.epUsernameForgetPass.ContainerControl = this;
             // 
             // ForgetPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.ClientSize = new System.Drawing.Size(889, 520);
             this.Controls.Add(this.PanelForgetPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -190,6 +196,7 @@
             this.PanelForgetPass.PerformLayout();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsernameForgetPass)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +210,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton ContinueButtonForgetPass;
         private System.Windows.Forms.Label UsernameLabelForgetPass;
         private Guna.UI2.WinForms.Guna2GradientButton PreviousButtonForgetVerify;
+        private System.Windows.Forms.ErrorProvider epUsernameForgetPass;
     }
 }

@@ -411,6 +411,20 @@ GO
 CREATE PROC USP_GetShowTimeList
 AS SELECT * FROM dbo.ShowTime
 
+
+create proc USP_ForgetPassUsername
+@username varchar(100) 
+as 
+begin 
+	select * from Account 
+	where username = @username;
+end
+
 -- Ngày 18/11/2025
 -- Đổi row thành varchar(1) với các hàng ghế là A, B, C, D, E
+
+-- Ngày 20/11/2025 
+-- Tạo proc cho phần forget 
+
+
 

@@ -189,6 +189,7 @@
     <Compile Include="Cinema.Designer.cs">
       <DependentUpon>Cinema.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\ForgetPassUsernameDAO.cs" />
     <Compile Include="DAO\MovieDAO.cs" />
     <Compile Include="DAO\ShowTime.cs" />
     <Compile Include="DAO\SnackDAO.cs" />
