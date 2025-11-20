@@ -14,10 +14,13 @@ namespace MovieManager
     public partial class ForgetPassword : Form
     {
         Color DefaultBoderColor = new Color();
-
+        private Random random;
+        private string UserEmail = "";
+        private int IDStaff;
         private void InitiateOther()
         {
             DefaultBoderColor = Color.FromArgb(213, 218, 223);
+            random = new Random();
         }
         public ForgetPassword()
         {
@@ -25,6 +28,17 @@ namespace MovieManager
             InitializeComponent();
         }
 
+        public string userEmail
+        {
+            get { return UserEmail; }   
+            private set { UserEmail = value; }
+        }
+
+        public int ID
+        {
+            get { return IDStaff; }
+            private set { IDStaff = value; }
+        }
         private void PreviousButtonForgetPass_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -64,6 +78,16 @@ namespace MovieManager
             string username = UsernameTextboxForgetPass.Text;
             if (ForgetPassUsernameDAO.Instance.CheckValidUsername(username))
             {
+                UserEmail = ForgetPassUsernameDAO.Instance.GetEmailFromUser(username);
+                int RandomNumber = random.Next(0, 100001);
+                string verificationCode = RandomNumber.ToString("000000");
+                IDStaff = ForgetPassUsernameDAO.Instance.GetIDStaffFromAccount(username);
+                if (IDStaff == -1)
+                {
+                    MessageBox.Show("Error", "Notification");
+                    return;
+                }    
+                ForgetPassUsernameDAO.Instance.InsertValueIntoForgetTable(IDStaff, verificationCode);
                 ForgetPassVerification f = new ForgetPassVerification();
                 this.Hide();
                 f.ShowDialog();

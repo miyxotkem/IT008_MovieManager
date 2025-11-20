@@ -420,11 +420,43 @@ begin
 	where username = @username;
 end
 
+create proc USP_ForgetPassGetIDStaff
+@username varchar(100)
+as select idStaff from Account where username = @username
+
+create proc USP_InsertIntoForgetTable
+@id int, @verify varchar(6)
+as
+begin 
+	insert into dbo.ForgetPassword
+	values (@id, @verify)
+end
+
+create proc USP_GetEmailFromUser
+@username varchar(100)
+as
+begin
+	select email from AccountStaff
+	where username = @username
+end
+-- View
+-- Bảng view liên kết account với staff
+create view AccountStaff as
+select ac.username, ac.password, st.contact_info as email , st.name
+from Account ac join Staff st on ac.idStaff = st.id; 
+
+
+
+
 -- Ngày 18/11/2025
 -- Đổi row thành varchar(1) với các hàng ghế là A, B, C, D, E
 
 -- Ngày 20/11/2025 
 -- Tạo proc cho phần forget 
+-- Tạo một số bảng ảo View
 
 
 
+exec USP_ForgetPassGetIDStaff 'dantruong2007'
+
+select * from ForgetPassword

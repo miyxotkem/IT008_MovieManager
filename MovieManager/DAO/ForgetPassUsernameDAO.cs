@@ -37,5 +37,34 @@ namespace MovieManager.DAO
             DataTable dataTable = DataProvider.Instance.ExecuteQuery(querry, new object[] { username });
             return dataTable.Rows.Count > 0;
         }
+
+        public int GetIDStaffFromAccount(string username)
+        {
+            string querry = "Exec USP_ForgetPassGetIDStaff @username";
+            DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] { username });
+            if (data.Rows.Count > 0)
+            {
+                return Convert.ToInt32(data.Rows[0]["idStaff"]);
+            }
+            return -1;
+        }
+
+        public void InsertValueIntoForgetTable(int id, string verify)
+        {
+            string querry = "Exec USP_InsertIntoForgetTable @id , @username";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { id, verify });
+        }
+
+        public string GetEmailFromUser(string username)
+        {
+            string querry = "Exec USP_GetEmailFromUser @username";
+            DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] { username });
+            string email = "";
+            if (data.Rows.Count > 0)
+            {
+                email = Convert.ToString(data.Rows[0]["email"]);
+            }
+            return email;
+        }
     }
 }
