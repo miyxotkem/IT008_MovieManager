@@ -224,7 +224,7 @@
             this.SignUpButtonSignUp.Name = "SignUpButtonSignUp";
             this.SignUpButtonSignUp.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.SignUpButtonSignUp.Size = new System.Drawing.Size(200, 60);
-            this.SignUpButtonSignUp.TabIndex = 2;
+            this.SignUpButtonSignUp.TabIndex = 6;
             this.SignUpButtonSignUp.Text = "Sign Up";
             this.SignUpButtonSignUp.Click += new System.EventHandler(this.SignUpButtonSignUp_Click);
             // 
@@ -263,7 +263,6 @@
             this.TermsAndConditions.Name = "TermsAndConditions";
             this.TermsAndConditions.Size = new System.Drawing.Size(153, 20);
             this.TermsAndConditions.TabIndex = 4;
-            this.TermsAndConditions.TabStop = true;
             this.TermsAndConditions.Text = "terms and condtions";
             // 
             // TermsAndConditionsCheckBoxSignUp
@@ -277,7 +276,7 @@
             this.TermsAndConditionsCheckBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TermsAndConditionsCheckBoxSignUp.Name = "TermsAndConditionsCheckBoxSignUp";
             this.TermsAndConditionsCheckBoxSignUp.Size = new System.Drawing.Size(266, 24);
-            this.TermsAndConditionsCheckBoxSignUp.TabIndex = 3;
+            this.TermsAndConditionsCheckBoxSignUp.TabIndex = 5;
             this.TermsAndConditionsCheckBoxSignUp.Text = "By checking this, I agree with our";
             this.TermsAndConditionsCheckBoxSignUp.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.TermsAndConditionsCheckBoxSignUp.UncheckedState.BorderRadius = 0;

@@ -410,7 +410,7 @@ AS SELECT * FROM dbo.Snack
 GO
 CREATE PROC USP_GetShowTimeList
 AS SELECT * FROM dbo.ShowTime
-
+GO
 
 create proc USP_ForgetPassUsername
 @username varchar(100) 
@@ -419,12 +419,12 @@ begin
 	select * from Account 
 	where username = @username;
 end
-
+GO
 -- Lấy idStaff từ username của Account 
 create proc USP_ForgetPassGetIDStaff
 @username varchar(100)
 as select idStaff from Account where username = @username
-
+GO
 -- Thêm verification vào bảng Forget
 create proc USP_InsertIntoForgetTable
 @id int, @verify varchar(6)
@@ -433,7 +433,7 @@ begin
 	insert into dbo.ForgetPassword
 	values (@id, @verify)
 end
-
+GO
 -- Lấy email từ username của account 
 create proc USP_GetEmailFromUser
 @username varchar(100)
@@ -442,7 +442,7 @@ begin
 	select email from AccountStaff
 	where username = @username
 end
-
+GO
 -- Xóa mã từ bảng Forget 
 create proc USP_EraseVerification
 @id int , @verify varchar(6)
@@ -451,7 +451,7 @@ begin
 	delete from ForgetPassword
 	where idStaff = @id and verification = @verify
 end 
-
+GO
 -- Kiểm tra verificationCode trong Forget
 create proc USP_CheckVerify
 @id int , @verify varchar(6)
@@ -461,13 +461,13 @@ begin
 	from ForgetPassword
 	where idStaff = @id and verification = @verify;
 end
-
+GO
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as
 select ac.username, ac.password, st.contact_info as email , st.name
 from Account ac join Staff st on ac.idStaff = st.id; 
-
+GO
 
 
 
@@ -479,4 +479,5 @@ from Account ac join Staff st on ac.idStaff = st.id;
 -- Tạo một số bảng ảo View
 
 
+select * from movie
 select * from ForgetPassword

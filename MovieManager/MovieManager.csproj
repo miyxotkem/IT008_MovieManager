@@ -214,6 +214,12 @@
     <Compile Include="MovieDisplay.Designer.cs">
       <DependentUpon>MovieDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieManage.Designer.cs">
+      <DependentUpon>MovieManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieDisplay.resx">
       <DependentUpon>MovieDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieManage.resx">
+      <DependentUpon>MovieManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectMovie.resx">
       <DependentUpon>SelectMovie.cs</DependentUpon>
@@ -340,6 +349,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\visibility_off_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\split_scene_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\X_button.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
