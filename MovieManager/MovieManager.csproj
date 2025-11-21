@@ -196,6 +196,12 @@
     <Compile Include="DTO\Movie.cs" />
     <Compile Include="DTO\ShowTime.cs" />
     <Compile Include="DTO\Snack.cs" />
+    <Compile Include="Edit_MovieManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit_MovieManage.Designer.cs">
+      <DependentUpon>Edit_MovieManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </Compile>
     <EmbeddedResource Include="Cinema.resx">
       <DependentUpon>Cinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_MovieManage.resx">
+      <DependentUpon>Edit_MovieManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassVerification.resx">
       <DependentUpon>ForgetPassVerification.cs</DependentUpon>

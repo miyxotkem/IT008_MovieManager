@@ -31,9 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ToolPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.DeleteButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SelectAllButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeselectAllButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,6 +39,9 @@
             this.ManageMovie = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.DeleteButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1.SuspendLayout();
             this.ToolPanel.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // ToolPanel
             // 
             this.ToolPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ToolPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ToolPanel.BackColor = System.Drawing.Color.White;
             this.ToolPanel.Controls.Add(this.FilterComboBox);
             this.ToolPanel.Controls.Add(this.DeleteButton);
             this.ToolPanel.Controls.Add(this.DeleteFilter);
@@ -73,6 +73,7 @@
             this.ToolPanel.Controls.Add(this.SearchLabel);
             this.ToolPanel.Location = new System.Drawing.Point(427, 178);
             this.ToolPanel.Name = "ToolPanel";
+            this.ToolPanel.ShadowDecoration.BorderRadius = 0;
             this.ToolPanel.ShadowDecoration.Enabled = true;
             this.ToolPanel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.ToolPanel.Size = new System.Drawing.Size(939, 226);
@@ -93,77 +94,31 @@
             this.FilterComboBox.ItemHeight = 30;
             this.FilterComboBox.Items.AddRange(new object[] {
             "N/A",
-            "Horror"});
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Drama",
+            "Horror",
+            "Science Fiction (Sci-Fi)",
+            "Fantasy",
+            "Thriller",
+            "Documentary",
+            "Animation",
+            "Romance",
+            "Musical",
+            "Mystery",
+            "Western",
+            "Crime",
+            "Biographical"});
             this.FilterComboBox.Location = new System.Drawing.Point(120, 115);
             this.FilterComboBox.Name = "FilterComboBox";
             this.FilterComboBox.Size = new System.Drawing.Size(450, 36);
             this.FilterComboBox.TabIndex = 4;
             this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
             // 
-            // DeleteButton
-            // 
-            this.DeleteButton.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteButton.BorderRadius = 4;
-            this.DeleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeleteButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeleteButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteButton.Image = global::MovieManager.Properties.Resources.delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.DeleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteButton.Location = new System.Drawing.Point(848, 37);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(50, 50);
-            this.DeleteButton.TabIndex = 3;
-            // 
-            // DeleteFilter
-            // 
-            this.DeleteFilter.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteFilter.BorderRadius = 4;
-            this.DeleteFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteFilter.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeleteFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeleteFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeleteFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeleteFilter.ForeColor = System.Drawing.Color.White;
-            this.DeleteFilter.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.DeleteFilter.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteFilter.Location = new System.Drawing.Point(590, 115);
-            this.DeleteFilter.Name = "DeleteFilter";
-            this.DeleteFilter.Size = new System.Drawing.Size(50, 50);
-            this.DeleteFilter.TabIndex = 3;
-            this.DeleteFilter.Click += new System.EventHandler(this.DeleteFilter_Click);
-            // 
-            // DeleteSearchButton
-            // 
-            this.DeleteSearchButton.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteSearchButton.BorderRadius = 4;
-            this.DeleteSearchButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteSearchButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteSearchButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteSearchButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteSearchButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeleteSearchButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeleteSearchButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeleteSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeleteSearchButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteSearchButton.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.DeleteSearchButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteSearchButton.Location = new System.Drawing.Point(590, 37);
-            this.DeleteSearchButton.Name = "DeleteSearchButton";
-            this.DeleteSearchButton.Size = new System.Drawing.Size(50, 50);
-            this.DeleteSearchButton.TabIndex = 3;
-            this.DeleteSearchButton.Click += new System.EventHandler(this.DeleteSearchButton_Click);
-            // 
             // SelectAllButton
             // 
+            this.SelectAllButton.Animated = true;
             this.SelectAllButton.BackColor = System.Drawing.Color.Transparent;
             this.SelectAllButton.BorderRadius = 4;
             this.SelectAllButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -184,6 +139,7 @@
             // 
             // DeselectAllButton
             // 
+            this.DeselectAllButton.Animated = true;
             this.DeselectAllButton.BackColor = System.Drawing.Color.Transparent;
             this.DeselectAllButton.BorderRadius = 4;
             this.DeselectAllButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -226,7 +182,7 @@
             // 
             // FilterLabel
             // 
-            this.FilterLabel.Location = new System.Drawing.Point(50, 123);
+            this.FilterLabel.Location = new System.Drawing.Point(50, 130);
             this.FilterLabel.Name = "FilterLabel";
             this.FilterLabel.Size = new System.Drawing.Size(64, 20);
             this.FilterLabel.TabIndex = 0;
@@ -279,6 +235,71 @@
             this.Panel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
             this.Panel.Size = new System.Drawing.Size(1393, 648);
             this.Panel.TabIndex = 1;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Animated = true;
+            this.DeleteButton.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteButton.BorderRadius = 4;
+            this.DeleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.DeleteButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteButton.Image = global::MovieManager.Properties.Resources.delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.DeleteButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.DeleteButton.Location = new System.Drawing.Point(848, 37);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(50, 50);
+            this.DeleteButton.TabIndex = 3;
+            // 
+            // DeleteFilter
+            // 
+            this.DeleteFilter.Animated = true;
+            this.DeleteFilter.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteFilter.BorderRadius = 4;
+            this.DeleteFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteFilter.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeleteFilter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.DeleteFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.DeleteFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DeleteFilter.ForeColor = System.Drawing.Color.White;
+            this.DeleteFilter.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.DeleteFilter.ImageSize = new System.Drawing.Size(30, 30);
+            this.DeleteFilter.Location = new System.Drawing.Point(590, 117);
+            this.DeleteFilter.Name = "DeleteFilter";
+            this.DeleteFilter.Size = new System.Drawing.Size(50, 50);
+            this.DeleteFilter.TabIndex = 3;
+            this.DeleteFilter.Click += new System.EventHandler(this.DeleteFilter_Click);
+            // 
+            // DeleteSearchButton
+            // 
+            this.DeleteSearchButton.Animated = true;
+            this.DeleteSearchButton.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteSearchButton.BorderRadius = 4;
+            this.DeleteSearchButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteSearchButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteSearchButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteSearchButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteSearchButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeleteSearchButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.DeleteSearchButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.DeleteSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DeleteSearchButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteSearchButton.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.DeleteSearchButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.DeleteSearchButton.Location = new System.Drawing.Point(590, 37);
+            this.DeleteSearchButton.Name = "DeleteSearchButton";
+            this.DeleteSearchButton.Size = new System.Drawing.Size(50, 50);
+            this.DeleteSearchButton.TabIndex = 3;
+            this.DeleteSearchButton.Click += new System.EventHandler(this.DeleteSearchButton_Click);
             // 
             // MovieManage
             // 

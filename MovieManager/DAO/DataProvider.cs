@@ -19,7 +19,7 @@ namespace MovieManager.DAO
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
             private set { DataProvider.instance = value; }
         }
-        private DataProvider() { }
+        public DataProvider() { }
         private string connectionSTR = @"Data Source=.;Initial Catalog=MovieManager;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

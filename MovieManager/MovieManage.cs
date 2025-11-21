@@ -20,7 +20,7 @@ namespace MovieManager
         {
             InitializeComponent();
             checkingStatus = new Dictionary<int, bool>();
-
+            FilterComboBox.SelectedIndex = 0;
             LoadMovie(MovieDAO.Instance.LoadMovieList());
             foreach (Movie movie in movies)
                 checkingStatus.Add(movie.ID, false);
@@ -105,6 +105,8 @@ namespace MovieManager
                 Guna2GradientButton edit = new Guna2GradientButton()
                 {
                     Image = global::MovieManager.Properties.Resources.MovieDisplay,
+                    Animated = true,
+                    Tag = movie.ID,
                     BorderRadius = 10,
                     Size = new Size(30, 30),
                     FillColor = Color.FromArgb(175, 62, 62),
@@ -113,6 +115,7 @@ namespace MovieManager
                 };
                 pnl.Controls.Add(cb);
                 cb.CheckedChanged += Check;
+                edit.Click += EditButton;
                 pnl.Controls.Add(title);
                 pnl.Controls.Add(genre);
                 pnl.Controls.Add(rated);
@@ -129,12 +132,24 @@ namespace MovieManager
                 checkingStatus[movieId] = cb.Checked;
             }
         }
+
+        void EditButton(object sender, EventArgs e)
+        {
+            Guna2GradientButton btn = sender as Guna2GradientButton;
+            if(btn != null && btn.Tag is int movieId)
+            {
+                Edit_MovieManage emm = new Edit_MovieManage(movieId);
+                emm.Location = new Point((this.Size.Width - emm.Width) / 2, (this.Size.Height - emm.Height) / 2);
+                this.Controls.Add(emm);
+                emm.BringToFront();
+            }
+        }
         private List<Movie> movies = MovieDAO.Instance.LoadMovieList();
         private Dictionary<int, bool> checkingStatus;
         void SearchAndFilter()
         {
             flowLayoutPanel1.Controls.Clear();
-            if (SearchTextBox.Text.Length == 0 && FilterComboBox.Text.Length == 0)
+            if (SearchTextBox.Text.Length == 0 && FilterComboBox.Text == "All")
             {
                 LoadMovie(MovieDAO.Instance.LoadMovieList());
                 return;
@@ -144,7 +159,7 @@ namespace MovieManager
             {
                 if (SearchTextBox.Text.Length == 0 && movie.Genre == FilterComboBox.Text)
                         filter.Add(movie);
-                else if (FilterComboBox.Text.Length == 0 && movie.Title.ToLower().Contains(SearchTextBox.Text.ToLower()))
+                else if (FilterComboBox.Text == "All" && movie.Title.ToLower().Contains(SearchTextBox.Text.ToLower()))
                         filter.Add(movie);
                 else if (movie.Title.ToLower().Contains(SearchTextBox.Text.ToLower()) && movie.Genre == FilterComboBox.Text)
                     filter.Add(movie);
