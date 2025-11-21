@@ -73,6 +73,16 @@ namespace MovieManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel_24dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("cancel_24dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ChatGPT_Image_Nov_19__2025__09_06_13_PM {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT Image Nov 19, 2025, 09_06_13 PM", resourceCulture);
@@ -86,6 +96,26 @@ namespace MovieManager.Properties {
         internal static System.Drawing.Bitmap ChatGPT_Image_Nov_19__2025__09_06_13_PM_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("ChatGPT_Image_Nov_19__2025__09_06_13_PM-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -336,6 +336,9 @@
     <None Include="Resources\Gemini_Generated_Image_hn5b5mhn5b5mhn5b.png" />
     <None Include="Resources\ChatGPT Image Nov 19, 2025, 09_06_13 PM.png" />
     <None Include="Resources\ChatGPT_Image_Nov_19__2025__09_06_13_PM-removebg-preview.png" />
+    <None Include="Resources\cancel_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
