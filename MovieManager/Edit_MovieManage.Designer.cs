@@ -52,6 +52,10 @@
             this.TrailerLabel = new System.Windows.Forms.Label();
             this.ActorLabel = new System.Windows.Forms.Label();
             this.BriefLabel = new System.Windows.Forms.Label();
+            this.UploadFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.UploadButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.PosterTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.PosterLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ApplyButton
@@ -316,7 +320,7 @@
             this.BriefTextBox.PasswordChar = '\0';
             this.BriefTextBox.PlaceholderText = "";
             this.BriefTextBox.SelectedText = "";
-            this.BriefTextBox.Size = new System.Drawing.Size(460, 257);
+            this.BriefTextBox.Size = new System.Drawing.Size(460, 160);
             this.BriefTextBox.TabIndex = 2;
             // 
             // GenreLabel
@@ -429,10 +433,63 @@
             this.BriefLabel.TabIndex = 1;
             this.BriefLabel.Text = "Brief";
             // 
+            // UploadFileDialog
+            // 
+            this.UploadFileDialog.FileName = "openFileDialog1";
+            // 
+            // UploadButton
+            // 
+            this.UploadButton.BorderRadius = 12;
+            this.UploadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UploadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UploadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UploadButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UploadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UploadButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.UploadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.UploadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UploadButton.ForeColor = System.Drawing.Color.White;
+            this.UploadButton.Location = new System.Drawing.Point(1393, 750);
+            this.UploadButton.Name = "UploadButton";
+            this.UploadButton.Size = new System.Drawing.Size(117, 60);
+            this.UploadButton.TabIndex = 5;
+            this.UploadButton.Text = "Upload";
+            this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
+            // 
+            // PosterTextBox
+            // 
+            this.PosterTextBox.BorderRadius = 12;
+            this.PosterTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PosterTextBox.DefaultText = "";
+            this.PosterTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.PosterTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.PosterTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PosterTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PosterTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PosterTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PosterTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PosterTextBox.Location = new System.Drawing.Point(1050, 750);
+            this.PosterTextBox.Name = "PosterTextBox";
+            this.PosterTextBox.PasswordChar = '\0';
+            this.PosterTextBox.PlaceholderText = "";
+            this.PosterTextBox.SelectedText = "";
+            this.PosterTextBox.Size = new System.Drawing.Size(337, 60);
+            this.PosterTextBox.TabIndex = 2;
+            // 
+            // PosterLabel
+            // 
+            this.PosterLabel.AutoSize = true;
+            this.PosterLabel.Location = new System.Drawing.Point(1060, 730);
+            this.PosterLabel.Name = "PosterLabel";
+            this.PosterLabel.Size = new System.Drawing.Size(55, 20);
+            this.PosterLabel.TabIndex = 1;
+            this.PosterLabel.Text = "Poster";
+            // 
             // Edit_MovieManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.UploadButton);
             this.Controls.Add(this.RatedComboBox);
             this.Controls.Add(this.FormatComboBox);
             this.Controls.Add(this.GenreComboBox);
@@ -442,6 +499,7 @@
             this.Controls.Add(this.LanguageTextBox);
             this.Controls.Add(this.DirectorTextBox);
             this.Controls.Add(this.BriefTextBox);
+            this.Controls.Add(this.PosterTextBox);
             this.Controls.Add(this.DurationTextBox);
             this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.ReleaseDateLabel);
@@ -452,6 +510,7 @@
             this.Controls.Add(this.ActorLabel);
             this.Controls.Add(this.TrailerLabel);
             this.Controls.Add(this.FormatLabel);
+            this.Controls.Add(this.PosterLabel);
             this.Controls.Add(this.DurationLabel);
             this.Controls.Add(this.GenreLabel);
             this.Controls.Add(this.TitleLabel);
@@ -489,5 +548,9 @@
         private System.Windows.Forms.Label TrailerLabel;
         private System.Windows.Forms.Label ActorLabel;
         private System.Windows.Forms.Label BriefLabel;
+        private System.Windows.Forms.OpenFileDialog UploadFileDialog;
+        private Guna.UI2.WinForms.Guna2GradientButton UploadButton;
+        private Guna.UI2.WinForms.Guna2TextBox PosterTextBox;
+        private System.Windows.Forms.Label PosterLabel;
     }
 }

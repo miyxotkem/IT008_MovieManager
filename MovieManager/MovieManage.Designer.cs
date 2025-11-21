@@ -39,6 +39,8 @@
             this.ManageMovie = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -63,6 +65,8 @@
             this.ToolPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ToolPanel.BackColor = System.Drawing.Color.White;
             this.ToolPanel.Controls.Add(this.FilterComboBox);
+            this.ToolPanel.Controls.Add(this.ReloadButton);
+            this.ToolPanel.Controls.Add(this.AddButton);
             this.ToolPanel.Controls.Add(this.DeleteButton);
             this.ToolPanel.Controls.Add(this.DeleteFilter);
             this.ToolPanel.Controls.Add(this.DeleteSearchButton);
@@ -89,10 +93,11 @@
             this.FilterComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FilterComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FilterComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.FilterComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.FilterComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.FilterComboBox.IntegralHeight = false;
             this.FilterComboBox.ItemHeight = 30;
             this.FilterComboBox.Items.AddRange(new object[] {
+            "All",
             "N/A",
             "Action",
             "Adventure",
@@ -236,6 +241,50 @@
             this.Panel.Size = new System.Drawing.Size(1393, 648);
             this.Panel.TabIndex = 1;
             // 
+            // ReloadButton
+            // 
+            this.ReloadButton.Animated = true;
+            this.ReloadButton.BackColor = System.Drawing.Color.Transparent;
+            this.ReloadButton.BorderRadius = 4;
+            this.ReloadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReloadButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ReloadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.ReloadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ReloadButton.ForeColor = System.Drawing.Color.White;
+            this.ReloadButton.Image = global::MovieManager.Properties.Resources.refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.ReloadButton.Location = new System.Drawing.Point(860, 37);
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(50, 50);
+            this.ReloadButton.TabIndex = 3;
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.Animated = true;
+            this.AddButton.BackColor = System.Drawing.Color.Transparent;
+            this.AddButton.BorderRadius = 4;
+            this.AddButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.AddButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddButton.ForeColor = System.Drawing.Color.White;
+            this.AddButton.Image = global::MovieManager.Properties.Resources.add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.AddButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.AddButton.Location = new System.Drawing.Point(748, 37);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(50, 50);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
             // DeleteButton
             // 
             this.DeleteButton.Animated = true;
@@ -252,10 +301,11 @@
             this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Image = global::MovieManager.Properties.Resources.delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.DeleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteButton.Location = new System.Drawing.Point(848, 37);
+            this.DeleteButton.Location = new System.Drawing.Point(804, 37);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(50, 50);
             this.DeleteButton.TabIndex = 3;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // DeleteFilter
             // 
@@ -331,5 +381,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox FilterComboBox;
         private System.Windows.Forms.Label FilterLabel;
         private Guna.UI2.WinForms.Guna2GradientButton DeleteFilter;
+        private Guna.UI2.WinForms.Guna2GradientButton AddButton;
+        private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;
     }
 }

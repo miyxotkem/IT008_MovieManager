@@ -348,6 +348,8 @@
     <None Include="Resources\cancel_24dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

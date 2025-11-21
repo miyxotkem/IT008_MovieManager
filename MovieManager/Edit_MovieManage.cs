@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MovieManager
 {
@@ -21,6 +22,9 @@ namespace MovieManager
         public Edit_MovieManage()
         {
             InitializeComponent();
+            ApplyButton.Text = "Add";
+            ApplyButton.Click -= ApplyButton_Click;
+            ApplyButton.Click += Add_Click;
         }
         public Edit_MovieManage(int movieid)
         {
@@ -92,6 +96,46 @@ namespace MovieManager
             };
             dp.ExecuteNonQuery(query, values);
             CancelButton.PerformClick();
+        }
+        void Add_Click(object sender, EventArgs e)
+        {
+            if (DurationTextBox.Text == "")
+                DurationTextBox.Text = "0";
+            object[] values = new object[]
+            {
+                    TitleTextBox.Text,
+                    GenreComboBox.Text,
+                    RatedComboBox.Text,
+                    ReleaseDateTimePicker.Value,
+                    DirectorTextBox.Text,
+                    LanguageTextBox.Text,
+                    Convert.ToInt32(DurationTextBox.Text),
+                    FormatComboBox.Text,
+                    TrailerTextBox.Text,
+                    ActorTextBox.Text,
+                    BriefTextBox.Text
+            };
+            string dest = "C:\\Users\\Thinh Phat\\Documents\\UIT\\MovieManager\\MovieManager\\bin\\Debug\\Posters";
+            string query = @"INSERT INTO MOVIE(title, genre, rated, release_date, director, language, duration, format, trailer, actor, brief) 
+                 VALUES ( @title , @genre , @rated , @release_date , @director , @language , @duration , @format , @trailer , @actor , @brief ); 
+                 SELECT SCOPE_IDENTITY()";
+            object result = dp.ExecuteScalar(query, values);
+            int movieId = 0;
+            if (result != null)
+                movieId = Convert.ToInt32(result);
+            if (movieId > 0)
+            {
+                string posterFileName = $"{movieId}.jpg";
+                dest = Path.Combine(dest, posterFileName);
+            }
+            File.Copy(PosterTextBox.Text, dest);
+            CancelButton.PerformClick();
+        }
+
+        private void UploadButton_Click(object sender, EventArgs e)
+        {
+            if (UploadFileDialog.ShowDialog() == DialogResult.OK)
+                PosterTextBox.Text = UploadFileDialog.FileName;
         }
     }
 }

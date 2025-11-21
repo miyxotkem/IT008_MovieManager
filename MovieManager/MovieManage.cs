@@ -21,7 +21,7 @@ namespace MovieManager
             InitializeComponent();
             checkingStatus = new Dictionary<int, bool>();
             FilterComboBox.SelectedIndex = 0;
-            LoadMovie(MovieDAO.Instance.LoadMovieList());
+            //LoadMovie(MovieDAO.Instance.LoadMovieList());
             foreach (Movie movie in movies)
                 checkingStatus.Add(movie.ID, false);
         }
@@ -227,6 +227,41 @@ namespace MovieManager
         private void FilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SearchAndFilter();
+        }
+        private DataProvider dp = new DataProvider();
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            foreach (var item in checkingStatus)
+            {
+                int id = item.Key;
+                bool isChecked = item.Value;
+                if (isChecked)
+                {
+                    string query = @"DELETE FROM Movie WHERE id = @id";
+                    object[] values = new object[] { id };
+                    dp.ExecuteNonQuery(query, values);
+                }
+            }
+            sync();
+        }
+        void sync()
+        {
+            movies = MovieDAO.Instance.LoadMovieList();
+            flowLayoutPanel1.Controls.Clear();
+            SearchAndFilter();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            Edit_MovieManage emm = new Edit_MovieManage();
+            emm.Location = new Point((this.Size.Width - emm.Width) / 2, (this.Size.Height - emm.Height) / 2);
+            this.Controls.Add(emm);
+            emm.BringToFront();
+        }
+
+        private void ReloadButton_Click(object sender, EventArgs e)
+        {
+            sync();
         }
     }
 }
