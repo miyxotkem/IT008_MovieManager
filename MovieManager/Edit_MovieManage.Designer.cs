@@ -396,6 +396,7 @@
             this.DurationTextBox.SelectedText = "";
             this.DurationTextBox.Size = new System.Drawing.Size(460, 60);
             this.DurationTextBox.TabIndex = 2;
+            this.DurationTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DurationTextBox_KeyPress);
             // 
             // FormatLabel
             // 

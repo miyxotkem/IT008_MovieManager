@@ -16,14 +16,25 @@ namespace MovieManager
 {
     public partial class MovieManage : UserControl
     {
+        private List<Movie> movies;
+        private Dictionary<int, bool> checkingStatus;
         public MovieManage()
         {
             InitializeComponent();
+            movies = MovieDAO.Instance.LoadMovieList();
             checkingStatus = new Dictionary<int, bool>();
             FilterComboBox.SelectedIndex = 0;
             //LoadMovie(MovieDAO.Instance.LoadMovieList());
             foreach (Movie movie in movies)
                 checkingStatus.Add(movie.ID, false);
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (FilterComboBox.SelectedIndex == 0)
+                SearchAndFilter();
+            else
+                FilterComboBox.SelectedIndex = 0;
         }
         public void LoadMovie(List<Movie> movieList)
         {
@@ -144,8 +155,7 @@ namespace MovieManager
                 emm.BringToFront();
             }
         }
-        private List<Movie> movies = MovieDAO.Instance.LoadMovieList();
-        private Dictionary<int, bool> checkingStatus;
+
         void SearchAndFilter()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -248,6 +258,9 @@ namespace MovieManager
         {
             movies = MovieDAO.Instance.LoadMovieList();
             flowLayoutPanel1.Controls.Clear();
+            foreach (Movie movie in movies)
+                if (!checkingStatus.ContainsKey(movie.ID))
+                    checkingStatus.Add(movie.ID, false);
             SearchAndFilter();
         }
 

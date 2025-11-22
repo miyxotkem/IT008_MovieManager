@@ -76,6 +76,7 @@ namespace MovieManager
             this.Dispose();
         }
         private DataProvider dp = new DataProvider();
+        private string dest = "C:\\Users\\Thinh Phat\\Documents\\UIT\\MovieManager\\MovieManager\\bin\\Debug\\Posters";
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             string query = @"UPDATE MOVIE SET title = @title , genre = @genre , rated = @rated , release_date = @release_date , director = @director , language = @language , duration = @duration , format = @format , trailer = @trailer , actor = @actor , brief = @brief WHERE id = @id";
@@ -94,6 +95,20 @@ namespace MovieManager
                     BriefTextBox.Text,
                     main.ID
             };
+            string actdest = dest;
+            int movieId = main.ID;
+            if (movieId > 0)
+            {
+                string posterFileName = $"{movieId}.jpg";
+                actdest = Path.Combine(dest, posterFileName);
+            }
+            if (PosterTextBox.Text.Length > 0)
+                if (Path.GetFullPath(PosterTextBox.Text) != Path.GetFullPath(actdest))
+                {
+                    if (File.Exists(actdest))
+                        File.Delete(actdest);
+                    File.Copy(PosterTextBox.Text, actdest);
+                }
             dp.ExecuteNonQuery(query, values);
             CancelButton.PerformClick();
         }
@@ -115,7 +130,7 @@ namespace MovieManager
                     ActorTextBox.Text,
                     BriefTextBox.Text
             };
-            string dest = "C:\\Users\\Thinh Phat\\Documents\\UIT\\MovieManager\\MovieManager\\bin\\Debug\\Posters";
+            string actdest = dest;
             string query = @"INSERT INTO MOVIE(title, genre, rated, release_date, director, language, duration, format, trailer, actor, brief) 
                  VALUES ( @title , @genre , @rated , @release_date , @director , @language , @duration , @format , @trailer , @actor , @brief ); 
                  SELECT SCOPE_IDENTITY()";
@@ -126,9 +141,10 @@ namespace MovieManager
             if (movieId > 0)
             {
                 string posterFileName = $"{movieId}.jpg";
-                dest = Path.Combine(dest, posterFileName);
+                actdest = Path.Combine(dest, posterFileName);
             }
-            File.Copy(PosterTextBox.Text, dest);
+            if(PosterTextBox.Text.Length > 0)
+                File.Copy(PosterTextBox.Text, actdest);
             CancelButton.PerformClick();
         }
 
@@ -136,6 +152,12 @@ namespace MovieManager
         {
             if (UploadFileDialog.ShowDialog() == DialogResult.OK)
                 PosterTextBox.Text = UploadFileDialog.FileName;
+        }
+
+        private void DurationTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
