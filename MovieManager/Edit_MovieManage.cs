@@ -7,11 +7,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace MovieManager
 {
@@ -29,31 +30,32 @@ namespace MovieManager
         public Edit_MovieManage(int movieid)
         {
             InitializeComponent();
-            foreach(Movie movie in movies)
+            foreach (Movie movie in movies)
             {
-                if(movie.ID == movieid)
+                if (movie.ID == movieid)
                 {
                     main = movie;
                     TitleTextBox.Text = movie.Title;
                     GenreComboBox.Text = movie.Genre;
                     RatedComboBox.Text = movie.Rated;
-                    try
-                    {
-                        DateTime parsedDate = DateTime.ParseExact(
-                            movie.Release_date,
-                            "dd/MM/yyyy HH:mm:ss",
-                            CultureInfo.InvariantCulture
-                        );
-                        ReleaseDateTimePicker.Value = parsedDate;
-                    }
-                    catch (FormatException ex)
-                    {
-                        MessageBox.Show("Error: The date string is in the wrong format. " + ex.Message);
-                    }
-                    catch (ArgumentOutOfRangeException ex)
-                    {
-                        MessageBox.Show("Error: The date is out of range. " + ex.Message);
-                    }
+                    ReleaseDateTimePicker.Value = movie.Release_date;
+                    //try
+                    //{
+                    //    DateTime parsedDate = DateTime.ParseExact(
+                    //        movie.Release_date,
+                    //        "dd/MM/yyyy",
+                    //        CultureInfo.InvariantCulture
+                    //    );
+                    //    ReleaseDateTimePicker.Value = parsedDate;
+                    //}
+                    //catch (FormatException ex)
+                    //{
+                    //    MessageBox.Show("Error: The date string is in the wrong format. " + ex.Message);
+                    //}
+                    //catch (ArgumentOutOfRangeException ex)
+                    //{
+                    //    MessageBox.Show("Error: The date is out of range. " + ex.Message);
+                    //}
                     DirectorTextBox.Text = movie.Director;
                     LanguageTextBox.Text = movie.Language;
                     DurationTextBox.Text = movie.Duration.ToString();
@@ -61,6 +63,7 @@ namespace MovieManager
                     TrailerTextBox.Text = movie.Trailer;
                     ActorTextBox.Text = movie.Actor;
                     BriefTextBox.Text = movie.Brief;
+                    LoadPoster();
                 }
             }
         }
@@ -79,9 +82,22 @@ namespace MovieManager
         private string dest = "C:\\Users\\Thinh Phat\\Documents\\UIT\\MovieManager\\MovieManager\\bin\\Debug\\Posters";
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            string query = @"UPDATE MOVIE SET title = @title , genre = @genre , rated = @rated , release_date = @release_date , director = @director , language = @language , duration = @duration , format = @format , trailer = @trailer , actor = @actor , brief = @brief WHERE id = @id";
-            object[] values = new object[]
+            if (GenreComboBox.SelectedIndex == -1)
+                GenreComboBox.SelectedIndex = 0;
+            if (RatedComboBox.SelectedIndex == -1)
+                RatedComboBox.SelectedIndex = 0;
+            if (DurationTextBox.Text.Length == 0)
+                DurationTextBox.Text = "0";
+            if (TitleTextBox.Text.Length == 0)
             {
+                MessageBox.Show("Please enter the movie title");
+                return;
+            }
+            if (MessageBox.Show("Save changes?") == DialogResult.OK)
+            {
+                string query = @"UPDATE MOVIE SET title = @title , genre = @genre , rated = @rated , release_date = @release_date , director = @director , language = @language , duration = @duration , format = @format , trailer = @trailer , actor = @actor , brief = @brief WHERE id = @id";
+                object[] values = new object[]
+                {
                     TitleTextBox.Text,
                     GenreComboBox.Text,
                     RatedComboBox.Text,
@@ -94,28 +110,38 @@ namespace MovieManager
                     ActorTextBox.Text,
                     BriefTextBox.Text,
                     main.ID
-            };
-            string actdest = dest;
-            int movieId = main.ID;
-            if (movieId > 0)
-            {
-                string posterFileName = $"{movieId}.jpg";
-                actdest = Path.Combine(dest, posterFileName);
-            }
-            if (PosterTextBox.Text.Length > 0)
-                if (Path.GetFullPath(PosterTextBox.Text) != Path.GetFullPath(actdest))
+                };
+                string actdest = dest;
+                int movieId = main.ID;
+                if (movieId > 0)
                 {
-                    if (File.Exists(actdest))
-                        File.Delete(actdest);
-                    File.Copy(PosterTextBox.Text, actdest);
+                    string posterFileName = $"{movieId}.jpg";
+                    actdest = Path.Combine(dest, posterFileName);
                 }
-            dp.ExecuteNonQuery(query, values);
-            CancelButton.PerformClick();
+                if (PosterTextBox.Text.Length > 0)
+                    if (Path.GetFullPath(PosterTextBox.Text) != Path.GetFullPath(actdest))
+                    {
+                        if (File.Exists(actdest))
+                            File.Delete(actdest);
+                        File.Copy(PosterTextBox.Text, actdest);
+                    }
+                dp.ExecuteNonQuery(query, values);
+                CancelButton.PerformClick();
+            }
         }
         void Add_Click(object sender, EventArgs e)
         {
-            if (DurationTextBox.Text == "")
+            if (GenreComboBox.SelectedIndex == -1)
+                GenreComboBox.SelectedIndex = 0;
+            if (RatedComboBox.SelectedIndex == -1)
+                RatedComboBox.SelectedIndex = 0;
+            if (DurationTextBox.Text.Length == 0)
                 DurationTextBox.Text = "0";
+            if (TitleTextBox.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter the movie title");
+                return;
+            }
             object[] values = new object[]
             {
                     TitleTextBox.Text,
@@ -143,7 +169,7 @@ namespace MovieManager
                 string posterFileName = $"{movieId}.jpg";
                 actdest = Path.Combine(dest, posterFileName);
             }
-            if(PosterTextBox.Text.Length > 0)
+            if (PosterTextBox.Text.Length > 0)
                 File.Copy(PosterTextBox.Text, actdest);
             CancelButton.PerformClick();
         }
@@ -156,8 +182,17 @@ namespace MovieManager
 
         private void DurationTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsDigit(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar))
                 e.Handled = true;
+        }
+        void LoadPoster()
+        {
+            string fileName = main.ID.ToString() + ".jpg";
+            string baseDirectory = Application.StartupPath;
+            string imageFolder = Path.Combine(baseDirectory, "Posters");
+            string fullImagePath = Path.Combine(imageFolder, fileName);
+            if (File.Exists(fullImagePath))
+                PosterPictureBox.Image = Image.FromFile(fullImagePath);
         }
     }
 }

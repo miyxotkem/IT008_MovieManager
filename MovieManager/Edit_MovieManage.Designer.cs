@@ -56,6 +56,8 @@
             this.UploadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PosterTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.PosterLabel = new System.Windows.Forms.Label();
+            this.PosterPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PosterPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ApplyButton
@@ -101,7 +103,7 @@
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(300, 130);
+            this.TitleLabel.Location = new System.Drawing.Point(165, 80);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(38, 20);
             this.TitleLabel.TabIndex = 1;
@@ -119,7 +121,7 @@
             this.TitleTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TitleTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TitleTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TitleTextBox.Location = new System.Drawing.Point(290, 150);
+            this.TitleTextBox.Location = new System.Drawing.Point(155, 100);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.PasswordChar = '\0';
             this.TitleTextBox.PlaceholderText = "";
@@ -134,7 +136,7 @@
             this.ReleaseDateTimePicker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ReleaseDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ReleaseDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(290, 450);
+            this.ReleaseDateTimePicker.Location = new System.Drawing.Point(155, 400);
             this.ReleaseDateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ReleaseDateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ReleaseDateTimePicker.Name = "ReleaseDateTimePicker";
@@ -171,7 +173,7 @@
             "Western",
             "Crime",
             "Biographical"});
-            this.GenreComboBox.Location = new System.Drawing.Point(290, 250);
+            this.GenreComboBox.Location = new System.Drawing.Point(155, 200);
             this.GenreComboBox.Name = "GenreComboBox";
             this.GenreComboBox.Size = new System.Drawing.Size(460, 36);
             this.GenreComboBox.TabIndex = 4;
@@ -194,7 +196,7 @@
             "T13",
             "T16",
             "T18"});
-            this.RatedComboBox.Location = new System.Drawing.Point(290, 350);
+            this.RatedComboBox.Location = new System.Drawing.Point(155, 300);
             this.RatedComboBox.Name = "RatedComboBox";
             this.RatedComboBox.Size = new System.Drawing.Size(460, 36);
             this.RatedComboBox.TabIndex = 4;
@@ -211,7 +213,7 @@
             this.DirectorTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.DirectorTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DirectorTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DirectorTextBox.Location = new System.Drawing.Point(290, 550);
+            this.DirectorTextBox.Location = new System.Drawing.Point(155, 500);
             this.DirectorTextBox.Name = "DirectorTextBox";
             this.DirectorTextBox.PasswordChar = '\0';
             this.DirectorTextBox.PlaceholderText = "";
@@ -231,7 +233,7 @@
             this.LanguageTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LanguageTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LanguageTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LanguageTextBox.Location = new System.Drawing.Point(290, 650);
+            this.LanguageTextBox.Location = new System.Drawing.Point(155, 600);
             this.LanguageTextBox.Name = "LanguageTextBox";
             this.LanguageTextBox.PasswordChar = '\0';
             this.LanguageTextBox.PlaceholderText = "";
@@ -256,7 +258,7 @@
             "4DX",
             "2D",
             "3D"});
-            this.FormatComboBox.Location = new System.Drawing.Point(1050, 150);
+            this.FormatComboBox.Location = new System.Drawing.Point(770, 100);
             this.FormatComboBox.Name = "FormatComboBox";
             this.FormatComboBox.Size = new System.Drawing.Size(460, 36);
             this.FormatComboBox.TabIndex = 4;
@@ -273,7 +275,7 @@
             this.TrailerTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TrailerTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TrailerTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrailerTextBox.Location = new System.Drawing.Point(1050, 250);
+            this.TrailerTextBox.Location = new System.Drawing.Point(770, 200);
             this.TrailerTextBox.Name = "TrailerTextBox";
             this.TrailerTextBox.PasswordChar = '\0';
             this.TrailerTextBox.PlaceholderText = "";
@@ -293,13 +295,13 @@
             this.ActorTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ActorTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ActorTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ActorTextBox.Location = new System.Drawing.Point(1050, 350);
+            this.ActorTextBox.Location = new System.Drawing.Point(770, 300);
             this.ActorTextBox.Multiline = true;
             this.ActorTextBox.Name = "ActorTextBox";
             this.ActorTextBox.PasswordChar = '\0';
             this.ActorTextBox.PlaceholderText = "";
             this.ActorTextBox.SelectedText = "";
-            this.ActorTextBox.Size = new System.Drawing.Size(460, 153);
+            this.ActorTextBox.Size = new System.Drawing.Size(460, 160);
             this.ActorTextBox.TabIndex = 2;
             // 
             // BriefTextBox
@@ -314,19 +316,19 @@
             this.BriefTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.BriefTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BriefTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.BriefTextBox.Location = new System.Drawing.Point(1050, 550);
+            this.BriefTextBox.Location = new System.Drawing.Point(770, 503);
             this.BriefTextBox.Multiline = true;
             this.BriefTextBox.Name = "BriefTextBox";
             this.BriefTextBox.PasswordChar = '\0';
             this.BriefTextBox.PlaceholderText = "";
             this.BriefTextBox.SelectedText = "";
-            this.BriefTextBox.Size = new System.Drawing.Size(460, 160);
+            this.BriefTextBox.Size = new System.Drawing.Size(460, 257);
             this.BriefTextBox.TabIndex = 2;
             // 
             // GenreLabel
             // 
             this.GenreLabel.AutoSize = true;
-            this.GenreLabel.Location = new System.Drawing.Point(300, 230);
+            this.GenreLabel.Location = new System.Drawing.Point(165, 180);
             this.GenreLabel.Name = "GenreLabel";
             this.GenreLabel.Size = new System.Drawing.Size(54, 20);
             this.GenreLabel.TabIndex = 1;
@@ -335,7 +337,7 @@
             // RatedLabel
             // 
             this.RatedLabel.AutoSize = true;
-            this.RatedLabel.Location = new System.Drawing.Point(300, 330);
+            this.RatedLabel.Location = new System.Drawing.Point(165, 280);
             this.RatedLabel.Name = "RatedLabel";
             this.RatedLabel.Size = new System.Drawing.Size(53, 20);
             this.RatedLabel.TabIndex = 1;
@@ -344,7 +346,7 @@
             // ReleaseDateLabel
             // 
             this.ReleaseDateLabel.AutoSize = true;
-            this.ReleaseDateLabel.Location = new System.Drawing.Point(300, 430);
+            this.ReleaseDateLabel.Location = new System.Drawing.Point(165, 380);
             this.ReleaseDateLabel.Name = "ReleaseDateLabel";
             this.ReleaseDateLabel.Size = new System.Drawing.Size(107, 20);
             this.ReleaseDateLabel.TabIndex = 1;
@@ -353,7 +355,7 @@
             // DirectorLabel
             // 
             this.DirectorLabel.AutoSize = true;
-            this.DirectorLabel.Location = new System.Drawing.Point(300, 530);
+            this.DirectorLabel.Location = new System.Drawing.Point(165, 480);
             this.DirectorLabel.Name = "DirectorLabel";
             this.DirectorLabel.Size = new System.Drawing.Size(65, 20);
             this.DirectorLabel.TabIndex = 1;
@@ -362,7 +364,7 @@
             // LanguageLabel
             // 
             this.LanguageLabel.AutoSize = true;
-            this.LanguageLabel.Location = new System.Drawing.Point(300, 630);
+            this.LanguageLabel.Location = new System.Drawing.Point(165, 580);
             this.LanguageLabel.Name = "LanguageLabel";
             this.LanguageLabel.Size = new System.Drawing.Size(81, 20);
             this.LanguageLabel.TabIndex = 1;
@@ -371,7 +373,7 @@
             // DurationLabel
             // 
             this.DurationLabel.AutoSize = true;
-            this.DurationLabel.Location = new System.Drawing.Point(300, 730);
+            this.DurationLabel.Location = new System.Drawing.Point(165, 680);
             this.DurationLabel.Name = "DurationLabel";
             this.DurationLabel.Size = new System.Drawing.Size(70, 20);
             this.DurationLabel.TabIndex = 1;
@@ -389,7 +391,7 @@
             this.DurationTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.DurationTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DurationTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DurationTextBox.Location = new System.Drawing.Point(290, 750);
+            this.DurationTextBox.Location = new System.Drawing.Point(155, 700);
             this.DurationTextBox.Name = "DurationTextBox";
             this.DurationTextBox.PasswordChar = '\0';
             this.DurationTextBox.PlaceholderText = "";
@@ -401,7 +403,7 @@
             // FormatLabel
             // 
             this.FormatLabel.AutoSize = true;
-            this.FormatLabel.Location = new System.Drawing.Point(1060, 130);
+            this.FormatLabel.Location = new System.Drawing.Point(780, 80);
             this.FormatLabel.Name = "FormatLabel";
             this.FormatLabel.Size = new System.Drawing.Size(60, 20);
             this.FormatLabel.TabIndex = 1;
@@ -410,7 +412,7 @@
             // TrailerLabel
             // 
             this.TrailerLabel.AutoSize = true;
-            this.TrailerLabel.Location = new System.Drawing.Point(1060, 230);
+            this.TrailerLabel.Location = new System.Drawing.Point(780, 180);
             this.TrailerLabel.Name = "TrailerLabel";
             this.TrailerLabel.Size = new System.Drawing.Size(52, 20);
             this.TrailerLabel.TabIndex = 1;
@@ -419,7 +421,7 @@
             // ActorLabel
             // 
             this.ActorLabel.AutoSize = true;
-            this.ActorLabel.Location = new System.Drawing.Point(1060, 330);
+            this.ActorLabel.Location = new System.Drawing.Point(780, 280);
             this.ActorLabel.Name = "ActorLabel";
             this.ActorLabel.Size = new System.Drawing.Size(47, 20);
             this.ActorLabel.TabIndex = 1;
@@ -428,7 +430,7 @@
             // BriefLabel
             // 
             this.BriefLabel.AutoSize = true;
-            this.BriefLabel.Location = new System.Drawing.Point(1060, 530);
+            this.BriefLabel.Location = new System.Drawing.Point(780, 480);
             this.BriefLabel.Name = "BriefLabel";
             this.BriefLabel.Size = new System.Drawing.Size(42, 20);
             this.BriefLabel.TabIndex = 1;
@@ -450,9 +452,9 @@
             this.UploadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.UploadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UploadButton.ForeColor = System.Drawing.Color.White;
-            this.UploadButton.Location = new System.Drawing.Point(1393, 750);
+            this.UploadButton.Location = new System.Drawing.Point(1455, 555);
             this.UploadButton.Name = "UploadButton";
-            this.UploadButton.Size = new System.Drawing.Size(117, 60);
+            this.UploadButton.Size = new System.Drawing.Size(120, 60);
             this.UploadButton.TabIndex = 5;
             this.UploadButton.Text = "Upload";
             this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
@@ -469,27 +471,39 @@
             this.PosterTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PosterTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PosterTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PosterTextBox.Location = new System.Drawing.Point(1050, 750);
+            this.PosterTextBox.Location = new System.Drawing.Point(1385, 480);
             this.PosterTextBox.Name = "PosterTextBox";
             this.PosterTextBox.PasswordChar = '\0';
             this.PosterTextBox.PlaceholderText = "";
             this.PosterTextBox.SelectedText = "";
-            this.PosterTextBox.Size = new System.Drawing.Size(337, 60);
+            this.PosterTextBox.Size = new System.Drawing.Size(260, 60);
             this.PosterTextBox.TabIndex = 2;
             // 
             // PosterLabel
             // 
             this.PosterLabel.AutoSize = true;
-            this.PosterLabel.Location = new System.Drawing.Point(1060, 730);
+            this.PosterLabel.Location = new System.Drawing.Point(1395, 80);
             this.PosterLabel.Name = "PosterLabel";
             this.PosterLabel.Size = new System.Drawing.Size(55, 20);
             this.PosterLabel.TabIndex = 1;
             this.PosterLabel.Text = "Poster";
             // 
+            // PosterPictureBox
+            // 
+            this.PosterPictureBox.BorderRadius = 12;
+            this.PosterPictureBox.ImageRotate = 0F;
+            this.PosterPictureBox.Location = new System.Drawing.Point(1385, 100);
+            this.PosterPictureBox.Name = "PosterPictureBox";
+            this.PosterPictureBox.Size = new System.Drawing.Size(260, 360);
+            this.PosterPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PosterPictureBox.TabIndex = 6;
+            this.PosterPictureBox.TabStop = false;
+            // 
             // Edit_MovieManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.PosterPictureBox);
             this.Controls.Add(this.UploadButton);
             this.Controls.Add(this.RatedComboBox);
             this.Controls.Add(this.FormatComboBox);
@@ -519,6 +533,7 @@
             this.Controls.Add(this.ApplyButton);
             this.Name = "Edit_MovieManage";
             this.Size = new System.Drawing.Size(1800, 1011);
+            ((System.ComponentModel.ISupportInitialize)(this.PosterPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,5 +568,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton UploadButton;
         private Guna.UI2.WinForms.Guna2TextBox PosterTextBox;
         private System.Windows.Forms.Label PosterLabel;
+        private Guna.UI2.WinForms.Guna2PictureBox PosterPictureBox;
     }
 }

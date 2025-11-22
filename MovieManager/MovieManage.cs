@@ -241,18 +241,31 @@ namespace MovieManager
         private DataProvider dp = new DataProvider();
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            int count = 0;
             foreach (var item in checkingStatus)
             {
-                int id = item.Key;
                 bool isChecked = item.Value;
                 if (isChecked)
-                {
-                    string query = @"DELETE FROM Movie WHERE id = @id";
-                    object[] values = new object[] { id };
-                    dp.ExecuteNonQuery(query, values);
-                }
+                    count++;
             }
-            sync();
+            if (count > 0)
+            {
+                if (MessageBox.Show("Delete " + count + " movie(s)?") == DialogResult.OK)
+                    foreach (var item in checkingStatus)
+                    {
+                        int id = item.Key;
+                        bool isChecked = item.Value;
+                        if (isChecked)
+                        {
+                            string query = @"DELETE FROM Movie WHERE id = @id";
+                            object[] values = new object[] { id };
+                            dp.ExecuteNonQuery(query, values);
+                        }
+                    }
+                sync();
+            }
+            else
+                MessageBox.Show("No movies selected");
         }
         void sync()
         {

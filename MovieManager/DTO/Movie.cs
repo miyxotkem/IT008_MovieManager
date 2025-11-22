@@ -13,7 +13,7 @@ namespace MovieManager.DTO
         private string title;
         private string genre;
         private string rated;
-        private string release_date;
+        private DateTime release_date;
         private string director;
         private string language;
         private int duration;
@@ -41,7 +41,7 @@ namespace MovieManager.DTO
             get { return rated; }
             set { rated = value; }
         }
-        public string Release_date
+        public DateTime Release_date
         {
             get { return release_date; }
             set { release_date = value; }
@@ -81,7 +81,7 @@ namespace MovieManager.DTO
             get { return brief; }
             set { brief = value; }
         }
-        public Movie(int id, string title, string gerne, string rated, string release_date, string director, string language, int duration, string format, string trailer, string actor, string brief)
+        public Movie(int id, string title, string gerne, string rated, DateTime release_date, string director, string language, int duration, string format, string trailer, string actor, string brief)
         {
             this.ID = id;
             this.Title = title;
@@ -102,7 +102,7 @@ namespace MovieManager.DTO
             this.Title = row["Title"].ToString();
             this.Genre = row["Genre"].ToString();
             this.Rated = row["Rated"].ToString();
-            this.Release_date = row["Release_date"].ToString();
+            this.Release_date = (DateTime)row["Release_date"];
             this.Director = row["Director"].ToString();
             this.Language = row["Language"].ToString();
             this.Duration = (int)row["Duration"];
