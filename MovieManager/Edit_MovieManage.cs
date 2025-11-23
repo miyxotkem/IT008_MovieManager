@@ -39,23 +39,6 @@ namespace MovieManager
                     GenreComboBox.Text = movie.Genre;
                     RatedComboBox.Text = movie.Rated;
                     ReleaseDateTimePicker.Value = movie.Release_date;
-                    //try
-                    //{
-                    //    DateTime parsedDate = DateTime.ParseExact(
-                    //        movie.Release_date,
-                    //        "dd/MM/yyyy",
-                    //        CultureInfo.InvariantCulture
-                    //    );
-                    //    ReleaseDateTimePicker.Value = parsedDate;
-                    //}
-                    //catch (FormatException ex)
-                    //{
-                    //    MessageBox.Show("Error: The date string is in the wrong format. " + ex.Message);
-                    //}
-                    //catch (ArgumentOutOfRangeException ex)
-                    //{
-                    //    MessageBox.Show("Error: The date is out of range. " + ex.Message);
-                    //}
                     DirectorTextBox.Text = movie.Director;
                     LanguageTextBox.Text = movie.Language;
                     DurationTextBox.Text = movie.Duration.ToString();
@@ -67,9 +50,6 @@ namespace MovieManager
                 }
             }
         }
-        private void guna2ShadowForm1_Load(object sender, EventArgs e)
-        {
-        }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -79,7 +59,7 @@ namespace MovieManager
             this.Dispose();
         }
         private DataProvider dp = new DataProvider();
-        private string dest = "C:\\Users\\Thinh Phat\\Documents\\UIT\\MovieManager\\MovieManager\\bin\\Debug\\Posters";
+        private string dest = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             if (GenreComboBox.SelectedIndex == -1)
@@ -121,6 +101,13 @@ namespace MovieManager
                 if (PosterTextBox.Text.Length > 0)
                     if (Path.GetFullPath(PosterTextBox.Text) != Path.GetFullPath(actdest))
                     {
+                        if (PosterPictureBox.Image != null)
+                        {
+                            PosterPictureBox.Image.Dispose();
+                            PosterPictureBox.Image = null;
+                        }
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
                         if (File.Exists(actdest))
                             File.Delete(actdest);
                         File.Copy(PosterTextBox.Text, actdest);
@@ -171,13 +158,23 @@ namespace MovieManager
             }
             if (PosterTextBox.Text.Length > 0)
                 File.Copy(PosterTextBox.Text, actdest);
+            MovieChanged?.Invoke(this, EventArgs.Empty);
             CancelButton.PerformClick();
         }
-
+        public event EventHandler MovieChanged;
         private void UploadButton_Click(object sender, EventArgs e)
         {
+            UploadFileDialog.Filter = "Posters (*.jpg) | *.jpg";
             if (UploadFileDialog.ShowDialog() == DialogResult.OK)
+            {
                 PosterTextBox.Text = UploadFileDialog.FileName;
+                if (PosterPictureBox.Image != null)
+                {
+                    PosterPictureBox.Image.Dispose();
+                    PosterPictureBox.Image = null;
+                }
+                PosterPictureBox.Image = LoadImageUnlocked(UploadFileDialog.FileName);
+            }
         }
 
         private void DurationTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -188,11 +185,15 @@ namespace MovieManager
         void LoadPoster()
         {
             string fileName = main.ID.ToString() + ".jpg";
-            string baseDirectory = Application.StartupPath;
-            string imageFolder = Path.Combine(baseDirectory, "Posters");
-            string fullImagePath = Path.Combine(imageFolder, fileName);
+            string fullImagePath = Path.Combine(dest, fileName);
             if (File.Exists(fullImagePath))
-                PosterPictureBox.Image = Image.FromFile(fullImagePath);
+                PosterPictureBox.Image = LoadImageUnlocked(fullImagePath);
+        }
+        private Image LoadImageUnlocked(string path)
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            MemoryStream ms = new MemoryStream(bytes);
+            return Image.FromStream(ms);
         }
     }
 }

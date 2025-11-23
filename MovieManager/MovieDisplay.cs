@@ -24,7 +24,7 @@ namespace MovieManager
         {
             List<Movie> movieList = MovieDAO.Instance.LoadMovieList();
             string baseDirectory = Application.StartupPath;
-            string imageFolder = Path.Combine(baseDirectory, "Posters");
+            string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
             foreach (Movie movie in movieList)
             {
                 Panel pnl = new Panel()
@@ -59,9 +59,7 @@ namespace MovieManager
                     string fileName = movie.ID.ToString() + ".jpg";
                     string fullImagePath = Path.Combine(imageFolder, fileName);
                     if (File.Exists(fullImagePath))
-                    {
-                        pic.Image = Image.FromFile(fullImagePath);
-                    }
+                        pic.Image = LoadImageUnlocked(fullImagePath);
                     else
                     {
                         pic.BackColor = Color.Silver;
@@ -93,6 +91,12 @@ namespace MovieManager
                 parentContainer.Controls.Clear();
                 parentContainer.Controls.Add(sm);
             }
+        }
+        private Image LoadImageUnlocked(string path)
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            MemoryStream ms = new MemoryStream(bytes);
+            return Image.FromStream(ms);
         }
     }
 }

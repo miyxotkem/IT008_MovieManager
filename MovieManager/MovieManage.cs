@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -239,34 +241,43 @@ namespace MovieManager
             SearchAndFilter();
         }
         private DataProvider dp = new DataProvider();
+        private string dest = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            int count = 0;
-            foreach (var item in checkingStatus)
+            int count = checkingStatus.Count(kvp => kvp.Value);
+            if (count == 0)
             {
-                bool isChecked = item.Value;
-                if (isChecked)
-                    count++;
-            }
-            if (count > 0)
-            {
-                if (MessageBox.Show("Delete " + count + " movie(s)?") == DialogResult.OK)
-                    foreach (var item in checkingStatus)
-                    {
-                        int id = item.Key;
-                        bool isChecked = item.Value;
-                        if (isChecked)
-                        {
-                            string query = @"DELETE FROM Movie WHERE id = @id";
-                            object[] values = new object[] { id };
-                            dp.ExecuteNonQuery(query, values);
-                        }
-                    }
-                sync();
-            }
-            else
                 MessageBox.Show("No movies selected");
+                return;
+            }
+            if (MessageBox.Show($"Delete {count} movie(s)?", "Confirm", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                return;
+            foreach (var item in checkingStatus.ToList())
+            {
+                int id = item.Key;
+                bool isChecked = item.Value;
+                if (!isChecked)
+                    continue;
+                string posterFile = Path.Combine(dest, $"{id}.jpg");
+                if (File.Exists(posterFile))
+                {
+                    try
+                    {
+                        File.Delete(posterFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Cannot delete poster file for movie ID {id}: {ex.Message}");
+                    }
+                }
+                string query = @"DELETE FROM Movie WHERE id = @id";
+                object[] values = new object[] { id };
+                dp.ExecuteNonQuery(query, values);
+                checkingStatus[id] = false;
+            }
+            sync();
         }
+
         void sync()
         {
             movies = MovieDAO.Instance.LoadMovieList();
