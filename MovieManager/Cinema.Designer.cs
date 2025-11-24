@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.SnackManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SnackDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -38,11 +39,13 @@
             this.MovieDisplay = new MovieManager.MovieDisplay();
             this.SnackDisplay = new MovieManager.SnackDisplay();
             this.MovieManage = new MovieManager.MovieManage();
+            this.SnackManage = new MovieManager.SnackManage();
             this.SideBarPanelCinema.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideBarPanelCinema
             // 
+            this.SideBarPanelCinema.Controls.Add(this.SnackManageButton);
             this.SideBarPanelCinema.Controls.Add(this.MovieManageButton);
             this.SideBarPanelCinema.Controls.Add(this.SnackDisplayButtonCinema);
             this.SideBarPanelCinema.Controls.Add(this.MovieDisplayButtonCinema);
@@ -53,6 +56,33 @@
             this.SideBarPanelCinema.ShadowDecoration.Enabled = true;
             this.SideBarPanelCinema.Size = new System.Drawing.Size(100, 1200);
             this.SideBarPanelCinema.TabIndex = 2;
+            // 
+            // SnackManageButton
+            // 
+            this.SnackManageButton.Animated = true;
+            this.SnackManageButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.SnackManageButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.SnackManageButton.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.SnackManageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SnackManageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SnackManageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SnackManageButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SnackManageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SnackManageButton.FillColor = System.Drawing.Color.White;
+            this.SnackManageButton.FillColor2 = System.Drawing.Color.White;
+            this.SnackManageButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SnackManageButton.ForeColor = System.Drawing.Color.Black;
+            this.SnackManageButton.Image = global::MovieManager.Properties.Resources.fastfood_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.SnackManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SnackManageButton.ImageOffset = new System.Drawing.Point(10, 0);
+            this.SnackManageButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.SnackManageButton.Location = new System.Drawing.Point(0, 430);
+            this.SnackManageButton.Name = "SnackManageButton";
+            this.SnackManageButton.Size = new System.Drawing.Size(100, 80);
+            this.SnackManageButton.TabIndex = 1;
+            this.SnackManageButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SnackManageButton.TextOffset = new System.Drawing.Point(12, 0);
+            this.SnackManageButton.CheckedChanged += new System.EventHandler(this.SnackManageButton_CheckedChanged);
             // 
             // MovieManageButton
             // 
@@ -73,7 +103,7 @@
             this.MovieManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.MovieManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.MovieManageButton.Location = new System.Drawing.Point(0, 330);
+            this.MovieManageButton.Location = new System.Drawing.Point(0, 350);
             this.MovieManageButton.Name = "MovieManageButton";
             this.MovieManageButton.Size = new System.Drawing.Size(100, 80);
             this.MovieManageButton.TabIndex = 1;
@@ -164,7 +194,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MovieDisplay.Location = new System.Drawing.Point(107, 40);
             this.MovieDisplay.Name = "MovieDisplay";
-            this.MovieDisplay.Size = new System.Drawing.Size(1813, 1160);
+            this.MovieDisplay.Size = new System.Drawing.Size(1713, 1160);
             this.MovieDisplay.TabIndex = 0;
             // 
             // SnackDisplay
@@ -174,7 +204,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SnackDisplay.Location = new System.Drawing.Point(107, 40);
             this.SnackDisplay.Name = "SnackDisplay";
-            this.SnackDisplay.Size = new System.Drawing.Size(1813, 1160);
+            this.SnackDisplay.Size = new System.Drawing.Size(1713, 1160);
             this.SnackDisplay.TabIndex = 4;
             // 
             // MovieManage
@@ -184,18 +214,29 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MovieManage.Location = new System.Drawing.Point(107, 40);
             this.MovieManage.Name = "MovieManage";
-            this.MovieManage.Size = new System.Drawing.Size(1813, 1160);
+            this.MovieManage.Size = new System.Drawing.Size(1683, 1160);
             this.MovieManage.TabIndex = 5;
+            // 
+            // SnackManage
+            // 
+            this.SnackManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SnackManage.Location = new System.Drawing.Point(107, 40);
+            this.SnackManage.Name = "SnackManage";
+            this.SnackManage.Size = new System.Drawing.Size(1683, 1160);
+            this.SnackManage.TabIndex = 6;
             // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1200);
+            this.ClientSize = new System.Drawing.Size(1820, 1200);
             this.Controls.Add(this.SideBarPanelCinema);
             this.Controls.Add(this.MovieDisplay);
             this.Controls.Add(this.SnackDisplay);
             this.Controls.Add(this.MovieManage);
+            this.Controls.Add(this.SnackManage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cinema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -217,5 +258,7 @@
         private Guna.UI2.WinForms.Guna2ShadowForm CinemaShadow;
         private Guna.UI2.WinForms.Guna2GradientButton MovieManageButton;
         private MovieManage MovieManage;
+        private SnackManage SnackManage;
+        private Guna.UI2.WinForms.Guna2GradientButton SnackManageButton;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MovieManager
 {
-    partial class MovieManage
+    partial class SnackManage
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,37 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ManageSnack = new System.Windows.Forms.Label();
             this.ToolPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SelectAllButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.DeselectAllButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.FilterLabel = new System.Windows.Forms.Label();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.ManageMovie = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.DeleteButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Panel = new Guna.UI2.WinForms.Guna2Panel();
             this.ToolPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // ManageSnack
             // 
-            this.panel1.Controls.Add(this.ToolPanel);
-            this.panel1.Controls.Add(this.ManageMovie);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.Panel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1792, 1154);
-            this.panel1.TabIndex = 0;
+            this.ManageSnack.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ManageSnack.AutoSize = true;
+            this.ManageSnack.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageSnack.Location = new System.Drawing.Point(687, 49);
+            this.ManageSnack.Name = "ManageSnack";
+            this.ManageSnack.Size = new System.Drawing.Size(419, 61);
+            this.ManageSnack.TabIndex = 4;
+            this.ManageSnack.Text = "Manage Snack";
             // 
             // ToolPanel
             // 
@@ -67,11 +63,8 @@
             this.ToolPanel.Controls.Add(this.FilterComboBox);
             this.ToolPanel.Controls.Add(this.ReloadButton);
             this.ToolPanel.Controls.Add(this.AddButton);
-            this.ToolPanel.Controls.Add(this.DeleteButton);
             this.ToolPanel.Controls.Add(this.DeleteFilter);
             this.ToolPanel.Controls.Add(this.DeleteSearchButton);
-            this.ToolPanel.Controls.Add(this.SelectAllButton);
-            this.ToolPanel.Controls.Add(this.DeselectAllButton);
             this.ToolPanel.Controls.Add(this.SearchTextBox);
             this.ToolPanel.Controls.Add(this.FilterLabel);
             this.ToolPanel.Controls.Add(this.SearchLabel);
@@ -81,7 +74,7 @@
             this.ToolPanel.ShadowDecoration.Enabled = true;
             this.ToolPanel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.ToolPanel.Size = new System.Drawing.Size(939, 226);
-            this.ToolPanel.TabIndex = 3;
+            this.ToolPanel.TabIndex = 5;
             // 
             // FilterComboBox
             // 
@@ -98,70 +91,13 @@
             this.FilterComboBox.ItemHeight = 30;
             this.FilterComboBox.Items.AddRange(new object[] {
             "All",
-            "N/A",
-            "Action",
-            "Adventure",
-            "Comedy",
-            "Drama",
-            "Horror",
-            "Science Fiction (Sci-Fi)",
-            "Fantasy",
-            "Thriller",
-            "Documentary",
-            "Animation",
-            "Romance",
-            "Musical",
-            "Mystery",
-            "Western",
-            "Crime",
-            "Biographical"});
+            "Food",
+            "Beverage"});
             this.FilterComboBox.Location = new System.Drawing.Point(120, 115);
             this.FilterComboBox.Name = "FilterComboBox";
             this.FilterComboBox.Size = new System.Drawing.Size(450, 36);
             this.FilterComboBox.TabIndex = 4;
             this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
-            // 
-            // SelectAllButton
-            // 
-            this.SelectAllButton.Animated = true;
-            this.SelectAllButton.BackColor = System.Drawing.Color.Transparent;
-            this.SelectAllButton.BorderRadius = 4;
-            this.SelectAllButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SelectAllButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SelectAllButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SelectAllButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SelectAllButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SelectAllButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.SelectAllButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.SelectAllButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SelectAllButton.ForeColor = System.Drawing.Color.White;
-            this.SelectAllButton.Location = new System.Drawing.Point(748, 105);
-            this.SelectAllButton.Name = "SelectAllButton";
-            this.SelectAllButton.Size = new System.Drawing.Size(162, 44);
-            this.SelectAllButton.TabIndex = 2;
-            this.SelectAllButton.Text = "Select All";
-            this.SelectAllButton.Click += new System.EventHandler(this.SelectAllButton_Click);
-            // 
-            // DeselectAllButton
-            // 
-            this.DeselectAllButton.Animated = true;
-            this.DeselectAllButton.BackColor = System.Drawing.Color.Transparent;
-            this.DeselectAllButton.BorderRadius = 4;
-            this.DeselectAllButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeselectAllButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeselectAllButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeselectAllButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeselectAllButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeselectAllButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeselectAllButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeselectAllButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeselectAllButton.ForeColor = System.Drawing.Color.White;
-            this.DeselectAllButton.Location = new System.Drawing.Point(748, 155);
-            this.DeselectAllButton.Name = "DeselectAllButton";
-            this.DeselectAllButton.Size = new System.Drawing.Size(162, 44);
-            this.DeselectAllButton.TabIndex = 2;
-            this.DeselectAllButton.Text = "Deselect All";
-            this.DeselectAllButton.Click += new System.EventHandler(this.DeselectAllButton_Click);
             // 
             // SearchTextBox
             // 
@@ -203,44 +139,6 @@
             this.SearchLabel.Text = "Search:";
             this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ManageMovie
-            // 
-            this.ManageMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ManageMovie.AutoSize = true;
-            this.ManageMovie.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageMovie.Location = new System.Drawing.Point(690, 50);
-            this.ManageMovie.Name = "ManageMovie";
-            this.ManageMovie.Size = new System.Drawing.Size(412, 61);
-            this.ManageMovie.TabIndex = 2;
-            this.ManageMovie.Text = "Manage Movie";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(273, 459);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1246, 622);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // Panel
-            // 
-            this.Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Panel.BorderRadius = 5;
-            this.Panel.Location = new System.Drawing.Point(261, 450);
-            this.Panel.Name = "Panel";
-            this.Panel.ShadowDecoration.BorderRadius = 5;
-            this.Panel.ShadowDecoration.Enabled = true;
-            this.Panel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
-            this.Panel.Size = new System.Drawing.Size(1270, 648);
-            this.Panel.TabIndex = 1;
-            // 
             // ReloadButton
             // 
             this.ReloadButton.Animated = true;
@@ -257,9 +155,9 @@
             this.ReloadButton.ForeColor = System.Drawing.Color.White;
             this.ReloadButton.Image = global::MovieManager.Properties.Resources.refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.ReloadButton.Location = new System.Drawing.Point(860, 37);
+            this.ReloadButton.Location = new System.Drawing.Point(786, 107);
             this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(50, 50);
+            this.ReloadButton.Size = new System.Drawing.Size(106, 50);
             this.ReloadButton.TabIndex = 3;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
@@ -279,33 +177,10 @@
             this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Image = global::MovieManager.Properties.Resources.add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.AddButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddButton.Location = new System.Drawing.Point(748, 37);
+            this.AddButton.Location = new System.Drawing.Point(786, 51);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(50, 50);
+            this.AddButton.Size = new System.Drawing.Size(106, 50);
             this.AddButton.TabIndex = 3;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Animated = true;
-            this.DeleteButton.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteButton.BorderRadius = 4;
-            this.DeleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeleteButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeleteButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteButton.Image = global::MovieManager.Properties.Resources.delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.DeleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteButton.Location = new System.Drawing.Point(804, 37);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(50, 50);
-            this.DeleteButton.TabIndex = 3;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // DeleteFilter
             // 
@@ -351,37 +226,72 @@
             this.DeleteSearchButton.TabIndex = 3;
             this.DeleteSearchButton.Click += new System.EventHandler(this.DeleteSearchButton_Click);
             // 
-            // MovieManage
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.Panel);
+            this.panel1.Controls.Add(this.ToolPanel);
+            this.panel1.Controls.Add(this.ManageSnack);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1792, 1154);
+            this.panel1.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(574, 459);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 622);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // Panel
+            // 
+            this.Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel.BackColor = System.Drawing.Color.Transparent;
+            this.Panel.BorderRadius = 5;
+            this.Panel.Location = new System.Drawing.Point(564, 450);
+            this.Panel.Name = "Panel";
+            this.Panel.ShadowDecoration.BorderRadius = 5;
+            this.Panel.ShadowDecoration.Enabled = true;
+            this.Panel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
+            this.Panel.Size = new System.Drawing.Size(664, 648);
+            this.Panel.TabIndex = 7;
+            // 
+            // SnackManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "MovieManage";
+            this.Name = "SnackManage";
             this.Size = new System.Drawing.Size(1792, 1154);
+            this.ToolPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.ToolPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Label ManageSnack;
+        private Guna.UI2.WinForms.Guna2GradientPanel ToolPanel;
+        private Guna.UI2.WinForms.Guna2ComboBox FilterComboBox;
+        private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;
+        private Guna.UI2.WinForms.Guna2GradientButton AddButton;
+        private Guna.UI2.WinForms.Guna2GradientButton DeleteFilter;
+        private Guna.UI2.WinForms.Guna2GradientButton DeleteSearchButton;
+        private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
+        private System.Windows.Forms.Label FilterLabel;
+        private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel Panel;
-        private System.Windows.Forms.Label ManageMovie;
-        private Guna.UI2.WinForms.Guna2GradientPanel ToolPanel;
-        private Guna.UI2.WinForms.Guna2GradientButton DeleteSearchButton;
-        private Guna.UI2.WinForms.Guna2GradientButton SelectAllButton;
-        private Guna.UI2.WinForms.Guna2GradientButton DeselectAllButton;
-        private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
-        private System.Windows.Forms.Label SearchLabel;
-        private Guna.UI2.WinForms.Guna2GradientButton DeleteButton;
-        private Guna.UI2.WinForms.Guna2ComboBox FilterComboBox;
-        private System.Windows.Forms.Label FilterLabel;
-        private Guna.UI2.WinForms.Guna2GradientButton DeleteFilter;
-        private Guna.UI2.WinForms.Guna2GradientButton AddButton;
-        private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;
     }
 }

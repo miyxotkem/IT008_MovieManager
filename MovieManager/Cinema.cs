@@ -65,7 +65,9 @@ namespace MovieManager
                 SnackDisplayButtonCinema.Size = new Size(SnackDisplayButtonCinema.Width + 150, SnackDisplayButtonCinema.Height);
                 SnackDisplayButtonCinema.Text = "Snack Display";
                 MovieManageButton.Size = new Size(MovieManageButton.Width + 150, MovieManageButton.Height);
-                MovieManageButton.Text = "Movie Manager";
+                MovieManageButton.Text = "Movie Manage";
+                SnackManageButton.Size = new Size(SnackManageButton.Width + 150, SnackManageButton.Height);
+                SnackManageButton.Text = "Snack Manage";
                 MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
                 MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
                 SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
@@ -73,6 +75,8 @@ namespace MovieManager
                 MovieManage.Size = new Size(MovieManage.Width - 150, MovieManage.Height);
                 MovieManage.Location = new Point(MovieManage.Location.X + 150, MovieManage.Location.Y);
                 signout.Location = new Point((SideBarPanelCinema.Width - 150) / 2, SideBarPanelCinema.Height - 80);
+                SnackManage.Size = new Size(SnackManage.Width - 150, SnackManage.Height);
+                SnackManage.Location = new Point(SnackManage.Location.X + 150, SnackManage.Location.Y);
                 title.Visible = true;
                 signout.Visible = true;
                 sidebarzoom = true;
@@ -86,12 +90,16 @@ namespace MovieManager
                 SnackDisplayButtonCinema.Text = "";
                 MovieManageButton.Size = new Size(MovieManageButton.Width - 150, MovieManageButton.Height);
                 MovieManageButton.Text = "";
+                SnackManageButton.Size = new Size(SnackManageButton.Width - 150, SnackManageButton.Height);
+                SnackManageButton.Text = "";
                 MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
                 MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
                 SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
                 SnackDisplay.Location = new Point(SnackDisplay.Location.X - 150, SnackDisplay.Location.Y);
                 MovieManage.Size = new Size(MovieManage.Width + 150, MovieManage.Height);
                 MovieManage.Location = new Point(MovieManage.Location.X - 150, MovieManage.Location.Y);
+                SnackManage.Size = new Size(SnackManage.Width + 150, SnackManage.Height);
+                SnackManage.Location = new Point(SnackManage.Location.X - 150, SnackManage.Location.Y);
                 title.Visible = false;
                 signout.Visible = false;
                 sidebarzoom = false;
@@ -104,11 +112,13 @@ namespace MovieManager
             SignInForm signInForm = new SignInForm();
             signInForm.ShowDialog();
         }
+
         private void MovieDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
         {
             if (MovieDisplayButtonCinema.Checked)
             {
                 MovieDisplay.BringToFront();
+                MovieDisplay.Reload();
                 if(sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
@@ -130,6 +140,16 @@ namespace MovieManager
             {
                 MovieManage.BringToFront();
                 if (sidebarzoom == true)
+                    SideBarZoomButtonCinema.PerformClick();
+            }
+        }
+
+        private void SnackManageButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SnackManageButton.Checked)
+            {
+                SnackManage.BringToFront();
+                if(sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }

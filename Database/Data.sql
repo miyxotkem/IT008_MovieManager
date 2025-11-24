@@ -90,7 +90,7 @@ CREATE TABLE ShowTime (
 	start_time DATETIME,
 	available BIT DEFAULT 0
 
-	FOREIGN KEY (idmovie) REFERENCES Movie(id),
+	FOREIGN KEY (idmovie) REFERENCES Movie(id) ON DELETE CASCADE,
 	FOREIGN KEY (idscreen) REFERENCES Screen(id),
 	FOREIGN KEY (idseat) REFERENCES Seat(id),
 
@@ -135,7 +135,7 @@ CREATE TABLE Account
 	idStaff INT,
 	accept BIT DEFAULT 0,
 
-	FOREIGN KEY (idStaff) REFERENCES dbo.Staff
+	FOREIGN KEY (idStaff) REFERENCES dbo.Staff(id)
 )
 GO
 CREATE TABLE ForgetPassword
@@ -145,6 +145,15 @@ CREATE TABLE ForgetPassword
 
 	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
 	PRIMARY KEY (idStaff, verification)
+)
+GO
+CREATE TABLE ImportHistory
+(
+	idSnack INT,
+	quantity INT,
+	date DATE,
+
+	FOREIGN KEY (idSnack) REFERENCES dbo.Snack(id)
 )
 GO
 SET DATEFORMAT dmy;
@@ -472,6 +481,7 @@ begin
 	set password = @pass
 	where username = @username
 end
+GO
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as
@@ -490,4 +500,4 @@ GO
 
 
 select * from movie
-select * from ForgetPassword
+select * from Account

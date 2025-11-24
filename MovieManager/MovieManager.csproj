@@ -263,6 +263,12 @@
     <Compile Include="SnackDisplay.Designer.cs">
       <DependentUpon>SnackDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="SnackManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SnackManage.Designer.cs">
+      <DependentUpon>SnackManage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cinema.resx">
       <DependentUpon>Cinema.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,6 +307,9 @@
     <EmbeddedResource Include="SnackDisplay.resx">
       <DependentUpon>SnackDisplay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SnackManage.resx">
+      <DependentUpon>SnackManage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -330,6 +339,7 @@
     <None Include="Resources\add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\edit_square_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\fastfood_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

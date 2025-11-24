@@ -240,8 +240,10 @@ namespace MovieManager
         {
             SearchAndFilter();
         }
+
         private DataProvider dp = new DataProvider();
         private string dest = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
+
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             int count = checkingStatus.Count(kvp => kvp.Value);
