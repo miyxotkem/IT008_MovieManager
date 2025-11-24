@@ -231,6 +231,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ResetPassConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassConfirm.Designer.cs">
+      <DependentUpon>ResetPassConfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MovieManage.resx">
       <DependentUpon>MovieManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassConfirm.resx">
+      <DependentUpon>ResetPassConfirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectMovie.resx">
       <DependentUpon>SelectMovie.cs</DependentUpon>

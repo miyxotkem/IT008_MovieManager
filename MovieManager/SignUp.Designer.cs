@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
             this.FullNameTextBoxSignUp = new Guna.UI2.WinForms.Guna2TextBox();
             this.FullNameLabel = new System.Windows.Forms.Label();
@@ -46,8 +47,20 @@
             this.Home = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.ExitButtonSignUp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SignUpLabel = new System.Windows.Forms.Label();
+            this.epFullName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPass = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRetype = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epCheck = new System.Windows.Forms.ErrorProvider(this.components);
             this.Panel.SuspendLayout();
             this.Home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epFullName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRetype)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // FullNameTextBoxSignUp
@@ -62,21 +75,23 @@
             this.FullNameTextBoxSignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FullNameTextBoxSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FullNameTextBoxSignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FullNameTextBoxSignUp.Location = new System.Drawing.Point(75, 60);
+            this.FullNameTextBoxSignUp.Location = new System.Drawing.Point(67, 48);
             this.FullNameTextBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FullNameTextBoxSignUp.Name = "FullNameTextBoxSignUp";
             this.FullNameTextBoxSignUp.PasswordChar = '\0';
             this.FullNameTextBoxSignUp.PlaceholderText = "";
             this.FullNameTextBoxSignUp.SelectedText = "";
-            this.FullNameTextBoxSignUp.Size = new System.Drawing.Size(400, 60);
+            this.FullNameTextBoxSignUp.Size = new System.Drawing.Size(356, 48);
             this.FullNameTextBoxSignUp.TabIndex = 0;
+            this.FullNameTextBoxSignUp.Enter += new System.EventHandler(this.FullNameTextBoxSignUp_Enter);
+            this.FullNameTextBoxSignUp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FullNameTextBoxSignUp_KeyPress);
             // 
             // FullNameLabel
             // 
             this.FullNameLabel.AutoSize = true;
-            this.FullNameLabel.Location = new System.Drawing.Point(86, 38);
+            this.FullNameLabel.Location = new System.Drawing.Point(76, 30);
             this.FullNameLabel.Name = "FullNameLabel";
-            this.FullNameLabel.Size = new System.Drawing.Size(80, 20);
+            this.FullNameLabel.Size = new System.Drawing.Size(68, 16);
             this.FullNameLabel.TabIndex = 1;
             this.FullNameLabel.Text = "Full Name";
             // 
@@ -92,21 +107,23 @@
             this.UsernameTextBoxSignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.UsernameTextBoxSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UsernameTextBoxSignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.UsernameTextBoxSignUp.Location = new System.Drawing.Point(575, 60);
+            this.UsernameTextBoxSignUp.Location = new System.Drawing.Point(511, 48);
             this.UsernameTextBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsernameTextBoxSignUp.Name = "UsernameTextBoxSignUp";
             this.UsernameTextBoxSignUp.PasswordChar = '\0';
             this.UsernameTextBoxSignUp.PlaceholderText = "";
             this.UsernameTextBoxSignUp.SelectedText = "";
-            this.UsernameTextBoxSignUp.Size = new System.Drawing.Size(400, 60);
+            this.UsernameTextBoxSignUp.Size = new System.Drawing.Size(356, 48);
             this.UsernameTextBoxSignUp.TabIndex = 2;
+            this.UsernameTextBoxSignUp.Enter += new System.EventHandler(this.UsernameTextBoxSignUp_Enter);
+            this.UsernameTextBoxSignUp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsernameTextBoxSignUp_KeyPress);
             // 
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(586, 38);
+            this.UsernameLabel.Location = new System.Drawing.Point(521, 30);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(83, 20);
+            this.UsernameLabel.Size = new System.Drawing.Size(70, 16);
             this.UsernameLabel.TabIndex = 1;
             this.UsernameLabel.Text = "Username";
             // 
@@ -122,22 +139,24 @@
             this.PasswordTextBoxSignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.PasswordTextBoxSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PasswordTextBoxSignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PasswordTextBoxSignUp.Location = new System.Drawing.Point(575, 180);
+            this.PasswordTextBoxSignUp.Location = new System.Drawing.Point(511, 144);
             this.PasswordTextBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBoxSignUp.Name = "PasswordTextBoxSignUp";
             this.PasswordTextBoxSignUp.PasswordChar = '●';
             this.PasswordTextBoxSignUp.PlaceholderText = "";
             this.PasswordTextBoxSignUp.SelectedText = "";
-            this.PasswordTextBoxSignUp.Size = new System.Drawing.Size(400, 60);
+            this.PasswordTextBoxSignUp.Size = new System.Drawing.Size(356, 48);
             this.PasswordTextBoxSignUp.TabIndex = 3;
             this.PasswordTextBoxSignUp.UseSystemPasswordChar = true;
+            this.PasswordTextBoxSignUp.Enter += new System.EventHandler(this.PasswordTextBoxSignUp_Enter);
+            this.PasswordTextBoxSignUp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBoxSignUp_KeyPress);
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(586, 158);
+            this.PasswordLabel.Location = new System.Drawing.Point(521, 126);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(78, 20);
+            this.PasswordLabel.Size = new System.Drawing.Size(67, 16);
             this.PasswordLabel.TabIndex = 1;
             this.PasswordLabel.Text = "Password";
             // 
@@ -153,22 +172,24 @@
             this.RetypePasswordTextBoxSignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.RetypePasswordTextBoxSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RetypePasswordTextBoxSignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RetypePasswordTextBoxSignUp.Location = new System.Drawing.Point(575, 300);
+            this.RetypePasswordTextBoxSignUp.Location = new System.Drawing.Point(511, 240);
             this.RetypePasswordTextBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RetypePasswordTextBoxSignUp.Name = "RetypePasswordTextBoxSignUp";
             this.RetypePasswordTextBoxSignUp.PasswordChar = '●';
             this.RetypePasswordTextBoxSignUp.PlaceholderText = "";
             this.RetypePasswordTextBoxSignUp.SelectedText = "";
-            this.RetypePasswordTextBoxSignUp.Size = new System.Drawing.Size(400, 60);
+            this.RetypePasswordTextBoxSignUp.Size = new System.Drawing.Size(356, 48);
             this.RetypePasswordTextBoxSignUp.TabIndex = 4;
             this.RetypePasswordTextBoxSignUp.UseSystemPasswordChar = true;
+            this.RetypePasswordTextBoxSignUp.Enter += new System.EventHandler(this.RetypePasswordTextBoxSignUp_Enter);
+            this.RetypePasswordTextBoxSignUp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RetypePasswordTextBoxSignUp_KeyPress);
             // 
             // RetypePasswordLabel
             // 
             this.RetypePasswordLabel.AutoSize = true;
-            this.RetypePasswordLabel.Location = new System.Drawing.Point(586, 278);
+            this.RetypePasswordLabel.Location = new System.Drawing.Point(521, 222);
             this.RetypePasswordLabel.Name = "RetypePasswordLabel";
-            this.RetypePasswordLabel.Size = new System.Drawing.Size(133, 20);
+            this.RetypePasswordLabel.Size = new System.Drawing.Size(114, 16);
             this.RetypePasswordLabel.TabIndex = 1;
             this.RetypePasswordLabel.Text = "Retype Password";
             // 
@@ -184,21 +205,23 @@
             this.EmailTextBoxSignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmailTextBoxSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmailTextBoxSignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmailTextBoxSignUp.Location = new System.Drawing.Point(75, 180);
+            this.EmailTextBoxSignUp.Location = new System.Drawing.Point(67, 144);
             this.EmailTextBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmailTextBoxSignUp.Name = "EmailTextBoxSignUp";
             this.EmailTextBoxSignUp.PasswordChar = '\0';
             this.EmailTextBoxSignUp.PlaceholderText = "";
             this.EmailTextBoxSignUp.SelectedText = "";
-            this.EmailTextBoxSignUp.Size = new System.Drawing.Size(400, 60);
+            this.EmailTextBoxSignUp.Size = new System.Drawing.Size(356, 48);
             this.EmailTextBoxSignUp.TabIndex = 1;
+            this.EmailTextBoxSignUp.Enter += new System.EventHandler(this.EmailTextBoxSignUp_Enter);
+            this.EmailTextBoxSignUp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailTextBoxSignUp_KeyPress);
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(86, 158);
+            this.EmailLabel.Location = new System.Drawing.Point(76, 126);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(48, 20);
+            this.EmailLabel.Size = new System.Drawing.Size(41, 16);
             this.EmailLabel.TabIndex = 1;
             this.EmailLabel.Text = "Email";
             // 
@@ -219,11 +242,11 @@
             this.SignUpButtonSignUp.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.SignUpButtonSignUp.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.SignUpButtonSignUp.HoverState.ForeColor = System.Drawing.Color.White;
-            this.SignUpButtonSignUp.Location = new System.Drawing.Point(425, 460);
+            this.SignUpButtonSignUp.Location = new System.Drawing.Point(378, 368);
             this.SignUpButtonSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SignUpButtonSignUp.Name = "SignUpButtonSignUp";
             this.SignUpButtonSignUp.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.SignUpButtonSignUp.Size = new System.Drawing.Size(200, 60);
+            this.SignUpButtonSignUp.Size = new System.Drawing.Size(178, 48);
             this.SignUpButtonSignUp.TabIndex = 6;
             this.SignUpButtonSignUp.Text = "Sign Up";
             this.SignUpButtonSignUp.Click += new System.EventHandler(this.SignUpButtonSignUp_Click);
@@ -246,23 +269,24 @@
             this.Panel.Controls.Add(this.PasswordTextBoxSignUp);
             this.Panel.Controls.Add(this.UsernameTextBoxSignUp);
             this.Panel.Controls.Add(this.FullNameTextBoxSignUp);
-            this.Panel.Location = new System.Drawing.Point(64, 140);
+            this.Panel.Location = new System.Drawing.Point(57, 112);
             this.Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Panel.Name = "Panel";
             this.Panel.ShadowDecoration.BorderRadius = 30;
             this.Panel.ShadowDecoration.Enabled = true;
             this.Panel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.Panel.Size = new System.Drawing.Size(1050, 700);
+            this.Panel.Size = new System.Drawing.Size(933, 560);
             this.Panel.TabIndex = 3;
             // 
             // TermsAndConditions
             // 
             this.TermsAndConditions.AutoSize = true;
             this.TermsAndConditions.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.TermsAndConditions.Location = new System.Drawing.Point(586, 418);
+            this.TermsAndConditions.Location = new System.Drawing.Point(521, 334);
             this.TermsAndConditions.Name = "TermsAndConditions";
-            this.TermsAndConditions.Size = new System.Drawing.Size(153, 20);
+            this.TermsAndConditions.Size = new System.Drawing.Size(127, 16);
             this.TermsAndConditions.TabIndex = 4;
+            this.TermsAndConditions.TabStop = true;
             this.TermsAndConditions.Text = "terms and condtions";
             // 
             // TermsAndConditionsCheckBoxSignUp
@@ -272,10 +296,10 @@
             this.TermsAndConditionsCheckBoxSignUp.CheckedState.BorderRadius = 0;
             this.TermsAndConditionsCheckBoxSignUp.CheckedState.BorderThickness = 0;
             this.TermsAndConditionsCheckBoxSignUp.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TermsAndConditionsCheckBoxSignUp.Location = new System.Drawing.Point(322, 416);
+            this.TermsAndConditionsCheckBoxSignUp.Location = new System.Drawing.Point(286, 333);
             this.TermsAndConditionsCheckBoxSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TermsAndConditionsCheckBoxSignUp.Name = "TermsAndConditionsCheckBoxSignUp";
-            this.TermsAndConditionsCheckBoxSignUp.Size = new System.Drawing.Size(266, 24);
+            this.TermsAndConditionsCheckBoxSignUp.Size = new System.Drawing.Size(220, 20);
             this.TermsAndConditionsCheckBoxSignUp.TabIndex = 5;
             this.TermsAndConditionsCheckBoxSignUp.Text = "By checking this, I agree with our";
             this.TermsAndConditionsCheckBoxSignUp.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -296,7 +320,7 @@
             this.Home.Location = new System.Drawing.Point(0, 0);
             this.Home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(1178, 744);
+            this.Home.Size = new System.Drawing.Size(1047, 595);
             this.Home.TabIndex = 4;
             // 
             // ExitButtonSignUp
@@ -310,11 +334,11 @@
             this.ExitButtonSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ExitButtonSignUp.ForeColor = System.Drawing.Color.White;
             this.ExitButtonSignUp.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ExitButtonSignUp.Location = new System.Drawing.Point(1134, 14);
+            this.ExitButtonSignUp.Location = new System.Drawing.Point(1008, 11);
             this.ExitButtonSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitButtonSignUp.Name = "ExitButtonSignUp";
             this.ExitButtonSignUp.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ExitButtonSignUp.Size = new System.Drawing.Size(30, 30);
+            this.ExitButtonSignUp.Size = new System.Drawing.Size(27, 24);
             this.ExitButtonSignUp.TabIndex = 5;
             this.ExitButtonSignUp.Click += new System.EventHandler(this.ExitButtonSignUp_Click);
             // 
@@ -323,17 +347,41 @@
             this.SignUpLabel.AutoSize = true;
             this.SignUpLabel.BackColor = System.Drawing.Color.Transparent;
             this.SignUpLabel.Font = new System.Drawing.Font("Stencil", 30F);
-            this.SignUpLabel.Location = new System.Drawing.Point(460, 35);
+            this.SignUpLabel.Location = new System.Drawing.Point(409, 28);
             this.SignUpLabel.Name = "SignUpLabel";
-            this.SignUpLabel.Size = new System.Drawing.Size(259, 71);
+            this.SignUpLabel.Size = new System.Drawing.Size(217, 59);
             this.SignUpLabel.TabIndex = 4;
             this.SignUpLabel.Text = "Sign Up";
             // 
+            // epFullName
+            // 
+            this.epFullName.ContainerControl = this;
+            // 
+            // epUsername
+            // 
+            this.epUsername.ContainerControl = this;
+            // 
+            // epEmail
+            // 
+            this.epEmail.ContainerControl = this;
+            // 
+            // epPass
+            // 
+            this.epPass.ContainerControl = this;
+            // 
+            // epRetype
+            // 
+            this.epRetype.ContainerControl = this;
+            // 
+            // epCheck
+            // 
+            this.epCheck.ContainerControl = this;
+            // 
             // SignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.ClientSize = new System.Drawing.Size(1047, 595);
             this.Controls.Add(this.Home);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -345,6 +393,12 @@
             this.Panel.PerformLayout();
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epFullName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRetype)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCheck)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +422,11 @@
         private Guna.UI2.WinForms.Guna2CheckBox TermsAndConditionsCheckBoxSignUp;
         private System.Windows.Forms.LinkLabel TermsAndConditions;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButtonSignUp;
+        private System.Windows.Forms.ErrorProvider epFullName;
+        private System.Windows.Forms.ErrorProvider epUsername;
+        private System.Windows.Forms.ErrorProvider epEmail;
+        private System.Windows.Forms.ErrorProvider epPass;
+        private System.Windows.Forms.ErrorProvider epRetype;
+        private System.Windows.Forms.ErrorProvider epCheck;
     }
 }

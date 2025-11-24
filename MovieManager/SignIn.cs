@@ -176,7 +176,14 @@ namespace MovieManager
 
         }
 
-        private void ShowPassButtonSignIn_Click(object sender, EventArgs e)
+
+        private void ShowPassButtonSignIn_Click_1(object sender, EventArgs e)
+        {
+            PasswordTextBoxSignIn.UseSystemPasswordChar = !PasswordTextBoxSignIn.UseSystemPasswordChar;       
+                
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             PasswordTextBoxSignIn.UseSystemPasswordChar = !PasswordTextBoxSignIn.UseSystemPasswordChar;
         }

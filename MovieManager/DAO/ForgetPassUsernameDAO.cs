@@ -79,5 +79,11 @@ namespace MovieManager.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] {id, verify});
             return data.Rows.Count > 0;
         }
+
+        public void UpdatePassword(string username, string password)
+        {
+            string querry = "Exec USP_UpdateNewPassword @username , @pass";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { username, password });
+        }
     }
 }

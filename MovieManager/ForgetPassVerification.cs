@@ -244,7 +244,10 @@ namespace MovieManager
             if (ForgetPassUsernameDAO.Instance.CheckVerificationCode(IDStaff, VerifyCode))
             {
                 ForgetPassUsernameDAO.Instance.EraseVerificationCode(IDStaff, VerifyCode);
-                MessageBox.Show("Successful", "Notification");
+                ResetPassConfirm f = new ResetPassConfirm(UserName);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
             }
             else
             {

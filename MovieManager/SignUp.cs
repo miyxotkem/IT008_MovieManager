@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using Org.BouncyCastle.Math.Field;
 namespace MovieManager
 {
     public partial class SignUp : Form
@@ -180,12 +182,116 @@ namespace MovieManager
             else
             {
                 MessageBox.Show("Please fill and correct all the information.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (FullNameTextBoxSignUp.Text.Length == 0)
+                {
+                    FullNameTextBoxSignUp.BorderColor = Color.Red;
+                    epFullName.SetError(FullNameTextBoxSignUp, "Please fill the information");
+                }
+                if (UsernameTextBoxSignUp.Text.Length == 0)
+                {
+                    UsernameTextBoxSignUp.BorderColor = Color.Red;
+                    epUsername.SetError(UsernameTextBoxSignUp, "Plase fill the information");
+                }
+                if (EmailTextBoxSignUp.Text.Length == 0)
+                {
+                    EmailTextBoxSignUp.BorderColor = Color.Red;
+                    epEmail.SetError(EmailTextBoxSignUp, "Please fill the information");
+                }
+                if (PasswordTextBoxSignUp.Text.Length == 0)
+                {
+                    PasswordTextBoxSignUp.BorderColor = Color.Red;
+                    epPass.SetError(PasswordTextBoxSignUp, "Please fill the information");
+                } 
+                if (RetypePasswordTextBoxSignUp.Text.Length == 0)
+                {
+                    RetypePasswordTextBoxSignUp.BorderColor = Color.Red;
+                    epRetype.SetError(RetypePasswordTextBoxSignUp, "Please fill the information");
+                }
             }
         }
 
         private void ExitButtonSignUp_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FullNameTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@')
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void UsernameTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@')
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void EmailTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@')
+            {
+                return;
+            }
+            e.Handled = true;
+        }
+
+        private void PasswordTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void RetypePasswordTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SetDefaultColor(object sender , EventArgs e)
+        {
+            Guna2TextBox txb = (Guna2TextBox)sender;
+            txb.BorderColor = Color.Gray;
+        }
+
+        private void FullNameTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            SetDefaultColor(sender, EventArgs.Empty);
+            epFullName.Clear();
+        }
+
+        private void UsernameTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            SetDefaultColor(sender , EventArgs.Empty);
+            epUsername.Clear();
+        }
+
+        private void PasswordTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            SetDefaultColor(sender, EventArgs.Empty);
+            epPass.Clear();
+        }
+
+        private void EmailTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            SetDefaultColor(sender, EventArgs.Empty);
+            epEmail.Clear();    
+        }
+
+        private void RetypePasswordTextBoxSignUp_Enter(object sender, EventArgs e)
+        {
+            SetDefaultColor(sender, EventArgs.Empty);
+            epRetype.Clear();   
         }
     }
 }

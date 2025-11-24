@@ -462,6 +462,16 @@ begin
 	where idStaff = @id and verification = @verify;
 end
 GO
+
+-- Cập nhật Password mới sau khi reset password vào Account 
+create proc USP_UpdateNewPassword 
+@username varchar(100), @pass varchar(100)
+as 
+begin 
+	update Account 
+	set password = @pass
+	where username = @username
+end
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as

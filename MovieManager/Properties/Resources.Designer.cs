@@ -143,6 +143,26 @@ namespace MovieManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EyeOff {
+            get {
+                object obj = ResourceManager.GetObject("EyeOff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EyeOn {
+            get {
+                object obj = ResourceManager.GetObject("EyeOn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fastfood_24dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("fastfood_24dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -246,16 +266,6 @@ namespace MovieManager.Properties {
         internal static System.Drawing.Bitmap theaters_24dp_BLACK_FILL0_wght400_GRAD0_opsz241 {
             get {
                 object obj = ResourceManager.GetObject("theaters_24dp_BLACK_FILL0_wght400_GRAD0_opsz241", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap visibility_off_24dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
-            get {
-                object obj = ResourceManager.GetObject("visibility_off_24dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
