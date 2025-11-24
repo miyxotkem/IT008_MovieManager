@@ -500,4 +500,4 @@ GO
 
 
 select * from movie
-select * from Account
+select * from snack
