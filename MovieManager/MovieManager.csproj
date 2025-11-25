@@ -181,7 +181,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountDisplay.Designer.cs">
+      <DependentUpon>AccountDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\AccountInfoDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="Cinema.cs">
       <SubType>Form</SubType>
@@ -193,6 +200,7 @@
     <Compile Include="DAO\MovieDAO.cs" />
     <Compile Include="DAO\ShowTime.cs" />
     <Compile Include="DAO\SnackDAO.cs" />
+    <Compile Include="DTO\AccountInfo.cs" />
     <Compile Include="DTO\Movie.cs" />
     <Compile Include="DTO\ShowTime.cs" />
     <Compile Include="DTO\Snack.cs" />
@@ -269,6 +277,9 @@
     <Compile Include="SnackManage.Designer.cs">
       <DependentUpon>SnackManage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountDisplay.resx">
+      <DependentUpon>AccountDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cinema.resx">
       <DependentUpon>Cinema.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +351,8 @@
     <None Include="Resources\refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\edit_square_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\fastfood_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\add_30dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

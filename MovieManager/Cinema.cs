@@ -21,6 +21,11 @@ namespace MovieManager
             InitializeComponent();
         }
 
+        public Cinema(string username)
+        {
+            InitializeComponent();
+            AccountDisplay.Reload(username);
+        }
         private void Cinema_Load(object sender, EventArgs e)
         {
             CinemaShadow.SetShadowForm(this);            

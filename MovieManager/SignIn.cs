@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using MovieManager.DAO;
+using MovieManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,8 +78,8 @@ namespace MovieManager
             string usr = UsernameTextBoxSignIn.Text;
             string pas = PasswordTextBoxSignIn.Text;
             if (Login(usr, pas))
-            {
-                Cinema f = new Cinema();
+            { 
+                Cinema f = new Cinema(usr);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

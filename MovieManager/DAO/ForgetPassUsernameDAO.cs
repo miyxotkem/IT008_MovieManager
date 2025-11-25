@@ -1,4 +1,5 @@
-﻿using Org.BouncyCastle.Tls;
+﻿using Microsoft.SqlServer.Server;
+using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -85,5 +86,7 @@ namespace MovieManager.DAO
             string querry = "Exec USP_UpdateNewPassword @username , @pass";
             int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { username, password });
         }
+
+        
     }
 }

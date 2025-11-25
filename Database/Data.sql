@@ -482,14 +482,24 @@ begin
 	where username = @username
 end
 GO
+
+-- Lấy các thông tin khi user đăng nhập vào 
+create proc USP_GetAccountInfoFromUser
+@username varchar(100)
+as 
+begin 
+	select * from AccountStaff
+	where username = @username
+end
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as
-select ac.username, ac.password, st.contact_info as email , st.name
+select ac.idStaff as ID,  ac.username, ac.password, st.contact_info as email , st.name, st.role as Role
 from Account ac join Staff st on ac.idStaff = st.id; 
 GO
 
 
+select * from AccountStaff
 
 -- Ngày 18/11/2025
 -- Đổi row thành varchar(1) với các hàng ghế là A, B, C, D, E
@@ -501,3 +511,5 @@ GO
 
 select * from movie
 select * from snack
+
+Exec USP_GetAccountInfoFromUser 'dantruong2007'

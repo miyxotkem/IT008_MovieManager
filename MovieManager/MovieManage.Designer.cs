@@ -56,8 +56,9 @@
             this.panel1.Controls.Add(this.Panel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1792, 1154);
+            this.panel1.Size = new System.Drawing.Size(1593, 923);
             this.panel1.TabIndex = 0;
             // 
             // ToolPanel
@@ -75,12 +76,13 @@
             this.ToolPanel.Controls.Add(this.SearchTextBox);
             this.ToolPanel.Controls.Add(this.FilterLabel);
             this.ToolPanel.Controls.Add(this.SearchLabel);
-            this.ToolPanel.Location = new System.Drawing.Point(427, 178);
+            this.ToolPanel.Location = new System.Drawing.Point(380, 142);
+            this.ToolPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ToolPanel.Name = "ToolPanel";
             this.ToolPanel.ShadowDecoration.BorderRadius = 0;
             this.ToolPanel.ShadowDecoration.Enabled = true;
             this.ToolPanel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.ToolPanel.Size = new System.Drawing.Size(939, 226);
+            this.ToolPanel.Size = new System.Drawing.Size(835, 181);
             this.ToolPanel.TabIndex = 3;
             // 
             // FilterComboBox
@@ -115,9 +117,10 @@
             "Western",
             "Crime",
             "Biographical"});
-            this.FilterComboBox.Location = new System.Drawing.Point(120, 115);
+            this.FilterComboBox.Location = new System.Drawing.Point(107, 92);
+            this.FilterComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FilterComboBox.Name = "FilterComboBox";
-            this.FilterComboBox.Size = new System.Drawing.Size(450, 36);
+            this.FilterComboBox.Size = new System.Drawing.Size(400, 36);
             this.FilterComboBox.TabIndex = 4;
             this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
             // 
@@ -135,9 +138,10 @@
             this.SelectAllButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.SelectAllButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SelectAllButton.ForeColor = System.Drawing.Color.White;
-            this.SelectAllButton.Location = new System.Drawing.Point(748, 105);
+            this.SelectAllButton.Location = new System.Drawing.Point(665, 84);
+            this.SelectAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SelectAllButton.Name = "SelectAllButton";
-            this.SelectAllButton.Size = new System.Drawing.Size(162, 44);
+            this.SelectAllButton.Size = new System.Drawing.Size(144, 35);
             this.SelectAllButton.TabIndex = 2;
             this.SelectAllButton.Text = "Select All";
             this.SelectAllButton.Click += new System.EventHandler(this.SelectAllButton_Click);
@@ -156,9 +160,10 @@
             this.DeselectAllButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.DeselectAllButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DeselectAllButton.ForeColor = System.Drawing.Color.White;
-            this.DeselectAllButton.Location = new System.Drawing.Point(748, 155);
+            this.DeselectAllButton.Location = new System.Drawing.Point(665, 124);
+            this.DeselectAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeselectAllButton.Name = "DeselectAllButton";
-            this.DeselectAllButton.Size = new System.Drawing.Size(162, 44);
+            this.DeselectAllButton.Size = new System.Drawing.Size(144, 35);
             this.DeselectAllButton.TabIndex = 2;
             this.DeselectAllButton.Text = "Deselect All";
             this.DeselectAllButton.Click += new System.EventHandler(this.DeselectAllButton_Click);
@@ -176,29 +181,30 @@
             this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.Location = new System.Drawing.Point(120, 37);
+            this.SearchTextBox.Location = new System.Drawing.Point(107, 30);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.PasswordChar = '\0';
             this.SearchTextBox.PlaceholderText = "";
             this.SearchTextBox.SelectedText = "";
-            this.SearchTextBox.Size = new System.Drawing.Size(450, 50);
+            this.SearchTextBox.Size = new System.Drawing.Size(400, 40);
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // FilterLabel
             // 
-            this.FilterLabel.Location = new System.Drawing.Point(50, 130);
+            this.FilterLabel.Location = new System.Drawing.Point(44, 104);
             this.FilterLabel.Name = "FilterLabel";
-            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
+            this.FilterLabel.Size = new System.Drawing.Size(57, 16);
             this.FilterLabel.TabIndex = 0;
             this.FilterLabel.Text = "Filter:";
             this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // SearchLabel
             // 
-            this.SearchLabel.Location = new System.Drawing.Point(50, 51);
+            this.SearchLabel.Location = new System.Drawing.Point(44, 41);
             this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(64, 20);
+            this.SearchLabel.Size = new System.Drawing.Size(57, 16);
             this.SearchLabel.TabIndex = 0;
             this.SearchLabel.Text = "Search:";
             this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -208,9 +214,9 @@
             this.ManageMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ManageMovie.AutoSize = true;
             this.ManageMovie.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageMovie.Location = new System.Drawing.Point(690, 50);
+            this.ManageMovie.Location = new System.Drawing.Point(613, 40);
             this.ManageMovie.Name = "ManageMovie";
-            this.ManageMovie.Size = new System.Drawing.Size(412, 61);
+            this.ManageMovie.Size = new System.Drawing.Size(348, 52);
             this.ManageMovie.TabIndex = 2;
             this.ManageMovie.Text = "Manage Movie";
             // 
@@ -221,9 +227,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(273, 459);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(243, 367);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1246, 622);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1108, 498);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Panel
@@ -233,12 +240,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel.BackColor = System.Drawing.Color.Transparent;
             this.Panel.BorderRadius = 5;
-            this.Panel.Location = new System.Drawing.Point(261, 450);
+            this.Panel.Location = new System.Drawing.Point(232, 360);
+            this.Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Panel.Name = "Panel";
             this.Panel.ShadowDecoration.BorderRadius = 5;
             this.Panel.ShadowDecoration.Enabled = true;
             this.Panel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
-            this.Panel.Size = new System.Drawing.Size(1270, 648);
+            this.Panel.Size = new System.Drawing.Size(1129, 518);
             this.Panel.TabIndex = 1;
             // 
             // ReloadButton
@@ -257,9 +265,10 @@
             this.ReloadButton.ForeColor = System.Drawing.Color.White;
             this.ReloadButton.Image = global::MovieManager.Properties.Resources.refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.ReloadButton.Location = new System.Drawing.Point(860, 37);
+            this.ReloadButton.Location = new System.Drawing.Point(764, 30);
+            this.ReloadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(50, 50);
+            this.ReloadButton.Size = new System.Drawing.Size(44, 40);
             this.ReloadButton.TabIndex = 3;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
@@ -279,9 +288,10 @@
             this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Image = global::MovieManager.Properties.Resources.add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.AddButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddButton.Location = new System.Drawing.Point(748, 37);
+            this.AddButton.Location = new System.Drawing.Point(665, 30);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(50, 50);
+            this.AddButton.Size = new System.Drawing.Size(44, 40);
             this.AddButton.TabIndex = 3;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -301,9 +311,10 @@
             this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Image = global::MovieManager.Properties.Resources.delete_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.DeleteButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteButton.Location = new System.Drawing.Point(804, 37);
+            this.DeleteButton.Location = new System.Drawing.Point(715, 30);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(50, 50);
+            this.DeleteButton.Size = new System.Drawing.Size(44, 40);
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
@@ -323,9 +334,10 @@
             this.DeleteFilter.ForeColor = System.Drawing.Color.White;
             this.DeleteFilter.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.DeleteFilter.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteFilter.Location = new System.Drawing.Point(590, 117);
+            this.DeleteFilter.Location = new System.Drawing.Point(524, 94);
+            this.DeleteFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteFilter.Name = "DeleteFilter";
-            this.DeleteFilter.Size = new System.Drawing.Size(50, 50);
+            this.DeleteFilter.Size = new System.Drawing.Size(44, 40);
             this.DeleteFilter.TabIndex = 3;
             this.DeleteFilter.Click += new System.EventHandler(this.DeleteFilter_Click);
             // 
@@ -345,19 +357,21 @@
             this.DeleteSearchButton.ForeColor = System.Drawing.Color.White;
             this.DeleteSearchButton.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.DeleteSearchButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteSearchButton.Location = new System.Drawing.Point(590, 37);
+            this.DeleteSearchButton.Location = new System.Drawing.Point(524, 30);
+            this.DeleteSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteSearchButton.Name = "DeleteSearchButton";
-            this.DeleteSearchButton.Size = new System.Drawing.Size(50, 50);
+            this.DeleteSearchButton.Size = new System.Drawing.Size(44, 40);
             this.DeleteSearchButton.TabIndex = 3;
             this.DeleteSearchButton.Click += new System.EventHandler(this.DeleteSearchButton_Click);
             // 
             // MovieManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MovieManage";
-            this.Size = new System.Drawing.Size(1792, 1154);
+            this.Size = new System.Drawing.Size(1593, 923);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ToolPanel.ResumeLayout(false);
