@@ -491,6 +491,7 @@ begin
 	select * from AccountStaff
 	where username = @username
 end
+GO
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as
