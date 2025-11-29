@@ -54,9 +54,9 @@
             this.BriefLabel = new System.Windows.Forms.Label();
             this.UploadFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.UploadButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.PosterTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.PosterLabel = new System.Windows.Forms.Label();
             this.PosterPictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.RemoveButton = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.PosterPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -452,32 +452,12 @@
             this.UploadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.UploadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UploadButton.ForeColor = System.Drawing.Color.White;
-            this.UploadButton.Location = new System.Drawing.Point(1455, 555);
+            this.UploadButton.Location = new System.Drawing.Point(1385, 480);
             this.UploadButton.Name = "UploadButton";
             this.UploadButton.Size = new System.Drawing.Size(120, 60);
             this.UploadButton.TabIndex = 5;
             this.UploadButton.Text = "Upload";
             this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
-            // 
-            // PosterTextBox
-            // 
-            this.PosterTextBox.BorderRadius = 12;
-            this.PosterTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PosterTextBox.DefaultText = "";
-            this.PosterTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PosterTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PosterTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PosterTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PosterTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PosterTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PosterTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PosterTextBox.Location = new System.Drawing.Point(1385, 480);
-            this.PosterTextBox.Name = "PosterTextBox";
-            this.PosterTextBox.PasswordChar = '\0';
-            this.PosterTextBox.PlaceholderText = "";
-            this.PosterTextBox.SelectedText = "";
-            this.PosterTextBox.Size = new System.Drawing.Size(260, 60);
-            this.PosterTextBox.TabIndex = 2;
             // 
             // PosterLabel
             // 
@@ -499,11 +479,31 @@
             this.PosterPictureBox.TabIndex = 6;
             this.PosterPictureBox.TabStop = false;
             // 
+            // RemoveButton
+            // 
+            this.RemoveButton.BorderRadius = 12;
+            this.RemoveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.RemoveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.RemoveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemoveButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemoveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.RemoveButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.RemoveButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.RemoveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RemoveButton.ForeColor = System.Drawing.Color.White;
+            this.RemoveButton.Location = new System.Drawing.Point(1525, 480);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(120, 60);
+            this.RemoveButton.TabIndex = 5;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
             // Edit_MovieManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.PosterPictureBox);
+            this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.UploadButton);
             this.Controls.Add(this.RatedComboBox);
             this.Controls.Add(this.FormatComboBox);
@@ -514,7 +514,6 @@
             this.Controls.Add(this.LanguageTextBox);
             this.Controls.Add(this.DirectorTextBox);
             this.Controls.Add(this.BriefTextBox);
-            this.Controls.Add(this.PosterTextBox);
             this.Controls.Add(this.DurationTextBox);
             this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.ReleaseDateLabel);
@@ -566,8 +565,8 @@
         private System.Windows.Forms.Label BriefLabel;
         private System.Windows.Forms.OpenFileDialog UploadFileDialog;
         private Guna.UI2.WinForms.Guna2GradientButton UploadButton;
-        private Guna.UI2.WinForms.Guna2TextBox PosterTextBox;
         private System.Windows.Forms.Label PosterLabel;
         private Guna.UI2.WinForms.Guna2PictureBox PosterPictureBox;
+        private Guna.UI2.WinForms.Guna2GradientButton RemoveButton;
     }
 }

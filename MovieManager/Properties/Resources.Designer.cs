@@ -63,6 +63,16 @@ namespace MovieManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_circle_30dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("account_circle_30dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -246,6 +256,26 @@ namespace MovieManager.Properties {
         internal static System.Drawing.Bitmap MovieDisplay2 {
             get {
                 object obj = ResourceManager.GetObject("MovieDisplay2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap production_quantity_limits_30dp_BLACK_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("production_quantity_limits_30dp_BLACK_FILL0_wght400_GRAD0_opsz24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

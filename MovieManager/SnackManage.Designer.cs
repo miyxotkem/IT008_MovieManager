@@ -31,13 +31,13 @@
             this.ManageSnack = new System.Windows.Forms.Label();
             this.ToolPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.FilterLabel = new System.Windows.Forms.Label();
-            this.SearchLabel = new System.Windows.Forms.Label();
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.FilterLabel = new System.Windows.Forms.Label();
+            this.SearchLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -99,46 +99,6 @@
             this.FilterComboBox.TabIndex = 4;
             this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
             // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.SearchTextBox.BorderRadius = 4;
-            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SearchTextBox.DefaultText = "";
-            this.SearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SearchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SearchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SearchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.Location = new System.Drawing.Point(120, 37);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.PasswordChar = '\0';
-            this.SearchTextBox.PlaceholderText = "";
-            this.SearchTextBox.SelectedText = "";
-            this.SearchTextBox.Size = new System.Drawing.Size(450, 50);
-            this.SearchTextBox.TabIndex = 1;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
-            // FilterLabel
-            // 
-            this.FilterLabel.Location = new System.Drawing.Point(50, 130);
-            this.FilterLabel.Name = "FilterLabel";
-            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
-            this.FilterLabel.TabIndex = 0;
-            this.FilterLabel.Text = "Filter:";
-            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // SearchLabel
-            // 
-            this.SearchLabel.Location = new System.Drawing.Point(50, 51);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(64, 20);
-            this.SearchLabel.TabIndex = 0;
-            this.SearchLabel.Text = "Search:";
-            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ReloadButton
             // 
             this.ReloadButton.Animated = true;
@@ -181,6 +141,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(106, 50);
             this.AddButton.TabIndex = 3;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DeleteFilter
             // 
@@ -225,6 +186,46 @@
             this.DeleteSearchButton.Size = new System.Drawing.Size(50, 50);
             this.DeleteSearchButton.TabIndex = 3;
             this.DeleteSearchButton.Click += new System.EventHandler(this.DeleteSearchButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.SearchTextBox.BorderRadius = 4;
+            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.DefaultText = "";
+            this.SearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SearchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SearchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SearchTextBox.Location = new System.Drawing.Point(120, 37);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.PasswordChar = '\0';
+            this.SearchTextBox.PlaceholderText = "";
+            this.SearchTextBox.SelectedText = "";
+            this.SearchTextBox.Size = new System.Drawing.Size(450, 50);
+            this.SearchTextBox.TabIndex = 1;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // FilterLabel
+            // 
+            this.FilterLabel.Location = new System.Drawing.Point(50, 130);
+            this.FilterLabel.Name = "FilterLabel";
+            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
+            this.FilterLabel.TabIndex = 0;
+            this.FilterLabel.Text = "Filter:";
+            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.Location = new System.Drawing.Point(50, 51);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(64, 20);
+            this.SearchLabel.TabIndex = 0;
+            this.SearchLabel.Text = "Search:";
+            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 

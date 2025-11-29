@@ -210,6 +210,12 @@
     <Compile Include="Edit_MovieManage.Designer.cs">
       <DependentUpon>Edit_MovieManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_SnackManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit_SnackManage.Designer.cs">
+      <DependentUpon>Edit_SnackManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     <EmbeddedResource Include="Edit_MovieManage.resx">
       <DependentUpon>Edit_MovieManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit_SnackManage.resx">
+      <DependentUpon>Edit_SnackManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassVerification.resx">
       <DependentUpon>ForgetPassVerification.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +362,9 @@
     <None Include="Resources\fastfood_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\add_30dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\account_circle_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\production_quantity_limits_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

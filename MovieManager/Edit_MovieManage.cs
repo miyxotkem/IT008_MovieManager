@@ -73,7 +73,7 @@ namespace MovieManager
                 MessageBox.Show("Please enter the movie title");
                 return;
             }
-            if (MessageBox.Show("Save changes?") == DialogResult.OK)
+            if (MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 string query = @"UPDATE MOVIE SET title = @title , genre = @genre , rated = @rated , release_date = @release_date , director = @director , language = @language , duration = @duration , format = @format , trailer = @trailer , actor = @actor , brief = @brief WHERE id = @id";
                 object[] values = new object[]
@@ -98,8 +98,15 @@ namespace MovieManager
                     string posterFileName = $"{movieId}.jpg";
                     actdest = Path.Combine(dest, posterFileName);
                 }
-                if (PosterTextBox.Text.Length > 0)
-                    if (Path.GetFullPath(PosterTextBox.Text) != Path.GetFullPath(actdest))
+                if (isPosterDeleted)
+                {
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                    if (File.Exists(actdest))
+                        File.Delete(actdest);
+                }
+                else if (path != null)
+                    if (Path.GetFullPath(path) != Path.GetFullPath(actdest))
                     {
                         if (PosterPictureBox.Image != null)
                         {
@@ -110,7 +117,7 @@ namespace MovieManager
                         GC.WaitForPendingFinalizers();
                         if (File.Exists(actdest))
                             File.Delete(actdest);
-                        File.Copy(PosterTextBox.Text, actdest);
+                        File.Copy(path, actdest);
                     }
                 dp.ExecuteNonQuery(query, values);
                 CancelButton.PerformClick();
@@ -156,18 +163,20 @@ namespace MovieManager
                 string posterFileName = $"{movieId}.jpg";
                 actdest = Path.Combine(dest, posterFileName);
             }
-            if (PosterTextBox.Text.Length > 0)
-                File.Copy(PosterTextBox.Text, actdest);
+            if (path != null)
+                File.Copy(path, actdest);
             MovieChanged?.Invoke(this, EventArgs.Empty);
             CancelButton.PerformClick();
         }
         public event EventHandler MovieChanged;
+        private string path = null;
         private void UploadButton_Click(object sender, EventArgs e)
         {
             UploadFileDialog.Filter = "Posters (*.jpg) | *.jpg";
             if (UploadFileDialog.ShowDialog() == DialogResult.OK)
             {
-                PosterTextBox.Text = UploadFileDialog.FileName;
+                isPosterDeleted = false;
+                path = UploadFileDialog.FileName;
                 if (PosterPictureBox.Image != null)
                 {
                     PosterPictureBox.Image.Dispose();
@@ -179,9 +188,12 @@ namespace MovieManager
 
         private void DurationTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            bool isDigit = char.IsDigit(e.KeyChar);
+            bool isBackspace = e.KeyChar == '\b';
+            if (!isDigit && !isBackspace)
                 e.Handled = true;
         }
+
         void LoadPoster()
         {
             string fileName = main.ID.ToString() + ".jpg";
@@ -189,11 +201,23 @@ namespace MovieManager
             if (File.Exists(fullImagePath))
                 PosterPictureBox.Image = LoadImageUnlocked(fullImagePath);
         }
+
         private Image LoadImageUnlocked(string path)
         {
             byte[] bytes = File.ReadAllBytes(path);
             MemoryStream ms = new MemoryStream(bytes);
             return Image.FromStream(ms);
+        }
+        private bool isPosterDeleted = false;
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (PosterPictureBox.Image != null)
+            {
+                PosterPictureBox.Image.Dispose();
+                PosterPictureBox.Image = null;
+            }
+            path = null;
+            isPosterDeleted = true;
         }
     }
 }

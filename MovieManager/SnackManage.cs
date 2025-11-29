@@ -64,7 +64,7 @@ namespace MovieManager
                 };
                 Guna2GradientButton edit = new Guna2GradientButton()
                 {
-                    Image = global::MovieManager.Properties.Resources.MovieDisplay,
+                    Image = global::MovieManager.Properties.Resources.production_quantity_limits_30dp_BLACK_FILL0_wght400_GRAD0_opsz24,
                     Animated = true,
                     Tag = snack.ID,
                     BorderRadius = 10,
@@ -73,6 +73,7 @@ namespace MovieManager
                     FillColor2 = Color.FromArgb(218, 108, 108),
                     Location = new Point(700, 12)
                 };
+                edit.Click += EditButton;
                 pnl.Controls.Add(name);
                 pnl.Controls.Add(price);
                 pnl.Controls.Add(stock);
@@ -133,6 +134,29 @@ namespace MovieManager
         private void ReloadButton_Click(object sender, EventArgs e)
         {
             sync();
+        }
+        void EditButton(object sender, EventArgs e)
+        {
+            Guna2GradientButton btn = sender as Guna2GradientButton;
+            if (btn != null && btn.Tag is int snackId)
+            {
+                Edit_SnackManage esm = new Edit_SnackManage(snackId);
+                esm.Location = new Point((this.Size.Width - esm.Width) / 2, (this.Size.Height - esm.Height) / 2);
+                this.Controls.Add(esm);
+                esm.BringToFront();
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            Guna2GradientButton btn = sender as Guna2GradientButton;
+            if (btn != null && btn.Tag is int snackId)
+            {
+                Edit_SnackManage esm = new Edit_SnackManage();
+                esm.Location = new Point((this.Size.Width - esm.Width) / 2, (this.Size.Height - esm.Height) / 2);
+                this.Controls.Add(esm);
+                esm.BringToFront();
+            }
         }
     }
 }
