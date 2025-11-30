@@ -147,8 +147,9 @@ CREATE TABLE ForgetPassword
 	PRIMARY KEY (idStaff, verification)
 )
 GO
-CREATE TABLE ImportHistory
+CREATE TABLE History
 (
+	id INT IDENTITY PRIMARY KEY,
 	idSnack INT,
 	quantity INT,
 	date DATE,
@@ -420,7 +421,9 @@ GO
 CREATE PROC USP_GetShowTimeList
 AS SELECT * FROM dbo.ShowTime
 GO
-
+CREATE PROC USP_GetHistoryList
+AS SELECT * FROM dbo.History
+GO
 create proc USP_ForgetPassUsername
 @username varchar(100) 
 as 
