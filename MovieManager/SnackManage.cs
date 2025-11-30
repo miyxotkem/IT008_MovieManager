@@ -36,7 +36,45 @@ namespace MovieManager
 
         public void LoadSnack(List<Snack> snackList)
         {
-            foreach(Snack snack in snackList)
+            Panel p = new Panel()
+            {
+                Height = 30,
+                Width = 800
+            };
+            Label n = new Label()
+            {
+                Location = new Point(100, 10),
+                Width = 300,
+                Text = "Name",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label pr = new Label()
+            {
+                Location = new Point(400, 10),
+                Width = 100,
+                Text = "Price",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label s = new Label()
+            {
+                Location = new Point(550, 10),
+                Width = 100,
+                Text = "Stock",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label e = new Label()
+            {
+                Location = new Point(700, 10),
+                Width = 100,
+                Text = "Edit",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            p.Controls.Add(n);
+            p.Controls.Add(pr);
+            p.Controls.Add(s);
+            p.Controls.Add(e);
+            flowLayoutPanel2.Controls.Add(p);
+            foreach (Snack snack in snackList)
             {
                 Guna2GradientPanel pnl = new Guna2GradientPanel()
                 {
@@ -84,6 +122,7 @@ namespace MovieManager
         void SearchAndFilter()
         {
             flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
             if (SearchTextBox.Text.Length == 0 && FilterComboBox.Text == "All")
             {
                 LoadSnack(SnackDAO.Instance.LoadSnackList());
@@ -129,12 +168,15 @@ namespace MovieManager
         {
             snacks = SnackDAO.Instance.LoadSnackList();
             flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
             SearchAndFilter();
         }
+
         private void ReloadButton_Click(object sender, EventArgs e)
         {
             sync();
         }
+
         void EditButton(object sender, EventArgs e)
         {
             Guna2GradientButton btn = sender as Guna2GradientButton;
@@ -149,14 +191,18 @@ namespace MovieManager
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Guna2GradientButton btn = sender as Guna2GradientButton;
-            if (btn != null && btn.Tag is int snackId)
-            {
                 Edit_SnackManage esm = new Edit_SnackManage();
                 esm.Location = new Point((this.Size.Width - esm.Width) / 2, (this.Size.Height - esm.Height) / 2);
                 this.Controls.Add(esm);
                 esm.BringToFront();
-            }
+        }
+
+        private void HistoryButton_Click(object sender, EventArgs e)
+        {
+            History_SnackManage hsm = new History_SnackManage();
+            hsm.Location = new Point((this.Size.Width - hsm.Width) / 2, (this.Size.Height - hsm.Height) / 2);
+            this.Controls.Add(hsm);
+            hsm.BringToFront();
         }
     }
 }

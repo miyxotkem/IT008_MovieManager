@@ -25,7 +25,7 @@ namespace MovieManager
         {
             List<Snack> snackList = SnackDAO.Instance.LoadSnackList();
             string baseDirectory = Application.StartupPath;
-            string imageFolder = Path.Combine(baseDirectory, "Snacks");
+            string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
             foreach (Snack snack in snackList)
             {
                 Panel pnl = new Panel()
@@ -55,7 +55,7 @@ namespace MovieManager
                     string fullImagePath = Path.Combine(imageFolder, fileName);
                     if (File.Exists(fullImagePath))
                     {
-                        pic.Image = Image.FromFile(fullImagePath);
+                        pic.Image = LoadImageUnlocked(fullImagePath);
                     }
                     else
                     {
@@ -72,6 +72,12 @@ namespace MovieManager
                 pnl.Controls.Add(lblTitle);
                 SnackDisplayFlowLayoutPanel.Controls.Add(pnl);
             }
+        }
+        private Image LoadImageUnlocked(string path)
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            MemoryStream ms = new MemoryStream(bytes);
+            return Image.FromStream(ms);
         }
     }
 }

@@ -26,7 +26,6 @@ namespace MovieManager
             movies = MovieDAO.Instance.LoadMovieList();
             checkingStatus = new Dictionary<int, bool>();
             FilterComboBox.SelectedIndex = 0;
-            //LoadMovie(MovieDAO.Instance.LoadMovieList());
             foreach (Movie movie in movies)
                 checkingStatus.Add(movie.ID, false);
         }
@@ -40,40 +39,60 @@ namespace MovieManager
         }
         public void LoadMovie(List<Movie> movieList)
         {
-            //Panel p = new Panel()
-            //{
-            //    Height = 30,
-            //    Width = 1300
-            //};
-            //Label t = new Label()
-            //{
-            //    Location = new Point(100, 23),
-            //    Width = 500,
-            //    Text = "Title"
-            //};
-            //Label g = new Label()
-            //{
-            //    Location = new Point(750, 23),
-            //    Width = 100,
-            //    Text = "Gerne"
-            //};
-            //Label r = new Label()
-            //{
-            //    Location = new Point(1100, 23),
-            //    Width = 100,
-            //    Text = "Rated"
-            //};
-            //Label d = new Label()
-            //{
-            //    Location = new Point(1450, 23),
-            //    Width = 100,
-            //    Text = "Duration"
-            //};
-            //p.Controls.Add(t);
-            //p.Controls.Add(g);
-            //p.Controls.Add(r);
-            //p.Controls.Add(d);
-            //flowLayoutPanel1.Controls.Add(p);
+            Panel p = new Panel()
+            {
+                Height = 30,
+                Width = 1200
+            };
+            Label c = new Label()
+            {
+                Location = new Point(5, 10),
+                Width = 100,
+                Text = "Check",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label t = new Label()
+            {
+                Location = new Point(100, 10),
+                Width = 500,
+                Text = "Title",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label g = new Label()
+            {
+                Location = new Point(600, 10),
+                Width = 100,
+                Text = "Genre",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label r = new Label()
+            {
+                Location = new Point(750, 10),
+                Width = 100,
+                Text = "Rated",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label d = new Label()
+            {
+                Location = new Point(900, 10),
+                Width = 100,
+                Text = "Duration",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label e = new Label()
+            {
+                Location = new Point(1050, 10),
+                Width = 100,
+                Text = "Edit",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            p.Controls.Add(c);
+            p.Controls.Add(t);
+            p.Controls.Add(g);
+            p.Controls.Add(r);
+            p.Controls.Add(d);
+            p.Controls.Add(e);
+            flowLayoutPanel2.Controls.Add(p);
             foreach (Movie movie in movieList)
             {
                 bool isChecked = false;
@@ -161,6 +180,7 @@ namespace MovieManager
         void SearchAndFilter()
         {
             flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
             if (SearchTextBox.Text.Length == 0 && FilterComboBox.Text == "All")
             {
                 LoadMovie(MovieDAO.Instance.LoadMovieList());
@@ -284,6 +304,7 @@ namespace MovieManager
         {
             movies = MovieDAO.Instance.LoadMovieList();
             flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
             foreach (Movie movie in movies)
                 if (!checkingStatus.ContainsKey(movie.ID))
                     checkingStatus.Add(movie.ID, false);

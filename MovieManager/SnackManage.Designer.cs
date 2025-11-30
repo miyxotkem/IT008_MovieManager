@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SnackManage));
             this.ManageSnack = new System.Windows.Forms.Label();
-            this.ToolPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.HistoryButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -39,10 +40,13 @@
             this.FilterLabel = new System.Windows.Forms.Label();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.ToolPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ManageSnack
@@ -55,26 +59,6 @@
             this.ManageSnack.Size = new System.Drawing.Size(419, 61);
             this.ManageSnack.TabIndex = 4;
             this.ManageSnack.Text = "Manage Snack";
-            // 
-            // ToolPanel
-            // 
-            this.ToolPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ToolPanel.BackColor = System.Drawing.Color.White;
-            this.ToolPanel.Controls.Add(this.FilterComboBox);
-            this.ToolPanel.Controls.Add(this.ReloadButton);
-            this.ToolPanel.Controls.Add(this.AddButton);
-            this.ToolPanel.Controls.Add(this.DeleteFilter);
-            this.ToolPanel.Controls.Add(this.DeleteSearchButton);
-            this.ToolPanel.Controls.Add(this.SearchTextBox);
-            this.ToolPanel.Controls.Add(this.FilterLabel);
-            this.ToolPanel.Controls.Add(this.SearchLabel);
-            this.ToolPanel.Location = new System.Drawing.Point(427, 178);
-            this.ToolPanel.Name = "ToolPanel";
-            this.ToolPanel.ShadowDecoration.BorderRadius = 0;
-            this.ToolPanel.ShadowDecoration.Enabled = true;
-            this.ToolPanel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.ToolPanel.Size = new System.Drawing.Size(939, 226);
-            this.ToolPanel.TabIndex = 5;
             // 
             // FilterComboBox
             // 
@@ -93,11 +77,33 @@
             "All",
             "Food",
             "Beverage"});
-            this.FilterComboBox.Location = new System.Drawing.Point(120, 115);
+            this.FilterComboBox.Location = new System.Drawing.Point(112, 118);
             this.FilterComboBox.Name = "FilterComboBox";
             this.FilterComboBox.Size = new System.Drawing.Size(450, 36);
             this.FilterComboBox.TabIndex = 4;
             this.FilterComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterComboBox_SelectedIndexChanged);
+            // 
+            // HistoryButton
+            // 
+            this.HistoryButton.Animated = true;
+            this.HistoryButton.BackColor = System.Drawing.Color.Transparent;
+            this.HistoryButton.BorderRadius = 4;
+            this.HistoryButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.HistoryButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.HistoryButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.HistoryButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.HistoryButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.HistoryButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.HistoryButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.HistoryButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.HistoryButton.ForeColor = System.Drawing.Color.White;
+            this.HistoryButton.Image = global::MovieManager.Properties.Resources.history_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.HistoryButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.HistoryButton.Location = new System.Drawing.Point(782, 141);
+            this.HistoryButton.Name = "HistoryButton";
+            this.HistoryButton.Size = new System.Drawing.Size(106, 50);
+            this.HistoryButton.TabIndex = 3;
+            this.HistoryButton.Click += new System.EventHandler(this.HistoryButton_Click);
             // 
             // ReloadButton
             // 
@@ -113,9 +119,9 @@
             this.ReloadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.ReloadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ReloadButton.ForeColor = System.Drawing.Color.White;
-            this.ReloadButton.Image = global::MovieManager.Properties.Resources.refresh_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.ReloadButton.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.Image")));
             this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.ReloadButton.Location = new System.Drawing.Point(786, 107);
+            this.ReloadButton.Location = new System.Drawing.Point(782, 85);
             this.ReloadButton.Name = "ReloadButton";
             this.ReloadButton.Size = new System.Drawing.Size(106, 50);
             this.ReloadButton.TabIndex = 3;
@@ -135,9 +141,9 @@
             this.AddButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Image = global::MovieManager.Properties.Resources.add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
             this.AddButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddButton.Location = new System.Drawing.Point(786, 51);
+            this.AddButton.Location = new System.Drawing.Point(782, 29);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(106, 50);
             this.AddButton.TabIndex = 3;
@@ -157,9 +163,9 @@
             this.DeleteFilter.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.DeleteFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DeleteFilter.ForeColor = System.Drawing.Color.White;
-            this.DeleteFilter.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.DeleteFilter.Image = ((System.Drawing.Image)(resources.GetObject("DeleteFilter.Image")));
             this.DeleteFilter.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteFilter.Location = new System.Drawing.Point(590, 117);
+            this.DeleteFilter.Location = new System.Drawing.Point(582, 120);
             this.DeleteFilter.Name = "DeleteFilter";
             this.DeleteFilter.Size = new System.Drawing.Size(50, 50);
             this.DeleteFilter.TabIndex = 3;
@@ -179,9 +185,9 @@
             this.DeleteSearchButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.DeleteSearchButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DeleteSearchButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteSearchButton.Image = global::MovieManager.Properties.Resources.close_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.DeleteSearchButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteSearchButton.Image")));
             this.DeleteSearchButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeleteSearchButton.Location = new System.Drawing.Point(590, 37);
+            this.DeleteSearchButton.Location = new System.Drawing.Point(582, 40);
             this.DeleteSearchButton.Name = "DeleteSearchButton";
             this.DeleteSearchButton.Size = new System.Drawing.Size(50, 50);
             this.DeleteSearchButton.TabIndex = 3;
@@ -200,7 +206,7 @@
             this.SearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SearchTextBox.Location = new System.Drawing.Point(120, 37);
+            this.SearchTextBox.Location = new System.Drawing.Point(112, 40);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.PasswordChar = '\0';
             this.SearchTextBox.PlaceholderText = "";
@@ -211,7 +217,7 @@
             // 
             // FilterLabel
             // 
-            this.FilterLabel.Location = new System.Drawing.Point(50, 130);
+            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
             this.FilterLabel.Name = "FilterLabel";
             this.FilterLabel.Size = new System.Drawing.Size(64, 20);
             this.FilterLabel.TabIndex = 0;
@@ -220,7 +226,7 @@
             // 
             // SearchLabel
             // 
-            this.SearchLabel.Location = new System.Drawing.Point(50, 51);
+            this.SearchLabel.Location = new System.Drawing.Point(42, 54);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.Size = new System.Drawing.Size(64, 20);
             this.SearchLabel.TabIndex = 0;
@@ -229,15 +235,64 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Controls.Add(this.Panel);
-            this.panel1.Controls.Add(this.ToolPanel);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.ManageSnack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1792, 1154);
             this.panel1.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BorderRadius = 30;
+            this.panel3.Controls.Add(this.FilterComboBox);
+            this.panel3.Controls.Add(this.SearchTextBox);
+            this.panel3.Controls.Add(this.HistoryButton);
+            this.panel3.Controls.Add(this.SearchLabel);
+            this.panel3.Controls.Add(this.ReloadButton);
+            this.panel3.Controls.Add(this.FilterLabel);
+            this.panel3.Controls.Add(this.AddButton);
+            this.panel3.Controls.Add(this.DeleteSearchButton);
+            this.panel3.Controls.Add(this.DeleteFilter);
+            this.panel3.Location = new System.Drawing.Point(427, 178);
+            this.panel3.Name = "panel3";
+            this.panel3.ShadowDecoration.BorderRadius = 30;
+            this.panel3.ShadowDecoration.Enabled = true;
+            this.panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.panel3.Size = new System.Drawing.Size(939, 226);
+            this.panel3.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderRadius = 50;
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Location = new System.Drawing.Point(539, 468);
+            this.panel2.Name = "panel2";
+            this.panel2.ShadowDecoration.BorderRadius = 50;
+            this.panel2.ShadowDecoration.Enabled = true;
+            this.panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.panel2.Size = new System.Drawing.Size(714, 743);
+            this.panel2.TabIndex = 7;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(35, 18);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(644, 65);
+            this.flowLayoutPanel2.TabIndex = 6;
             // 
             // flowLayoutPanel1
             // 
@@ -246,25 +301,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(574, 459);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(35, 89);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 622);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 443);
             this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // Panel
-            // 
-            this.Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel.BackColor = System.Drawing.Color.Transparent;
-            this.Panel.BorderRadius = 5;
-            this.Panel.Location = new System.Drawing.Point(564, 450);
-            this.Panel.Name = "Panel";
-            this.Panel.ShadowDecoration.BorderRadius = 5;
-            this.Panel.ShadowDecoration.Enabled = true;
-            this.Panel.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1);
-            this.Panel.Size = new System.Drawing.Size(664, 648);
-            this.Panel.TabIndex = 7;
             // 
             // SnackManage
             // 
@@ -273,16 +313,16 @@
             this.Controls.Add(this.panel1);
             this.Name = "SnackManage";
             this.Size = new System.Drawing.Size(1792, 1154);
-            this.ToolPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label ManageSnack;
-        private Guna.UI2.WinForms.Guna2GradientPanel ToolPanel;
         private Guna.UI2.WinForms.Guna2ComboBox FilterComboBox;
         private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;
         private Guna.UI2.WinForms.Guna2GradientButton AddButton;
@@ -293,6 +333,9 @@
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Panel Panel;
+        private Guna.UI2.WinForms.Guna2GradientButton HistoryButton;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panel2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

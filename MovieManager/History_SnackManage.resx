@@ -117,39 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ReloadButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAPdJREFUSEvt
-        ljEKAjEQRf85tFavYGGlIKi38BSWXkFQsLWy8hA2WtjY6BX2GMrIBobvGLOJ7Frkwa9m/nwIm8kCmcyf
-        0AdwBfAgHQF0qHep6tHMjLBPapee5OCdMfwEYANgC+Bu1BepwSsaOOYGxZB6i9jgKQ0KRXuqel9EG1OC
-        B8rkO16BQywFc6tg4hBLwTjDmQsGHGIpGGeQK1MrjQfLoqgVvY9jkc0lmnPBhzwGLvjbdbIYKb/b3cFE
-        fZUlKd63FykU7WlxMZQDDfId+4R6k2/EngaKZLHI4HX5E8D15FAHH7tPPTb/Ank89B53ugDocnMm0whP
-        yKihLGNDnZEAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="AddButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAHhJREFUSEvt
-        1jEKgEAMRNEc1/tfQLHYRgJ5xYCg+yGNvJ3aqt0fO6rqDN+9OfZ8lLoxhhjvMcR4jyHGewrTjmHaMUw7
-        hmnHMO1auL7pdW/HOvgcnq57O6Yw7RimHcO0Y5h2DNPOIcZ7DDHeY4jx3oLpG3vtZ2/3rS4ns8jZd0Us
-        0gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="DeleteFilter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAIFJREFUSEvt
-        kkEOgDAIBPsU//9JDaY1tRLCrlJjZBIuhZ29tJQk+RtLHRQ2tyPBtQ4iYXMHvcArYTIqiAi5deERem4o
-        LLG1ewStQHsLYSyaUtrQysNLhVeKtdLw8rF0yueyCqzdLTxizw0EIkRuTRgRk7nQSxABmzshQSbM5pLk
-        w2zWdV+pxMPTaQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="DeleteSearchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAIFJREFUSEvt
-        kkEOgDAIBPsU//9JDaY1tRLCrlJjZBIuhZ29tJQk+RtLHRQ2tyPBtQ4iYXMHvcArYTIqiAi5deERem4o
-        LLG1ewStQHsLYSyaUtrQysNLhVeKtdLw8rF0yueyCqzdLTxizw0EIkRuTRgRk7nQSxABmzshQSbM5pLk
-        w2zWdV+pxMPTaQAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

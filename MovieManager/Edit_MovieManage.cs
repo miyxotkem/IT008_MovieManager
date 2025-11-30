@@ -162,9 +162,9 @@ namespace MovieManager
             {
                 string posterFileName = $"{movieId}.jpg";
                 actdest = Path.Combine(dest, posterFileName);
+                if (path != null)
+                    File.Copy(path, actdest, true);
             }
-            if (path != null)
-                File.Copy(path, actdest);
             MovieChanged?.Invoke(this, EventArgs.Empty);
             CancelButton.PerformClick();
         }

@@ -37,14 +37,14 @@
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.CategoryTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.RemovePic = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.AddPic = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.ImportButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ApplyButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ImportTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ImportLabel = new System.Windows.Forms.Label();
-            this.ImportButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.SnackPic = new System.Windows.Forms.PictureBox();
-            this.AddPic = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.RemovePic = new Guna.UI2.WinForms.Guna2GradientButton();
             this.UploadFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
@@ -170,13 +170,14 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.panel1.Controls.Add(this.SnackPic);
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.RemovePic);
             this.panel1.Controls.Add(this.AddPic);
             this.panel1.Controls.Add(this.ImportButton);
             this.panel1.Controls.Add(this.ApplyButton);
             this.panel1.Controls.Add(this.CategoryTextBox);
-            this.panel1.Controls.Add(this.SnackPic);
             this.panel1.Controls.Add(this.CategoryLabel);
             this.panel1.Controls.Add(this.ImportTextBox);
             this.panel1.Controls.Add(this.StockTextBox);
@@ -191,6 +192,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1500, 800);
             this.panel1.TabIndex = 3;
+            // 
+            // SnackPic
+            // 
+            this.SnackPic.BorderRadius = 12;
+            this.SnackPic.ImageRotate = 0F;
+            this.SnackPic.Location = new System.Drawing.Point(250, 80);
+            this.SnackPic.Name = "SnackPic";
+            this.SnackPic.Size = new System.Drawing.Size(400, 470);
+            this.SnackPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SnackPic.TabIndex = 5;
+            this.SnackPic.TabStop = false;
             // 
             // CancelButton
             // 
@@ -211,6 +223,69 @@
             this.CancelButton.TabIndex = 3;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // RemovePic
+            // 
+            this.RemovePic.Animated = true;
+            this.RemovePic.BorderRadius = 14;
+            this.RemovePic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.RemovePic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.RemovePic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemovePic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemovePic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.RemovePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.RemovePic.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.RemovePic.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RemovePic.ForeColor = System.Drawing.Color.White;
+            this.RemovePic.ImageSize = new System.Drawing.Size(30, 30);
+            this.RemovePic.Location = new System.Drawing.Point(458, 571);
+            this.RemovePic.Name = "RemovePic";
+            this.RemovePic.Size = new System.Drawing.Size(168, 60);
+            this.RemovePic.TabIndex = 4;
+            this.RemovePic.Text = "Remove";
+            this.RemovePic.Click += new System.EventHandler(this.RemovePic_Click);
+            // 
+            // AddPic
+            // 
+            this.AddPic.Animated = true;
+            this.AddPic.BorderRadius = 14;
+            this.AddPic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddPic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddPic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddPic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddPic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddPic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.AddPic.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.AddPic.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddPic.ForeColor = System.Drawing.Color.White;
+            this.AddPic.ImageSize = new System.Drawing.Size(30, 30);
+            this.AddPic.Location = new System.Drawing.Point(268, 571);
+            this.AddPic.Name = "AddPic";
+            this.AddPic.Size = new System.Drawing.Size(168, 60);
+            this.AddPic.TabIndex = 4;
+            this.AddPic.Text = "Upload";
+            this.AddPic.Click += new System.EventHandler(this.AddPic_Click);
+            // 
+            // ImportButton
+            // 
+            this.ImportButton.Animated = true;
+            this.ImportButton.BorderRadius = 14;
+            this.ImportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ImportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ImportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ImportButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ImportButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ImportButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ImportButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.ImportButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ImportButton.ForeColor = System.Drawing.Color.White;
+            this.ImportButton.Image = global::MovieManager.Properties.Resources.playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.ImportButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.ImportButton.Location = new System.Drawing.Point(1100, 360);
+            this.ImportButton.Name = "ImportButton";
+            this.ImportButton.Size = new System.Drawing.Size(60, 60);
+            this.ImportButton.TabIndex = 4;
+            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
             // 
             // ApplyButton
             // 
@@ -262,79 +337,6 @@
             this.ImportLabel.TabIndex = 1;
             this.ImportLabel.Text = "Import";
             // 
-            // ImportButton
-            // 
-            this.ImportButton.Animated = true;
-            this.ImportButton.BorderRadius = 14;
-            this.ImportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ImportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ImportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ImportButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ImportButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ImportButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.ImportButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ImportButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ImportButton.ForeColor = System.Drawing.Color.White;
-            this.ImportButton.Image = global::MovieManager.Properties.Resources.playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.ImportButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.ImportButton.Location = new System.Drawing.Point(1100, 360);
-            this.ImportButton.Name = "ImportButton";
-            this.ImportButton.Size = new System.Drawing.Size(60, 60);
-            this.ImportButton.TabIndex = 4;
-            this.ImportButton.Click += new System.EventHandler(this.ImportButton_Click);
-            // 
-            // SnackPic
-            // 
-            this.SnackPic.BackColor = System.Drawing.Color.White;
-            this.SnackPic.Location = new System.Drawing.Point(250, 80);
-            this.SnackPic.Name = "SnackPic";
-            this.SnackPic.Size = new System.Drawing.Size(400, 470);
-            this.SnackPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SnackPic.TabIndex = 0;
-            this.SnackPic.TabStop = false;
-            // 
-            // AddPic
-            // 
-            this.AddPic.Animated = true;
-            this.AddPic.BorderRadius = 14;
-            this.AddPic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddPic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddPic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddPic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddPic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddPic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.AddPic.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.AddPic.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AddPic.ForeColor = System.Drawing.Color.White;
-            this.AddPic.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddPic.Location = new System.Drawing.Point(268, 571);
-            this.AddPic.Name = "AddPic";
-            this.AddPic.Size = new System.Drawing.Size(168, 60);
-            this.AddPic.TabIndex = 4;
-            this.AddPic.Text = "Upload";
-            this.AddPic.Click += new System.EventHandler(this.AddPic_Click);
-            // 
-            // RemovePic
-            // 
-            this.RemovePic.Animated = true;
-            this.RemovePic.BorderRadius = 14;
-            this.RemovePic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.RemovePic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.RemovePic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.RemovePic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.RemovePic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.RemovePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.RemovePic.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.RemovePic.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RemovePic.ForeColor = System.Drawing.Color.White;
-            this.RemovePic.ImageSize = new System.Drawing.Size(30, 30);
-            this.RemovePic.Location = new System.Drawing.Point(458, 571);
-            this.RemovePic.Name = "RemovePic";
-            this.RemovePic.Size = new System.Drawing.Size(168, 60);
-            this.RemovePic.TabIndex = 4;
-            this.RemovePic.Text = "Remove";
-            this.RemovePic.Click += new System.EventHandler(this.RemovePic_Click);
-            // 
             // UploadFileDialog
             // 
             this.UploadFileDialog.FileName = "openFileDialog1";
@@ -354,8 +356,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox SnackPic;
         private System.Windows.Forms.Label NameLabel;
         private Guna.UI2.WinForms.Guna2TextBox NameTextBox;
         private System.Windows.Forms.Label PriceLabel;
@@ -373,5 +373,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton RemovePic;
         private Guna.UI2.WinForms.Guna2GradientButton AddPic;
         private System.Windows.Forms.OpenFileDialog UploadFileDialog;
+        private Guna.UI2.WinForms.Guna2PictureBox SnackPic;
     }
 }

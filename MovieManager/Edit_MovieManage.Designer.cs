@@ -502,6 +502,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.Controls.Add(this.PosterPictureBox);
             this.Controls.Add(this.RemoveButton);
             this.Controls.Add(this.UploadButton);
