@@ -365,7 +365,7 @@ INSERT INTO dbo.Staff VALUES(N'Phạm Đan Trường', N'Quản lý', N'truongpd
 INSERT INTO dbo.Staff VALUES(N'Hồ Thịnh Phát', N'Quản lý', N'phatht.a2.2124@gmail.com', 3);
 INSERT INTO dbo.Staff VALUES(N'Võ Việt Thy', N'Nhân viên', N'thyvv.a2.2124@gmail.com', 2);
 INSERT INTO dbo.Staff VALUES(N'Lê Phương Thúy', N'Nhân viên', N'thuylp.a2.2124@gmail.com', 3);
-INSERT INTO dbo.Staff VALUES(N'Nguyễn Thanh Hiếu Thảo', N'Nhân viên', N'thaontt.a2.2124@gmail.com', 4);
+INSERT INTO dbo.Staff VALUES(N'Nguyễn Thanh Hiếu Thảo', N'Nhân viên', N'thaonth.a2.2124@gmail.com', 4);
 
 INSERT INTO dbo.Account VALUES('minhanh2104', '123456789', '1', '1', '1');
 INSERT INTO dbo.Account VALUES('minhduc2303', '123456789', '0', '2', '1');
@@ -373,8 +373,7 @@ INSERT INTO dbo.Account VALUES('dantruong2007', '123456789', '1', '3', '1');
 INSERT INTO dbo.Account VALUES('thinhphat1512', '123456789', '1', '4', '1');
 INSERT INTO dbo.Account VALUES('vietthy1908', '123456789', '0', '5', '1');
 INSERT INTO dbo.Account VALUES('phuongthuy2505', '123456789', '0', '6', '1');
-INSERT INTO dbo.Account VALUES('hieuthao2103', '123456789', '0', '7', '1');
-
+INSERT INTO dbo.Account VALUES('hieuthao2103', '123456789', '0', '10', '0');
 
 INSERT INTO Snack (name, price, stock, category)
 VALUES

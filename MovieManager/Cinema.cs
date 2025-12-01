@@ -150,6 +150,7 @@ namespace MovieManager
             if (SnackDisplayButtonCinema.Checked)
             {
                 SnackDisplay.BringToFront();
+                SnackDisplay.Reload();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }

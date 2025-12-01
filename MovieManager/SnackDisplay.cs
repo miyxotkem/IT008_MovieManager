@@ -79,5 +79,10 @@ namespace MovieManager
             MemoryStream ms = new MemoryStream(bytes);
             return Image.FromStream(ms);
         }
+        public void Reload()
+        {
+            SnackDisplayFlowLayoutPanel.Controls.Clear();
+            LoadSnack();
+        }
     }
 }

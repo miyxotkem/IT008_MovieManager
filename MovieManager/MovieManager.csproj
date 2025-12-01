@@ -223,6 +223,12 @@
     <Compile Include="Edit_SnackManage.Designer.cs">
       <DependentUpon>Edit_SnackManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit_StaffManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit_StaffManage.Designer.cs">
+      <DependentUpon>Edit_StaffManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassVerification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,9 @@
     <EmbeddedResource Include="Edit_SnackManage.resx">
       <DependentUpon>Edit_SnackManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit_StaffManage.resx">
+      <DependentUpon>Edit_StaffManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgetPassVerification.resx">
       <DependentUpon>ForgetPassVerification.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +401,7 @@
     <None Include="Resources\playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\history_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\badge_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\check_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

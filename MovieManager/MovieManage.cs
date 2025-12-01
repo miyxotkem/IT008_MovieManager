@@ -48,13 +48,13 @@ namespace MovieManager
             {
                 Location = new Point(5, 10),
                 Width = 100,
-                Text = "Check",
+                Text = "Select",
                 Font = new Font(Font, FontStyle.Bold)
             };
             Label t = new Label()
             {
-                Location = new Point(100, 10),
-                Width = 400,
+                Location = new Point(150, 10),
+                Width = 350,
                 Text = "Title",
                 Font = new Font(Font, FontStyle.Bold)
             };
@@ -100,37 +100,36 @@ namespace MovieManager
                 Guna2GradientPanel pnl = new Guna2GradientPanel()
                 {
                     Height = 50,
-                    Width = 1100,
-                    BorderColor = Color.Black
+                    Width = 1100
                 };
                 CheckBox cb = new CheckBox()
                 {
-                    Location = new Point(20, 20),
+                    Location = new Point(20, 18),
                     AutoSize = true,
                     Tag = movie.ID,
                     Checked = isChecked
                 };
                 Label title = new Label()
                 {
-                    Location = new Point(100, 23),
-                    Width = 400,
+                    Location = new Point(150, 20),
+                    Width = 350,
                     Text = movie.Title
                 };
                 Label genre = new Label()
                 {
-                    Location = new Point(500, 23),
+                    Location = new Point(500, 20),
                     Width = 100,
                     Text = movie.Genre
                 };
                 Label rated = new Label()
                 {
-                    Location = new Point(650, 23),
+                    Location = new Point(650, 20),
                     Width = 100,
                     Text = movie.Rated
                 };
                 Label duration = new Label()
                 {
-                    Location = new Point(800, 23),
+                    Location = new Point(800, 20),
                     Width = 100,
                     Text = movie.Duration.ToString()
                 };
