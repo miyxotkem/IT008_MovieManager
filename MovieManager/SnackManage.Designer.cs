@@ -54,7 +54,7 @@
             this.ManageSnack.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ManageSnack.AutoSize = true;
             this.ManageSnack.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageSnack.Location = new System.Drawing.Point(687, 49);
+            this.ManageSnack.Location = new System.Drawing.Point(687, 50);
             this.ManageSnack.Name = "ManageSnack";
             this.ManageSnack.Size = new System.Drawing.Size(419, 61);
             this.ManageSnack.TabIndex = 4;
@@ -258,7 +258,7 @@
             this.panel3.Controls.Add(this.AddButton);
             this.panel3.Controls.Add(this.DeleteSearchButton);
             this.panel3.Controls.Add(this.DeleteFilter);
-            this.panel3.Location = new System.Drawing.Point(427, 178);
+            this.panel3.Location = new System.Drawing.Point(427, 150);
             this.panel3.Name = "panel3";
             this.panel3.ShadowDecoration.BorderRadius = 30;
             this.panel3.ShadowDecoration.Enabled = true;
@@ -275,7 +275,7 @@
             this.panel2.BorderRadius = 50;
             this.panel2.Controls.Add(this.flowLayoutPanel2);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Location = new System.Drawing.Point(539, 468);
+            this.panel2.Location = new System.Drawing.Point(539, 450);
             this.panel2.Name = "panel2";
             this.panel2.ShadowDecoration.BorderRadius = 50;
             this.panel2.ShadowDecoration.Enabled = true;
@@ -303,7 +303,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(35, 89);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 443);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 473);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // SnackManage

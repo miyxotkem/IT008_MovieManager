@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,6 +22,17 @@ namespace MovieManager.DAO
             string query = "USP_Login @username , @password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
             return (result.Rows.Count > 0 && Convert.ToBoolean(result.Rows[0]["Accept"]));
+        }
+        public List<Account> LoadAccountList()
+        {
+            List<Account> AccountList = new List<Account>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetAccountList");
+            foreach (DataRow row in data.Rows)
+            {
+                Account Account = new Account(row);
+                AccountList.Add(Account);
+            }
+            return AccountList;
         }
     }
 }

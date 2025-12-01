@@ -199,13 +199,18 @@
     <Compile Include="DAO\ForgetPassUsernameDAO.cs" />
     <Compile Include="DAO\HistoryDAO.cs" />
     <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\ShiftDAO.cs" />
     <Compile Include="DAO\ShowTime.cs" />
     <Compile Include="DAO\SnackDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\AccountInfo.cs" />
     <Compile Include="DTO\History.cs" />
     <Compile Include="DTO\Movie.cs" />
+    <Compile Include="DTO\Shift.cs" />
     <Compile Include="DTO\ShowTime.cs" />
     <Compile Include="DTO\Snack.cs" />
+    <Compile Include="DTO\Staff.cs" />
     <Compile Include="Edit_MovieManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,6 +296,12 @@
     <Compile Include="SnackManage.Designer.cs">
       <DependentUpon>SnackManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffManage.Designer.cs">
+      <DependentUpon>StaffManage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountDisplay.resx">
       <DependentUpon>AccountDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +352,9 @@
     <EmbeddedResource Include="SnackManage.resx">
       <DependentUpon>SnackManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StaffManage.resx">
+      <DependentUpon>StaffManage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -377,6 +391,7 @@
     <None Include="Resources\production_quantity_limits_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\playlist_add_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\history_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\badge_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -79,8 +79,7 @@ namespace MovieManager
                 Guna2GradientPanel pnl = new Guna2GradientPanel()
                 {
                     Height = 50,
-                    Width = 800,
-                    BorderColor = Color.Black
+                    Width = 800
                 };
                 Label name = new Label()
                 {

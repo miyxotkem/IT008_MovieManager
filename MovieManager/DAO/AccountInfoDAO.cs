@@ -43,5 +43,16 @@ namespace MovieManager.DAO
             }
             return null;
         }
+        public List<AccountInfo> LoadAccountList()
+        {
+            List<AccountInfo> AccountList = new List<AccountInfo>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetAccountList");
+            foreach (DataRow row in data.Rows)
+            {
+                AccountInfo Account = new AccountInfo(row);
+                AccountList.Add(Account);
+            }
+            return AccountList;
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace MovieManager
             Panel p = new Panel()
             {
                 Height = 30,
-                Width = 1200
+                Width = 1000
             };
             Label c = new Label()
             {
@@ -54,34 +54,34 @@ namespace MovieManager
             Label t = new Label()
             {
                 Location = new Point(100, 10),
-                Width = 500,
+                Width = 400,
                 Text = "Title",
                 Font = new Font(Font, FontStyle.Bold)
             };
             Label g = new Label()
             {
-                Location = new Point(600, 10),
+                Location = new Point(500, 10),
                 Width = 100,
                 Text = "Genre",
                 Font = new Font(Font, FontStyle.Bold)
             };
             Label r = new Label()
             {
-                Location = new Point(750, 10),
+                Location = new Point(650, 10),
                 Width = 100,
                 Text = "Rated",
                 Font = new Font(Font, FontStyle.Bold)
             };
             Label d = new Label()
             {
-                Location = new Point(900, 10),
+                Location = new Point(800, 10),
                 Width = 100,
                 Text = "Duration",
                 Font = new Font(Font, FontStyle.Bold)
             };
             Label e = new Label()
             {
-                Location = new Point(1050, 10),
+                Location = new Point(950, 10),
                 Width = 100,
                 Text = "Edit",
                 Font = new Font(Font, FontStyle.Bold)
@@ -100,12 +100,12 @@ namespace MovieManager
                 Guna2GradientPanel pnl = new Guna2GradientPanel()
                 {
                     Height = 50,
-                    Width = 1200,
+                    Width = 1100,
                     BorderColor = Color.Black
                 };
                 CheckBox cb = new CheckBox()
                 {
-                    Location = new Point(5, 20),
+                    Location = new Point(20, 20),
                     AutoSize = true,
                     Tag = movie.ID,
                     Checked = isChecked
@@ -113,24 +113,24 @@ namespace MovieManager
                 Label title = new Label()
                 {
                     Location = new Point(100, 23),
-                    Width = 500,
+                    Width = 400,
                     Text = movie.Title
                 };
                 Label genre = new Label()
                 {
-                    Location = new Point(600, 23),
+                    Location = new Point(500, 23),
                     Width = 100,
                     Text = movie.Genre
                 };
                 Label rated = new Label()
                 {
-                    Location = new Point(750, 23),
+                    Location = new Point(650, 23),
                     Width = 100,
                     Text = movie.Rated
                 };
                 Label duration = new Label()
                 {
-                    Location = new Point(900, 23),
+                    Location = new Point(800, 23),
                     Width = 100,
                     Text = movie.Duration.ToString()
                 };
@@ -143,7 +143,7 @@ namespace MovieManager
                     Size = new Size(30, 30),
                     FillColor = Color.FromArgb(175, 62, 62),
                     FillColor2 = Color.FromArgb(218, 108, 108),
-                    Location = new Point(1050, 12)
+                    Location = new Point(950, 12)
                 };
                 pnl.Controls.Add(cb);
                 cb.CheckedChanged += Check;

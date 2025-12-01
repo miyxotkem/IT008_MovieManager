@@ -424,6 +424,15 @@ GO
 CREATE PROC USP_GetHistoryList
 AS SELECT * FROM dbo.History
 GO
+CREATE PROC USP_GetAccountList
+AS SELECT * FROM dbo.Account
+GO
+CREATE PROC USP_GetStaffList
+AS SELECT * FROM dbo.Staff
+GO
+CREATE PROC USP_GetShiftList
+AS SELECT * FROM dbo.ShiftSchedule
+GO
 create proc USP_ForgetPassUsername
 @username varchar(100) 
 as 
