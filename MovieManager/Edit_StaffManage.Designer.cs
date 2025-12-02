@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PromoteAdmin = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.DeactiveButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ApplyButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -40,8 +42,6 @@
             this.RoleTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.DeactiveButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.PromoteAdmin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1500, 800);
             this.panel1.TabIndex = 0;
+            // 
+            // PromoteAdmin
+            // 
+            this.PromoteAdmin.Animated = true;
+            this.PromoteAdmin.BorderRadius = 14;
+            this.PromoteAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PromoteAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PromoteAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PromoteAdmin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PromoteAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PromoteAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.PromoteAdmin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.PromoteAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PromoteAdmin.ForeColor = System.Drawing.Color.White;
+            this.PromoteAdmin.ImageSize = new System.Drawing.Size(30, 30);
+            this.PromoteAdmin.Location = new System.Drawing.Point(250, 571);
+            this.PromoteAdmin.Name = "PromoteAdmin";
+            this.PromoteAdmin.Size = new System.Drawing.Size(180, 60);
+            this.PromoteAdmin.TabIndex = 9;
+            this.PromoteAdmin.Click += new System.EventHandler(this.PromoteAdmin_Click);
+            // 
+            // DeactiveButton
+            // 
+            this.DeactiveButton.Animated = true;
+            this.DeactiveButton.BorderRadius = 14;
+            this.DeactiveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeactiveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeactiveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeactiveButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeactiveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeactiveButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.DeactiveButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.DeactiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DeactiveButton.ForeColor = System.Drawing.Color.White;
+            this.DeactiveButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.DeactiveButton.Location = new System.Drawing.Point(470, 571);
+            this.DeactiveButton.Name = "DeactiveButton";
+            this.DeactiveButton.Size = new System.Drawing.Size(180, 60);
+            this.DeactiveButton.TabIndex = 9;
+            this.DeactiveButton.Click += new System.EventHandler(this.DeactiveButton_Click);
             // 
             // CancelButton
             // 
@@ -199,6 +239,7 @@
             this.EmailTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.EmailTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.EmailTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EmailTextBox.Enabled = false;
             this.EmailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmailTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -219,6 +260,7 @@
             this.NameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.NameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.NameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.NameTextBox.Enabled = false;
             this.NameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -229,46 +271,6 @@
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.Size = new System.Drawing.Size(460, 60);
             this.NameTextBox.TabIndex = 4;
-            // 
-            // DeactiveButton
-            // 
-            this.DeactiveButton.Animated = true;
-            this.DeactiveButton.BorderRadius = 14;
-            this.DeactiveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeactiveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeactiveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeactiveButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeactiveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeactiveButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeactiveButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeactiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeactiveButton.ForeColor = System.Drawing.Color.White;
-            this.DeactiveButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeactiveButton.Location = new System.Drawing.Point(470, 571);
-            this.DeactiveButton.Name = "DeactiveButton";
-            this.DeactiveButton.Size = new System.Drawing.Size(180, 60);
-            this.DeactiveButton.TabIndex = 9;
-            this.DeactiveButton.Click += new System.EventHandler(this.DeactiveButton_Click);
-            // 
-            // PromoteAdmin
-            // 
-            this.PromoteAdmin.Animated = true;
-            this.PromoteAdmin.BorderRadius = 14;
-            this.PromoteAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PromoteAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PromoteAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PromoteAdmin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PromoteAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PromoteAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.PromoteAdmin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.PromoteAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PromoteAdmin.ForeColor = System.Drawing.Color.White;
-            this.PromoteAdmin.ImageSize = new System.Drawing.Size(30, 30);
-            this.PromoteAdmin.Location = new System.Drawing.Point(250, 571);
-            this.PromoteAdmin.Name = "PromoteAdmin";
-            this.PromoteAdmin.Size = new System.Drawing.Size(180, 60);
-            this.PromoteAdmin.TabIndex = 9;
-            this.PromoteAdmin.Click += new System.EventHandler(this.DeactiveButton_Click);
             // 
             // Edit_StaffManage
             // 

@@ -100,7 +100,7 @@ namespace MovieManager
                 Guna2GradientPanel pnl = new Guna2GradientPanel()
                 {
                     Height = 50,
-                    Width = 1100
+                    Width = 1000
                 };
                 CheckBox cb = new CheckBox()
                 {

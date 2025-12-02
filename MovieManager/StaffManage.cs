@@ -100,7 +100,7 @@ namespace MovieManager
                 Guna2GradientPanel pnl = new Guna2GradientPanel()
                 {
                     Height = 50,
-                    Width = 1100,
+                    Width = 1000,
                 };
                 Label name = new Label()
                 {
@@ -151,7 +151,7 @@ namespace MovieManager
                 };
                 Guna2GradientButton edit = new Guna2GradientButton()
                 {
-                    Image = global::MovieManager.Properties.Resources.MovieDisplay,
+                    Image = global::MovieManager.Properties.Resources.manage_accounts_30dp_BLACK_FILL0_wght400_GRAD0_opsz24,
                     Animated = true,
                     Tag = staff.Id,
                     BorderRadius = 10,

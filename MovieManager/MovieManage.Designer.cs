@@ -381,7 +381,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(37, 90);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1025, 467);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1025, 614);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // ManageMovie

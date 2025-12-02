@@ -303,7 +303,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(35, 89);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 473);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 615);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // SnackManage

@@ -26,22 +26,12 @@ namespace MovieManager
             ApplyButton.Text = "Add";
             ApplyButton.Click -= ApplyButton_Click;
             ApplyButton.Click += Add_Click;
-            Guna2ComboBox CategoryComboBox = new Guna2ComboBox()
-            {
-                Width = CategoryTextBox.Width,
-                Height = CategoryTextBox.Height,
-                Location = CategoryTextBox.Location,
-                BorderRadius = CategoryTextBox.BorderRadius,
-                Items = {"Food", "Beverage"}
-            };
-            Control parentContainer = CategoryTextBox.Parent;
+            Control parentContainer = CategoryComboBox.Parent;
             if (parentContainer != null)
             {
                 parentContainer.Controls.Remove(ImportButton);
                 parentContainer.Controls.Remove(ImportLabel);
                 parentContainer.Controls.Remove(ImportTextBox);
-                parentContainer.Controls.Remove(CategoryTextBox);
-                parentContainer.Controls.Add(CategoryComboBox);
             }
         }
         public Edit_SnackManage(int snackId)
@@ -55,7 +45,7 @@ namespace MovieManager
                     NameTextBox.Text = snack.Name;
                     PriceTextBox.Text = snack.Price.ToString();
                     StockTextBox.Text = snack.Stock.ToString();
-                    CategoryTextBox.Text = snack.Category == 0 ? "Food" : "Beverage";
+                    CategoryComboBox.SelectedIndex = snack.Category;
                     string fileName = main.ID.ToString() + ".jpg";
                     string fullImagePath = Path.Combine(dest, fileName);
                     if (File.Exists(fullImagePath))
@@ -110,7 +100,7 @@ namespace MovieManager
                     NameTextBox.Text,
                     float.Parse(PriceTextBox.Text),
                     Convert.ToInt32(StockTextBox.Text),
-                    CategoryTextBox.Text == "Food" ? 0 : 1,
+                    CategoryComboBox.SelectedIndex,
                     main.ID
                 };
                 if (import != 0)
@@ -170,14 +160,14 @@ namespace MovieManager
                 PriceTextBox.Text = "0";
             if (StockTextBox.Text == "")
                 StockTextBox.Text = "0";
-            if(CategoryTextBox.Text == "")
-                CategoryTextBox.Text = "0";
+            if(CategoryComboBox.Text == "")
+                CategoryComboBox.SelectedIndex = 0;
             object[] values = new object[]
             {
                     NameTextBox.Text,
                     float.Parse(PriceTextBox.Text),
                     Convert.ToInt32(StockTextBox.Text),
-                    CategoryTextBox.Text == "Food" ? 0 : 1
+                    CategoryComboBox.SelectedIndex
             };
             object result = dp.ExecuteScalar(query, values);
             string actdest = dest;

@@ -275,7 +275,7 @@
             this.MovieDisplay.Location = new System.Drawing.Point(107, 40);
             this.MovieDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieDisplay.Name = "MovieDisplay";
-            this.MovieDisplay.Size = new System.Drawing.Size(1713, 1160);
+            this.MovieDisplay.Size = new System.Drawing.Size(1713, 1015);
             this.MovieDisplay.TabIndex = 0;
             // 
             // SnackDisplay
@@ -286,7 +286,7 @@
             this.SnackDisplay.Location = new System.Drawing.Point(107, 40);
             this.SnackDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackDisplay.Name = "SnackDisplay";
-            this.SnackDisplay.Size = new System.Drawing.Size(1713, 1160);
+            this.SnackDisplay.Size = new System.Drawing.Size(1713, 1015);
             this.SnackDisplay.TabIndex = 4;
             // 
             // MovieManage
@@ -297,7 +297,7 @@
             this.MovieManage.Location = new System.Drawing.Point(107, 40);
             this.MovieManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieManage.Name = "MovieManage";
-            this.MovieManage.Size = new System.Drawing.Size(1683, 1160);
+            this.MovieManage.Size = new System.Drawing.Size(1683, 1015);
             this.MovieManage.TabIndex = 5;
             // 
             // SnackManage
@@ -308,7 +308,7 @@
             this.SnackManage.Location = new System.Drawing.Point(107, 40);
             this.SnackManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackManage.Name = "SnackManage";
-            this.SnackManage.Size = new System.Drawing.Size(1683, 1160);
+            this.SnackManage.Size = new System.Drawing.Size(1683, 1015);
             this.SnackManage.TabIndex = 6;
             // 
             // StaffManage
@@ -318,7 +318,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StaffManage.Location = new System.Drawing.Point(107, 40);
             this.StaffManage.Name = "StaffManage";
-            this.StaffManage.Size = new System.Drawing.Size(1683, 1160);
+            this.StaffManage.Size = new System.Drawing.Size(1683, 1015);
             this.StaffManage.TabIndex = 7;
             // 
             // Cinema

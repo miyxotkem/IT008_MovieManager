@@ -27,17 +27,23 @@ namespace MovieManager
         public Edit_StaffManage(int id)
         {
             InitializeComponent();
-            foreach(Shift shiftschedule in shifts)
+            foreach (Shift shiftschedule in shifts)
                 ShiftComboBox.Items.Add(shiftschedule.Start.ToString("hh\\:mm") + " - " + shiftschedule.End.ToString("hh\\:mm"));
             foreach(Staff staff in staffs)
                 if(staff.Id == id)
                 {
                     main = staff;
-                    foreach(Account account in accounts)
+                    foreach (Account account in accounts)
+                        if (account.Idstaff == main.Id)
+                        {
+                            activate = account.Accept == false ? 0 : 1;
+                            admin = account.Admin == false ? 0 : 1;
+                        }
+                    foreach (Account account in accounts)
                         if(staff.Id == account.Idstaff)
                         {
                             if (account.Admin == true)
-                                PromoteAdmin.Text = "Alread an admin";
+                                PromoteAdmin.Text = "Demote an admin";
                             else
                                 PromoteAdmin.Text = "Promote Admin";
                             if (account.Accept == true)
@@ -62,21 +68,24 @@ namespace MovieManager
             this.Dispose();
         }
         private DataProvider dp = new DataProvider();
-        private int activate = 1;
+        private int activate = 0;
+        private int admin = 0;
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string query = @"UPDATE STAFF SET role = @role WHERE id = @id ";
-                string query2 = @"UPDATE ACCOUNT SET accept = @active WHERE idstaff = @id ";
+                string query = @"UPDATE STAFF SET role = @role , idshiftschedule = @shift WHERE id = @id ";
+                string query2 = @"UPDATE ACCOUNT SET accept = @active , admin = @admin WHERE idstaff = @id ";
                 object[] values = new object[]
                 {
                     RoleTextBox.Text,
+                    ShiftComboBox.SelectedIndex + 1,
                     main.Id
                 };
                 object[] values2 = new object[]
                 {
                     activate,
+                    admin,
                     main.Id,
                 };
                 dp.ExecuteNonQuery(query, values);
@@ -87,7 +96,15 @@ namespace MovieManager
 
         private void DeactiveButton_Click(object sender, EventArgs e)
         {
-            activate = 0;
+            if(activate == 1)
+                activate = 0;
+            else
+                MessageBox.Show("Accouunt has been deactivated", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void PromoteAdmin_Click(object sender, EventArgs e)
+        {
+            admin = admin == 0 ? 1 : 0;
         }
     }
 }

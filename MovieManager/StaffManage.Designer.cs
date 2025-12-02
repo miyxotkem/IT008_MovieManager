@@ -38,9 +38,9 @@
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.FilterLabel = new System.Windows.Forms.Label();
             this.AcceptButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.FilterLabel = new System.Windows.Forms.Label();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1.SuspendLayout();
@@ -107,7 +107,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(35, 89);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1030, 494);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1030, 612);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // panel3
@@ -185,15 +185,6 @@
             this.SearchLabel.Text = "Search:";
             this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FilterLabel
-            // 
-            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
-            this.FilterLabel.Name = "FilterLabel";
-            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
-            this.FilterLabel.TabIndex = 0;
-            this.FilterLabel.Text = "Filter:";
-            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // AcceptButton
             // 
             this.AcceptButton.Animated = true;
@@ -237,6 +228,15 @@
             this.ReloadButton.Size = new System.Drawing.Size(106, 50);
             this.ReloadButton.TabIndex = 3;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
+            // FilterLabel
+            // 
+            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
+            this.FilterLabel.Name = "FilterLabel";
+            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
+            this.FilterLabel.TabIndex = 0;
+            this.FilterLabel.Text = "Filter:";
+            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DeleteSearchButton
             // 

@@ -35,7 +35,6 @@
             this.StockLabel = new System.Windows.Forms.Label();
             this.StockTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.CategoryLabel = new System.Windows.Forms.Label();
-            this.CategoryTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -46,6 +45,7 @@
             this.ImportTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ImportLabel = new System.Windows.Forms.Label();
             this.UploadFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.CategoryComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
             this.SuspendLayout();
@@ -148,36 +148,16 @@
             this.CategoryLabel.TabIndex = 1;
             this.CategoryLabel.Text = "Category";
             // 
-            // CategoryTextBox
-            // 
-            this.CategoryTextBox.BorderRadius = 12;
-            this.CategoryTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CategoryTextBox.DefaultText = "";
-            this.CategoryTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.CategoryTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.CategoryTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CategoryTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CategoryTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CategoryTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CategoryTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CategoryTextBox.Location = new System.Drawing.Point(700, 490);
-            this.CategoryTextBox.Name = "CategoryTextBox";
-            this.CategoryTextBox.PasswordChar = '\0';
-            this.CategoryTextBox.PlaceholderText = "";
-            this.CategoryTextBox.SelectedText = "";
-            this.CategoryTextBox.Size = new System.Drawing.Size(460, 60);
-            this.CategoryTextBox.TabIndex = 2;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.panel1.Controls.Add(this.CategoryComboBox);
             this.panel1.Controls.Add(this.SnackPic);
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.RemovePic);
             this.panel1.Controls.Add(this.AddPic);
             this.panel1.Controls.Add(this.ImportButton);
             this.panel1.Controls.Add(this.ApplyButton);
-            this.panel1.Controls.Add(this.CategoryTextBox);
             this.panel1.Controls.Add(this.CategoryLabel);
             this.panel1.Controls.Add(this.ImportTextBox);
             this.panel1.Controls.Add(this.StockTextBox);
@@ -341,6 +321,25 @@
             // 
             this.UploadFileDialog.FileName = "openFileDialog1";
             // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.CategoryComboBox.BorderRadius = 12;
+            this.CategoryComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CategoryComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CategoryComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CategoryComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CategoryComboBox.ItemHeight = 30;
+            this.CategoryComboBox.Items.AddRange(new object[] {
+            "Food",
+            "Beverage"});
+            this.CategoryComboBox.Location = new System.Drawing.Point(700, 490);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(459, 36);
+            this.CategoryComboBox.TabIndex = 6;
+            // 
             // Edit_SnackManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -363,7 +362,6 @@
         private System.Windows.Forms.Label StockLabel;
         private Guna.UI2.WinForms.Guna2TextBox StockTextBox;
         private System.Windows.Forms.Label CategoryLabel;
-        private Guna.UI2.WinForms.Guna2TextBox CategoryTextBox;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2GradientButton CancelButton;
         private Guna.UI2.WinForms.Guna2GradientButton ApplyButton;
@@ -374,5 +372,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton AddPic;
         private System.Windows.Forms.OpenFileDialog UploadFileDialog;
         private Guna.UI2.WinForms.Guna2PictureBox SnackPic;
+        private Guna.UI2.WinForms.Guna2ComboBox CategoryComboBox;
     }
 }
