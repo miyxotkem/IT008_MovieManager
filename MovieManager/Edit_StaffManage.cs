@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace MovieManager
         private List<Shift> shifts = ShiftDAO.Instance.LoadShiftList();
         private List<Account> accounts = AccountDAO.Instance.LoadAccountList();
         private Staff main = null;
+        private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
         public Edit_StaffManage()
         {
             InitializeComponent();
@@ -57,6 +59,13 @@ namespace MovieManager
                     foreach (Shift shift in shifts)
                         if (shift.Id == main.Idshift)
                             ShiftComboBox.SelectedIndex = shift.Id - 1;
+                    string ID = staff.Id.ToString("000");
+                    string fileName = "NV" + ID + ".png";
+                    string DesPath = Path.Combine(Source, fileName);
+                    if (File.Exists(DesPath))
+                    {
+                        SnackPic.Image = LoadImageUnlocked(DesPath);
+                    }
                 }
         }
 
@@ -105,6 +114,13 @@ namespace MovieManager
         private void PromoteAdmin_Click(object sender, EventArgs e)
         {
             admin = admin == 0 ? 1 : 0;
+        }
+
+        private Image LoadImageUnlocked(string path)
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            MemoryStream ms = new MemoryStream(bytes);
+            return Image.FromStream(ms);
         }
     }
 }

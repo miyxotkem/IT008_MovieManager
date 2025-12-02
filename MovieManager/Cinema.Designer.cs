@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.AccountDisplayButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.StaffManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SnackManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -37,12 +38,11 @@
             this.SnackDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SideBarZoomButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.AccountDisplay = new MovieManager.AccountDisplay();
             this.MovieDisplay = new MovieManager.MovieDisplay();
             this.SnackDisplay = new MovieManager.SnackDisplay();
             this.MovieManage = new MovieManager.MovieManage();
             this.SnackManage = new MovieManager.SnackManage();
+            this.AccountDisplay = new MovieManager.AccountDisplay();
             this.StaffManage = new MovieManager.StaffManage();
             this.SideBarPanelCinema.SuspendLayout();
             this.SuspendLayout();
@@ -61,11 +61,12 @@
             this.SideBarPanelCinema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SideBarPanelCinema.Name = "SideBarPanelCinema";
             this.SideBarPanelCinema.ShadowDecoration.Enabled = true;
-            this.SideBarPanelCinema.Size = new System.Drawing.Size(100, 1055);
+            this.SideBarPanelCinema.Size = new System.Drawing.Size(89, 844);
             this.SideBarPanelCinema.TabIndex = 2;
             // 
             // AccountDisplayButton
             // 
+            this.AccountDisplayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AccountDisplayButton.Animated = true;
             this.AccountDisplayButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.AccountDisplayButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
@@ -83,10 +84,10 @@
             this.AccountDisplayButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountDisplayButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.AccountDisplayButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.AccountDisplayButton.Location = new System.Drawing.Point(0, 800);
+            this.AccountDisplayButton.Location = new System.Drawing.Point(0, 640);
             this.AccountDisplayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AccountDisplayButton.Name = "AccountDisplayButton";
-            this.AccountDisplayButton.Size = new System.Drawing.Size(100, 80);
+            this.AccountDisplayButton.Size = new System.Drawing.Size(89, 64);
             this.AccountDisplayButton.TabIndex = 1;
             this.AccountDisplayButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountDisplayButton.TextOffset = new System.Drawing.Point(12, 0);
@@ -112,10 +113,10 @@
             this.StaffManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.StaffManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.StaffManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.StaffManageButton.Location = new System.Drawing.Point(0, 560);
+            this.StaffManageButton.Location = new System.Drawing.Point(0, 448);
             this.StaffManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StaffManageButton.Name = "StaffManageButton";
-            this.StaffManageButton.Size = new System.Drawing.Size(100, 80);
+            this.StaffManageButton.Size = new System.Drawing.Size(89, 64);
             this.StaffManageButton.TabIndex = 1;
             this.StaffManageButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.StaffManageButton.TextOffset = new System.Drawing.Point(12, 0);
@@ -140,10 +141,10 @@
             this.SnackManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SnackManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.SnackManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.SnackManageButton.Location = new System.Drawing.Point(0, 480);
+            this.SnackManageButton.Location = new System.Drawing.Point(0, 384);
             this.SnackManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackManageButton.Name = "SnackManageButton";
-            this.SnackManageButton.Size = new System.Drawing.Size(100, 80);
+            this.SnackManageButton.Size = new System.Drawing.Size(89, 64);
             this.SnackManageButton.TabIndex = 1;
             this.SnackManageButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SnackManageButton.TextOffset = new System.Drawing.Point(12, 0);
@@ -168,10 +169,10 @@
             this.MovieManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.MovieManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.MovieManageButton.Location = new System.Drawing.Point(0, 400);
+            this.MovieManageButton.Location = new System.Drawing.Point(0, 320);
             this.MovieManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieManageButton.Name = "MovieManageButton";
-            this.MovieManageButton.Size = new System.Drawing.Size(100, 80);
+            this.MovieManageButton.Size = new System.Drawing.Size(89, 64);
             this.MovieManageButton.TabIndex = 1;
             this.MovieManageButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieManageButton.TextOffset = new System.Drawing.Point(12, 0);
@@ -196,10 +197,10 @@
             this.SnackDisplayButtonCinema.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SnackDisplayButtonCinema.ImageOffset = new System.Drawing.Point(10, 0);
             this.SnackDisplayButtonCinema.ImageSize = new System.Drawing.Size(25, 25);
-            this.SnackDisplayButtonCinema.Location = new System.Drawing.Point(0, 250);
+            this.SnackDisplayButtonCinema.Location = new System.Drawing.Point(0, 200);
             this.SnackDisplayButtonCinema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackDisplayButtonCinema.Name = "SnackDisplayButtonCinema";
-            this.SnackDisplayButtonCinema.Size = new System.Drawing.Size(100, 80);
+            this.SnackDisplayButtonCinema.Size = new System.Drawing.Size(89, 64);
             this.SnackDisplayButtonCinema.TabIndex = 1;
             this.SnackDisplayButtonCinema.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SnackDisplayButtonCinema.TextOffset = new System.Drawing.Point(12, 0);
@@ -225,10 +226,10 @@
             this.MovieDisplayButtonCinema.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieDisplayButtonCinema.ImageOffset = new System.Drawing.Point(10, 0);
             this.MovieDisplayButtonCinema.ImageSize = new System.Drawing.Size(25, 25);
-            this.MovieDisplayButtonCinema.Location = new System.Drawing.Point(0, 170);
+            this.MovieDisplayButtonCinema.Location = new System.Drawing.Point(0, 136);
             this.MovieDisplayButtonCinema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieDisplayButtonCinema.Name = "MovieDisplayButtonCinema";
-            this.MovieDisplayButtonCinema.Size = new System.Drawing.Size(100, 80);
+            this.MovieDisplayButtonCinema.Size = new System.Drawing.Size(89, 64);
             this.MovieDisplayButtonCinema.TabIndex = 1;
             this.MovieDisplayButtonCinema.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieDisplayButtonCinema.TextOffset = new System.Drawing.Point(12, 0);
@@ -249,33 +250,22 @@
             this.SideBarZoomButtonCinema.ForeColor = System.Drawing.Color.White;
             this.SideBarZoomButtonCinema.Image = global::MovieManager.Properties.Resources.SideBar;
             this.SideBarZoomButtonCinema.ImageSize = new System.Drawing.Size(25, 25);
-            this.SideBarZoomButtonCinema.Location = new System.Drawing.Point(35, 40);
+            this.SideBarZoomButtonCinema.Location = new System.Drawing.Point(31, 32);
             this.SideBarZoomButtonCinema.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SideBarZoomButtonCinema.Name = "SideBarZoomButtonCinema";
-            this.SideBarZoomButtonCinema.Size = new System.Drawing.Size(30, 30);
+            this.SideBarZoomButtonCinema.Size = new System.Drawing.Size(27, 24);
             this.SideBarZoomButtonCinema.TabIndex = 0;
             this.SideBarZoomButtonCinema.Click += new System.EventHandler(this.ZoomButtonCinema_Click);
-            // 
-            // AccountDisplay
-            // 
-            this.AccountDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AccountDisplay.Location = new System.Drawing.Point(107, 40);
-            this.AccountDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AccountDisplay.Name = "AccountDisplay";
-            this.AccountDisplay.Size = new System.Drawing.Size(1713, 1160);
-            this.AccountDisplay.TabIndex = 0;
             // 
             // MovieDisplay
             // 
             this.MovieDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MovieDisplay.Location = new System.Drawing.Point(107, 40);
+            this.MovieDisplay.Location = new System.Drawing.Point(95, 32);
             this.MovieDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieDisplay.Name = "MovieDisplay";
-            this.MovieDisplay.Size = new System.Drawing.Size(1713, 1015);
+            this.MovieDisplay.Size = new System.Drawing.Size(1523, 812);
             this.MovieDisplay.TabIndex = 0;
             // 
             // SnackDisplay
@@ -283,10 +273,10 @@
             this.SnackDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SnackDisplay.Location = new System.Drawing.Point(107, 40);
+            this.SnackDisplay.Location = new System.Drawing.Point(95, 32);
             this.SnackDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackDisplay.Name = "SnackDisplay";
-            this.SnackDisplay.Size = new System.Drawing.Size(1713, 1015);
+            this.SnackDisplay.Size = new System.Drawing.Size(1523, 812);
             this.SnackDisplay.TabIndex = 4;
             // 
             // MovieManage
@@ -294,10 +284,10 @@
             this.MovieManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MovieManage.Location = new System.Drawing.Point(107, 40);
+            this.MovieManage.Location = new System.Drawing.Point(95, 32);
             this.MovieManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieManage.Name = "MovieManage";
-            this.MovieManage.Size = new System.Drawing.Size(1683, 1015);
+            this.MovieManage.Size = new System.Drawing.Size(1496, 812);
             this.MovieManage.TabIndex = 5;
             // 
             // SnackManage
@@ -305,27 +295,39 @@
             this.SnackManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SnackManage.Location = new System.Drawing.Point(107, 40);
+            this.SnackManage.Location = new System.Drawing.Point(95, 32);
             this.SnackManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackManage.Name = "SnackManage";
-            this.SnackManage.Size = new System.Drawing.Size(1683, 1015);
+            this.SnackManage.Size = new System.Drawing.Size(1496, 812);
             this.SnackManage.TabIndex = 6;
+            // 
+            // AccountDisplay
+            // 
+            this.AccountDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AccountDisplay.Location = new System.Drawing.Point(95, 32);
+            this.AccountDisplay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AccountDisplay.Name = "AccountDisplay";
+            this.AccountDisplay.Size = new System.Drawing.Size(1523, 928);
+            this.AccountDisplay.TabIndex = 0;
             // 
             // StaffManage
             // 
             this.StaffManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.StaffManage.Location = new System.Drawing.Point(107, 40);
+            this.StaffManage.Location = new System.Drawing.Point(95, 32);
+            this.StaffManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StaffManage.Name = "StaffManage";
-            this.StaffManage.Size = new System.Drawing.Size(1683, 1015);
+            this.StaffManage.Size = new System.Drawing.Size(1496, 812);
             this.StaffManage.TabIndex = 7;
             // 
             // Cinema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1820, 1055);
+            this.ClientSize = new System.Drawing.Size(1618, 844);
             this.Controls.Add(this.SideBarPanelCinema);
             this.Controls.Add(this.MovieDisplay);
             this.Controls.Add(this.SnackDisplay);

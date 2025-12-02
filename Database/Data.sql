@@ -525,3 +525,14 @@ select * from movie
 select * from snack
 
 Exec USP_GetAccountInfoFromUser 'dantruong2007'
+
+select * from Account
+
+select * from Staff
+update Staff set name = N'Phạm Đan Trường', contact_info = 'truongpd.a2.2124@gmail.com' where id = 3;
+
+update Account
+set username = 'thichcodedao'
+where idStaff = 3;
+
+select * from Account

@@ -48,6 +48,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.panel1.Controls.Add(this.PromoteAdmin);
             this.panel1.Controls.Add(this.DeactiveButton);
             this.panel1.Controls.Add(this.CancelButton);
@@ -63,8 +64,9 @@
             this.panel1.Controls.Add(this.NameTextBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1500, 800);
+            this.panel1.Size = new System.Drawing.Size(1333, 640);
             this.panel1.TabIndex = 0;
             // 
             // PromoteAdmin
@@ -81,9 +83,10 @@
             this.PromoteAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.PromoteAdmin.ForeColor = System.Drawing.Color.White;
             this.PromoteAdmin.ImageSize = new System.Drawing.Size(30, 30);
-            this.PromoteAdmin.Location = new System.Drawing.Point(250, 571);
+            this.PromoteAdmin.Location = new System.Drawing.Point(222, 457);
+            this.PromoteAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PromoteAdmin.Name = "PromoteAdmin";
-            this.PromoteAdmin.Size = new System.Drawing.Size(180, 60);
+            this.PromoteAdmin.Size = new System.Drawing.Size(160, 48);
             this.PromoteAdmin.TabIndex = 9;
             this.PromoteAdmin.Click += new System.EventHandler(this.PromoteAdmin_Click);
             // 
@@ -101,9 +104,10 @@
             this.DeactiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DeactiveButton.ForeColor = System.Drawing.Color.White;
             this.DeactiveButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeactiveButton.Location = new System.Drawing.Point(470, 571);
+            this.DeactiveButton.Location = new System.Drawing.Point(418, 457);
+            this.DeactiveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeactiveButton.Name = "DeactiveButton";
-            this.DeactiveButton.Size = new System.Drawing.Size(180, 60);
+            this.DeactiveButton.Size = new System.Drawing.Size(160, 48);
             this.DeactiveButton.TabIndex = 9;
             this.DeactiveButton.Click += new System.EventHandler(this.DeactiveButton_Click);
             // 
@@ -120,9 +124,10 @@
             this.CancelButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CancelButton.ForeColor = System.Drawing.Color.White;
-            this.CancelButton.Location = new System.Drawing.Point(1267, 685);
+            this.CancelButton.Location = new System.Drawing.Point(1126, 548);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(193, 76);
+            this.CancelButton.Size = new System.Drawing.Size(172, 61);
             this.CancelButton.TabIndex = 7;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -140,9 +145,10 @@
             this.ApplyButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.ApplyButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ApplyButton.ForeColor = System.Drawing.Color.White;
-            this.ApplyButton.Location = new System.Drawing.Point(1045, 685);
+            this.ApplyButton.Location = new System.Drawing.Point(929, 548);
+            this.ApplyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(193, 76);
+            this.ApplyButton.Size = new System.Drawing.Size(172, 61);
             this.ApplyButton.TabIndex = 8;
             this.ApplyButton.Text = "Apply";
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
@@ -151,9 +157,10 @@
             // 
             this.SnackPic.BorderRadius = 12;
             this.SnackPic.ImageRotate = 0F;
-            this.SnackPic.Location = new System.Drawing.Point(250, 80);
+            this.SnackPic.Location = new System.Drawing.Point(222, 64);
+            this.SnackPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackPic.Name = "SnackPic";
-            this.SnackPic.Size = new System.Drawing.Size(400, 470);
+            this.SnackPic.Size = new System.Drawing.Size(356, 376);
             this.SnackPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SnackPic.TabIndex = 6;
             this.SnackPic.TabStop = false;
@@ -169,44 +176,45 @@
             this.ShiftComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ShiftComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ShiftComboBox.ItemHeight = 30;
-            this.ShiftComboBox.Location = new System.Drawing.Point(700, 490);
+            this.ShiftComboBox.Location = new System.Drawing.Point(622, 392);
+            this.ShiftComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShiftComboBox.Name = "ShiftComboBox";
-            this.ShiftComboBox.Size = new System.Drawing.Size(460, 36);
+            this.ShiftComboBox.Size = new System.Drawing.Size(409, 36);
             this.ShiftComboBox.TabIndex = 5;
             // 
             // ShiftLabel
             // 
             this.ShiftLabel.AutoSize = true;
-            this.ShiftLabel.Location = new System.Drawing.Point(710, 470);
+            this.ShiftLabel.Location = new System.Drawing.Point(631, 376);
             this.ShiftLabel.Name = "ShiftLabel";
-            this.ShiftLabel.Size = new System.Drawing.Size(113, 20);
+            this.ShiftLabel.Size = new System.Drawing.Size(92, 16);
             this.ShiftLabel.TabIndex = 3;
             this.ShiftLabel.Text = "Shift Schedule";
             // 
             // RoleLabel
             // 
             this.RoleLabel.AutoSize = true;
-            this.RoleLabel.Location = new System.Drawing.Point(710, 340);
+            this.RoleLabel.Location = new System.Drawing.Point(631, 272);
             this.RoleLabel.Name = "RoleLabel";
-            this.RoleLabel.Size = new System.Drawing.Size(42, 20);
+            this.RoleLabel.Size = new System.Drawing.Size(36, 16);
             this.RoleLabel.TabIndex = 3;
             this.RoleLabel.Text = "Role";
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(710, 210);
+            this.EmailLabel.Location = new System.Drawing.Point(631, 168);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(48, 20);
+            this.EmailLabel.Size = new System.Drawing.Size(41, 16);
             this.EmailLabel.TabIndex = 3;
             this.EmailLabel.Text = "Email";
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(710, 80);
+            this.NameLabel.Location = new System.Drawing.Point(631, 64);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(51, 20);
+            this.NameLabel.Size = new System.Drawing.Size(44, 16);
             this.NameLabel.TabIndex = 3;
             this.NameLabel.Text = "Name";
             // 
@@ -222,12 +230,13 @@
             this.RoleTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.RoleTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RoleTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RoleTextBox.Location = new System.Drawing.Point(700, 360);
+            this.RoleTextBox.Location = new System.Drawing.Point(622, 288);
+            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.PasswordChar = '\0';
             this.RoleTextBox.PlaceholderText = "";
             this.RoleTextBox.SelectedText = "";
-            this.RoleTextBox.Size = new System.Drawing.Size(460, 60);
+            this.RoleTextBox.Size = new System.Drawing.Size(409, 48);
             this.RoleTextBox.TabIndex = 4;
             // 
             // EmailTextBox
@@ -243,12 +252,13 @@
             this.EmailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.EmailTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.EmailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.EmailTextBox.Location = new System.Drawing.Point(700, 230);
+            this.EmailTextBox.Location = new System.Drawing.Point(622, 184);
+            this.EmailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.PasswordChar = '\0';
             this.EmailTextBox.PlaceholderText = "";
             this.EmailTextBox.SelectedText = "";
-            this.EmailTextBox.Size = new System.Drawing.Size(460, 60);
+            this.EmailTextBox.Size = new System.Drawing.Size(409, 48);
             this.EmailTextBox.TabIndex = 4;
             // 
             // NameTextBox
@@ -264,21 +274,23 @@
             this.NameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NameTextBox.Location = new System.Drawing.Point(700, 100);
+            this.NameTextBox.Location = new System.Drawing.Point(622, 80);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
             this.NameTextBox.PlaceholderText = "";
             this.NameTextBox.SelectedText = "";
-            this.NameTextBox.Size = new System.Drawing.Size(460, 60);
+            this.NameTextBox.Size = new System.Drawing.Size(409, 48);
             this.NameTextBox.TabIndex = 4;
             // 
             // Edit_StaffManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Edit_StaffManage";
-            this.Size = new System.Drawing.Size(1500, 800);
+            this.Size = new System.Drawing.Size(1333, 640);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).EndInit();

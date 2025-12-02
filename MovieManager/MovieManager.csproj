@@ -189,6 +189,7 @@
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\AccountInfoDAO.cs" />
+    <Compile Include="DAO\AdminDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="Cinema.cs">
       <SubType>Form</SubType>
@@ -403,6 +404,8 @@
     <None Include="Resources\badge_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\check_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\manage_accounts_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\account_circle_30dp_BLACK_FILL0_wght400_GRAD0_opsz241.png" />
+    <None Include="Resources\account_circle_100dp_BLACK_FILL0_wght400_GRAD0_opsz48.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -422,6 +425,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Avatars\" />
     <Folder Include="Posters\" />
     <Folder Include="Snacks\" />
     <Folder Include="UC\" />
