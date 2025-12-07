@@ -77,6 +77,8 @@ namespace MovieManager
                 AccountDisplayButton.Text = "Account";
                 StaffManageButton.Size = new Size(StaffManageButton.Width + 150, StaffManageButton.Height);
                 StaffManageButton.Text = "Staff Manage";
+                CustomerManageButton.Size = new Size(CustomerManageButton.Width + 150, CustomerManageButton.Height);
+                CustomerManageButton.Text = "Customer Manage";
                 MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
                 MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
                 SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
@@ -90,6 +92,8 @@ namespace MovieManager
                 AccountDisplay.Location = new Point(AccountDisplay.Location.X + 150, AccountDisplay.Location.Y);
                 StaffManage.Size = new Size(StaffManage.Width - 150, StaffManage.Height);
                 StaffManage.Location = new Point(StaffManage.Location.X + 150, StaffManage.Location.Y);
+                CustomerManage.Size = new Size(CustomerManage.Width - 150, CustomerManage.Height);
+                CustomerManage.Location = new Point(CustomerManage.Location.X + 150, CustomerManage.Location.Y);
                 title.Visible = true;
                 signout.Visible = true;
                 sidebarzoom = true;
@@ -109,6 +113,8 @@ namespace MovieManager
                 AccountDisplayButton.Text = "";
                 StaffManageButton.Size = new Size(StaffManageButton.Width - 150, StaffManageButton.Height);
                 StaffManageButton.Text = "";
+                CustomerManageButton.Size = new Size(CustomerManageButton.Width - 150, CustomerManageButton.Height);
+                CustomerManageButton.Text = "";
                 MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
                 MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
                 SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
@@ -121,6 +127,8 @@ namespace MovieManager
                 AccountDisplay.Location = new Point(AccountDisplay.Location.X - 150, AccountDisplay.Location.Y);
                 StaffManage.Size = new Size(StaffManage.Width + 150, StaffManage.Height);
                 StaffManage.Location = new Point(StaffManage.Location.X - 150, StaffManage.Location.Y);
+                CustomerManage.Size = new Size(CustomerManage.Width + 150, CustomerManage.Height);
+                CustomerManage.Location = new Point(CustomerManage.Location.X - 150, CustomerManage.Location.Y);
                 title.Visible = false;
                 signout.Visible = false;
                 sidebarzoom = false;
@@ -191,6 +199,16 @@ namespace MovieManager
             if (StaffManageButton.Checked)
             {
                 StaffManage.BringToFront();
+                if (sidebarzoom == true)
+                    SideBarZoomButtonCinema.PerformClick();
+            }
+        }
+
+        private void CustomerManageButton_Click(object sender, EventArgs e)
+        {
+            if (CustomerManageButton.Checked)
+            {
+                CustomerManage.BringToFront();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }

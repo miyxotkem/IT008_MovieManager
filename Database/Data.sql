@@ -51,9 +51,10 @@ CREATE TABLE Customer
 (
 	id INT IDENTITY PRIMARY KEY,
 	name NVARCHAR(100) DEFAULT N'Guest',
-	email VARCHAR(20) DEFAULT NULL,
+	email VARCHAR(100) DEFAULT NULL,
 	phone_number VARCHAR(11) DEFAULT NULL,
-	membership INT DEFAULT 0 -- 0: none, 1: bronze, 2: silver, 3: gold, etc.
+	membership INT DEFAULT 0, -- 0: none, 1: bronze, 2: silver, 3: gold, etc.
+	money_spent FLOAT
 )
 GO
 CREATE TABLE ShiftSchedule
@@ -169,6 +170,48 @@ INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (2
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (3, 50, 50, N'iMax', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (4, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (5, 50, 50, N'iMax', 1);
+select * from account
+select * from staff
+INSERT INTO Customer (name, email, phone_number, membership, money_spent) VALUES
+(N'Nguyễn Minh Anh', 'mlamnhanh214@gmail.com', '0908935963', 5, 5000000.0),
+(N'Nguyễn Thanh Hiếu Thảo', '31241023127@student.isb.edu.vn', '0908047268', 5, 5000000.0),
+(N'Phạm Đan Trù', 'truuthao@gmail.com', '0123456789', 5, 5000000.0),
+(N'Nguyễn Ngọc Thảo Như', 'tnhu2406205@gmail.com', '0766995289', 5, 5000000.0),
+(N'Enzo Nguyen', 'hungatoms2025@gmail.com', '5714049575', 5, 5000000.0),
+(N'Travis', 'ngobinhphuong153@gmail.com', '0982714467', 5, 5000000.0),
+(N'Dũn', 'huynhchidung@gmail.com', '0373168853', 5, 5000000.0),
+(N'Hàoooooo', 'Dangquanhao182006@gmail.com', '0888370684', 5, 5000000.0),
+(N'Họ Nguyễn Thu An', 'Anhhte@vietjetair.com', '0707164604', 0, 0.0),
+(N'Khánh Linh Nguyễn Đình', 'ndklinh.a2.2124@gmail.com', '0368750126', 5, 5000000.0),
+(N'Khoa', 'khoanguyen20062020@gmail.com', '0908429637', 4, 4000000.0),
+(N'Nguyễn Trần Phương Vy', '24522062@gm.uit.edu.vn', '0562318690', 2, 2000000.0),
+(N'Tô Thành Nguyên', '24521207@gm.uit.edu.vn', '0383993152', 5, 5000000.0),
+(N'Trần Đình Thi', 'thitd.t1.2124@gmail.com', '0963263206', 2, 2000000.0),
+(N'Võ Tấn Nhã', 'sugiaxu36@gmail.com', '0123456789', 5, 5000000.0),
+(N'Nguyễn Hữu Nguyên', 'huunguyen2006ks@gmail.com', '0947662347', 1, 1000000.0),
+(N'Nguyễn Nam Khôi', 'nguyennamkhoi21@gmail.com', '0399590711', 5, 5000000.0),
+(N'Nguyễn Bảo Nguyên', 'nguyennb.a2.2124@gmail.com', '0374483435', 2, 2000000.0),
+(N'Trương Đỗ Ái Nhân', 'nhantruong.31241023050@st.ueh.edu.vn', '0961947977', 5, 5000000.0),
+(N'Trịnh Hà Phương', 'phuongh7406@gmail.com', '0349645755', 5, 5000000.0),
+(N'Lê Nguyên Ngọc', 'ngocnguyenlng@gmail.com', '0784811498', 5, 5000000.0),
+(N'Thu Giang', 'thugiang911315@gmail.com', '0898411229', 0, 0.0),
+(N'Như Anh', 'anhpham206@gmail.com', '0334474160', 1, 1000000.0),
+(N'Hà Tuấn Hùng', '24520584@gm.uit.edu.vn', '0898373778', 5, 5000000.0),
+(N'Trần Thị Hồng Thanh', '24521643@gm.uit.edu.vn', '0345910695', 5, 5000000.0),
+(N'Cao Vĩ Trà My', 'tui nghe bài trình r', '1-0', 5, 5000000.0),
+(N'Cao Vĩ Trà My', 'caomy039@gmail.com', '0328813029', 5, 5000000.0),
+(N'Trọng Nguyên', 'votannha@gmail.com', '0935678910', 5, 5000000.0),
+(N'Nguyễn Quỳnh Hương', 'quynhhuong160807@gmail.com', '0913343449', 5, 5000000.0),
+(N'Võ Lê Yến Nhi', 'vonhi2k05@gmail.com', '0977540807', 2, 2000000.0),
+(N'Nguyễn Hưng Phát', 'nguyenhungphat26112006@gmail.com', '0969261106', 3, 3000000.0),
+(N'Lê Trần Uyên Nghi', 'nghile.31241023134@st.ueh.edu.vn', '0707907603', 2, 2000000.0),
+(N'Nguyễn Anh Khoa', 'dannypark1201@gmail.com', '0336826679', 2, 2000000.0),
+(N'Trần Thiên Ân', 'naan22526@gmail.com', '0938533198', 0, 0.0),
+(N'Nguyễn Chí Nguyên', 'nathanguyen6002@gmail.com', '0865320821', 5, 5000000.0),
+(N'Lương Bảo Châu', 'pouliejulie68@gmail.com', '0936788367', 5, 5000000.0),
+(N'Hạnh Minh', 'minhnnnh.s.2427@gmail.com', '0337347082', 2, 2000000.0),
+(N'Hà Gia Bảo', 'baogianxao1405@gmail.com', '0859238738', 5, 5000000.0),
+(N'hạnh đoan', '24007819@student.westernsydney.edu.vn', '0693705102', 4, 4000000.0);
 
 INSERT INTO dbo.Seat (row, number, type)
 VALUES
@@ -373,7 +416,7 @@ INSERT INTO dbo.Account VALUES('dantruong2007', '123456789', '1', '3', '1');
 INSERT INTO dbo.Account VALUES('thinhphat1512', '123456789', '1', '4', '1');
 INSERT INTO dbo.Account VALUES('vietthy1908', '123456789', '0', '5', '1');
 INSERT INTO dbo.Account VALUES('phuongthuy2505', '123456789', '0', '6', '1');
-INSERT INTO dbo.Account VALUES('hieuthao2103', '123456789', '0', '10', '0');
+INSERT INTO dbo.Account VALUES('hieuthao2103', '123456789', '0', '7', '0');
 
 INSERT INTO Snack (name, price, stock, category)
 VALUES
@@ -431,6 +474,9 @@ AS SELECT * FROM dbo.Staff
 GO
 CREATE PROC USP_GetShiftList
 AS SELECT * FROM dbo.ShiftSchedule
+GO
+CREATE PROC USP_GetCustomerList
+AS SELECT * FROM dbo.Customer
 GO
 create proc USP_ForgetPassUsername
 @username varchar(100) 
