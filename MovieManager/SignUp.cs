@@ -11,6 +11,7 @@ using Guna.UI2.WinForms;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using MovieManager.DAO;
 using Org.BouncyCastle.Math.Field;
 namespace MovieManager
 {
@@ -118,7 +119,11 @@ namespace MovieManager
                 }
                 if (HaveSendEmail)
                 {
+                    // Đã gửi thành công
                     MessageBox.Show("Successful! Please check your email.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string Pass = PasswordTextBoxSignUp.Text;
+                    string UserName = UsernameTextBoxSignUp.Text;
+                    AccountDAO.Instance.AddAccountFromSignUp(UserName, Pass, FullName, UserEmail);  
                     try
                     {
                         // 1. Tạo nội dung thư
@@ -217,7 +222,7 @@ namespace MovieManager
 
         private void FullNameTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@')
+            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@' || e.KeyChar == ' ' || e.KeyChar == '.')
             {
                 return;
             }
@@ -226,7 +231,7 @@ namespace MovieManager
 
         private void UsernameTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@')
+            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@' || e.KeyChar == '.')
             {
                 return;
             }
@@ -235,7 +240,7 @@ namespace MovieManager
 
         private void EmailTextBoxSignUp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@')
+            if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == '_' || e.KeyChar == '-' || e.KeyChar == '@' || e.KeyChar == '.')
             {
                 return;
             }

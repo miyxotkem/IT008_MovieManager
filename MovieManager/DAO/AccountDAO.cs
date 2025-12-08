@@ -23,6 +23,20 @@ namespace MovieManager.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password});
             return (result.Rows.Count > 0 && Convert.ToBoolean(result.Rows[0]["Accept"]));
         }
+
+        public void AddAccountFromSignUp(string user, string pass, string fullname, string email)
+        {
+            string querryAddStaff = "Exec USP_AddStaff @name , @email";
+            int data1 = DataProvider.Instance.ExecuteNonQuery(querryAddStaff, new object[] { fullname, email });
+            string querryGetID = "Select id from Staff where name = N'" + fullname + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(querryGetID);
+            if (data.Rows.Count > 0)
+            {
+                int idStaff = Convert.ToInt32(data.Rows[0]["id"]);
+                string querryAddAccount = "Exec USP_AddAccount @user , @pass , @idStaff";
+                int data2 = DataProvider.Instance.ExecuteNonQuery(querryAddAccount, new object[] { user, pass, idStaff });
+            }    
+        }
         public List<Account> LoadAccountList()
         {
             List<Account> AccountList = new List<Account>();

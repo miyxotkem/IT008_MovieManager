@@ -42,9 +42,12 @@ GO
 CREATE TABLE Seat
 (
 	id INT IDENTITY PRIMARY KEY,
+	idScreen INT not null, 
 	row varchar(3),
 	number INT,
 	type NVARCHAR(100)
+
+	Foreign key (idScreen) references Screen(id)
 )
 GO
 CREATE TABLE Customer
@@ -87,15 +90,13 @@ GO
 CREATE TABLE ShowTime (
 	idmovie INT,
 	idscreen INT,
-	idseat INT,
 	start_time DATETIME,
 	available BIT DEFAULT 0
 
 	FOREIGN KEY (idmovie) REFERENCES Movie(id) ON DELETE CASCADE,
 	FOREIGN KEY (idscreen) REFERENCES Screen(id),
-	FOREIGN KEY (idseat) REFERENCES Seat(id),
 
-	PRIMARY KEY (idmovie, idscreen, idseat, start_time)
+	PRIMARY KEY (idmovie, idscreen, start_time)
 )
 GO
 CREATE TABLE Ticket
@@ -165,11 +166,13 @@ GO
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
 INSERT INTO dbo.Hall (name, location)VALUES (N'Lotte Cinema Thu Duc', N'5th Floor, Giga Mall');
 
+select * from Hall
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (1, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (2, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (3, 50, 50, N'iMax', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (4, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (5, 50, 50, N'iMax', 1);
+select * from Screen
 select * from account
 select * from staff
 INSERT INTO Customer (name, email, phone_number, membership, money_spent) VALUES
@@ -212,68 +215,135 @@ INSERT INTO Customer (name, email, phone_number, membership, money_spent) VALUES
 (N'Hạnh Minh', 'minhnnnh.s.2427@gmail.com', '0337347082', 2, 2000000.0),
 (N'Hà Gia Bảo', 'baogianxao1405@gmail.com', '0859238738', 5, 5000000.0),
 (N'hạnh đoan', '24007819@student.westernsydney.edu.vn', '0693705102', 4, 4000000.0);
-
-INSERT INTO dbo.Seat (row, number, type)
+select * from Customer
+select * from Seat
+-- Phòng 1 
+INSERT INTO dbo.Seat (idScreen, row, number, type)
 VALUES
 -- Row 1 (Row A - Normal)
-('A', 1, N'Normal'),
-('A', 2, N'Normal'),
-('A', 3, N'Normal'),
-('A', 4, N'Normal'),
-('A', 5, N'Normal'),
-('A', 6, N'Normal'),
-('A', 7, N'Normal'),
-('A', 8, N'Normal'),
-('A', 9, N'Normal'),
-('A', 10, N'Normal'),
+(1, 'A', 1, N'Normal'),
+(1, 'A', 2, N'Normal'),
+(1, 'A', 3, N'Normal'),
+(1, 'A', 4, N'Normal'),
+(1, 'A', 5, N'Normal'),
+(1, 'A', 6, N'Normal'),
+(1, 'A', 7, N'Normal'),
+(1, 'A', 8, N'Normal'),
+(1, 'A', 9, N'Normal'),
+(1, 'A', 10, N'Normal'),
 
--- Row 2 (Row B - Normal) -> Đổi số 2 thành 'B'
-('B', 1, N'Normal'),
-('B', 2, N'Normal'),
-('B', 3, N'Normal'), -- Đã sửa lỗi thiếu dấu nháy ở đây
-('B', 4, N'Normal'),
-('B', 5, N'Normal'),
-('B', 6, N'Normal'),
-('B', 7, N'Normal'),
-('B', 8, N'Normal'),
-('B', 9, N'Normal'),
-('B', 10, N'Normal'),
+-- Row 2 (Row B - Normal)
+(1, 'B', 1, N'Normal'),
+(1, 'B', 2, N'Normal'),
+(1, 'B', 3, N'Normal'),
+(1, 'B', 4, N'Normal'),
+(1, 'B', 5, N'Normal'),
+(1, 'B', 6, N'Normal'),
+(1, 'B', 7, N'Normal'),
+(1, 'B', 8, N'Normal'),
+(1, 'B', 9, N'Normal'),
+(1, 'B', 10, N'Normal'),
 
--- Row 3 (Row C - VIP) -> Đổi số 3 thành 'C'
-('C', 1, N'VIP'),
-('C', 2, N'VIP'),
-('C', 3, N'VIP'),
-('C', 4, N'VIP'),
-('C', 5, N'VIP'),
-('C', 6, N'VIP'),
-('C', 7, N'VIP'),
-('C', 8, N'VIP'),
-('C', 9, N'VIP'),
-('C', 10, N'VIP'),
+-- Row 3 (Row C - VIP)
+(1, 'C', 1, N'VIP'),
+(1, 'C', 2, N'VIP'),
+(1, 'C', 3, N'VIP'),
+(1, 'C', 4, N'VIP'),
+(1, 'C', 5, N'VIP'),
+(1, 'C', 6, N'VIP'),
+(1, 'C', 7, N'VIP'),
+(1, 'C', 8, N'VIP'),
+(1, 'C', 9, N'VIP'),
+(1, 'C', 10, N'VIP'),
 
--- Row 4 (Row D - VIP) -> Đổi số 4 thành 'D'
-('D', 1, N'VIP'),
-('D', 2, N'VIP'),
-('D', 3, N'VIP'),
-('D', 4, N'VIP'),
-('D', 5, N'VIP'),
-('D', 6, N'VIP'),
-('D', 7, N'VIP'),
-('D', 8, N'VIP'),
-('D', 9, N'VIP'),
-('D', 10, N'VIP'),
+-- Row 4 (Row D - VIP)
+(1, 'D', 1, N'VIP'),
+(1, 'D', 2, N'VIP'),
+(1, 'D', 3, N'VIP'),
+(1, 'D', 4, N'VIP'),
+(1, 'D', 5, N'VIP'),
+(1, 'D', 6, N'VIP'),
+(1, 'D', 7, N'VIP'),
+(1, 'D', 8, N'VIP'),
+(1, 'D', 9, N'VIP'),
+(1, 'D', 10, N'VIP'),
 
--- Row 5 (Row E - Couple & SVIP) -> Đổi số 5 thành 'E'
-('E', 1, N'Couple'),
-('E', 2, N'Couple'),
-('E', 3, N'Couple'),
-('E', 4, N'Couple'),
-('E', 5, N'Couple'),
-('E', 6, N'SVIP'),
-('E', 7, N'SVIP'),
-('E', 8, N'SVIP'),
-('E', 9, N'SVIP'),
-('E', 10, N'SVIP');
+-- Row 5 (Row E - Couple & SVIP)
+(1, 'E', 1, N'Couple'),
+(1, 'E', 2, N'Couple'),
+(1, 'E', 3, N'Couple'),
+(1, 'E', 4, N'Couple'),
+(1, 'E', 5, N'Couple'),
+(1, 'E', 6, N'SVIP'),
+(1, 'E', 7, N'SVIP'),
+(1, 'E', 8, N'SVIP'),
+(1, 'E', 9, N'SVIP'),
+(1, 'E', 10, N'SVIP');
+
+-- Phòng 2
+INSERT INTO dbo.Seat (idScreen, row, number, type)
+VALUES
+-- Row 1 (Row A - Normal)
+(2, 'A', 1, N'Normal'),
+(2, 'A', 2, N'Normal'),
+(2, 'A', 3, N'Normal'),
+(2, 'A', 4, N'Normal'),
+(2, 'A', 5, N'Normal'),
+(2, 'A', 6, N'Normal'),
+(2, 'A', 7, N'Normal'),
+(2, 'A', 8, N'Normal'),
+(2, 'A', 9, N'Normal'),
+(2, 'A', 10, N'Normal'),
+
+-- Row 2 (Row B - Normal)
+(2, 'B', 1, N'Normal'),
+(2, 'B', 2, N'Normal'),
+(2, 'B', 3, N'Normal'),
+(2, 'B', 4, N'Normal'),
+(2, 'B', 5, N'Normal'),
+(2, 'B', 6, N'Normal'),
+(2, 'B', 7, N'Normal'),
+(2, 'B', 8, N'Normal'),
+(2, 'B', 9, N'Normal'),
+(2, 'B', 10, N'Normal'),
+
+-- Row 3 (Row C - VIP)
+(2, 'C', 1, N'VIP'),
+(2, 'C', 2, N'VIP'),
+(2, 'C', 3, N'VIP'),
+(2, 'C', 4, N'VIP'),
+(2, 'C', 5, N'VIP'),
+(2, 'C', 6, N'VIP'),
+(2, 'C', 7, N'VIP'),
+(2, 'C', 8, N'VIP'),
+(2, 'C', 9, N'VIP'),
+(2, 'C', 10, N'VIP'),
+
+-- Row 4 (Row D - VIP)
+(2, 'D', 1, N'VIP'),
+(2, 'D', 2, N'VIP'),
+(2, 'D', 3, N'VIP'),
+(2, 'D', 4, N'VIP'),
+(2, 'D', 5, N'VIP'),
+(2, 'D', 6, N'VIP'),
+(2, 'D', 7, N'VIP'),
+(2, 'D', 8, N'VIP'),
+(2, 'D', 9, N'VIP'),
+(2, 'D', 10, N'VIP'),
+
+-- Row 5 (Row E - Couple & SVIP)
+(2, 'E', 1, N'Couple'),
+(2, 'E', 2, N'Couple'),
+(2, 'E', 3, N'Couple'),
+(2, 'E', 4, N'Couple'),
+(2, 'E', 5, N'Couple'),
+(2, 'E', 6, N'SVIP'),
+(2, 'E', 7, N'SVIP'),
+(2, 'E', 8, N'SVIP'),
+(2, 'E', 9, N'SVIP'),
+(2, 'E', 10, N'SVIP');
+
+
 
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TEE YOD: QUỶ ĂN TẠNG - PHẦN 3', N'N/A', N'N/A', '10/10/2025', N'Narit Yuvaboon', N'Tiếng Thái', 104, N'iMax', N'https://youtu.be/DMOGnGokm4c', N'Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee, ...');
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TAY ANH GIỮ MỘT VÌ SAO', N'N/A', N'N/A', '03/10/2025', N'Kim Sung Hoon', N'Tiếng Hàn', 117, N'N/A', N'https://youtu.be/ZsSYbAy2Ez8', N'Lee Kwang Soo, Hoàng Hà, Duy Khánh, Cù Thị Trà, Um Mun Suk, Lâm Thanh Mỹ, ...');
@@ -291,112 +361,14 @@ SET duration = 0
 WHERE duration IS NULL;
 GO
 
-INSERT INTO dbo.ShowTime (idmovie, idscreen, idseat, start_time, available)
+INSERT INTO dbo.ShowTime (idmovie, idscreen, start_time, available)
 VALUES
 -- Showtime 1: Movie 1, Screen 1 @ 18:00 on 15/12/2025
-(1, 1, 1, '15/12/2025 18:00:00', 1),
-(1, 1, 2, '15/12/2025 18:00:00', 1),
-(1, 1, 3, '15/12/2025 18:00:00', 1),
-(1, 1, 4, '15/12/2025 18:00:00', 1),
-(1, 1, 5, '15/12/2025 18:00:00', 1),
-(1, 1, 6, '15/12/2025 18:00:00', 1),
-(1, 1, 7, '15/12/2025 18:00:00', 1),
-(1, 1, 8, '15/12/2025 18:00:00', 1),
-(1, 1, 9, '15/12/2025 18:00:00', 1),
-(1, 1, 10, '15/12/2025 18:00:00', 1),
-(1, 1, 11, '15/12/2025 18:00:00', 1),
-(1, 1, 12, '15/12/2025 18:00:00', 1),
-(1, 1, 13, '15/12/2025 18:00:00', 1),
-(1, 1, 14, '15/12/2025 18:00:00', 1),
-(1, 1, 15, '15/12/2025 18:00:00', 1),
-(1, 1, 16, '15/12/2025 18:00:00', 1),
-(1, 1, 17, '15/12/2025 18:00:00', 1),
-(1, 1, 18, '15/12/2025 18:00:00', 1),
-(1, 1, 19, '15/12/2025 18:00:00', 1),
-(1, 1, 20, '15/12/2025 18:00:00', 1),
-(1, 1, 21, '15/12/2025 18:00:00', 1),
-(1, 1, 22, '15/12/2025 18:00:00', 1),
-(1, 1, 23, '15/12/2025 18:00:00', 1),
-(1, 1, 24, '15/12/2025 18:00:00', 1),
-(1, 1, 25, '15/12/2025 18:00:00', 1),
-(1, 1, 26, '15/12/2025 18:00:00', 1),
-(1, 1, 27, '15/12/2025 18:00:00', 1),
-(1, 1, 28, '15/12/2025 18:00:00', 1),
-(1, 1, 29, '15/12/2025 18:00:00', 1),
-(1, 1, 30, '15/12/2025 18:00:00', 1),
-(1, 1, 31, '15/12/2025 18:00:00', 1),
-(1, 1, 32, '15/12/2025 18:00:00', 1),
-(1, 1, 33, '15/12/2025 18:00:00', 1),
-(1, 1, 34, '15/12/2025 18:00:00', 1),
-(1, 1, 35, '15/12/2025 18:00:00', 1),
-(1, 1, 36, '15/12/2025 18:00:00', 1),
-(1, 1, 37, '15/12/2025 18:00:00', 1),
-(1, 1, 38, '15/12/2025 18:00:00', 1),
-(1, 1, 39, '15/12/2025 18:00:00', 1),
-(1, 1, 40, '15/12/2025 18:00:00', 1),
-(1, 1, 41, '15/12/2025 18:00:00', 1),
-(1, 1, 42, '15/12/2025 18:00:00', 1),
-(1, 1, 43, '15/12/2025 18:00:00', 1),
-(1, 1, 44, '15/12/2025 18:00:00', 1),
-(1, 1, 45, '15/12/2025 18:00:00', 1),
-(1, 1, 46, '15/12/2025 18:00:00', 1),
-(1, 1, 47, '15/12/2025 18:00:00', 1),
-(1, 1, 48, '15/12/2025 18:00:00', 1),
-(1, 1, 49, '15/12/2025 18:00:00', 1),
-(1, 1, 50, '15/12/2025 18:00:00', 1),
+(1,1,'15/12/2025 18:00:00',1),
 
 -- Showtime 2: Movie 1, Screen 2 @ 20:30 on 15/12/2025
-(1, 2, 1, '15/12/2025 20:30:00', 1),
-(1, 2, 2, '15/12/2025 20:30:00', 1),
-(1, 2, 3, '15/12/2025 20:30:00', 1),
-(1, 2, 4, '15/12/2025 20:30:00', 1),
-(1, 2, 5, '15/12/2025 20:30:00', 1),
-(1, 2, 6, '15/12/2025 20:30:00', 1),
-(1, 2, 7, '15/12/2025 20:30:00', 1),
-(1, 2, 8, '15/12/2025 20:30:00', 1),
-(1, 2, 9, '15/12/2025 20:30:00', 1),
-(1, 2, 10, '15/12/2025 20:30:00', 1),
-(1, 2, 11, '15/12/2025 20:30:00', 1),
-(1, 2, 12, '15/12/2025 20:30:00', 1),
-(1, 2, 13, '15/12/2025 20:30:00', 1),
-(1, 2, 14, '15/12/2025 20:30:00', 1),
-(1, 2, 15, '15/12/2025 20:30:00', 1),
-(1, 2, 16, '15/12/2025 20:30:00', 1),
-(1, 2, 17, '15/12/2025 20:30:00', 1),
-(1, 2, 18, '15/12/2025 20:30:00', 1),
-(1, 2, 19, '15/12/2025 20:30:00', 1),
-(1, 2, 20, '15/12/2025 20:30:00', 1),
-(1, 2, 21, '15/12/2025 20:30:00', 1),
-(1, 2, 22, '15/12/2025 20:30:00', 1),
-(1, 2, 23, '15/12/2025 20:30:00', 1),
-(1, 2, 24, '15/12/2025 20:30:00', 1),
-(1, 2, 25, '15/12/2025 20:30:00', 1),
-(1, 2, 26, '15/12/2025 20:30:00', 1),
-(1, 2, 27, '15/12/2025 20:30:00', 1),
-(1, 2, 28, '15/12/2025 20:30:00', 1),
-(1, 2, 29, '15/12/2025 20:30:00', 1),
-(1, 2, 30, '15/12/2025 20:30:00', 1),
-(1, 2, 31, '15/12/2025 20:30:00', 1),
-(1, 2, 32, '15/12/2025 20:30:00', 1),
-(1, 2, 33, '15/12/2025 20:30:00', 1),
-(1, 2, 34, '15/12/2025 20:30:00', 1),
-(1, 2, 35, '15/12/2025 20:30:00', 1),
-(1, 2, 36, '15/12/2025 20:30:00', 1),
-(1, 2, 37, '15/12/2025 20:30:00', 1),
-(1, 2, 38, '15/12/2025 20:30:00', 1),
-(1, 2, 39, '15/12/2025 20:30:00', 1),
-(1, 2, 40, '15/12/2025 20:30:00', 1),
-(1, 2, 41, '15/12/2025 20:30:00', 1),
-(1, 2, 42, '15/12/2025 20:30:00', 1),
-(1, 2, 43, '15/12/2025 20:30:00', 1),
-(1, 2, 44, '15/12/2025 20:30:00', 1),
-(1, 2, 45, '15/12/2025 20:30:00', 1),
-(1, 2, 46, '15/12/2025 20:30:00', 1),
-(1, 2, 47, '15/12/2025 20:30:00', 1),
-(1, 2, 48, '15/12/2025 20:30:00', 1),
-(1, 2, 49, '15/12/2025 20:30:00', 1),
-(1, 2, 50, '15/12/2025 20:30:00', 1);
-
+(1,2,'15/12/2025 20:30:00',1)
+select * from ShowTime
 INSERT INTO dbo.ShiftSchedule VALUES('7:30:00', '12:30:00');
 INSERT INTO dbo.ShiftSchedule VALUES('12:30:00', '17:30:00');
 INSERT INTO dbo.ShiftSchedule VALUES('17:30:00', '22:30:00');
@@ -549,14 +521,39 @@ begin
 	where username = @username
 end
 GO
+
+-- Thêm tài khoản vào khi người dùng nhấn đăng kí
+-- Thêm vào Staff 
+create proc USP_AddStaff
+@name nvarchar(100), @email nvarchar(100) 
+as 
+begin 
+	insert into Staff (name, role , contact_info , idshiftschedule)
+	values 
+			(@name , N'Nhân viên', @email, 1)
+end 
+
+-- Thêm vào Account 
+Select id from Staff where name = N'Nguyễn Võ Minh Quang' -- lấy idStaff
+
+create proc USP_AddAccount 
+@user varchar(100), @pass varchar(100), @idStaff int 
+as 
+begin 
+	insert into Account (username, password, admin, idStaff, accept)
+		values 
+				(@user , @pass, 0, @idStaff, 0)
+end 
+
+
 -- View
 -- Bảng view liên kết account với staff
 create view AccountStaff as
 select ac.idStaff as ID,  ac.username, ac.password, st.contact_info as email , st.name, st.role as Role
 from Account ac join Staff st on ac.idStaff = st.id; 
 GO
-
-
+select *from Account
+select * from Staff
 select * from AccountStaff
 
 -- Ngày 18/11/2025
