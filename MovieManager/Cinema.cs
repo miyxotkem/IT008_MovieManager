@@ -18,7 +18,7 @@ namespace MovieManager
     {
         public Cinema()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         public Cinema(string username)
@@ -166,6 +166,13 @@ namespace MovieManager
 
         private void MovieManageButton_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.Tag is Account account)
+            {
+                if (!account.Admin)
+                {
+                    return;
+                }
+            }
             if (MovieManageButton.Checked)
             {
                 MovieManage.BringToFront();
@@ -176,6 +183,13 @@ namespace MovieManager
 
         private void SnackManageButton_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.Tag is Account account)
+            {
+                if (!account.Admin)
+                {
+                    return;
+                }
+            }
             if (SnackManageButton.Checked)
             {
                 SnackManage.BringToFront();
@@ -196,6 +210,13 @@ namespace MovieManager
 
         private void StaffManageButton_Click(object sender, EventArgs e)
         {
+            if (this.Tag is Account account)
+            {
+                if (!account.Admin)
+                {
+                    return;
+                }
+            }
             if (StaffManageButton.Checked)
             {
                 StaffManage.BringToFront();
@@ -206,6 +227,13 @@ namespace MovieManager
 
         private void CustomerManageButton_Click(object sender, EventArgs e)
         {
+            if (this.Tag is Account account)
+            {
+                if (!account.Admin)
+                {
+                    return;
+                }
+            }
             if (CustomerManageButton.Checked)
             {
                 CustomerManage.BringToFront();

@@ -80,6 +80,11 @@ namespace MovieManager
             if (Login(usr, pas))
             { 
                 Cinema f = new Cinema(usr);
+                Account account = AccountDAO.Instance.GetAccountFromUser(usr);
+                if (account != null)
+                {
+                    f.Tag = account;
+                }    
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

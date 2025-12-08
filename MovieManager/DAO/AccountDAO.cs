@@ -37,6 +37,18 @@ namespace MovieManager.DAO
                 int data2 = DataProvider.Instance.ExecuteNonQuery(querryAddAccount, new object[] { user, pass, idStaff });
             }    
         }
+
+        public Account GetAccountFromUser(string user)
+        {
+            Account account = null;
+            string querry = "select * from Account where username = '" + user + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(querry);
+            if (data.Rows.Count > 0 )
+            {
+                account = new Account(data.Rows[0]);
+            }    
+            return account; 
+        }
         public List<Account> LoadAccountList()
         {
             List<Account> AccountList = new List<Account>();

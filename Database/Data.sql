@@ -579,3 +579,5 @@ set username = 'thichcodedao'
 where idStaff = 3;
 
 select * from Account
+
+select * from Account where username = 'dantruong2007'

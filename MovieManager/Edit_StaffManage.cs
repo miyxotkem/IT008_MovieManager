@@ -44,11 +44,11 @@ namespace MovieManager
                     foreach (Account account in accounts)
                         if(staff.Id == account.Idstaff)
                         {
-                            if (account.Admin == true)
+                            if (account.Admin)
                                 PromoteAdmin.Text = "Demote an admin";
                             else
                                 PromoteAdmin.Text = "Promote Admin";
-                            if (account.Accept == true)
+                            if (account.Accept)
                                 DeactiveButton.Text = "Deactivate Account";
                             else
                                 DeactiveButton.Text = "Already Deactivated";
