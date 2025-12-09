@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.AccountDisplayButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.CustomerManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.StaffManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SnackManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -38,7 +39,6 @@
             this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SideBarZoomButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.CustomerManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplay = new MovieManager.MovieDisplay();
             this.SnackDisplay = new MovieManager.SnackDisplay();
             this.MovieManage = new MovieManager.MovieManage();
@@ -96,6 +96,34 @@
             this.AccountDisplayButton.TextOffset = new System.Drawing.Point(12, 0);
             this.AccountDisplayButton.CheckedChanged += new System.EventHandler(this.SnackManageButton_CheckedChanged);
             this.AccountDisplayButton.Click += new System.EventHandler(this.AccountDisplayButton_Click);
+            // 
+            // CustomerManageButton
+            // 
+            this.CustomerManageButton.Animated = true;
+            this.CustomerManageButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.CustomerManageButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.CustomerManageButton.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.CustomerManageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CustomerManageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CustomerManageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CustomerManageButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CustomerManageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CustomerManageButton.FillColor = System.Drawing.Color.White;
+            this.CustomerManageButton.FillColor2 = System.Drawing.Color.White;
+            this.CustomerManageButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CustomerManageButton.ForeColor = System.Drawing.Color.Black;
+            this.CustomerManageButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.CustomerManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.CustomerManageButton.ImageOffset = new System.Drawing.Point(10, 0);
+            this.CustomerManageButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.CustomerManageButton.Location = new System.Drawing.Point(0, 640);
+            this.CustomerManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CustomerManageButton.Name = "CustomerManageButton";
+            this.CustomerManageButton.Size = new System.Drawing.Size(100, 80);
+            this.CustomerManageButton.TabIndex = 1;
+            this.CustomerManageButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.CustomerManageButton.TextOffset = new System.Drawing.Point(12, 0);
+            this.CustomerManageButton.Click += new System.EventHandler(this.CustomerManageButton_Click);
             // 
             // StaffManageButton
             // 
@@ -259,34 +287,6 @@
             this.SideBarZoomButtonCinema.Size = new System.Drawing.Size(30, 30);
             this.SideBarZoomButtonCinema.TabIndex = 0;
             this.SideBarZoomButtonCinema.Click += new System.EventHandler(this.ZoomButtonCinema_Click);
-            // 
-            // CustomerManageButton
-            // 
-            this.CustomerManageButton.Animated = true;
-            this.CustomerManageButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.CustomerManageButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.CustomerManageButton.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.CustomerManageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.CustomerManageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.CustomerManageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.CustomerManageButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.CustomerManageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.CustomerManageButton.FillColor = System.Drawing.Color.White;
-            this.CustomerManageButton.FillColor2 = System.Drawing.Color.White;
-            this.CustomerManageButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CustomerManageButton.ForeColor = System.Drawing.Color.Black;
-            this.CustomerManageButton.Image = global::MovieManager.Properties.Resources.badge_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.CustomerManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CustomerManageButton.ImageOffset = new System.Drawing.Point(10, 0);
-            this.CustomerManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.CustomerManageButton.Location = new System.Drawing.Point(0, 640);
-            this.CustomerManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CustomerManageButton.Name = "CustomerManageButton";
-            this.CustomerManageButton.Size = new System.Drawing.Size(100, 80);
-            this.CustomerManageButton.TabIndex = 1;
-            this.CustomerManageButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CustomerManageButton.TextOffset = new System.Drawing.Point(12, 0);
-            this.CustomerManageButton.Click += new System.EventHandler(this.CustomerManageButton_Click);
             // 
             // MovieDisplay
             // 

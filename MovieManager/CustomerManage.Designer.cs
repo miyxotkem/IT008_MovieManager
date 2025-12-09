@@ -36,14 +36,14 @@
             this.panel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.HistoryButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.FilterLabel = new System.Windows.Forms.Label();
+            this.ManageCustomer = new System.Windows.Forms.Label();
+            this.HistoryButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.ManageCustomer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -171,6 +171,35 @@
             this.SearchTextBox.TabIndex = 1;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
+            // SearchLabel
+            // 
+            this.SearchLabel.Location = new System.Drawing.Point(42, 54);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(64, 20);
+            this.SearchLabel.TabIndex = 0;
+            this.SearchLabel.Text = "Search:";
+            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // FilterLabel
+            // 
+            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
+            this.FilterLabel.Name = "FilterLabel";
+            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
+            this.FilterLabel.TabIndex = 0;
+            this.FilterLabel.Text = "Filter:";
+            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ManageCustomer
+            // 
+            this.ManageCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ManageCustomer.AutoSize = true;
+            this.ManageCustomer.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageCustomer.Location = new System.Drawing.Point(634, 50);
+            this.ManageCustomer.Name = "ManageCustomer";
+            this.ManageCustomer.Size = new System.Drawing.Size(524, 61);
+            this.ManageCustomer.TabIndex = 5;
+            this.ManageCustomer.Text = "Manage Customer";
+            // 
             // HistoryButton
             // 
             this.HistoryButton.Animated = true;
@@ -191,15 +220,6 @@
             this.HistoryButton.Name = "HistoryButton";
             this.HistoryButton.Size = new System.Drawing.Size(106, 50);
             this.HistoryButton.TabIndex = 3;
-            // 
-            // SearchLabel
-            // 
-            this.SearchLabel.Location = new System.Drawing.Point(42, 54);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(64, 20);
-            this.SearchLabel.TabIndex = 0;
-            this.SearchLabel.Text = "Search:";
-            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ReloadButton
             // 
@@ -223,15 +243,6 @@
             this.ReloadButton.TabIndex = 3;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
-            // FilterLabel
-            // 
-            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
-            this.FilterLabel.Name = "FilterLabel";
-            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
-            this.FilterLabel.TabIndex = 0;
-            this.FilterLabel.Text = "Filter:";
-            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // AddButton
             // 
             this.AddButton.Animated = true;
@@ -246,7 +257,7 @@
             this.AddButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
+            this.AddButton.Image = global::MovieManager.Properties.Resources.add_box_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.AddButton.ImageSize = new System.Drawing.Size(30, 30);
             this.AddButton.Location = new System.Drawing.Point(782, 29);
             this.AddButton.Name = "AddButton";
@@ -297,17 +308,6 @@
             this.DeleteFilter.Size = new System.Drawing.Size(50, 50);
             this.DeleteFilter.TabIndex = 3;
             this.DeleteFilter.Click += new System.EventHandler(this.DeleteFilter_Click);
-            // 
-            // ManageCustomer
-            // 
-            this.ManageCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ManageCustomer.AutoSize = true;
-            this.ManageCustomer.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageCustomer.Location = new System.Drawing.Point(634, 50);
-            this.ManageCustomer.Name = "ManageCustomer";
-            this.ManageCustomer.Size = new System.Drawing.Size(524, 61);
-            this.ManageCustomer.TabIndex = 5;
-            this.ManageCustomer.Text = "Manage Customer";
             // 
             // CustomerManage
             // 

@@ -115,7 +115,7 @@ namespace MovieManager
                 };
                 Guna2GradientButton edit = new Guna2GradientButton()
                 {
-                    Image = global::MovieManager.Properties.Resources.manage_accounts_30dp_BLACK_FILL0_wght400_GRAD0_opsz24,
+                    Image = global::MovieManager.Properties.Resources.loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz24,
                     Animated = true,
                     Tag = customer.Id,
                     BorderRadius = 10,

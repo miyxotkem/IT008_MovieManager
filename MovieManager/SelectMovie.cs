@@ -36,13 +36,10 @@ namespace MovieManager
         {
             StartTimePanelSelectMovie.Controls.Clear();
             List<ShowTime> showtimeList = ShowTimeDAO.Instance.LoadShowTimeList();
-            bool[] screen = new bool[5];
             foreach (ShowTime showtime in showtimeList)
             {
                 if(showtime.IDMovie == currentMovie.ID)
                 {
-                    if (screen[showtime.IDScreen] == false)
-                    {
                        Guna2GradientButton btn = new Guna2GradientButton();
                         btn.Size = new Size(150, 100);
                         btn.BackColor = Color.Transparent;
@@ -61,8 +58,6 @@ namespace MovieManager
                         btn.Click += SelectStartTime_Click;
                         btn.Tag = showtime; 
                         StartTimePanelSelectMovie.Controls.Add(btn);
-                        screen[showtime.IDScreen] = true;
-                    }
                 }
             }
         }

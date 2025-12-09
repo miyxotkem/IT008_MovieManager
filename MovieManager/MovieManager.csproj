@@ -288,12 +288,6 @@
     <Compile Include="ResetPassConfirm.Designer.cs">
       <DependentUpon>ResetPassConfirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenLayout.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ScreenLayout.Designer.cs">
-      <DependentUpon>ScreenLayout.cs</DependentUpon>
-    </Compile>
     <Compile Include="ScreenLayout1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -377,9 +371,6 @@
     <EmbeddedResource Include="ResetPassConfirm.resx">
       <DependentUpon>ResetPassConfirm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenLayout.resx">
-      <DependentUpon>ScreenLayout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ScreenLayout1.resx">
       <DependentUpon>ScreenLayout1.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,6 +438,9 @@
     <None Include="Resources\manage_accounts_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\account_circle_30dp_BLACK_FILL0_wght400_GRAD0_opsz241.png" />
     <None Include="Resources\account_circle_100dp_BLACK_FILL0_wght400_GRAD0_opsz48.png" />
+    <None Include="Resources\group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz241.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
