@@ -91,14 +91,25 @@ CREATE TABLE ShowTime (
 	idmovie INT,
 	idscreen INT,
 	start_time DATETIME,
-	available BIT DEFAULT 0
 
 	FOREIGN KEY (idmovie) REFERENCES Movie(id) ON DELETE CASCADE,
 	FOREIGN KEY (idscreen) REFERENCES Screen(id),
 
-	PRIMARY KEY (idmovie, idscreen, start_time)
+	PRIMARY KEY (idmovie, start_time)
+)
+go
+create table ShowTimeDetail( 
+	idMovie int,
+	Start_time DATETIME,
+	idSeat int ,
+	available int default 0,
+
+	foreign key (idMovie, Start_time) references ShowTime(idmovie, start_time),
+	foreign key (idSeat) references Seat(id),
+	primary key (idMovie, Start_time, idSeat)
 )
 GO
+
 CREATE TABLE Ticket
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -361,13 +372,13 @@ SET duration = 0
 WHERE duration IS NULL;
 GO
 
-INSERT INTO dbo.ShowTime (idmovie, idscreen, start_time, available)
+INSERT INTO dbo.ShowTime (idmovie, idscreen, start_time)
 VALUES
 -- Showtime 1: Movie 1, Screen 1 @ 18:00 on 15/12/2025
-(1,1,'15/12/2025 18:00:00',1),
+(1,1,'15/12/2025 18:00:00'),
 
 -- Showtime 2: Movie 1, Screen 2 @ 20:30 on 15/12/2025
-(1,2,'15/12/2025 20:30:00',1)
+(1,2,'15/12/2025 20:30:00')
 select * from ShowTime
 INSERT INTO dbo.ShiftSchedule VALUES('7:30:00', '12:30:00');
 INSERT INTO dbo.ShiftSchedule VALUES('12:30:00', '17:30:00');
@@ -417,6 +428,125 @@ VALUES
 (N'Cơm gà sốt phô mai', 59000, 100, 0),
 (N'Cơm bò sốt tiêu đen', 65000, 100, 0),
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
+
+INSERT INTO ShowTimeDetail (idMovie, Start_time, idSeat)
+VALUES
+(1, '15/12/2025 18:00:00', 1),
+(1, '15/12/2025 18:00:00', 2),
+(1, '15/12/2025 18:00:00', 3),
+(1, '15/12/2025 18:00:00', 4),
+(1, '15/12/2025 18:00:00', 5),
+(1, '15/12/2025 18:00:00', 6),
+(1, '15/12/2025 18:00:00', 7),
+(1, '15/12/2025 18:00:00', 8),
+(1, '15/12/2025 18:00:00', 9),
+(1, '15/12/2025 18:00:00', 10),
+(1, '15/12/2025 18:00:00', 11),
+(1, '15/12/2025 18:00:00', 12),
+(1, '15/12/2025 18:00:00', 13),
+(1, '15/12/2025 18:00:00', 14),
+(1, '15/12/2025 18:00:00', 15),
+(1, '15/12/2025 18:00:00', 16),
+(1, '15/12/2025 18:00:00', 17),
+(1, '15/12/2025 18:00:00', 18),
+(1, '15/12/2025 18:00:00', 19),
+(1, '15/12/2025 18:00:00', 20),
+(1, '15/12/2025 18:00:00', 21),
+(1, '15/12/2025 18:00:00', 22),
+(1, '15/12/2025 18:00:00', 23),
+(1, '15/12/2025 18:00:00', 24),
+(1, '15/12/2025 18:00:00', 25),
+(1, '15/12/2025 18:00:00', 26),
+(1, '15/12/2025 18:00:00', 27),
+(1, '15/12/2025 18:00:00', 28),
+(1, '15/12/2025 18:00:00', 29),
+(1, '15/12/2025 18:00:00', 30),
+(1, '15/12/2025 18:00:00', 31),
+(1, '15/12/2025 18:00:00', 32),
+(1, '15/12/2025 18:00:00', 33),
+(1, '15/12/2025 18:00:00', 34),
+(1, '15/12/2025 18:00:00', 35),
+(1, '15/12/2025 18:00:00', 36),
+(1, '15/12/2025 18:00:00', 37),
+(1, '15/12/2025 18:00:00', 38),
+(1, '15/12/2025 18:00:00', 39),
+(1, '15/12/2025 18:00:00', 40),
+(1, '15/12/2025 18:00:00', 41),
+(1, '15/12/2025 18:00:00', 42),
+(1, '15/12/2025 18:00:00', 43),
+(1, '15/12/2025 18:00:00', 44),
+(1, '15/12/2025 18:00:00', 45),
+(1, '15/12/2025 18:00:00', 46),
+(1, '15/12/2025 18:00:00', 47),
+(1, '15/12/2025 18:00:00', 48),
+(1, '15/12/2025 18:00:00', 49),
+(1, '15/12/2025 18:00:00', 50);
+
+INSERT INTO ShowTimeDetail (idMovie, Start_time, idSeat)
+VALUES
+(1, '15/12/2025 20:30:00', 51),
+(1, '15/12/2025 20:30:00', 52),
+(1, '15/12/2025 20:30:00', 53),
+(1, '15/12/2025 20:30:00', 54),
+(1, '15/12/2025 20:30:00', 55),
+(1, '15/12/2025 20:30:00', 56),
+(1, '15/12/2025 20:30:00', 57),
+(1, '15/12/2025 20:30:00', 58),
+(1, '15/12/2025 20:30:00', 59),
+(1, '15/12/2025 20:30:00', 60),
+(1, '15/12/2025 20:30:00', 61),
+(1, '15/12/2025 20:30:00', 62),
+(1, '15/12/2025 20:30:00', 63),
+(1, '15/12/2025 20:30:00', 64),
+(1, '15/12/2025 20:30:00', 65),
+(1, '15/12/2025 20:30:00', 66),
+(1, '15/12/2025 20:30:00', 67),
+(1, '15/12/2025 20:30:00', 68),
+(1, '15/12/2025 20:30:00', 69),
+(1, '15/12/2025 20:30:00', 70),
+(1, '15/12/2025 20:30:00', 71),
+(1, '15/12/2025 20:30:00', 72),
+(1, '15/12/2025 20:30:00', 73),
+(1, '15/12/2025 20:30:00', 74),
+(1, '15/12/2025 20:30:00', 75),
+(1, '15/12/2025 20:30:00', 76),
+(1, '15/12/2025 20:30:00', 77),
+(1, '15/12/2025 20:30:00', 78),
+(1, '15/12/2025 20:30:00', 79),
+(1, '15/12/2025 20:30:00', 80),
+(1, '15/12/2025 20:30:00', 81),
+(1, '15/12/2025 20:30:00', 82),
+(1, '15/12/2025 20:30:00', 83),
+(1, '15/12/2025 20:30:00', 84),
+(1, '15/12/2025 20:30:00', 85),
+(1, '15/12/2025 20:30:00', 86),
+(1, '15/12/2025 20:30:00', 87),
+(1, '15/12/2025 20:30:00', 88),
+(1, '15/12/2025 20:30:00', 89),
+(1, '15/12/2025 20:30:00', 90),
+(1, '15/12/2025 20:30:00', 91),
+(1, '15/12/2025 20:30:00', 92),
+(1, '15/12/2025 20:30:00', 93),
+(1, '15/12/2025 20:30:00', 94),
+(1, '15/12/2025 20:30:00', 95),
+(1, '15/12/2025 20:30:00', 96),
+(1, '15/12/2025 20:30:00', 97),
+(1, '15/12/2025 20:30:00', 98),
+(1, '15/12/2025 20:30:00', 99),
+(1, '15/12/2025 20:30:00', 100);
+
+update ShowTime 
+set idscreen = 1
+where start_time = '15/12/2025 20:30:00';
+select * from ShowTime
+select * from ShowTimeDetail
+-- VIEW
+-- Bảng view liên kết account với staff
+create view AccountStaff as
+select ac.idStaff as ID,  ac.username, ac.password, st.contact_info as email , st.name, st.role as Role
+from Account ac join Staff st on ac.idStaff = st.id; 
+GO
+
 
 -- PROC
 CREATE PROC USP_Login
@@ -534,7 +664,7 @@ begin
 end 
 
 -- Thêm vào Account 
-Select id from Staff where name = N'Nguyễn Võ Minh Quang' -- lấy idStaff
+-- Select id from Staff where name = N'Nguyễn Võ Minh Quang' -- lấy idStaff
 
 create proc USP_AddAccount 
 @user varchar(100), @pass varchar(100), @idStaff int 
@@ -546,12 +676,7 @@ begin
 end 
 
 
--- View
--- Bảng view liên kết account với staff
-create view AccountStaff as
-select ac.idStaff as ID,  ac.username, ac.password, st.contact_info as email , st.name, st.role as Role
-from Account ac join Staff st on ac.idStaff = st.id; 
-GO
+
 select *from Account
 select * from Staff
 select * from AccountStaff
@@ -581,3 +706,11 @@ where idStaff = 3;
 select * from Account
 
 select * from Account where username = 'dantruong2007'
+
+select * from Seat where idScreen = 1;
+
+set dateformat dmy
+select idSeat from ShowTimeDetail where idMovie = 1 and Start_time = '15/12/2025 20:30:00'
+select * from Seat where id = 1;
+
+select * from Seat

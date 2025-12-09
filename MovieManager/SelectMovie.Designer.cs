@@ -51,10 +51,11 @@
             this.BackButtonSelectMovie.ForeColor = System.Drawing.Color.Black;
             this.BackButtonSelectMovie.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.BackButtonSelectMovie.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.BackButtonSelectMovie.Location = new System.Drawing.Point(25, 25);
+            this.BackButtonSelectMovie.Location = new System.Drawing.Point(22, 20);
+            this.BackButtonSelectMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButtonSelectMovie.Name = "BackButtonSelectMovie";
             this.BackButtonSelectMovie.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.BackButtonSelectMovie.Size = new System.Drawing.Size(172, 62);
+            this.BackButtonSelectMovie.Size = new System.Drawing.Size(153, 50);
             this.BackButtonSelectMovie.TabIndex = 0;
             this.BackButtonSelectMovie.Text = "Back";
             this.BackButtonSelectMovie.Click += new System.EventHandler(this.BackButtonSelectMovie_Click);
@@ -65,7 +66,7 @@
             this.TitleSelectMovie.Font = new System.Drawing.Font("Calibri", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleSelectMovie.Location = new System.Drawing.Point(0, 0);
             this.TitleSelectMovie.Name = "TitleSelectMovie";
-            this.TitleSelectMovie.Size = new System.Drawing.Size(1792, 83);
+            this.TitleSelectMovie.Size = new System.Drawing.Size(1593, 66);
             this.TitleSelectMovie.TabIndex = 1;
             this.TitleSelectMovie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -76,32 +77,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ScreenPanel.BackColor = System.Drawing.Color.Transparent;
             this.ScreenPanel.FillColor = System.Drawing.Color.White;
-            this.ScreenPanel.Location = new System.Drawing.Point(792, 93);
+            this.ScreenPanel.Location = new System.Drawing.Point(704, 74);
+            this.ScreenPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ScreenPanel.Name = "ScreenPanel";
             this.ScreenPanel.ShadowColor = System.Drawing.Color.Black;
-            this.ScreenPanel.Size = new System.Drawing.Size(984, 1045);
+            this.ScreenPanel.Size = new System.Drawing.Size(875, 836);
             this.ScreenPanel.TabIndex = 3;
             // 
             // StartTimePanelSelectMovie
             // 
             this.StartTimePanelSelectMovie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.StartTimePanelSelectMovie.Location = new System.Drawing.Point(25, 93);
+            this.StartTimePanelSelectMovie.Location = new System.Drawing.Point(22, 74);
+            this.StartTimePanelSelectMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StartTimePanelSelectMovie.Name = "StartTimePanelSelectMovie";
-            this.StartTimePanelSelectMovie.Size = new System.Drawing.Size(761, 1045);
+            this.StartTimePanelSelectMovie.Size = new System.Drawing.Size(676, 836);
             this.StartTimePanelSelectMovie.TabIndex = 0;
             // 
             // SelectMovie
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.StartTimePanelSelectMovie);
             this.Controls.Add(this.ScreenPanel);
             this.Controls.Add(this.BackButtonSelectMovie);
             this.Controls.Add(this.TitleSelectMovie);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SelectMovie";
-            this.Size = new System.Drawing.Size(1792, 1154);
+            this.Size = new System.Drawing.Size(1593, 923);
             this.ResumeLayout(false);
 
         }

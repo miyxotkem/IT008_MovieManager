@@ -59,6 +59,7 @@ namespace MovieManager
                         btn.Text = showtime.Start_time.ToString();
                         btn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
                         btn.Click += SelectStartTime_Click;
+                        btn.Tag = showtime; 
                         StartTimePanelSelectMovie.Controls.Add(btn);
                         screen[showtime.IDScreen] = true;
                     }
@@ -75,7 +76,30 @@ namespace MovieManager
         }
         private void SelectStartTime_Click(object sender, EventArgs e)
         {
-            
+            // từ idMovie và StartTime lấy ds id ghế 
+            // từ ds id ghế lấy ra chi tiết từng ghế 
+            Guna2GradientButton btn = (Guna2GradientButton)sender;
+            if (btn.Tag is ShowTime showtime)
+            {
+                List<int> ListIDSeat = ShowTimeDetailDAO.Instance.GetSeatIDListFromMovie(showtime.IDMovie, showtime.Start_time);
+                List<Seat> ListSeat = new List<Seat>();
+                if (ListIDSeat != null && ListIDSeat.Count > 0)
+                {
+                    foreach (int id in ListIDSeat)
+                    {
+                        Seat seat = SeatDAO.Instance.GetSeatInfoFromSeatID(id);
+                        ListSeat.Add(seat); 
+                    }    
+                }
+                ScreenPanel.Controls.Clear();
+                if (showtime.IDScreen == 1)
+                {
+                    ScreenLayout1 screen1 = new ScreenLayout1();
+                    screen1.Reload(ListSeat);
+                    screen1.Dock = DockStyle.Fill;
+                    ScreenPanel.Controls.Add(screen1);
+                }    
+            }    
         }
     }
 }

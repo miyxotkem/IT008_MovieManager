@@ -207,8 +207,10 @@
     <Compile Include="DAO\ForgetPassUsernameDAO.cs" />
     <Compile Include="DAO\HistoryDAO.cs" />
     <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShiftDAO.cs" />
     <Compile Include="DAO\ShowTime.cs" />
+    <Compile Include="DAO\ShowTimeDetailDAO.cs" />
     <Compile Include="DAO\SnackDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DTO\Account.cs" />
@@ -216,6 +218,7 @@
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="DTO\History.cs" />
     <Compile Include="DTO\Movie.cs" />
+    <Compile Include="DTO\Seat.cs" />
     <Compile Include="DTO\Shift.cs" />
     <Compile Include="DTO\ShowTime.cs" />
     <Compile Include="DTO\Snack.cs" />
@@ -284,6 +287,18 @@
     </Compile>
     <Compile Include="ResetPassConfirm.Designer.cs">
       <DependentUpon>ResetPassConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenLayout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenLayout.Designer.cs">
+      <DependentUpon>ScreenLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenLayout1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenLayout1.Designer.cs">
+      <DependentUpon>ScreenLayout1.cs</DependentUpon>
     </Compile>
     <Compile Include="SelectMovie.cs">
       <SubType>UserControl</SubType>
@@ -361,6 +376,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPassConfirm.resx">
       <DependentUpon>ResetPassConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenLayout.resx">
+      <DependentUpon>ScreenLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenLayout1.resx">
+      <DependentUpon>ScreenLayout1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectMovie.resx">
       <DependentUpon>SelectMovie.cs</DependentUpon>
