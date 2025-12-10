@@ -193,7 +193,10 @@ namespace MovieManager
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-
+            Edit_CustomerManage ecm = new Edit_CustomerManage();
+            ecm.Location = new Point((this.Size.Width - ecm.Width) / 2, (this.Size.Height - ecm.Height) / 2);
+            this.Controls.Add(ecm);
+            ecm.BringToFront();
         }
 
         private void ReloadButton_Click(object sender, EventArgs e)

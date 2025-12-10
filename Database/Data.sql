@@ -2,7 +2,6 @@
 GO
 USE MovieManager
 GO
-select * from account
 
 -- Table
 CREATE TABLE Movie

@@ -43,16 +43,40 @@ namespace MovieManager
                             admin = account.Admin == false ? 0 : 1;
                         }
                     foreach (Account account in accounts)
-                        if(staff.Id == account.Idstaff)
+                        if (staff.Id == account.Idstaff)
                         {
                             if (account.Admin)
+                            {
                                 PromoteAdmin.Text = "Demote an admin";
+                                PromoteAdmin.ForeColor = Color.Black;
+                                PromoteAdmin.FillColor = Color.Transparent;
+                                PromoteAdmin.FillColor2 = Color.Transparent;
+                                PromoteAdmin.BorderThickness = 2;
+                            }
                             else
+                            {
                                 PromoteAdmin.Text = "Promote Admin";
+                                PromoteAdmin.ForeColor = Color.White;
+                                PromoteAdmin.FillColor = Color.FromArgb(175, 62, 62);
+                                PromoteAdmin.FillColor2 = Color.FromArgb(218, 108, 108);
+                                PromoteAdmin.BorderThickness = 0;
+                            }
                             if (account.Accept)
+                            {
                                 DeactiveButton.Text = "Deactivate Account";
+                                DeactiveButton.ForeColor = Color.White;
+                                DeactiveButton.FillColor = Color.FromArgb(175, 62, 62);
+                                DeactiveButton.FillColor2 = Color.FromArgb(218, 108, 108);
+                                DeactiveButton.BorderThickness = 0;
+                            }
                             else
+                            {
                                 DeactiveButton.Text = "Already Deactivated";
+                                DeactiveButton.ForeColor = Color.Black;
+                                DeactiveButton.FillColor = Color.Transparent;
+                                DeactiveButton.FillColor2 = Color.Transparent;
+                                DeactiveButton.BorderThickness = 2;
+                            }
                         }
                     NameTextBox.Text = staff.Name;
                     EmailTextBox.Text = staff.Contact_info;
@@ -106,8 +130,14 @@ namespace MovieManager
 
         private void DeactiveButton_Click(object sender, EventArgs e)
         {
-            if(activate == 1)
+            if (activate == 1)
+            {
                 activate = 0;
+                DeactiveButton.ForeColor = Color.Black;
+                DeactiveButton.FillColor = Color.Transparent;
+                DeactiveButton.FillColor2 = Color.Transparent;
+                DeactiveButton.BorderThickness = 2;
+            }
             else
                 MessageBox.Show("Accouunt has been deactivated", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
@@ -115,6 +145,20 @@ namespace MovieManager
         private void PromoteAdmin_Click(object sender, EventArgs e)
         {
             admin = admin == 0 ? 1 : 0;
+            if (admin == 1)
+            {
+                PromoteAdmin.ForeColor = Color.Black;
+                PromoteAdmin.FillColor = Color.Transparent;
+                PromoteAdmin.FillColor2 = Color.Transparent;
+                PromoteAdmin.BorderThickness = 2;
+            }
+            else
+            {
+                PromoteAdmin.ForeColor = Color.White;
+                PromoteAdmin.FillColor = Color.FromArgb(175, 62, 62);
+                PromoteAdmin.FillColor2 = Color.FromArgb(218, 108, 108);
+                PromoteAdmin.BorderThickness = 0;
+            }
         }
 
         private Image LoadImageUnlocked(string path)

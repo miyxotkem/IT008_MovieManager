@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PromoteAdmin = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.DeactiveButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.RemoveImageButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.UploadImageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ApplyButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -44,6 +44,7 @@
             this.PhoneNumberTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.UploadFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
             this.SuspendLayout();
@@ -51,8 +52,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.panel1.Controls.Add(this.PromoteAdmin);
-            this.panel1.Controls.Add(this.DeactiveButton);
+            this.panel1.Controls.Add(this.RemoveImageButton);
+            this.panel1.Controls.Add(this.UploadImageButton);
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.ApplyButton);
             this.panel1.Controls.Add(this.SnackPic);
@@ -73,45 +74,51 @@
             this.panel1.Size = new System.Drawing.Size(1500, 800);
             this.panel1.TabIndex = 1;
             // 
-            // PromoteAdmin
+            // RemoveImageButton
             // 
-            this.PromoteAdmin.Animated = true;
-            this.PromoteAdmin.BorderRadius = 14;
-            this.PromoteAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PromoteAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PromoteAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PromoteAdmin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PromoteAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PromoteAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.PromoteAdmin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.PromoteAdmin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PromoteAdmin.ForeColor = System.Drawing.Color.White;
-            this.PromoteAdmin.ImageSize = new System.Drawing.Size(30, 30);
-            this.PromoteAdmin.Location = new System.Drawing.Point(250, 571);
-            this.PromoteAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PromoteAdmin.Name = "PromoteAdmin";
-            this.PromoteAdmin.Size = new System.Drawing.Size(180, 60);
-            this.PromoteAdmin.TabIndex = 9;
+            this.RemoveImageButton.Animated = true;
+            this.RemoveImageButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.RemoveImageButton.BorderRadius = 14;
+            this.RemoveImageButton.BorderThickness = 2;
+            this.RemoveImageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.RemoveImageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.RemoveImageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemoveImageButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.RemoveImageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.RemoveImageButton.FillColor = System.Drawing.Color.Empty;
+            this.RemoveImageButton.FillColor2 = System.Drawing.Color.Empty;
+            this.RemoveImageButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.RemoveImageButton.ForeColor = System.Drawing.Color.Black;
+            this.RemoveImageButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.RemoveImageButton.Location = new System.Drawing.Point(470, 571);
+            this.RemoveImageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RemoveImageButton.Name = "RemoveImageButton";
+            this.RemoveImageButton.Size = new System.Drawing.Size(180, 60);
+            this.RemoveImageButton.TabIndex = 9;
+            this.RemoveImageButton.Text = "Remove";
+            this.RemoveImageButton.Click += new System.EventHandler(this.RemoveImageButton_Click);
             // 
-            // DeactiveButton
+            // UploadImageButton
             // 
-            this.DeactiveButton.Animated = true;
-            this.DeactiveButton.BorderRadius = 14;
-            this.DeactiveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeactiveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeactiveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeactiveButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeactiveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeactiveButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeactiveButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.DeactiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeactiveButton.ForeColor = System.Drawing.Color.White;
-            this.DeactiveButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.DeactiveButton.Location = new System.Drawing.Point(470, 571);
-            this.DeactiveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DeactiveButton.Name = "DeactiveButton";
-            this.DeactiveButton.Size = new System.Drawing.Size(180, 60);
-            this.DeactiveButton.TabIndex = 9;
+            this.UploadImageButton.Animated = true;
+            this.UploadImageButton.BorderRadius = 14;
+            this.UploadImageButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UploadImageButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UploadImageButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UploadImageButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UploadImageButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UploadImageButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.UploadImageButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.UploadImageButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UploadImageButton.ForeColor = System.Drawing.Color.White;
+            this.UploadImageButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.UploadImageButton.Location = new System.Drawing.Point(250, 571);
+            this.UploadImageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UploadImageButton.Name = "UploadImageButton";
+            this.UploadImageButton.Size = new System.Drawing.Size(180, 60);
+            this.UploadImageButton.TabIndex = 9;
+            this.UploadImageButton.Text = "Upload";
+            this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
             // 
             // CancelButton
             // 
@@ -153,6 +160,7 @@
             this.ApplyButton.Size = new System.Drawing.Size(194, 76);
             this.ApplyButton.TabIndex = 8;
             this.ApplyButton.Text = "Apply";
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // SnackPic
             // 
@@ -275,6 +283,7 @@
             this.PhoneNumberTextBox.SelectedText = "";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(460, 60);
             this.PhoneNumberTextBox.TabIndex = 4;
+            this.PhoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // EmailTextBox
             // 
@@ -318,6 +327,10 @@
             this.NameTextBox.Size = new System.Drawing.Size(460, 60);
             this.NameTextBox.TabIndex = 4;
             // 
+            // UploadFileDialog
+            // 
+            this.UploadFileDialog.FileName = "openFileDialog1";
+            // 
             // Edit_CustomerManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -335,8 +348,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2GradientButton PromoteAdmin;
-        private Guna.UI2.WinForms.Guna2GradientButton DeactiveButton;
+        private Guna.UI2.WinForms.Guna2GradientButton UploadImageButton;
         private Guna.UI2.WinForms.Guna2GradientButton CancelButton;
         private Guna.UI2.WinForms.Guna2GradientButton ApplyButton;
         private Guna.UI2.WinForms.Guna2PictureBox SnackPic;
@@ -350,5 +362,7 @@
         private System.Windows.Forms.Label MembershipLabel;
         private Guna.UI2.WinForms.Guna2TextBox MembershipTextBox;
         private Guna.UI2.WinForms.Guna2TextBox MoneySpentTextBox;
+        private Guna.UI2.WinForms.Guna2GradientButton RemoveImageButton;
+        private System.Windows.Forms.OpenFileDialog UploadFileDialog;
     }
 }
