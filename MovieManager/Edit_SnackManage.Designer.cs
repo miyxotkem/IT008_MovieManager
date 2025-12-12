@@ -36,6 +36,7 @@
             this.StockTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CategoryComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.RemovePic = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -45,7 +46,6 @@
             this.ImportTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ImportLabel = new System.Windows.Forms.Label();
             this.UploadFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.CategoryComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
             this.SuspendLayout();
@@ -172,6 +172,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1500, 800);
             this.panel1.TabIndex = 3;
+            // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.CategoryComboBox.BorderRadius = 12;
+            this.CategoryComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CategoryComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CategoryComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.CategoryComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CategoryComboBox.ItemHeight = 30;
+            this.CategoryComboBox.Items.AddRange(new object[] {
+            "Food",
+            "Beverage"});
+            this.CategoryComboBox.Location = new System.Drawing.Point(700, 490);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(459, 36);
+            this.CategoryComboBox.TabIndex = 6;
             // 
             // SnackPic
             // 
@@ -320,25 +339,6 @@
             // UploadFileDialog
             // 
             this.UploadFileDialog.FileName = "openFileDialog1";
-            // 
-            // CategoryComboBox
-            // 
-            this.CategoryComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.CategoryComboBox.BorderRadius = 12;
-            this.CategoryComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CategoryComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CategoryComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CategoryComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.CategoryComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.CategoryComboBox.ItemHeight = 30;
-            this.CategoryComboBox.Items.AddRange(new object[] {
-            "Food",
-            "Beverage"});
-            this.CategoryComboBox.Location = new System.Drawing.Point(700, 490);
-            this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(459, 36);
-            this.CategoryComboBox.TabIndex = 6;
             // 
             // Edit_SnackManage
             // 

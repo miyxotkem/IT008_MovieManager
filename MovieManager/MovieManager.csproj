@@ -265,6 +265,12 @@
     <Compile Include="History_SnackManage.Designer.cs">
       <DependentUpon>History_SnackManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Info_ShowTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Info_ShowTime.Designer.cs">
+      <DependentUpon>Info_ShowTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +305,12 @@
     </Compile>
     <Compile Include="SelectMovie.Designer.cs">
       <DependentUpon>SelectMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowTimeManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowTimeManage.Designer.cs">
+      <DependentUpon>ShowTimeManage.cs</DependentUpon>
     </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
@@ -362,6 +374,9 @@
     <EmbeddedResource Include="History_SnackManage.resx">
       <DependentUpon>History_SnackManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Info_ShowTime.resx">
+      <DependentUpon>Info_ShowTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MovieDisplay.resx">
       <DependentUpon>MovieDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectMovie.resx">
       <DependentUpon>SelectMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowTimeManage.resx">
+      <DependentUpon>ShowTimeManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -441,6 +459,8 @@
     <None Include="Resources\group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz241.png" />
+    <None Include="Resources\info_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\folder_eye_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
