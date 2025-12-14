@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using MovieManager.DAO;
 using MovieManager.DTO;
+using Org.BouncyCastle.Crypto.Parameters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace MovieManager
 {
     public partial class SnackDisplay : UserControl
     {
+        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        //private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
         public SnackDisplay()
         {
             InitializeComponent();
@@ -25,7 +28,6 @@ namespace MovieManager
         {
             List<Snack> snackList = SnackDAO.Instance.LoadSnackList();
             string baseDirectory = Application.StartupPath;
-            string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
             foreach (Snack snack in snackList)
             {
                 Panel pnl = new Panel()
@@ -70,8 +72,24 @@ namespace MovieManager
                 }
                 pnl.Controls.Add(pic);
                 pnl.Controls.Add(lblTitle);
+                pic.Click += new EventHandler(panel_click);
+                pic.Tag = snack;
                 SnackDisplayFlowLayoutPanel.Controls.Add(pnl);
             }
+        }
+
+        private void panel_click(object sender, EventArgs e)
+        {
+            PictureBox panel = (PictureBox)sender;    
+            if (panel != null && panel.Tag is Snack snack)
+            {
+                SelectSnack selectSnack = new SelectSnack(snack);
+                this.Parent.Controls.Add(selectSnack);
+                selectSnack.BringToFront();
+                selectSnack.Left = (this.Parent.ClientSize.Width - selectSnack.ClientSize.Width) / 2;
+                selectSnack.Top = (this.Parent.ClientSize.Height - selectSnack.ClientSize.Height) / 2;
+                selectSnack.Tag = panel.Tag;
+            }    
         }
         private Image LoadImageUnlocked(string path)
         {

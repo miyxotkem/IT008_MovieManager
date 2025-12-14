@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,16 @@ namespace MovieManager
 {
     public partial class Cinema : Form
     {
+        private string user = null;
+        private MovieDisplay movieDisplay;
+        private SnackDisplay snackDisplay;
+        private MovieManage movieManage;
+        private SnackManage snackManage;
+        private CustomerManage customerManage;
+        private AccountDisplay accountDisplay;
+        private StaffManage staffManage;
+        private ShowTimeManage showTimeManage;
+
         public Cinema()
         {
             InitializeComponent(); 
@@ -24,10 +35,51 @@ namespace MovieManager
         public Cinema(string username)
         {
             InitializeComponent();
-            AccountDisplay.Reload(username);
+            //AccountDisplay.Reload(username);
+            user = username;
+        }
+        private void FirstLoad()
+        {
+            movieDisplay = new MovieDisplay();
+            movieDisplay.Reload();
+            movieDisplay.Dock = DockStyle.Fill;
+            snackDisplay = new SnackDisplay();
+            snackDisplay.Reload();
+            snackDisplay.Dock = DockStyle.Fill;
+            movieManage = new MovieManage();
+            movieManage.Dock = DockStyle.Fill;
+            snackManage = new SnackManage();    
+            snackManage.Dock = DockStyle.Fill;
+            customerManage = new CustomerManage();  
+            customerManage.Dock = DockStyle.Fill;
+            accountDisplay = new AccountDisplay();
+            if (user != null ) accountDisplay.Reload(user);
+            accountDisplay.Dock = DockStyle.Fill;   
+            staffManage = new StaffManage();
+            staffManage.Dock = DockStyle.Fill;
+            showTimeManage = new ShowTimeManage();
+            showTimeManage.Dock = DockStyle.Fill;   
+            MainPanel.Controls.Add(movieManage);
+            MainPanel.Controls.Add(snackManage);
+            MainPanel.Controls.Add(movieDisplay);
+            MainPanel.Controls.Add(snackDisplay);
+            MainPanel.Controls.Add(customerManage);
+            MainPanel.Controls.Add(staffManage);
+            MainPanel.Controls.Add(accountDisplay);
+            MainPanel.Controls.Add(showTimeManage);
+            if (this.Tag is Account account)
+            {
+                MovieManageButton.Enabled = account.Admin;
+                SnackManageButton.Enabled = account.Admin;
+                CustomerManageButton.Enabled = account.Admin;   
+                StaffManageButton.Enabled = account.Admin;
+                ShowTimeManageButton.Enabled = account.Admin;
+            }    
         }
         private void Cinema_Load(object sender, EventArgs e)
         {
+            FirstLoad();
+            MovieDisplayButtonCinema.Checked = true;
             CinemaShadow.SetShadowForm(this);            
             title.Text = "Movie Manager";
             title.AutoSize = false;
@@ -81,23 +133,23 @@ namespace MovieManager
                 CustomerManageButton.Text = "Customer Manage";
                 ShowTimeManageButton.Size = new Size(ShowTimeManageButton.Width + 150, ShowTimeManageButton.Height);
                 ShowTimeManageButton.Text = "ShowTime Manage";
-                MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
-                MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
-                SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
-                SnackDisplay.Location = new Point(SnackDisplay.Location.X + 150, SnackDisplay.Location.Y);
-                MovieManage.Size = new Size(MovieManage.Width - 150, MovieManage.Height);
-                MovieManage.Location = new Point(MovieManage.Location.X + 150, MovieManage.Location.Y);
+                //MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
+                //MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
+                //SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
+                //SnackDisplay.Location = new Point(SnackDisplay.Location.X + 150, SnackDisplay.Location.Y);
+                //MovieManage.Size = new Size(MovieManage.Width - 150, MovieManage.Height);
+                //MovieManage.Location = new Point(MovieManage.Location.X + 150, MovieManage.Location.Y);
                 signout.Location = new Point((SideBarPanelCinema.Width - 150) / 2, SideBarPanelCinema.Height - 80);
-                SnackManage.Size = new Size(SnackManage.Width - 150, SnackManage.Height);
-                SnackManage.Location = new Point(SnackManage.Location.X + 150, SnackManage.Location.Y);
-                AccountDisplay.Size = new Size(AccountDisplay.Width - 150, AccountDisplay.Height);
-                AccountDisplay.Location = new Point(AccountDisplay.Location.X + 150, AccountDisplay.Location.Y);
-                StaffManage.Size = new Size(StaffManage.Width - 150, StaffManage.Height);
-                StaffManage.Location = new Point(StaffManage.Location.X + 150, StaffManage.Location.Y);
-                CustomerManage.Size = new Size(CustomerManage.Width - 150, CustomerManage.Height);
-                CustomerManage.Location = new Point(CustomerManage.Location.X + 150, CustomerManage.Location.Y);
-                ShowTimeManage.Size = new Size(ShowTimeManage.Width - 150, ShowTimeManage.Height);
-                ShowTimeManage.Location = new Point(ShowTimeManage.Location.X + 150, ShowTimeManage.Location.Y);
+                //SnackManage.Size = new Size(SnackManage.Width - 150, SnackManage.Height);
+                //SnackManage.Location = new Point(SnackManage.Location.X + 150, SnackManage.Location.Y);
+                //AccountDisplay.Size = new Size(AccountDisplay.Width - 150, AccountDisplay.Height);
+                //AccountDisplay.Location = new Point(AccountDisplay.Location.X + 150, AccountDisplay.Location.Y);
+                //StaffManage.Size = new Size(StaffManage.Width - 150, StaffManage.Height);
+                //StaffManage.Location = new Point(StaffManage.Location.X + 150, StaffManage.Location.Y);
+                //CustomerManage.Size = new Size(CustomerManage.Width - 150, CustomerManage.Height);
+                //CustomerManage.Location = new Point(CustomerManage.Location.X + 150, CustomerManage.Location.Y);
+                //ShowTimeManage.Size = new Size(ShowTimeManage.Width - 150, ShowTimeManage.Height);
+                //ShowTimeManage.Location = new Point(ShowTimeManage.Location.X + 150, ShowTimeManage.Location.Y);
                 title.Visible = true;
                 signout.Visible = true;
                 sidebarzoom = true;
@@ -121,22 +173,22 @@ namespace MovieManager
                 CustomerManageButton.Text = "";
                 ShowTimeManageButton.Size = new Size(ShowTimeManageButton.Width - 150, ShowTimeManageButton.Height);
                 ShowTimeManageButton.Text = "";
-                MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
-                MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
-                SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
-                SnackDisplay.Location = new Point(SnackDisplay.Location.X - 150, SnackDisplay.Location.Y);
-                MovieManage.Size = new Size(MovieManage.Width + 150, MovieManage.Height);
-                MovieManage.Location = new Point(MovieManage.Location.X - 150, MovieManage.Location.Y);
-                SnackManage.Size = new Size(SnackManage.Width + 150, SnackManage.Height);
-                SnackManage.Location = new Point(SnackManage.Location.X - 150, SnackManage.Location.Y);
-                AccountDisplay.Size = new Size(AccountDisplay.Width + 150, AccountDisplay.Height);
-                AccountDisplay.Location = new Point(AccountDisplay.Location.X - 150, AccountDisplay.Location.Y);
-                StaffManage.Size = new Size(StaffManage.Width + 150, StaffManage.Height);
-                StaffManage.Location = new Point(StaffManage.Location.X - 150, StaffManage.Location.Y);
-                CustomerManage.Size = new Size(CustomerManage.Width + 150, CustomerManage.Height);
-                CustomerManage.Location = new Point(CustomerManage.Location.X - 150, CustomerManage.Location.Y);
-                ShowTimeManage.Size = new Size(ShowTimeManage.Width + 150, ShowTimeManage.Height);
-                ShowTimeManage.Location = new Point(ShowTimeManage.Location.X - 150, ShowTimeManage.Location.Y);
+                //MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
+                //MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
+                //SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
+                //SnackDisplay.Location = new Point(SnackDisplay.Location.X - 150, SnackDisplay.Location.Y);
+                //MovieManage.Size = new Size(MovieManage.Width + 150, MovieManage.Height);
+                //MovieManage.Location = new Point(MovieManage.Location.X - 150, MovieManage.Location.Y);
+                //SnackManage.Size = new Size(SnackManage.Width + 150, SnackManage.Height);
+                //SnackManage.Location = new Point(SnackManage.Location.X - 150, SnackManage.Location.Y);
+                //AccountDisplay.Size = new Size(AccountDisplay.Width + 150, AccountDisplay.Height);
+                //AccountDisplay.Location = new Point(AccountDisplay.Location.X - 150, AccountDisplay.Location.Y);
+                //StaffManage.Size = new Size(StaffManage.Width + 150, StaffManage.Height);
+                //StaffManage.Location = new Point(StaffManage.Location.X - 150, StaffManage.Location.Y);
+                //CustomerManage.Size = new Size(CustomerManage.Width + 150, CustomerManage.Height);
+                //CustomerManage.Location = new Point(CustomerManage.Location.X - 150, CustomerManage.Location.Y);
+                //ShowTimeManage.Size = new Size(ShowTimeManage.Width + 150, ShowTimeManage.Height);
+                //ShowTimeManage.Location = new Point(ShowTimeManage.Location.X - 150, ShowTimeManage.Location.Y);
                 title.Visible = false;
                 signout.Visible = false;
                 sidebarzoom = false;
@@ -150,29 +202,31 @@ namespace MovieManager
             signInForm.ShowDialog();
         }
 
-        private void MovieDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
+        public void MovieDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
         {
             if (MovieDisplayButtonCinema.Checked)
             {
-                MovieDisplay.BringToFront();
-                MovieDisplay.Reload();
+                //MovieDisplay.BringToFront();
+                //MovieDisplay.Reload();
+                movieDisplay.BringToFront();
                 if(sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }
 
-        private void SnackDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
+        public void SnackDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)
         {
             if (SnackDisplayButtonCinema.Checked)
             {
-                SnackDisplay.BringToFront();
-                SnackDisplay.Reload();
+                //SnackDisplay.BringToFront();
+                //SnackDisplay.Reload();
+                snackDisplay.BringToFront();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }
 
-        private void MovieManageButton_CheckedChanged(object sender, EventArgs e)
+        public void MovieManageButton_CheckedChanged(object sender, EventArgs e)
         {
             if (this.Tag is Account account)
             {
@@ -183,13 +237,14 @@ namespace MovieManager
             }
             if (MovieManageButton.Checked)
             {
-                MovieManage.BringToFront();
+                //MovieManage.BringToFront();
+                movieManage.BringToFront();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }
 
-        private void SnackManageButton_CheckedChanged(object sender, EventArgs e)
+        public void SnackManageButton_CheckedChanged(object sender, EventArgs e)
         {
             if (this.Tag is Account account)
             {
@@ -200,23 +255,25 @@ namespace MovieManager
             }
             if (SnackManageButton.Checked)
             {
-                SnackManage.BringToFront();
+                //SnackManage.BringToFront();
+                snackManage.BringToFront();
                 if(sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }
 
-        private void AccountDisplayButton_Click(object sender, EventArgs e)
+        public void AccountDisplayButton_Click(object sender, EventArgs e)
         {
             if (AccountDisplayButton.Checked)
             {
-                AccountDisplay.BringToFront();
+                //AccountDisplay.BringToFront();
+                accountDisplay.BringToFront();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }
 
-        private void StaffManageButton_Click(object sender, EventArgs e)
+        public void StaffManageButton_Click(object sender, EventArgs e)
         {
             if (this.Tag is Account account)
             {
@@ -227,13 +284,14 @@ namespace MovieManager
             }
             if (StaffManageButton.Checked)
             {
-                StaffManage.BringToFront();
+                //StaffManage.BringToFront();
+                staffManage.BringToFront(); 
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
         }
 
-        private void CustomerManageButton_Click(object sender, EventArgs e)
+        public void CustomerManageButton_Click(object sender, EventArgs e)
         {
             if (this.Tag is Account account)
             {
@@ -244,7 +302,8 @@ namespace MovieManager
             }
             if (CustomerManageButton.Checked)
             {
-                CustomerManage.BringToFront();
+                //CustomerManage.BringToFront();
+                customerManage.BringToFront();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
@@ -261,10 +320,26 @@ namespace MovieManager
             }
             if (ShowTimeManageButton.Checked)
             {
-                ShowTimeManage.BringToFront();
+                //ShowTimeManage.BringToFront();
+                showTimeManage.BringToFront();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
+        }
+
+        private void MovieDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void ChangeSnackDisplayButton(bool state)
+        {
+            SnackDisplayButtonCinema.Checked = state;
+        }
+
+        public void ChangeMovieDisplayButton(bool state)
+        {
+            MovieDisplayButtonCinema.Checked =state;    
         }
     }
 }

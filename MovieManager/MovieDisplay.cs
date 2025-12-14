@@ -15,6 +15,8 @@ namespace MovieManager
 {
     public partial class MovieDisplay : UserControl
     {
+        //private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
+        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Posters";
         public MovieDisplay()
         {
             InitializeComponent();
@@ -24,7 +26,6 @@ namespace MovieManager
         {
             List<Movie> movieList = MovieDAO.Instance.LoadMovieList();
             string baseDirectory = Application.StartupPath;
-            string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
             foreach (Movie movie in movieList)
             {
                 Panel pnl = new Panel()
@@ -82,14 +83,15 @@ namespace MovieManager
             PictureBox clickedPic = sender as PictureBox;
             if (clickedPic == null) return;
             Movie selectedMovie = clickedPic.Tag as Movie;
-            if (selectedMovie == null) return;            
-            Control parentContainer = MovieDisplayFlowLayoutPanel.Parent;
-            SelectMovie sm = new SelectMovie(selectedMovie, parentContainer);
+            if (selectedMovie == null) return;
+            Control parentContainer = this.Parent;
+            Control cinemaPanel = this.Parent;
+            SelectMovie sm = new SelectMovie(selectedMovie, parentContainer, cinemaPanel);
             sm.Dock = DockStyle.Fill;
             if (parentContainer != null)
             {
-                parentContainer.Controls.Clear();
                 parentContainer.Controls.Add(sm);
+                sm.BringToFront();
             }
         }
         private Image LoadImageUnlocked(string path)

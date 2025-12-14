@@ -17,19 +17,23 @@ namespace MovieManager
     public partial class SelectMovie : UserControl
     {
         private Control parentContainer = null;
+        private Control cinemaPanel = null;
+        private Guna2GradientButton movieButton = null;
+        private Guna2GradientButton snackButton = null;
         public SelectMovie()
         {
             InitializeComponent();
         }
         private Movie currentMovie;
 
-        public SelectMovie(Movie movie, Control parentContainer)
+        public SelectMovie(Movie movie, Control parentContainer, Control cinemaPanel)
         {
             InitializeComponent();
             currentMovie = movie;
             TitleSelectMovie.Text = currentMovie.Title;
             LoadShowTime();
             this.parentContainer = parentContainer;
+            this.cinemaPanel = cinemaPanel;
         }
 
         public void LoadShowTime()
@@ -64,10 +68,14 @@ namespace MovieManager
 
         private void BackButtonSelectMovie_Click(object sender, EventArgs e)
         {
-            MovieDisplay md = new MovieDisplay();
-            parentContainer.Controls.Clear();
-            parentContainer.Controls.Add(md);
-            md.Dock = DockStyle.Fill;
+            if (parentContainer != null)
+            {
+                if (parentContainer.Parent is Cinema cinema)
+                {
+                    cinema.ChangeMovieDisplayButton(true);
+                }    
+            }
+            this.Dispose();
         }
         private void SelectStartTime_Click(object sender, EventArgs e)
         {
@@ -95,6 +103,18 @@ namespace MovieManager
                     ScreenPanel.Controls.Add(screen1);
                 }    
             }    
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            if (parentContainer != null )
+            {
+                if (parentContainer.Parent is Cinema cinema)
+                {
+                    cinema.ChangeSnackDisplayButton(true);
+                }    
+            }
+            this.Dispose();
         }
     }
 }

@@ -306,6 +306,12 @@
     <Compile Include="SelectMovie.Designer.cs">
       <DependentUpon>SelectMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectSnack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectSnack.Designer.cs">
+      <DependentUpon>SelectSnack.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowTimeManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -391,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectMovie.resx">
       <DependentUpon>SelectMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSnack.resx">
+      <DependentUpon>SelectSnack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowTimeManage.resx">
       <DependentUpon>ShowTimeManage.cs</DependentUpon>
