@@ -1,4 +1,5 @@
-﻿using MovieManager.DTO;
+﻿using MovieManager.DAO;
+using MovieManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,25 @@ namespace MovieManager
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void AddCustomerButton_Click(object sender, EventArgs e)
+        {
+            CustomerInput customerInput = new CustomerInput();
+            customerInput.ShowDialog();
+        }
+
+        private void SelectSnack_Load(object sender, EventArgs e)
+        {
+            if (CustomerDAO.Instance.CurrentCustomer != null)
+            {
+                AddCustomerButton.Visible = false;
+            }
+            else
+            {
+                AddCustomerButton.Visible = true;
+            } 
+                
         }
     }
 }

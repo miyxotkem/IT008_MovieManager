@@ -35,6 +35,7 @@
             this.ChooseSeatButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CancelSeatButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.NextButtonSnack = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.AddCustomerButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SuspendLayout();
             // 
             // BackButtonSelectMovie
@@ -54,7 +55,7 @@
             this.BackButtonSelectMovie.ForeColor = System.Drawing.Color.Black;
             this.BackButtonSelectMovie.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.BackButtonSelectMovie.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.BackButtonSelectMovie.Location = new System.Drawing.Point(35, 20);
+            this.BackButtonSelectMovie.Location = new System.Drawing.Point(30, 20);
             this.BackButtonSelectMovie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackButtonSelectMovie.Name = "BackButtonSelectMovie";
             this.BackButtonSelectMovie.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
@@ -122,6 +123,7 @@
             this.ChooseSeatButton.Size = new System.Drawing.Size(153, 50);
             this.ChooseSeatButton.TabIndex = 4;
             this.ChooseSeatButton.Text = "Confirm";
+            this.ChooseSeatButton.Click += new System.EventHandler(this.ChooseSeatButton_Click);
             // 
             // CancelSeatButton
             // 
@@ -148,6 +150,7 @@
             this.CancelSeatButton.Size = new System.Drawing.Size(153, 50);
             this.CancelSeatButton.TabIndex = 1;
             this.CancelSeatButton.Text = "Cancel";
+            this.CancelSeatButton.Click += new System.EventHandler(this.CancelSeatButton_Click);
             // 
             // NextButtonSnack
             // 
@@ -166,7 +169,7 @@
             this.NextButtonSnack.ForeColor = System.Drawing.Color.White;
             this.NextButtonSnack.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.NextButtonSnack.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.NextButtonSnack.Location = new System.Drawing.Point(212, 20);
+            this.NextButtonSnack.Location = new System.Drawing.Point(207, 20);
             this.NextButtonSnack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NextButtonSnack.Name = "NextButtonSnack";
             this.NextButtonSnack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
@@ -175,10 +178,30 @@
             this.NextButtonSnack.Text = "Next";
             this.NextButtonSnack.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
+            // AddCustomerButton
+            // 
+            this.AddCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddCustomerButton.BackColor = System.Drawing.Color.Transparent;
+            this.AddCustomerButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddCustomerButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddCustomerButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddCustomerButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddCustomerButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.AddCustomerButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.AddCustomerButton.Location = new System.Drawing.Point(1538, 30);
+            this.AddCustomerButton.Name = "AddCustomerButton";
+            this.AddCustomerButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.AddCustomerButton.Size = new System.Drawing.Size(38, 40);
+            this.AddCustomerButton.TabIndex = 6;
+            this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
+            // 
             // SelectMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.AddCustomerButton);
             this.Controls.Add(this.NextButtonSnack);
             this.Controls.Add(this.CancelSeatButton);
             this.Controls.Add(this.ChooseSeatButton);
@@ -190,6 +213,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SelectMovie";
             this.Size = new System.Drawing.Size(1593, 923);
+            this.Load += new System.EventHandler(this.SelectMovie_Load);
             this.ResumeLayout(false);
 
         }
@@ -203,5 +227,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton ChooseSeatButton;
         private Guna.UI2.WinForms.Guna2GradientButton CancelSeatButton;
         private Guna.UI2.WinForms.Guna2GradientButton NextButtonSnack;
+        private Guna.UI2.WinForms.Guna2CircleButton AddCustomerButton;
     }
 }

@@ -36,17 +36,19 @@
             this.MovieDisplayFlowLayoutPanel.AutoScroll = true;
             this.MovieDisplayFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MovieDisplayFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.MovieDisplayFlowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieDisplayFlowLayoutPanel.Name = "MovieDisplayFlowLayoutPanel";
-            this.MovieDisplayFlowLayoutPanel.Size = new System.Drawing.Size(1792, 1154);
+            this.MovieDisplayFlowLayoutPanel.Size = new System.Drawing.Size(1593, 923);
             this.MovieDisplayFlowLayoutPanel.TabIndex = 0;
             // 
             // MovieDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MovieDisplayFlowLayoutPanel);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MovieDisplay";
-            this.Size = new System.Drawing.Size(1792, 1154);
+            this.Size = new System.Drawing.Size(1593, 923);
             this.ResumeLayout(false);
 
         }

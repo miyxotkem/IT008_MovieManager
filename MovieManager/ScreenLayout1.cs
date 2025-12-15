@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using MovieManager.DAO;
 using MovieManager.DTO;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace MovieManager
         private Color Couple = Color.FromArgb(184, 0, 0);
         private Color Choose = Color.FromArgb(235, 107, 149);
         private Color Occupied = Color.FromArgb(125, 31, 164);
+        private ShowTime showtime = null;
         public ScreenLayout1()
         {
             InitializeComponent();
@@ -29,6 +31,10 @@ namespace MovieManager
 
         public void Reload(List<Seat> list)
         {
+            if (this.Tag is ShowTime show)
+            {
+                showtime = show;
+            }
             if (list != null && list.Count > 0)
             {
                 string firstname = "guna2GradientButton";
@@ -44,6 +50,11 @@ namespace MovieManager
                             if (name == btnName)
                             {
                                 btn.Text = Convert.ToString(list[index].SeatRow + list[index].SeatNumber);
+                                bool occupied = false;
+                                if (showtime != null)
+                                {
+                                    occupied = ShowTimeDetailDAO.Instance.CheckSeatOccupied(showtime.IDMovie, showtime.Start_time, list[index].IdSeat);
+                                }
                                 btn.Tag = list[index];
                                 btn.FillColor = Color.White;
                                 btn.FillColor2 = Color.White;
@@ -60,6 +71,9 @@ namespace MovieManager
                                 }    else if (list[index].SeatType == "Couple")
                                 {
                                     color = Couple;
+                                }    else if (occupied)
+                                {
+                                    color = Occupied;
                                 }    
                                 btn.FillColor = color;
                                 btn.FillColor2 = color;
@@ -99,7 +113,7 @@ namespace MovieManager
                     } else if (seat.SeatType == "Couple")
                     {
                         color = Couple;
-                    }    
+                    } 
                 }    
                 btn.FillColor = color;
                 btn.FillColor2 = color;
@@ -108,6 +122,19 @@ namespace MovieManager
                 btn.FillColor = Choose;
                 btn.FillColor2 = Choose;
             }    
+        }
+
+        public List<Guna2GradientButton> GetCurrentChooseButton()
+        {
+            List<Guna2GradientButton> list = new List<Guna2GradientButton>();
+            foreach (Control ctrl in SeatPanel.Controls)
+            {
+                if (ctrl is Guna2GradientButton btn)
+                {
+                    if (btn.FillColor == Choose)  list.Add(btn);
+                }    
+            }
+            return list;
         }
     }
 }

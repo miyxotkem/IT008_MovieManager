@@ -18,8 +18,14 @@ namespace MovieManager
     {
         private Control parentContainer = null;
         private Control cinemaPanel = null;
-        private Guna2GradientButton movieButton = null;
-        private Guna2GradientButton snackButton = null;
+        private Color Normal = Color.FromArgb(251, 198, 56);
+        private Color VIP = Color.FromArgb(247, 175, 64);
+        private Color SVIP = Color.FromArgb(233, 134, 30);
+        private Color Couple = Color.FromArgb(184, 0, 0);
+        private Color Choose = Color.FromArgb(235, 107, 149);
+        private Color Occupied = Color.FromArgb(125, 31, 164);
+        private ShowTime CurrentShowTime = null;
+        private Cinema cinema = null;
         public SelectMovie()
         {
             InitializeComponent();
@@ -34,6 +40,13 @@ namespace MovieManager
             LoadShowTime();
             this.parentContainer = parentContainer;
             this.cinemaPanel = cinemaPanel;
+            if (parentContainer != null)
+            {
+                if (parentContainer.Parent is Cinema cinema)
+                {
+                    this.cinema = cinema;
+                }    
+            }    
         }
 
         public void LoadShowTime()
@@ -84,6 +97,7 @@ namespace MovieManager
             Guna2GradientButton btn = (Guna2GradientButton)sender;
             if (btn.Tag is ShowTime showtime)
             {
+                CurrentShowTime = showtime;
                 List<int> ListIDSeat = ShowTimeDetailDAO.Instance.GetSeatIDListFromMovie(showtime.IDMovie, showtime.Start_time);
                 List<Seat> ListSeat = new List<Seat>();
                 if (ListIDSeat != null && ListIDSeat.Count > 0)
@@ -98,6 +112,7 @@ namespace MovieManager
                 if (showtime.IDScreen == 1)
                 {
                     ScreenLayout1 screen1 = new ScreenLayout1();
+                    screen1.Tag = showtime;
                     screen1.Reload(ListSeat);
                     screen1.Dock = DockStyle.Fill;
                     ScreenPanel.Controls.Add(screen1);
@@ -115,6 +130,153 @@ namespace MovieManager
                 }    
             }
             this.Dispose();
+        }
+
+        private void ChooseSeatButton_Click(object sender, EventArgs e)
+        {
+            ScreenLayout1 screen = null;
+            foreach (Control ctr in ScreenPanel.Controls)
+            {
+                if (ctr is ScreenLayout1 screenLayout)
+                {
+                    screen = screenLayout;
+                    break;
+                }    
+            }
+            List<Guna2GradientButton> list = screen.GetCurrentChooseButton();
+            bool HaveChooseSeat = false;
+            Bill bill = null;
+            if (CustomerDAO.Instance.CurrentCustomer == null)
+            {
+                MessageBox.Show("Please fill customer's information.", "Notification");
+            }
+            else
+            {
+                // Lấy/ Tạo mới Bill 
+                int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
+                bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
+                if (bill == null) // chưa có bill --> Cần tạo mới
+                {
+                    BillDAO.Instance.CreateBill(idCustomer);
+                    bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
+                }
+            }
+            int TotalSeat = 0;
+            foreach (Guna2GradientButton button in list)
+            {
+                if (button.FillColor == Choose)
+                {
+                    button.FillColor = Occupied;
+                    button.FillColor2 = Occupied;
+                    if (CurrentShowTime != null)
+                    {
+                        if (button.Tag is Seat seat)
+                        {
+                            TotalSeat++;
+                            // Đánh dấu ghế đã chọn 
+                            ShowTimeDetailDAO.Instance.ChooseSeat(CurrentShowTime.IDMovie, CurrentShowTime.Start_time, seat.IdSeat);
+                            // Cho ticket vào database 
+                            if (bill != null)
+                            {
+                                float price = 0;
+                                if (seat.SeatType == "Normal")
+                                {
+                                    price = 70;
+                                } else if (seat.SeatType == "VIP")
+                                {
+                                    price = 90;
+                                } else if (seat.SeatType == "SVIP")
+                                {
+                                    price = 110;
+                                } else if (seat.SeatType == "Couple")
+                                {
+                                    price = 115;
+                                }    
+                                if (cinema != null && cinema.Tag is Account account)
+                                {
+                                    TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, account.Id, seat.IdSeat, bill.IdBill);
+                                }    
+                            }    
+                        }    
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please choose film's start time first.", "Notification");
+                    }
+                    HaveChooseSeat = true;
+                }    
+            }    
+            if (!HaveChooseSeat)
+            {
+                MessageBox.Show("Please choose your seat first.", "Notification");
+            }
+            else
+            {
+                // Thêm vào BillInfo 
+
+            } 
+                
+        }
+
+        private void CancelSeatButton_Click(object sender, EventArgs e)
+        {
+            ScreenLayout1 screen = null;
+            foreach (Control ctr in ScreenPanel.Controls)
+            {
+                if (ctr is ScreenLayout1 screenLayout)
+                {
+                    screen = screenLayout;
+                    break;
+                }
+            }
+            List<Guna2GradientButton> list = screen.GetCurrentChooseButton();
+            foreach (Guna2GradientButton button in list)
+            {
+                if (button.FillColor == Choose)
+                {
+                        Color color = Color.White;
+                        if (button.Tag is Seat seat)
+                        {
+                            if (seat.SeatType == "Normal")
+                            {
+                                color = Normal;
+                            }
+                            else if (seat.SeatType == "VIP")
+                            {
+                                color = VIP;
+                            }
+                            else if (seat.SeatType == "SVIP")
+                            {
+                                color = SVIP;
+                            }
+                            else if (seat.SeatType == "Couple")
+                            {
+                                color = Couple;
+                            }
+                        }
+                        button.FillColor = color;
+                        button.FillColor2 = color; 
+                }
+            }
+        }
+
+        private void AddCustomerButton_Click(object sender, EventArgs e)
+        {
+            CustomerInput customerInput = new CustomerInput();
+            customerInput.ShowDialog();
+        }
+
+        private void SelectMovie_Load(object sender, EventArgs e)
+        {
+            if (CustomerDAO.Instance.CurrentCustomer != null)
+            {
+                AddCustomerButton.Visible = false;
+            }
+            else
+            {
+                AddCustomerButton.Visible = true;   
+            } 
+                
         }
     }
 }

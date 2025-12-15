@@ -110,35 +110,46 @@ create table ShowTimeDetail(
 )
 GO
 
+create table Bill(
+	idBill int identity primary key, 
+	idCustomer int,
+	payment_method varchar(50) default 'Cash',
+	bill_status int default 0, --0: Unpaid   1: Paid
+
+	foreign key (idCustomer) references Customer(id)
+)
+go
+insert into Bill (idCustomer) values ( @id )
 CREATE TABLE Ticket
 (
 	id INT IDENTITY PRIMARY KEY,
+	idBill int,
 	price FLOAT CHECK(price >= 0),
 	purchase_date DATE DEFAULT GETDATE(),
-	payment_method NVARCHAR(100),
-	payment_status BIT DEFAULT 1, -- 0: unpaid, 1: paid
-	discount INT DEFAULT 0 CHECK(discount >= 0 AND discount <= 100), -- in percent
 	idmovie INT,
-	idcustomer INT,
-	idstaff INT
-
-	FOREIGN KEY (idmovie) REFERENCES dbo.Movie(id),
-	FOREIGN KEY (idcustomer) REFERENCES dbo.Customer(id),
+	Start_time DateTime,
+	idstaff INT,
+	idSeat int,
+	FOREIGN KEY (idmovie, Start_time, idSeat) REFERENCES ShowTimeDetail(idMovie, Start_time,idSeat),
 	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
+	foreign key (idBill) references Bill(idBill)
 )
 GO
-CREATE TABLE TicketSnack
-(
-    idticket INT,
-    idsnack INT,
-    quantity INT DEFAULT 1,
 
-    FOREIGN KEY (idticket) REFERENCES Ticket(id),
-    FOREIGN KEY (idsnack) REFERENCES Snack(id),
+create table BillInfo(
+	idBillInfo int identity primary key, 
+	idBill int,
+	Category varchar(50), -- Ticket/ Food and Drink
+	Detail nvarchar(100), 
+	Quantity int, 
+	Discount int check(Discount>=0 and Discount<=100), 
+	Price float check (Price >=0),
 
-	PRIMARY KEY (idticket, idsnack)
+	foreign key(idBill) references Bill(idBill)
 )
-GO
+
+go
+
 CREATE TABLE Account
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -676,7 +687,7 @@ begin
 end 
 
 
-
+-- TEST
 select *from Account
 select * from Staff
 select * from AccountStaff
@@ -712,5 +723,9 @@ select * from Seat where idScreen = 1;
 set dateformat dmy
 select idSeat from ShowTimeDetail where idMovie = 1 and Start_time = '15/12/2025 20:30:00'
 select * from Seat where id = 1;
-
-select * from Seat
+select * from Customer
+select * from Bill
+select * from Ticket
+select * from BillInfo
+select idBill from Bill where idCustomer = @id and bill_status = 0
+insert into Ticket (price, idBill, idmovie, Start_time, idstaff, idSeat) values ( @price , @idBill , @idmovie , @start , @idStaff, @idSeat)

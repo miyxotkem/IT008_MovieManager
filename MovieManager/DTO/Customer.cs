@@ -37,8 +37,24 @@ namespace MovieManager.DTO
         {
             this.id = (int)row["id"];
             this.name = (string)row["name"];
-            this.email = (string)row["email"];
-            this.phonenumber = (string)row["phone_number"];
+            object emailValue = row["email"];
+            if (row.IsNull("email"))
+            {
+                this.email = "None";
+            }
+            else
+            {
+                this.email = emailValue.ToString();
+            }
+            object phoneValue = row["phone_number"];
+            if (row.IsNull("phone_number"))
+            {
+                this.phonenumber = "None";
+            }
+            else
+            {
+                this.phonenumber = phoneValue.ToString();
+            } 
             this.membership = (int)row["membership"];
             this.moneyspent = (float)(double)row["money_spent"];
         }

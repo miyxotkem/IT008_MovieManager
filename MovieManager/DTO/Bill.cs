@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MovieManager.DTO
+{
+    public class Bill
+    {
+        private int idBill;
+        private int idCustomer;
+        private string payment_method;
+        private int bill_statius;
+
+        public int IdBill { get => idBill; set => idBill = value; }
+        public int IdCustomer { get => idCustomer; set => idCustomer = value; }
+        public string Payment_method { get => payment_method; set => payment_method = value; }
+        public int Bill_statius { get => bill_statius; set => bill_statius = value; }
+
+        public Bill(DataRow row)
+        {
+            this.idBill = Convert.ToInt32(row["idBill"]);
+            this.idCustomer = Convert.ToInt32(row["idCustomer"]);
+            this.payment_method = (string)row["payment_method"];
+            this.bill_statius = Convert.ToInt32(row["bill_status"]);
+        }
+    }
+}

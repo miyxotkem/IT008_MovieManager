@@ -49,5 +49,24 @@ namespace MovieManager.DAO
             }    
             return ListIDSeat;
         }
+
+        public bool CheckSeatOccupied(int idMovie, DateTime start_time, int idSeat)
+        {
+            bool occupied = false;
+            string Start_time = start_time.ToString("dd/MM/yyyy HH:mm:ss");
+            string querry = "select available from ShowTimeDetail where idMovie = @id and Start_time = @time and idSeat = @seat";
+            DataTable table = DataProvider.Instance.ExecuteQuery(querry, new object[] { idMovie, start_time, idSeat });
+            if (table.Rows.Count > 0)
+            {
+                occupied = Convert.ToBoolean(table.Rows[0]["available"]);
+            }
+            return occupied;
+        }
+
+        public void ChooseSeat(int idMovie, DateTime start_time, int idSeat)
+        {
+            string querry = "Update ShowTimeDetail  set available = 1 where idMovie = @id and Start_time = @start and idSeat = @seat";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { idMovie, start_time, idSeat });
+        }
     }
 }
