@@ -1,4 +1,5 @@
-﻿using MovieManager.DAO;
+﻿using Guna.UI2.WinForms;
+using MovieManager.DAO;
 using MovieManager.DTO;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ namespace MovieManager
     public partial class SelectSnack : UserControl
     {
         private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        private Snack snack= null;
+        private Control parentContainer = null;
+        private Bill CurBill = null;
         public SelectSnack()
         {
             InitializeComponent();
@@ -23,7 +27,7 @@ namespace MovieManager
             PriceTextBox.Enabled = false;   
         }
 
-        public SelectSnack(Snack snack)
+        public SelectSnack(Snack snack, Control parenContainer)
         {
             InitializeComponent();
             NameTextBox.Enabled = false;
@@ -38,6 +42,11 @@ namespace MovieManager
                 }
                 NameTextBox.Text = snack.Name.ToString();
                 PriceTextBox.Text = snack.Price.ToString("c");
+                this.snack = snack;
+            }    
+            if (parenContainer != null)
+            {
+                this.parentContainer = parenContainer;
             }    
         }
 
@@ -62,15 +71,76 @@ namespace MovieManager
 
         private void SelectSnack_Load(object sender, EventArgs e)
         {
-            if (CustomerDAO.Instance.CurrentCustomer != null)
+            
+        }
+
+        private void ConfirmButton_Click(object sender, EventArgs e)
+        {
+            if (CustomerDAO.Instance.CurrentCustomer == null)
             {
-                AddCustomerButton.Visible = false;
+                CustomerDAO.Instance.CurrentCustomer = new Customer();  
+            }    
+            int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
+            Bill bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
+            if (bill == null) // chưa có bill -> Cần tạo bill
+            {
+                BillDAO.Instance.CreateBill(idCustomer);
+                bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
+            }    
+            if (bill != null && snack != null)
+            {
+                CurBill = bill;
+                // Thêm thông tin vào billInfo 
+                int Quantity = 1;
+                if (QuantityTextbox.Text.Length > 0)
+                {
+                    try
+                    {
+                        Quantity = Convert.ToInt32(QuantityTextbox.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Invalid quantity.", "Notification");
+                    } 
+                }
+                if (Quantity > snack.Stock)
+                {
+                    MessageBox.Show("Out of stock.", "Notification");
+                    return;
+                }    
+                BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Food and Drink", snack.ID, Quantity, 0, snack.Price);
+                MessageBox.Show("Successfully!", "Notification");
+            }    
+        }
+
+        private void QuantityTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                return;
+            }    
+            e.Handled = true;
+        }
+
+        private void QuantityTextbox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void PreviousButtonForgetVerify_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            if (parentContainer != null)
+            {
+                parentContainer.Controls.Add(payment);
+                payment.Dock = DockStyle.Fill;
+                if (CurBill != null)
+                {
+                    payment.Tag = CurBill;
+                }    
+                payment.BringToFront();
             }
-            else
-            {
-                AddCustomerButton.Visible = true;
-            } 
-                
+            this.Dispose();
         }
     }
 }

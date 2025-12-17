@@ -38,24 +38,16 @@ namespace MovieManager
             Customer customer = CustomerDAO.Instance.CheckExistCustomer(phone);
             if (customer == null) // không có customer 
             {
-                // Add số điện thoại vào 
-                CustomerDAO.Instance.AddCustomer(phone);
-                customer = CustomerDAO.Instance.CheckExistCustomer(phone);
-                this.Dispose();
+                // Thông báo không có 
+                MessageBox.Show("No valid customer.", "Notification");
+                CustomerDAO.Instance.CurrentCustomer = new Customer();
             }
             else
             {
-                if (customer.Membership == 0)
-                {
-                    DialogResult r = new DialogResult();
-                    r = MessageBox.Show("Do you want to register as a customer?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (r == DialogResult.Yes)
-                    {
-
-                    }
-                }
-            }
-            CustomerDAO.Instance.CurrentCustomer = customer;    
+                CustomerDAO.Instance.CurrentCustomer = customer;
+                MessageBox.Show("Name: " + customer.Name.ToString(), "Notification");
+            } 
+            this.Dispose();
         }
     }
 }

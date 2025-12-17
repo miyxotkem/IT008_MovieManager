@@ -31,20 +31,54 @@ namespace MovieManager.DAO
 
         public void CreateBill(int idCustomer)
         {
+            int data = -1;
             string querry = "insert into Bill (idCustomer) values ( @id )";
-            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { idCustomer });
+            if (idCustomer == -1) // --> Khách vãng lai
+            {
+                querry = "insert into Bill (idCustomer) values ( null )";
+                data = DataProvider.Instance.ExecuteNonQuery(querry);
+                return;
+            }    
+            data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { idCustomer });
         }
 
         public Bill GetIDBillFromIDCustomer(int idCustomer)
         {
             Bill bill = null;
             string querry = "select * from Bill where idCustomer = @id and bill_status = 0"; // tìm những bill chưa được pay
-            DataTable table = DataProvider.Instance.ExecuteQuery(querry, new object[] { idCustomer });  
+            DataTable table = new DataTable();  
+            if (idCustomer == -1)
+            {
+                querry = "select * from Bill where idCustomer is null and bill_status = 0";
+                table = DataProvider.Instance.ExecuteQuery(querry); 
+            }
+            else
+            {
+                table = DataProvider.Instance.ExecuteQuery(querry, new object[] { idCustomer });
+            } 
             if (table.Rows.Count > 0)
             {
                 bill = new Bill(table.Rows[0]);
             }
             return bill;
+        }
+
+        public bool ExistUncheckedBill()
+        {
+            string querry = "select * from Bill where bill_status = 0";
+            DataTable table = DataProvider.Instance.ExecuteQuery(querry);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+                
+        }
+
+        public void PayBill(int idBill, string method)
+        {
+            string querry = "update Bill set bill_status = 1, payment_method = @method where idBill = @id and bill_status = 0";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { method, idBill });
         }
     }
 }

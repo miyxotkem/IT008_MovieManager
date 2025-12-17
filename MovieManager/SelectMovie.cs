@@ -26,6 +26,8 @@ namespace MovieManager
         private Color Occupied = Color.FromArgb(125, 31, 164);
         private ShowTime CurrentShowTime = null;
         private Cinema cinema = null;
+        private Bill CurBill = null;
+        private bool HaveChooseSeat;
         public SelectMovie()
         {
             InitializeComponent();
@@ -120,8 +122,28 @@ namespace MovieManager
             }    
         }
 
+        private void MoveToPayment_Click(object sender, EventArgs e)
+        {
+            Payment payment = new Payment();
+            if (parentContainer != null)
+            {
+                parentContainer.Controls.Add(payment);
+                payment.Dock = DockStyle.Fill;
+                if (CurBill != null)
+                {
+                    payment.Tag = CurBill;
+                }    
+                payment.BringToFront();
+            }
+            this.Dispose();
+        }
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
+            if (!HaveChooseSeat)
+            {
+                MessageBox.Show("Please choose your seat first.", "Notification");
+                return;
+            }    
             if (parentContainer != null )
             {
                 if (parentContainer.Parent is Cinema cinema)
@@ -134,6 +156,11 @@ namespace MovieManager
 
         private void ChooseSeatButton_Click(object sender, EventArgs e)
         {
+            if (CurrentShowTime == null)
+            {
+                MessageBox.Show("Please choose film's start time first.", "Notification");
+                return;
+            }    
             ScreenLayout1 screen = null;
             foreach (Control ctr in ScreenPanel.Controls)
             {
@@ -144,67 +171,70 @@ namespace MovieManager
                 }    
             }
             List<Guna2GradientButton> list = screen.GetCurrentChooseButton();
-            bool HaveChooseSeat = false;
             Bill bill = null;
-            if (CustomerDAO.Instance.CurrentCustomer == null)
+            if (CustomerDAO.Instance.CurrentCustomer == null) // chưa nhập khách hàng mua --> Vãng lai
             {
-                MessageBox.Show("Please fill customer's information.", "Notification");
+                CustomerDAO.Instance.CurrentCustomer = new Customer();
             }
-            else
+            // Lấy/ Tạo mới Bill 
+            int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
+            bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer); // lấy Bill của khách hàng đang mua hiện tại
+            if (bill == null) // chưa có bill --> Cần tạo mới
             {
-                // Lấy/ Tạo mới Bill 
-                int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
+                BillDAO.Instance.CreateBill(idCustomer);
                 bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
-                if (bill == null) // chưa có bill --> Cần tạo mới
-                {
-                    BillDAO.Instance.CreateBill(idCustomer);
-                    bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
-                }
             }
+            if (BillInfoDAO.Instance.CheckExistingFilmInBill(bill.IdBill))
+            {
+                MessageBox.Show("Please pay all the previous bill before choosing new films.", "Notification");
+                return;
+            }    
+            if (bill != null)
+            {
+                CurBill = bill;
+            }    
             int TotalSeat = 0;
+            float CommonPrice = 0;
             foreach (Guna2GradientButton button in list)
             {
                 if (button.FillColor == Choose)
                 {
                     button.FillColor = Occupied;
                     button.FillColor2 = Occupied;
-                    if (CurrentShowTime != null)
+                    if (button.Tag is Seat seat)
                     {
-                        if (button.Tag is Seat seat)
+                        HaveChooseSeat = true;
+                        TotalSeat++;
+                        // Đánh dấu ghế đã chọn 
+                        ShowTimeDetailDAO.Instance.ChooseSeat(CurrentShowTime.IDMovie, CurrentShowTime.Start_time, seat.IdSeat);
+                        // Cho ticket vào database 
+                        if (bill != null)
                         {
-                            TotalSeat++;
-                            // Đánh dấu ghế đã chọn 
-                            ShowTimeDetailDAO.Instance.ChooseSeat(CurrentShowTime.IDMovie, CurrentShowTime.Start_time, seat.IdSeat);
-                            // Cho ticket vào database 
-                            if (bill != null)
+                            float price = 0;
+                            if (seat.SeatType == "Normal")
                             {
-                                float price = 0;
-                                if (seat.SeatType == "Normal")
-                                {
-                                    price = 70;
-                                } else if (seat.SeatType == "VIP")
-                                {
-                                    price = 90;
-                                } else if (seat.SeatType == "SVIP")
-                                {
-                                    price = 110;
-                                } else if (seat.SeatType == "Couple")
-                                {
-                                    price = 115;
-                                }    
-                                if (cinema != null && cinema.Tag is Account account)
-                                {
-                                    TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, account.Id, seat.IdSeat, bill.IdBill);
-                                }    
-                            }    
-                        }    
+                                price = 70000;
+                            }
+                            else if (seat.SeatType == "VIP")
+                            {
+                                price = 90000;
+                            }
+                            else if (seat.SeatType == "SVIP")
+                            {
+                                price = 110000;
+                            }
+                            else if (seat.SeatType == "Couple")
+                            {
+                                price = 115000;
+                            }
+                            CommonPrice = price;
+                            if (cinema != null && cinema.Tag is Account account)
+                            {
+                                TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, account.Id, seat.IdSeat, bill.IdBill);
+                            }
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Please choose film's start time first.", "Notification");
-                    }
-                    HaveChooseSeat = true;
-                }    
+                }
             }    
             if (!HaveChooseSeat)
             {
@@ -213,7 +243,11 @@ namespace MovieManager
             else
             {
                 // Thêm vào BillInfo 
-
+                if (bill != null && currentMovie != null)
+                {
+                    BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Ticket", currentMovie.ID, TotalSeat, 0, CommonPrice);
+                    MessageBox.Show("Successfully!", "Notification");
+                }    
             } 
                 
         }
@@ -268,15 +302,7 @@ namespace MovieManager
 
         private void SelectMovie_Load(object sender, EventArgs e)
         {
-            if (CustomerDAO.Instance.CurrentCustomer != null)
-            {
-                AddCustomerButton.Visible = false;
-            }
-            else
-            {
-                AddCustomerButton.Visible = true;   
-            } 
-                
+            HaveChooseSeat = false;
         }
     }
 }

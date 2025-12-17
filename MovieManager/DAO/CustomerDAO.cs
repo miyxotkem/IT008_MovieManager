@@ -52,5 +52,11 @@ namespace MovieManager.DAO
             string querry = "insert into Customer (phone_number, money_spent) values ( @phone , 0)";
             int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { phonenumber });
         }
+
+        public void IncreaseCustomerSpend(int idCustomer, float amount)
+        {
+            string querry = "update Customer set money_spent = money_spent + @amount where id = @id ";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] {amount,  idCustomer});
+        }
     }
 }

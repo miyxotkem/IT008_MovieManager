@@ -22,9 +22,19 @@ namespace MovieManager.DTO
         public Bill(DataRow row)
         {
             this.idBill = Convert.ToInt32(row["idBill"]);
-            this.idCustomer = Convert.ToInt32(row["idCustomer"]);
+            object idCus = row["idCustomer"];
+            if (row.IsNull("idCustomer"))
+            {
+                this.IdCustomer = -1;
+            }
+            else
+            {
+                this.idCustomer = Convert.ToInt32(idCus);
+            }
             this.payment_method = (string)row["payment_method"];
             this.bill_statius = Convert.ToInt32(row["bill_status"]);
         }
+
+        
     }
 }

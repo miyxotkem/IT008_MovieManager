@@ -83,7 +83,7 @@ namespace MovieManager
             PictureBox panel = (PictureBox)sender;    
             if (panel != null && panel.Tag is Snack snack)
             {
-                SelectSnack selectSnack = new SelectSnack(snack);
+                SelectSnack selectSnack = new SelectSnack(snack, this.Parent);
                 this.Parent.Controls.Add(selectSnack);
                 selectSnack.BringToFront();
                 selectSnack.Left = (this.Parent.ClientSize.Width - selectSnack.ClientSize.Width) / 2;

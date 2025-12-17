@@ -295,6 +295,18 @@
     <Compile Include="MovieManage.Designer.cs">
       <DependentUpon>MovieManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentMethod.Designer.cs">
+      <DependentUpon>PaymentMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -404,6 +416,12 @@
     <EmbeddedResource Include="MovieManage.resx">
       <DependentUpon>MovieManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMethod.resx">
+      <DependentUpon>PaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResetPassConfirm.resx">
       <DependentUpon>ResetPassConfirm.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +503,7 @@
     <None Include="Resources\loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz241.png" />
     <None Include="Resources\info_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\folder_eye_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\chevron_right_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

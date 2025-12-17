@@ -116,20 +116,20 @@ create table Bill(
 	payment_method varchar(50) default 'Cash',
 	bill_status int default 0, --0: Unpaid   1: Paid
 
-	foreign key (idCustomer) references Customer(id)
 )
+
 go
-insert into Bill (idCustomer) values ( @id )
+
 CREATE TABLE Ticket
 (
 	id INT IDENTITY PRIMARY KEY,
-	idBill int,
 	price FLOAT CHECK(price >= 0),
 	purchase_date DATE DEFAULT GETDATE(),
 	idmovie INT,
 	Start_time DateTime,
 	idstaff INT,
 	idSeat int,
+	idBill int,
 	FOREIGN KEY (idmovie, Start_time, idSeat) REFERENCES ShowTimeDetail(idMovie, Start_time,idSeat),
 	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
 	foreign key (idBill) references Bill(idBill)
@@ -140,7 +140,7 @@ create table BillInfo(
 	idBillInfo int identity primary key, 
 	idBill int,
 	Category varchar(50), -- Ticket/ Food and Drink
-	Detail nvarchar(100), 
+	idDetail int, 
 	Quantity int, 
 	Discount int check(Discount>=0 and Discount<=100), 
 	Price float check (Price >=0),
@@ -687,7 +687,7 @@ begin
 end 
 
 
--- TEST
+-- TEST - DONT EXEC THESE
 select *from Account
 select * from Staff
 select * from AccountStaff
@@ -727,5 +727,28 @@ select * from Customer
 select * from Bill
 select * from Ticket
 select * from BillInfo
-select idBill from Bill where idCustomer = @id and bill_status = 0
-insert into Ticket (price, idBill, idmovie, Start_time, idstaff, idSeat) values ( @price , @idBill , @idmovie , @start , @idStaff, @idSeat)
+
+select * from ShowTimeDetail
+select * from Bill
+select * from BillInfo
+select * from Ticket
+update ShowTimeDetail
+set available = 0
+where available = 1
+drop table BillInfo
+drop table Ticket
+drop table Bill
+
+update Bill
+set bill_status = 1
+where bill_status = 0
+
+
+delete from Customer
+where name = N'Guest'
+
+select * from Customer
+
+update Bill set bill_status = 1, payment_method = @method where idBill = @id and bill_status = 0
+
+update Bill set bill_status =1, payment_method = 'Banking' where idBill = 3

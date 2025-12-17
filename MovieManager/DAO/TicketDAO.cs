@@ -30,8 +30,8 @@ namespace MovieManager.DAO
 
         public void CreateTicket(float price, int idMovie, DateTime Start_time, int idStaff, int idSeat, int idBill)
         {
-            string querry = "insert into Ticket (price, idmovie, Start_time, idstaff, idSeat, idBill) values ( @price , @idmovie , @start , @idStaff, @idSeat , @idBill )";
-            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { price, idMovie, Start_time, idStaff, idSeat });
+            string querry = "insert into Ticket (price, idmovie, Start_time, idstaff, idSeat, idBill) values ( @price , @idmovie , @start , @idStaff , @idSeat , @idBill )";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { price, idMovie, Start_time, idStaff, idSeat, idBill });
         }
     }
 }

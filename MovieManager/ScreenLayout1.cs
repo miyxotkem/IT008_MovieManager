@@ -59,21 +59,25 @@ namespace MovieManager
                                 btn.FillColor = Color.White;
                                 btn.FillColor2 = Color.White;
                                 Color color = new Color();
-                                if (list[index].SeatType == "Normal")
-                                {
-                                    color = Normal;
-                                }  else if (list[index].SeatType == "VIP")
-                                {
-                                    color = VIP;
-                                } else if (list[index].SeatType == "SVIP")
-                                {
-                                    color = SVIP;
-                                }    else if (list[index].SeatType == "Couple")
-                                {
-                                    color = Couple;
-                                }    else if (occupied)
+                                if (occupied)
                                 {
                                     color = Occupied;
+                                }   
+                                else if (list[index].SeatType == "Normal")
+                                {
+                                    color = Normal;
+                                }
+                                else if (list[index].SeatType == "VIP")
+                                {
+                                    color = VIP;
+                                }
+                                else if (list[index].SeatType == "SVIP")
+                                {
+                                    color = SVIP;
+                                }
+                                else if (list[index].SeatType == "Couple")
+                                {
+                                    color = Couple;
                                 }    
                                 btn.FillColor = color;
                                 btn.FillColor2 = color;
@@ -121,6 +125,9 @@ namespace MovieManager
             {
                 btn.FillColor = Choose;
                 btn.FillColor2 = Choose;
+            } else if (btn.FillColor == Occupied)
+            {
+                MessageBox.Show("Seat is already taken.", "Notification");
             }    
         }
 

@@ -34,6 +34,18 @@ namespace MovieManager.DAO
             }
             return movieList;
         }
+
+        public Movie GetMovieFromIDMovie(int id)
+        {
+            Movie movie = null;
+            string querry = "select * from Movie where id = @id";
+            DataTable table = DataProvider.Instance.ExecuteQuery(querry, new object[] { id }); 
+            if (table.Rows.Count > 0)
+            {
+                movie = new Movie(table.Rows[0]);
+            }
+            return movie;
+        }
     }
 }
 

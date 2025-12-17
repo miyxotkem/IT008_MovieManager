@@ -34,8 +34,9 @@
             this.StartTimePanelSelectMovie = new System.Windows.Forms.FlowLayoutPanel();
             this.ChooseSeatButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CancelSeatButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.NextButtonSnack = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.MovePaymentButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddCustomerButton = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.NextButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SuspendLayout();
             // 
             // BackButtonSelectMovie
@@ -85,7 +86,7 @@
             this.ScreenPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ScreenPanel.Name = "ScreenPanel";
             this.ScreenPanel.ShadowColor = System.Drawing.Color.Black;
-            this.ScreenPanel.Size = new System.Drawing.Size(875, 782);
+            this.ScreenPanel.Size = new System.Drawing.Size(822, 782);
             this.ScreenPanel.TabIndex = 3;
             // 
             // StartTimePanelSelectMovie
@@ -116,7 +117,7 @@
             this.ChooseSeatButton.ForeColor = System.Drawing.Color.White;
             this.ChooseSeatButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ChooseSeatButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ChooseSeatButton.Location = new System.Drawing.Point(1426, 860);
+            this.ChooseSeatButton.Location = new System.Drawing.Point(1373, 860);
             this.ChooseSeatButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChooseSeatButton.Name = "ChooseSeatButton";
             this.ChooseSeatButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
@@ -143,7 +144,7 @@
             this.CancelSeatButton.ForeColor = System.Drawing.Color.Black;
             this.CancelSeatButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.CancelSeatButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.CancelSeatButton.Location = new System.Drawing.Point(1244, 860);
+            this.CancelSeatButton.Location = new System.Drawing.Point(1189, 860);
             this.CancelSeatButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelSeatButton.Name = "CancelSeatButton";
             this.CancelSeatButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
@@ -152,31 +153,31 @@
             this.CancelSeatButton.Text = "Cancel";
             this.CancelSeatButton.Click += new System.EventHandler(this.CancelSeatButton_Click);
             // 
-            // NextButtonSnack
+            // MovePaymentButton
             // 
-            this.NextButtonSnack.Animated = true;
-            this.NextButtonSnack.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.NextButtonSnack.BorderRadius = 12;
-            this.NextButtonSnack.BorderThickness = 1;
-            this.NextButtonSnack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.NextButtonSnack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.NextButtonSnack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.NextButtonSnack.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.NextButtonSnack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.NextButtonSnack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.NextButtonSnack.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.NextButtonSnack.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NextButtonSnack.ForeColor = System.Drawing.Color.White;
-            this.NextButtonSnack.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.NextButtonSnack.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.NextButtonSnack.Location = new System.Drawing.Point(207, 20);
-            this.NextButtonSnack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NextButtonSnack.Name = "NextButtonSnack";
-            this.NextButtonSnack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.NextButtonSnack.Size = new System.Drawing.Size(153, 50);
-            this.NextButtonSnack.TabIndex = 5;
-            this.NextButtonSnack.Text = "Next";
-            this.NextButtonSnack.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.MovePaymentButton.Animated = true;
+            this.MovePaymentButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.MovePaymentButton.BorderRadius = 12;
+            this.MovePaymentButton.BorderThickness = 1;
+            this.MovePaymentButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.MovePaymentButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.MovePaymentButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MovePaymentButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.MovePaymentButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.MovePaymentButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.MovePaymentButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.MovePaymentButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MovePaymentButton.ForeColor = System.Drawing.Color.White;
+            this.MovePaymentButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.MovePaymentButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.MovePaymentButton.Location = new System.Drawing.Point(207, 20);
+            this.MovePaymentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MovePaymentButton.Name = "MovePaymentButton";
+            this.MovePaymentButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.MovePaymentButton.Size = new System.Drawing.Size(153, 50);
+            this.MovePaymentButton.TabIndex = 5;
+            this.MovePaymentButton.Text = "Move to payment";
+            this.MovePaymentButton.Click += new System.EventHandler(this.MoveToPayment_Click);
             // 
             // AddCustomerButton
             // 
@@ -190,19 +191,51 @@
             this.AddCustomerButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
             this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.AddCustomerButton.Location = new System.Drawing.Point(1538, 30);
+            this.AddCustomerButton.Location = new System.Drawing.Point(1488, 30);
             this.AddCustomerButton.Name = "AddCustomerButton";
             this.AddCustomerButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.AddCustomerButton.Size = new System.Drawing.Size(38, 40);
             this.AddCustomerButton.TabIndex = 6;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
+            // NextButton
+            // 
+            this.NextButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.NextButton.BackColor = System.Drawing.Color.Transparent;
+            this.NextButton.BorderColor = System.Drawing.Color.Empty;
+            this.NextButton.BorderRadius = 12;
+            this.NextButton.BorderThickness = 1;
+            this.NextButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.NextButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.NextButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.NextButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.NextButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.NextButton.FillColor = System.Drawing.Color.White;
+            this.NextButton.FillColor2 = System.Drawing.Color.White;
+            this.NextButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NextButton.ForeColor = System.Drawing.Color.Black;
+            this.NextButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.NextButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.NextButton.HoverState.ForeColor = System.Drawing.Color.White;
+            this.NextButton.Image = global::MovieManager.Properties.Resources.chevron_right_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.NextButton.Location = new System.Drawing.Point(1546, 441);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.NextButton.ShadowDecoration.BorderRadius = 12;
+            this.NextButton.ShadowDecoration.Enabled = true;
+            this.NextButton.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.NextButton.Size = new System.Drawing.Size(44, 40);
+            this.NextButton.TabIndex = 17;
+            this.NextButton.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            // 
             // SelectMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.NextButton);
             this.Controls.Add(this.AddCustomerButton);
-            this.Controls.Add(this.NextButtonSnack);
+            this.Controls.Add(this.MovePaymentButton);
             this.Controls.Add(this.CancelSeatButton);
             this.Controls.Add(this.ChooseSeatButton);
             this.Controls.Add(this.StartTimePanelSelectMovie);
@@ -226,7 +259,8 @@
         private System.Windows.Forms.FlowLayoutPanel StartTimePanelSelectMovie;
         private Guna.UI2.WinForms.Guna2GradientButton ChooseSeatButton;
         private Guna.UI2.WinForms.Guna2GradientButton CancelSeatButton;
-        private Guna.UI2.WinForms.Guna2GradientButton NextButtonSnack;
+        private Guna.UI2.WinForms.Guna2GradientButton MovePaymentButton;
         private Guna.UI2.WinForms.Guna2CircleButton AddCustomerButton;
+        private Guna.UI2.WinForms.Guna2GradientButton NextButton;
     }
 }

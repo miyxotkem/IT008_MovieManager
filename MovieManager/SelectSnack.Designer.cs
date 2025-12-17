@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.PriceTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,21 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ConfirmButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.PreviousButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddCustomerButton = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // SnackPic
-            // 
-            this.SnackPic.BorderRadius = 12;
-            this.SnackPic.ImageRotate = 0F;
-            this.SnackPic.Location = new System.Drawing.Point(100, 104);
-            this.SnackPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.SnackPic.Name = "SnackPic";
-            this.SnackPic.Size = new System.Drawing.Size(356, 376);
-            this.SnackPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.SnackPic.TabIndex = 6;
-            this.SnackPic.TabStop = false;
             // 
             // NameLabel
             // 
@@ -133,6 +122,8 @@
             this.QuantityTextbox.SelectedText = "";
             this.QuantityTextbox.Size = new System.Drawing.Size(328, 48);
             this.QuantityTextbox.TabIndex = 12;
+            this.QuantityTextbox.TextChanged += new System.EventHandler(this.QuantityTextbox_TextChanged);
+            this.QuantityTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityTextbox_KeyPress);
             // 
             // label1
             // 
@@ -162,6 +153,7 @@
             this.ConfirmButton.Size = new System.Drawing.Size(172, 49);
             this.ConfirmButton.TabIndex = 13;
             this.ConfirmButton.Text = "Confirm";
+            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
             // CancelButton
             // 
@@ -184,6 +176,36 @@
             this.CancelButton.Text = "Cancel";
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // PreviousButtonForgetVerify
+            // 
+            this.PreviousButtonForgetVerify.BackColor = System.Drawing.Color.Transparent;
+            this.PreviousButtonForgetVerify.BorderColor = System.Drawing.Color.Empty;
+            this.PreviousButtonForgetVerify.BorderRadius = 12;
+            this.PreviousButtonForgetVerify.BorderThickness = 1;
+            this.PreviousButtonForgetVerify.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PreviousButtonForgetVerify.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PreviousButtonForgetVerify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PreviousButtonForgetVerify.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PreviousButtonForgetVerify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PreviousButtonForgetVerify.FillColor = System.Drawing.Color.White;
+            this.PreviousButtonForgetVerify.FillColor2 = System.Drawing.Color.White;
+            this.PreviousButtonForgetVerify.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PreviousButtonForgetVerify.ForeColor = System.Drawing.Color.Black;
+            this.PreviousButtonForgetVerify.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.PreviousButtonForgetVerify.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.PreviousButtonForgetVerify.HoverState.ForeColor = System.Drawing.Color.White;
+            this.PreviousButtonForgetVerify.Image = global::MovieManager.Properties.Resources.chevron_right_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.PreviousButtonForgetVerify.Location = new System.Drawing.Point(1017, 232);
+            this.PreviousButtonForgetVerify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PreviousButtonForgetVerify.Name = "PreviousButtonForgetVerify";
+            this.PreviousButtonForgetVerify.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.PreviousButtonForgetVerify.ShadowDecoration.BorderRadius = 12;
+            this.PreviousButtonForgetVerify.ShadowDecoration.Enabled = true;
+            this.PreviousButtonForgetVerify.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.PreviousButtonForgetVerify.Size = new System.Drawing.Size(44, 40);
+            this.PreviousButtonForgetVerify.TabIndex = 16;
+            this.PreviousButtonForgetVerify.Click += new System.EventHandler(this.PreviousButtonForgetVerify_Click);
+            // 
             // AddCustomerButton
             // 
             this.AddCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,11 +225,24 @@
             this.AddCustomerButton.TabIndex = 15;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
+            // SnackPic
+            // 
+            this.SnackPic.BorderRadius = 12;
+            this.SnackPic.ImageRotate = 0F;
+            this.SnackPic.Location = new System.Drawing.Point(100, 104);
+            this.SnackPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SnackPic.Name = "SnackPic";
+            this.SnackPic.Size = new System.Drawing.Size(356, 376);
+            this.SnackPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SnackPic.TabIndex = 6;
+            this.SnackPic.TabStop = false;
+            // 
             // SelectSnack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.Controls.Add(this.PreviousButtonForgetVerify);
             this.Controls.Add(this.AddCustomerButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.ConfirmButton);
@@ -239,5 +274,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton ConfirmButton;
         private Guna.UI2.WinForms.Guna2GradientButton CancelButton;
         private Guna.UI2.WinForms.Guna2CircleButton AddCustomerButton;
+        private Guna.UI2.WinForms.Guna2GradientButton PreviousButtonForgetVerify;
     }
 }

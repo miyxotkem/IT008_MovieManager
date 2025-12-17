@@ -33,10 +33,27 @@ namespace MovieManager.DTO
             this.moneyspent = moneyspent;
         }
 
+        public Customer()
+        {
+            this.id = -1;
+            this.name = null;
+            this.email = null;
+            this.phonenumber = null;
+            this.membership = 0;
+            this.moneyspent = 0;
+        }
         public Customer(DataRow row)
         {
             this.id = (int)row["id"];
-            this.name = (string)row["name"];
+            object Name = row["name"];
+            if (row.IsNull("name"))
+            {
+                this.name = "Guest";
+            }
+            else
+            {
+                this.name = (string)Name;
+            } 
             object emailValue = row["email"];
             if (row.IsNull("email"))
             {
