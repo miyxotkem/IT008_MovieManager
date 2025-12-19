@@ -180,6 +180,7 @@ CREATE TABLE History
 
 	FOREIGN KEY (idSnack) REFERENCES dbo.Snack(id)
 )
+
 GO
 SET DATEFORMAT dmy;
 GO
@@ -188,15 +189,12 @@ GO
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
 INSERT INTO dbo.Hall (name, location)VALUES (N'Lotte Cinema Thu Duc', N'5th Floor, Giga Mall');
 
-select * from Hall
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (1, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (2, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (3, 50, 50, N'iMax', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (4, 50, 50, N'2D', 1);
 INSERT INTO dbo.Screen (number, capacity, available_seat, type, idhall)VALUES (5, 50, 50, N'iMax', 1);
-select * from Screen
-select * from account
-select * from staff
+
 INSERT INTO Customer (name, email, phone_number, membership, money_spent) VALUES
 (N'Nguyễn Minh Anh', 'mlamnhanh214@gmail.com', '0908935963', 5, 5000000.0),
 (N'Nguyễn Thanh Hiếu Thảo', '31241023127@student.isb.edu.vn', '0908047268', 5, 5000000.0),
@@ -237,8 +235,7 @@ INSERT INTO Customer (name, email, phone_number, membership, money_spent) VALUES
 (N'Hạnh Minh', 'minhnnnh.s.2427@gmail.com', '0337347082', 2, 2000000.0),
 (N'Hà Gia Bảo', 'baogianxao1405@gmail.com', '0859238738', 5, 5000000.0),
 (N'hạnh đoan', '24007819@student.westernsydney.edu.vn', '0693705102', 4, 4000000.0);
-select * from Customer
-select * from Seat
+
 -- Phòng 1 
 INSERT INTO dbo.Seat (idScreen, row, number, type)
 VALUES
@@ -365,8 +362,6 @@ VALUES
 (2, 'E', 9, N'SVIP'),
 (2, 'E', 10, N'SVIP');
 
-
-
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TEE YOD: QUỶ ĂN TẠNG - PHẦN 3', N'N/A', N'N/A', '10/10/2025', N'Narit Yuvaboon', N'Tiếng Thái', 104, N'iMax', N'https://youtu.be/DMOGnGokm4c', N'Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee, ...');
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TAY ANH GIỮ MỘT VÌ SAO', N'N/A', N'N/A', '03/10/2025', N'Kim Sung Hoon', N'Tiếng Hàn', 117, N'N/A', N'https://youtu.be/ZsSYbAy2Ez8', N'Lee Kwang Soo, Hoàng Hà, Duy Khánh, Cù Thị Trà, Um Mun Suk, Lâm Thanh Mỹ, ...');
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TỬ CHIẾN TRÊN KHÔNG', N'N/A', N'N/A', '19/09/2025', N'Hàm Trần', N'Tiếng Việt', 118, N'4DX', N'https://youtu.be/h4O-GbuwwlM', N'Thái Hòa, Kaity Nguyễn, Thanh Sơn, Xuân Phúc, Võ Điền Gia Huy, Trần Ngọc Vàng, ...');
@@ -390,7 +385,7 @@ VALUES
 
 -- Showtime 2: Movie 1, Screen 2 @ 20:30 on 15/12/2025
 (1,2,'15/12/2025 20:30:00')
-select * from ShowTime
+
 INSERT INTO dbo.ShiftSchedule VALUES('7:30:00', '12:30:00');
 INSERT INTO dbo.ShiftSchedule VALUES('12:30:00', '17:30:00');
 INSERT INTO dbo.ShiftSchedule VALUES('17:30:00', '22:30:00');
@@ -549,8 +544,7 @@ VALUES
 update ShowTime 
 set idscreen = 1
 where start_time = '15/12/2025 20:30:00';
-select * from ShowTime
-select * from ShowTimeDetail
+
 -- VIEW
 -- Bảng view liên kết account với staff
 create view AccountStaff as
@@ -672,7 +666,8 @@ begin
 	insert into Staff (name, role , contact_info , idshiftschedule)
 	values 
 			(@name , N'Nhân viên', @email, 1)
-end 
+end
+go
 
 -- Thêm vào Account 
 -- Select id from Staff where name = N'Nguyễn Võ Minh Quang' -- lấy idStaff

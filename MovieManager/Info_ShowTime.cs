@@ -24,6 +24,7 @@ namespace MovieManager
         public Info_ShowTime(int id)
         {
             InitializeComponent();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             foreach (Movie movie in movies)
                 if (movie.ID == id)
                     Title.Text = movie.Title;
@@ -43,6 +44,10 @@ namespace MovieManager
                         Font = new Font("Microsoft Sans Serif", 15f),
                         Text = showtime.Start_time.ToString("hh:mm dd/mm/yyyy")
                     };
+                    CheckBox delete = new CheckBox()
+                    {
+                        Location = new Point(50, 25),
+                    };
                     pnl.Controls.Add(lbl);
                     if (showtime.IDScreen == 1)
                         flowLayoutPanel1.Controls.Add(pnl);
@@ -60,6 +65,11 @@ namespace MovieManager
             if (parentContainer != null)
                 parentContainer.Controls.Remove(this);
             this.Dispose();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
