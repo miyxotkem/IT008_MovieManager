@@ -153,5 +153,13 @@ namespace MovieManager
                 esm.BringToFront();
             }
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            AddShowTime esm = new AddShowTime();
+            esm.Location = new Point((this.Size.Width - esm.Width) / 2, (this.Size.Height - esm.Height) / 2);
+            this.Controls.Add(esm);
+            esm.BringToFront();
+        }
     }
 }

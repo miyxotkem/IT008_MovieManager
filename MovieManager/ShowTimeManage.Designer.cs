@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowTimeManage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ManageShowTime = new System.Windows.Forms.Label();
+            this.panel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.HistoryButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -38,12 +40,10 @@
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.panel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ManageShowTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,16 +57,45 @@
             this.panel1.Size = new System.Drawing.Size(1792, 1154);
             this.panel1.TabIndex = 0;
             // 
-            // ManageShowTime
+            // panel2
             // 
-            this.ManageShowTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ManageShowTime.AutoSize = true;
-            this.ManageShowTime.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageShowTime.Location = new System.Drawing.Point(633, 50);
-            this.ManageShowTime.Name = "ManageShowTime";
-            this.ManageShowTime.Size = new System.Drawing.Size(526, 61);
-            this.ManageShowTime.TabIndex = 5;
-            this.ManageShowTime.Text = "Manage ShowTime";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderRadius = 50;
+            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Location = new System.Drawing.Point(539, 450);
+            this.panel2.Name = "panel2";
+            this.panel2.ShadowDecoration.BorderRadius = 50;
+            this.panel2.ShadowDecoration.Enabled = true;
+            this.panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.panel2.Size = new System.Drawing.Size(714, 743);
+            this.panel2.TabIndex = 10;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(35, 18);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(644, 65);
+            this.flowLayoutPanel2.TabIndex = 6;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(35, 89);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 615);
+            this.flowLayoutPanel1.TabIndex = 6;
             // 
             // panel3
             // 
@@ -180,6 +209,7 @@
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(106, 50);
             this.AddButton.TabIndex = 3;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DeleteSearchButton
             // 
@@ -203,45 +233,16 @@
             this.DeleteSearchButton.TabIndex = 3;
             this.DeleteSearchButton.Click += new System.EventHandler(this.DeleteSearchButton_Click);
             // 
-            // panel2
+            // ManageShowTime
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BorderRadius = 50;
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Location = new System.Drawing.Point(539, 450);
-            this.panel2.Name = "panel2";
-            this.panel2.ShadowDecoration.BorderRadius = 50;
-            this.panel2.ShadowDecoration.Enabled = true;
-            this.panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
-            this.panel2.Size = new System.Drawing.Size(714, 743);
-            this.panel2.TabIndex = 10;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(35, 18);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(644, 65);
-            this.flowLayoutPanel2.TabIndex = 6;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(35, 89);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(644, 615);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.ManageShowTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ManageShowTime.AutoSize = true;
+            this.ManageShowTime.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageShowTime.Location = new System.Drawing.Point(633, 50);
+            this.ManageShowTime.Name = "ManageShowTime";
+            this.ManageShowTime.Size = new System.Drawing.Size(526, 61);
+            this.ManageShowTime.TabIndex = 5;
+            this.ManageShowTime.Text = "Manage ShowTime";
             // 
             // ShowTimeManage
             // 
@@ -252,8 +253,8 @@
             this.Size = new System.Drawing.Size(1792, 1154);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

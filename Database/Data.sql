@@ -96,7 +96,7 @@ CREATE TABLE ShowTime (
 	FOREIGN KEY (idscreen) REFERENCES Screen(id),
 
 	PRIMARY KEY (idmovie, start_time)
-)
+) 
 go
 create table ShowTimeDetail( 
 	idMovie int,
@@ -540,10 +540,6 @@ VALUES
 (1, '15/12/2025 20:30:00', 98),
 (1, '15/12/2025 20:30:00', 99),
 (1, '15/12/2025 20:30:00', 100);
-
-update ShowTime 
-set idscreen = 1
-where start_time = '15/12/2025 20:30:00';
 
 -- VIEW
 -- Bảng view liên kết account với staff

@@ -218,6 +218,12 @@
     <Compile Include="AccountDisplay.Designer.cs">
       <DependentUpon>AccountDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddShowTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddShowTime.Designer.cs">
+      <DependentUpon>AddShowTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Analyst.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -413,6 +419,9 @@
     </Compile>
     <EmbeddedResource Include="AccountDisplay.resx">
       <DependentUpon>AccountDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddShowTime.resx">
+      <DependentUpon>AddShowTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Analyst.resx">
       <DependentUpon>Analyst.cs</DependentUpon>
