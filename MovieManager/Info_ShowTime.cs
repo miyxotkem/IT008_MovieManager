@@ -16,6 +16,8 @@ namespace MovieManager
     {
         private List<ShowTime> showtimes = ShowTimeDAO.Instance.LoadShowTimeList();
         private List<Movie> movies = MovieDAO.Instance.LoadMovieList();
+        private int main = 0;
+        private Dictionary<ShowTime, bool> checkingStatus;
         public Info_ShowTime()
         {
             InitializeComponent();
@@ -24,7 +26,11 @@ namespace MovieManager
         public Info_ShowTime(int id)
         {
             InitializeComponent();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            checkingStatus = new Dictionary<ShowTime, bool>();
+            main = id;
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel3.Controls.Clear();
             foreach (Movie movie in movies)
                 if (movie.ID == id)
                     Title.Text = movie.Title;
@@ -32,30 +38,43 @@ namespace MovieManager
             {
                 if (showtime.IDMovie == id)
                 {
+                    checkingStatus.Add(showtime, false);
                     Panel pnl = new Panel()
                     {
-                        Width = 550,
+                        Width = 250,
                         Height = 50,
                     };
                     Label lbl = new Label()
                     {
                         Location = new Point(80, 30),
-                        Width = 500,
+                        Width = 250,
                         Font = new Font("Microsoft Sans Serif", 15f),
-                        Text = showtime.Start_time.ToString("hh:mm dd/mm/yyyy")
+                        Text = showtime.Start_time.ToString("HH:mm dd/mm/yyyy")
                     };
                     CheckBox delete = new CheckBox()
                     {
-                        Location = new Point(50, 25),
+                        Location = new Point(50, 32),
+                        Tag = showtime
                     };
+                    delete.CheckedChanged += Check;
                     pnl.Controls.Add(lbl);
+                    pnl.Controls.Add(delete);
                     if (showtime.IDScreen == 1)
                         flowLayoutPanel1.Controls.Add(pnl);
                     else if (showtime.IDScreen == 2)
                         flowLayoutPanel2.Controls.Add(pnl);
-                    else if (showtime.IDScreen == 2)
+                    else if (showtime.IDScreen == 3)
                         flowLayoutPanel3.Controls.Add(pnl);
                 }
+            }
+        }
+
+        void Check(object sender, EventArgs e)
+        {
+            CheckBox cb = sender as CheckBox;
+            if (cb != null && cb.Tag is ShowTime st)
+            {
+                checkingStatus[st] = cb.Checked;
             }
         }
 
@@ -70,6 +89,78 @@ namespace MovieManager
         private void AddButton_Click(object sender, EventArgs e)
         {
 
+        }
+        DataProvider dp = new DataProvider();
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            // Create a copy of the list to iterate safely
+            foreach (var item in checkingStatus.ToList())
+            {
+                ShowTime st = item.Key;
+                bool isChecked = item.Value;
+
+                if (!isChecked) continue;
+
+                // --- FIX 1: Fix the DateTime Mismatch ---
+                // We format the date to a string to ensure C# doesn't send 
+                // high-precision ticks that SQL cannot match.
+                string query = "DELETE FROM ShowTime WHERE idmovie = @id AND start_time = @time";
+
+                // Use standard SQL date format
+                string sqlTime = st.Start_time.ToString("yyyy-MM-dd HH:mm:ss");
+
+                object[] values = new object[] { st.IDMovie, sqlTime };
+
+                // --- FIX 2: Check if DB actually deleted it ---
+                int rowsAffected = dp.ExecuteNonQuery(query, values);
+
+                if (rowsAffected > 0)
+                {
+                    // Database delete successful, NOW remove from UI
+                    checkingStatus.Remove(st);
+                    RemoveControlByValues(flowLayoutPanel1, st);
+                    RemoveControlByValues(flowLayoutPanel2, st);
+                    RemoveControlByValues(flowLayoutPanel3, st);
+                }
+                else
+                {
+                    MessageBox.Show($"Could not delete showtime at {sqlTime}. It may have been modified externally.");
+                }
+            }
+        }
+
+        // Renamed to reflect that we check values, not just tags
+        void RemoveControlByValues(FlowLayoutPanel panel, ShowTime stToDelete)
+        {
+            Control toRemove = null;
+            foreach (Control pnl in panel.Controls)
+            {
+                // Iterate children of the panel (Labels, Checkboxes)
+                foreach (Control child in pnl.Controls)
+                {
+                    // --- FIX 3: Compare Data Values, not Object References ---
+                    if (child is CheckBox cb && cb.Tag is ShowTime stInBox)
+                    {
+                        // Compare the ID and the Time explicitly
+                        // We use a small tolerance for time or string comparison to be safe
+                        bool sameMovie = stInBox.IDMovie == stToDelete.IDMovie;
+                        bool sameTime = stInBox.Start_time.ToString("yyyy-MM-dd HH:mm:ss") == stToDelete.Start_time.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        if (sameMovie && sameTime)
+                        {
+                            toRemove = pnl; // Found the parent panel to remove
+                            break;
+                        }
+                    }
+                }
+                if (toRemove != null) break;
+            }
+
+            if (toRemove != null)
+            {
+                panel.Controls.Remove(toRemove);
+                toRemove.Dispose();
+            }
         }
     }
 }

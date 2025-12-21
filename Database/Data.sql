@@ -88,15 +88,15 @@ CREATE TABLE Snack
 )
 GO
 CREATE TABLE ShowTime (
-	idmovie INT,
-	idscreen INT,
-	start_time DATETIME,
+		idmovie INT,
+		idscreen INT,
+		start_time DATETIME,
 
-	FOREIGN KEY (idmovie) REFERENCES Movie(id) ON DELETE CASCADE,
-	FOREIGN KEY (idscreen) REFERENCES Screen(id),
+		FOREIGN KEY (idmovie) REFERENCES Movie(id) ON DELETE CASCADE,
+		FOREIGN KEY (idscreen) REFERENCES Screen(id),
 
-	PRIMARY KEY (idmovie, start_time)
-) 
+		PRIMARY KEY (idmovie, start_time)
+	) 
 go
 create table ShowTimeDetail( 
 	idMovie int,
@@ -104,7 +104,7 @@ create table ShowTimeDetail(
 	idSeat int ,
 	available int default 0,
 
-	foreign key (idMovie, Start_time) references ShowTime(idmovie, start_time),
+	foreign key (idMovie, Start_time) references ShowTime(idmovie, start_time) ON DELETE CASCADE,
 	foreign key (idSeat) references Seat(id),
 	primary key (idMovie, Start_time, idSeat)
 )
@@ -539,7 +539,7 @@ VALUES
 (1, '15/12/2025 20:30:00', 97),
 (1, '15/12/2025 20:30:00', 98),
 (1, '15/12/2025 20:30:00', 99),
-(1, '15/12/2025 20:30:00', 100);
+(1, '15/12/2025 20:30:00', 100); 
 
 -- VIEW
 -- Bảng view liên kết account với staff

@@ -32,8 +32,6 @@ namespace MovieManager.DAO
             }
             return showtimeList;
         }
-
-        
     }
 }
 

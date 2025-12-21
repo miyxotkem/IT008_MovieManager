@@ -57,7 +57,12 @@
                 {
                     MessageBox.Show("Please select available screen.");
                     return;
-            }
+                }
+                if (FromDTP.Value.Date > ToDTP.Value.Date)
+                {
+                    MessageBox.Show("The 'From' date cannot be later than the 'To' date.");
+                    return;
+                }
                 DateTime cs = FromDTP.Value.Date + StartTimeDTP.Value.TimeOfDay;
                 foreach (ShowTime showTime in showtimes)
                 {

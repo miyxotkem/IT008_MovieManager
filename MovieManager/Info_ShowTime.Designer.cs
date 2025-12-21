@@ -36,12 +36,11 @@
             this.Screen3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.DeleteButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BackButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ScreenLabel3 = new System.Windows.Forms.Label();
             this.ScreenLabel2 = new System.Windows.Forms.Label();
             this.ScreenLabel1 = new System.Windows.Forms.Label();
-            this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.DeleteButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Screen2.SuspendLayout();
             this.Screen1.SuspendLayout();
             this.Screen3.SuspendLayout();
@@ -74,6 +73,7 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(32, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(336, 400);
@@ -95,6 +95,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(336, 400);
@@ -116,6 +117,7 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoScroll = true;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(32, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(336, 400);
@@ -125,7 +127,6 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.panel4.Controls.Add(this.DeleteButton);
-            this.panel4.Controls.Add(this.AddButton);
             this.panel4.Controls.Add(this.BackButton);
             this.panel4.Controls.Add(this.ScreenLabel3);
             this.panel4.Controls.Add(this.ScreenLabel2);
@@ -138,6 +139,29 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1500, 800);
             this.panel4.TabIndex = 2;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Animated = true;
+            this.DeleteButton.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.DeleteButton.BorderRadius = 14;
+            this.DeleteButton.BorderThickness = 2;
+            this.DeleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DeleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DeleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DeleteButton.FillColor = System.Drawing.Color.Empty;
+            this.DeleteButton.FillColor2 = System.Drawing.Color.Empty;
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DeleteButton.ForeColor = System.Drawing.Color.Black;
+            this.DeleteButton.Location = new System.Drawing.Point(659, 715);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(182, 70);
+            this.DeleteButton.TabIndex = 5;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // BackButton
             // 
@@ -189,48 +213,6 @@
             this.ScreenLabel1.TabIndex = 2;
             this.ScreenLabel1.Text = "Screen 1";
             // 
-            // AddButton
-            // 
-            this.AddButton.Animated = true;
-            this.AddButton.BorderRadius = 14;
-            this.AddButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.AddButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.AddButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AddButton.ForeColor = System.Drawing.Color.White;
-            this.AddButton.Location = new System.Drawing.Point(550, 715);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(182, 70);
-            this.AddButton.TabIndex = 5;
-            this.AddButton.Text = "Add";
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Animated = true;
-            this.DeleteButton.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.DeleteButton.BorderRadius = 14;
-            this.DeleteButton.BorderThickness = 2;
-            this.DeleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.DeleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.DeleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.DeleteButton.FillColor = System.Drawing.Color.Empty;
-            this.DeleteButton.FillColor2 = System.Drawing.Color.Empty;
-            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DeleteButton.ForeColor = System.Drawing.Color.Black;
-            this.DeleteButton.Location = new System.Drawing.Point(768, 715);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(182, 70);
-            this.DeleteButton.TabIndex = 5;
-            this.DeleteButton.Text = "Delete";
-            // 
             // Info_ShowTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -265,6 +247,5 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private Guna.UI2.WinForms.Guna2GradientButton BackButton;
         private Guna.UI2.WinForms.Guna2GradientButton DeleteButton;
-        private Guna.UI2.WinForms.Guna2GradientButton AddButton;
     }
 }
