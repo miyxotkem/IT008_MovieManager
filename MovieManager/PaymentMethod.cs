@@ -19,12 +19,12 @@ namespace MovieManager
         private float Total = 0;
         private void Initial()
         {
-            CashButton.Tag = "Cash";
-            BankButton.Tag = "Banking";
             ApplePayButton.Tag = "ApplePay";
-            CashButton.CheckedChanged += new EventHandler(CheckChange);
-            BankButton.CheckedChanged += new EventHandler(CheckChange);
+            BankButton.Tag = "Banking";
+            CashButton.Tag = "Cash";
             ApplePayButton.CheckedChanged += new EventHandler(CheckChange);
+            BankButton.CheckedChanged += new EventHandler(CheckChange);
+            CashButton.CheckedChanged += new EventHandler(CheckChange);
         }
         public PaymentMethod()
         {
@@ -68,21 +68,17 @@ namespace MovieManager
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            if (CustomerDAO.Instance.CurrentCustomer == null)
-            {
-                CustomerDAO.Instance.CurrentCustomer = new Customer();
-            }
-            int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
-            Bill bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
+            Bill bill = BillDAO.Instance.GetUncheckedBill();
             if (bill != null)
             {
                 BillDAO.Instance.PayBill(bill.IdBill, Method);
-                MessageBox.Show("Pay successfully", "Notification");
-                if (CustomerDAO.Instance.CurrentCustomer.Id != -1) // ->Khách hàng
+                Voucher v = VoucherDAO.Instance.GetVoucherFromID(bill.IdVoucher);
+                if (v != null && v.Code != "HSSV") VoucherDAO.Instance.DeleteVoucher(v.Id);
+                MessageBox.Show("Pay successfully. Please reload the bill first.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (BillDAO.Instance.CheckValidCustomer(bill.IdBill))
                 {
-                    CustomerDAO.Instance.IncreaseCustomerSpend(CustomerDAO.Instance.CurrentCustomer.Id, Total);
+                    CustomerDAO.Instance.IncreaseCustomerSpend(bill.IdCustomer, Total);
                 }    
-                CustomerDAO.Instance.CurrentCustomer = null;
                 this.Dispose();
             }
             else

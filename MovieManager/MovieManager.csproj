@@ -265,6 +265,7 @@
     <Compile Include="DAO\SnackDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
+    <Compile Include="DAO\VoucherDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\AccountInfo.cs" />
     <Compile Include="DTO\Bill.cs" />
@@ -278,6 +279,7 @@
     <Compile Include="DTO\Snack.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Ticket.cs" />
+    <Compile Include="DTO\Voucher.cs" />
     <Compile Include="Edit_CustomerManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -417,6 +419,12 @@
     <Compile Include="StaffManage.Designer.cs">
       <DependentUpon>StaffManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="VoucherInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoucherInput.Designer.cs">
+      <DependentUpon>VoucherInput.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountDisplay.resx">
       <DependentUpon>AccountDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -506,6 +514,9 @@
     <EmbeddedResource Include="StaffManage.resx">
       <DependentUpon>StaffManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VoucherInput.resx">
+      <DependentUpon>VoucherInput.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -554,6 +565,13 @@
     <None Include="Resources\info_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\folder_eye_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\chevron_right_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\Payment_Icon.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\images %281%29.jpg" />
+    <None Include="Resources\20230712_64ae924034cb5.jpg" />
+    <None Include="Resources\pngtree-bank-transfer-icon-circle-donation-company-vector-picture-image_9731259.png" />
+    <None Include="Resources\22-100723-151400-800-resize.jpg" />
+    <None Include="Resources\sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -37,7 +37,6 @@
             this.ConfirmButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CancelButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PreviousButtonForgetVerify = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.AddCustomerButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SnackPic = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SnackPic)).BeginInit();
             this.SuspendLayout();
@@ -206,25 +205,6 @@
             this.PreviousButtonForgetVerify.TabIndex = 16;
             this.PreviousButtonForgetVerify.Click += new System.EventHandler(this.PreviousButtonForgetVerify_Click);
             // 
-            // AddCustomerButton
-            // 
-            this.AddCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddCustomerButton.BackColor = System.Drawing.Color.Transparent;
-            this.AddCustomerButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddCustomerButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddCustomerButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddCustomerButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddCustomerButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.AddCustomerButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.AddCustomerButton.Location = new System.Drawing.Point(893, 330);
-            this.AddCustomerButton.Name = "AddCustomerButton";
-            this.AddCustomerButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.AddCustomerButton.Size = new System.Drawing.Size(38, 40);
-            this.AddCustomerButton.TabIndex = 15;
-            this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
-            // 
             // SnackPic
             // 
             this.SnackPic.BorderRadius = 12;
@@ -243,7 +223,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
             this.Controls.Add(this.PreviousButtonForgetVerify);
-            this.Controls.Add(this.AddCustomerButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.QuantityTextbox);
@@ -273,7 +252,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientButton ConfirmButton;
         private Guna.UI2.WinForms.Guna2GradientButton CancelButton;
-        private Guna.UI2.WinForms.Guna2CircleButton AddCustomerButton;
         private Guna.UI2.WinForms.Guna2GradientButton PreviousButtonForgetVerify;
     }
 }

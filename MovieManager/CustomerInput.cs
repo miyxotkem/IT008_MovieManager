@@ -39,13 +39,16 @@ namespace MovieManager
             if (customer == null) // không có customer 
             {
                 // Thông báo không có 
-                MessageBox.Show("No valid customer.", "Notification");
+                MessageBox.Show("No valid customer.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CustomerDAO.Instance.CurrentCustomer = new Customer();
             }
             else
             {
-                CustomerDAO.Instance.CurrentCustomer = customer;
-                MessageBox.Show("Name: " + customer.Name.ToString(), "Notification");
+                Bill bill = BillDAO.Instance.GetUncheckedBill();
+                if (bill != null)
+                {
+                    BillDAO.Instance.UpdateCustomerID(bill.IdBill, customer.Id);
+                }    
             } 
             this.Dispose();
         }

@@ -28,26 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             this.OutsidePanel = new Guna.UI2.WinForms.Guna2Panel();
             this.Container = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.ResetButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TotalLabel = new System.Windows.Forms.Label();
             this.ExportButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ViewButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PayButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ContentPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.ExitButtonSignUp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.PaymentLabel = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.TotalLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.VoucherButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.AddCustomerButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TitlePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.OutsidePanel.SuspendLayout();
             this.Container.SuspendLayout();
-            this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // OutsidePanel
             // 
             this.OutsidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.OutsidePanel.Controls.Add(this.VoucherButton);
+            this.OutsidePanel.Controls.Add(this.AddCustomerButton);
+            this.OutsidePanel.Controls.Add(this.ReloadButton);
             this.OutsidePanel.Controls.Add(this.Container);
-            this.OutsidePanel.Controls.Add(this.ExitButtonSignUp);
             this.OutsidePanel.Controls.Add(this.PaymentLabel);
             this.OutsidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OutsidePanel.Location = new System.Drawing.Point(0, 0);
@@ -60,7 +66,10 @@
             // 
             this.Container.BackColor = System.Drawing.Color.Transparent;
             this.Container.BorderRadius = 20;
-            this.Container.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Container.Controls.Add(this.TitlePanel);
+            this.Container.Controls.Add(this.NameLabel);
+            this.Container.Controls.Add(this.TotalLabel);
+            this.Container.Controls.Add(this.ResetButton);
             this.Container.Controls.Add(this.ExportButton);
             this.Container.Controls.Add(this.ViewButton);
             this.Container.Controls.Add(this.PayButton);
@@ -69,6 +78,44 @@
             this.Container.Name = "Container";
             this.Container.Size = new System.Drawing.Size(1246, 782);
             this.Container.TabIndex = 12;
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResetButton.Animated = true;
+            this.ResetButton.BackColor = System.Drawing.Color.Transparent;
+            this.ResetButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ResetButton.BorderRadius = 12;
+            this.ResetButton.BorderThickness = 1;
+            this.ResetButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ResetButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ResetButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ResetButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ResetButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ResetButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ResetButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.ResetButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ResetButton.ForeColor = System.Drawing.Color.White;
+            this.ResetButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ResetButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.ResetButton.Location = new System.Drawing.Point(55, 709);
+            this.ResetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.ResetButton.Size = new System.Drawing.Size(153, 50);
+            this.ResetButton.TabIndex = 9;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
+            // TotalLabel
+            // 
+            this.TotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLabel.Location = new System.Drawing.Point(451, 648);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(740, 29);
+            this.TotalLabel.TabIndex = 0;
+            this.TotalLabel.Text = "Total: 0";
+            this.TotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ExportButton
             // 
@@ -158,30 +205,10 @@
             // 
             this.ContentPanel.AutoScroll = true;
             this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ContentPanel.Location = new System.Drawing.Point(55, 24);
+            this.ContentPanel.Location = new System.Drawing.Point(55, 142);
             this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(1136, 599);
+            this.ContentPanel.Size = new System.Drawing.Size(1136, 481);
             this.ContentPanel.TabIndex = 1;
-            // 
-            // ExitButtonSignUp
-            // 
-            this.ExitButtonSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitButtonSignUp.BackColor = System.Drawing.Color.Transparent;
-            this.ExitButtonSignUp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ExitButtonSignUp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ExitButtonSignUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ExitButtonSignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ExitButtonSignUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.ExitButtonSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ExitButtonSignUp.ForeColor = System.Drawing.Color.White;
-            this.ExitButtonSignUp.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ExitButtonSignUp.Location = new System.Drawing.Point(1556, 13);
-            this.ExitButtonSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ExitButtonSignUp.Name = "ExitButtonSignUp";
-            this.ExitButtonSignUp.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ExitButtonSignUp.Size = new System.Drawing.Size(24, 24);
-            this.ExitButtonSignUp.TabIndex = 11;
-            this.ExitButtonSignUp.Click += new System.EventHandler(this.ExitButtonSignUp_Click);
             // 
             // PaymentLabel
             // 
@@ -194,25 +221,92 @@
             this.PaymentLabel.TabIndex = 6;
             this.PaymentLabel.Text = "PAYMENT SITE";
             // 
-            // guna2CustomGradientPanel1
+            // NameLabel
             // 
-            this.guna2CustomGradientPanel1.BorderRadius = 20;
-            this.guna2CustomGradientPanel1.Controls.Add(this.TotalLabel);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(835, 635);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(356, 59);
-            this.guna2CustomGradientPanel1.TabIndex = 8;
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(52, 19);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(152, 16);
+            this.NameLabel.TabIndex = 10;
+            this.NameLabel.Text = "Customer\'s name: Guest";
             // 
-            // TotalLabel
+            // VoucherButton
             // 
-            this.TotalLabel.AutoSize = true;
-            this.TotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLabel.Location = new System.Drawing.Point(3, 15);
-            this.TotalLabel.Name = "TotalLabel";
-            this.TotalLabel.Size = new System.Drawing.Size(105, 29);
-            this.TotalLabel.TabIndex = 0;
-            this.TotalLabel.Text = "Total: 0";
-            this.TotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.VoucherButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.VoucherButton.Animated = true;
+            this.VoucherButton.BackColor = System.Drawing.Color.Transparent;
+            this.VoucherButton.BorderRadius = 4;
+            this.VoucherButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.VoucherButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.VoucherButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.VoucherButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.VoucherButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.VoucherButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.VoucherButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.VoucherButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.VoucherButton.ForeColor = System.Drawing.Color.White;
+            this.VoucherButton.Image = global::MovieManager.Properties.Resources.sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.VoucherButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.VoucherButton.Location = new System.Drawing.Point(1502, 2);
+            this.VoucherButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VoucherButton.Name = "VoucherButton";
+            this.VoucherButton.Size = new System.Drawing.Size(41, 40);
+            this.VoucherButton.TabIndex = 15;
+            this.VoucherButton.Click += new System.EventHandler(this.VoucherButton_Click);
+            // 
+            // AddCustomerButton
+            // 
+            this.AddCustomerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddCustomerButton.Animated = true;
+            this.AddCustomerButton.BackColor = System.Drawing.Color.Transparent;
+            this.AddCustomerButton.BorderRadius = 4;
+            this.AddCustomerButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddCustomerButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddCustomerButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddCustomerButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddCustomerButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddCustomerButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.AddCustomerButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.AddCustomerButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.AddCustomerButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.AddCustomerButton.Location = new System.Drawing.Point(1549, 2);
+            this.AddCustomerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddCustomerButton.Name = "AddCustomerButton";
+            this.AddCustomerButton.Size = new System.Drawing.Size(41, 40);
+            this.AddCustomerButton.TabIndex = 14;
+            this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
+            // 
+            // ReloadButton
+            // 
+            this.ReloadButton.Animated = true;
+            this.ReloadButton.BackColor = System.Drawing.Color.Transparent;
+            this.ReloadButton.BorderRadius = 4;
+            this.ReloadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReloadButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ReloadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.ReloadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ReloadButton.ForeColor = System.Drawing.Color.White;
+            this.ReloadButton.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.Image")));
+            this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.ReloadButton.Location = new System.Drawing.Point(3, 2);
+            this.ReloadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(41, 40);
+            this.ReloadButton.TabIndex = 13;
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
+            // TitlePanel
+            // 
+            this.TitlePanel.Location = new System.Drawing.Point(55, 52);
+            this.TitlePanel.Name = "TitlePanel";
+            this.TitlePanel.Size = new System.Drawing.Size(1135, 84);
+            this.TitlePanel.TabIndex = 11;
             // 
             // Payment
             // 
@@ -225,8 +319,7 @@
             this.OutsidePanel.ResumeLayout(false);
             this.OutsidePanel.PerformLayout();
             this.Container.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
+            this.Container.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -235,13 +328,17 @@
 
         private Guna.UI2.WinForms.Guna2Panel OutsidePanel;
         private System.Windows.Forms.Label PaymentLabel;
-        private Guna.UI2.WinForms.Guna2CircleButton ExitButtonSignUp;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel Container;
         private System.Windows.Forms.FlowLayoutPanel ContentPanel;
         private Guna.UI2.WinForms.Guna2GradientButton PayButton;
         private Guna.UI2.WinForms.Guna2GradientButton ExportButton;
         private Guna.UI2.WinForms.Guna2GradientButton ViewButton;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Label TotalLabel;
+        private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;
+        private Guna.UI2.WinForms.Guna2GradientButton ResetButton;
+        private Guna.UI2.WinForms.Guna2GradientButton AddCustomerButton;
+        private System.Windows.Forms.Label NameLabel;
+        private Guna.UI2.WinForms.Guna2GradientButton VoucherButton;
+        private System.Windows.Forms.FlowLayoutPanel TitlePanel;
     }
 }

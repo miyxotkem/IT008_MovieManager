@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.PaymentButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AccountDisplayButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ShowTimeManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.CustomerManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -39,13 +42,12 @@
             this.SnackDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MovieDisplayButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SideBarZoomButtonCinema = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.SideBarPanelCinema.SuspendLayout();
             this.SuspendLayout();
             // 
             // SideBarPanelCinema
             // 
+            this.SideBarPanelCinema.Controls.Add(this.PaymentButton);
             this.SideBarPanelCinema.Controls.Add(this.AccountDisplayButton);
             this.SideBarPanelCinema.Controls.Add(this.ShowTimeManageButton);
             this.SideBarPanelCinema.Controls.Add(this.CustomerManageButton);
@@ -62,6 +64,43 @@
             this.SideBarPanelCinema.ShadowDecoration.Enabled = true;
             this.SideBarPanelCinema.Size = new System.Drawing.Size(89, 844);
             this.SideBarPanelCinema.TabIndex = 2;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(89, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1529, 844);
+            this.MainPanel.TabIndex = 3;
+            // 
+            // PaymentButton
+            // 
+            this.PaymentButton.Animated = true;
+            this.PaymentButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.PaymentButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.PaymentButton.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.PaymentButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PaymentButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PaymentButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PaymentButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PaymentButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PaymentButton.FillColor = System.Drawing.Color.White;
+            this.PaymentButton.FillColor2 = System.Drawing.Color.White;
+            this.PaymentButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PaymentButton.ForeColor = System.Drawing.Color.Black;
+            this.PaymentButton.Image = global::MovieManager.Properties.Resources.Payment_Icon;
+            this.PaymentButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PaymentButton.ImageOffset = new System.Drawing.Point(10, 0);
+            this.PaymentButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.PaymentButton.Location = new System.Drawing.Point(0, 264);
+            this.PaymentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PaymentButton.Name = "PaymentButton";
+            this.PaymentButton.Size = new System.Drawing.Size(89, 64);
+            this.PaymentButton.TabIndex = 2;
+            this.PaymentButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PaymentButton.TextOffset = new System.Drawing.Point(12, 0);
+            this.PaymentButton.CheckedChanged += new System.EventHandler(this.PaymentButton_Click);
+            this.PaymentButton.Click += new System.EventHandler(this.PaymentButton_Click);
             // 
             // AccountDisplayButton
             // 
@@ -312,14 +351,6 @@
             this.SideBarZoomButtonCinema.TabIndex = 0;
             this.SideBarZoomButtonCinema.Click += new System.EventHandler(this.ZoomButtonCinema_Click);
             // 
-            // MainPanel
-            // 
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(89, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1529, 844);
-            this.MainPanel.TabIndex = 3;
-            // 
             // Cinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,5 +383,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton CustomerManageButton;
         private Guna.UI2.WinForms.Guna2GradientButton ShowTimeManageButton;
         private Guna.UI2.WinForms.Guna2Panel MainPanel;
+        private Guna.UI2.WinForms.Guna2GradientButton PaymentButton;
     }
 }

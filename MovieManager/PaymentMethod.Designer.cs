@@ -35,7 +35,13 @@
             this.ApplePayButton = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.ExitButtonSignUp = new Guna.UI2.WinForms.Guna2CircleButton();
             this.ConfirmButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.MethodPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PaymentLabel
@@ -52,12 +58,15 @@
             // MethodPanel
             // 
             this.MethodPanel.BorderRadius = 20;
-            this.MethodPanel.Controls.Add(this.ApplePayButton);
-            this.MethodPanel.Controls.Add(this.BankButton);
+            this.MethodPanel.Controls.Add(this.guna2CirclePictureBox3);
+            this.MethodPanel.Controls.Add(this.guna2CirclePictureBox2);
+            this.MethodPanel.Controls.Add(this.guna2CirclePictureBox1);
             this.MethodPanel.Controls.Add(this.CashButton);
-            this.MethodPanel.Location = new System.Drawing.Point(130, 92);
+            this.MethodPanel.Controls.Add(this.BankButton);
+            this.MethodPanel.Controls.Add(this.ApplePayButton);
+            this.MethodPanel.Location = new System.Drawing.Point(39, 92);
             this.MethodPanel.Name = "MethodPanel";
-            this.MethodPanel.Size = new System.Drawing.Size(330, 221);
+            this.MethodPanel.Size = new System.Drawing.Size(513, 221);
             this.MethodPanel.TabIndex = 8;
             // 
             // CashButton
@@ -67,10 +76,11 @@
             this.CashButton.CheckedState.BorderThickness = 0;
             this.CashButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CashButton.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.CashButton.Location = new System.Drawing.Point(55, 25);
+            this.CashButton.Location = new System.Drawing.Point(78, 171);
             this.CashButton.Name = "CashButton";
             this.CashButton.Size = new System.Drawing.Size(20, 20);
-            this.CashButton.TabIndex = 0;
+            this.CashButton.TabIndex = 2;
+            this.CashButton.Text = "guna2CustomRadioButton1";
             this.CashButton.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.CashButton.UncheckedState.BorderThickness = 2;
             this.CashButton.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -83,7 +93,7 @@
             this.BankButton.CheckedState.BorderThickness = 0;
             this.BankButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.BankButton.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.BankButton.Location = new System.Drawing.Point(55, 98);
+            this.BankButton.Location = new System.Drawing.Point(249, 171);
             this.BankButton.Name = "BankButton";
             this.BankButton.Size = new System.Drawing.Size(20, 20);
             this.BankButton.TabIndex = 1;
@@ -100,11 +110,10 @@
             this.ApplePayButton.CheckedState.BorderThickness = 0;
             this.ApplePayButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ApplePayButton.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.ApplePayButton.Location = new System.Drawing.Point(55, 171);
+            this.ApplePayButton.Location = new System.Drawing.Point(420, 171);
             this.ApplePayButton.Name = "ApplePayButton";
             this.ApplePayButton.Size = new System.Drawing.Size(20, 20);
-            this.ApplePayButton.TabIndex = 2;
-            this.ApplePayButton.Text = "guna2CustomRadioButton1";
+            this.ApplePayButton.TabIndex = 0;
             this.ApplePayButton.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ApplePayButton.UncheckedState.BorderThickness = 2;
             this.ApplePayButton.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -158,6 +167,48 @@
             this.ConfirmButton.Text = "Confirm";
             this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
             // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox3.Image = global::MovieManager.Properties.Resources._22_100723_151400_800_resize;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(380, 50);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(100, 100);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox3.TabIndex = 5;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox2.Image = global::MovieManager.Properties.Resources.pngtree_bank_transfer_icon_circle_donation_company_vector_picture_image_9731259;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(209, 50);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox2.TabIndex = 4;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::MovieManager.Properties.Resources.images__1_;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(38, 50);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 3;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // PaymentMethod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,6 +226,9 @@
             this.Load += new System.EventHandler(this.PaymentMethod_Load);
             this.Resize += new System.EventHandler(this.PaymentMethod_Resize);
             this.MethodPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,10 +238,13 @@
 
         private System.Windows.Forms.Label PaymentLabel;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel MethodPanel;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton ApplePayButton;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton BankButton;
         private Guna.UI2.WinForms.Guna2CustomRadioButton CashButton;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton BankButton;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton ApplePayButton;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButtonSignUp;
         private Guna.UI2.WinForms.Guna2GradientButton ConfirmButton;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
     }
 }

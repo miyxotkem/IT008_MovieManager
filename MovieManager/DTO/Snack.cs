@@ -14,6 +14,7 @@ namespace MovieManager.DTO
         private float price;
         private int stock;
         private int category;
+        private int discount;
         public int ID
         {
             get { return id; }
@@ -39,6 +40,9 @@ namespace MovieManager.DTO
             get { return category; }
             set { category = value; }
         }
+
+        public int Discount { get => discount; set => discount = value; }
+
         public Snack()
         {
             this.ID = id;
@@ -46,6 +50,7 @@ namespace MovieManager.DTO
             this.Price = price;
             this.Stock = stock;
             this.Category = category;
+            this.Discount = discount;
         }
         public Snack(DataRow row)
         {
@@ -54,6 +59,7 @@ namespace MovieManager.DTO
             this.Price = (float)Convert.ToSingle(row["price"]);
             this.Stock = (int)row["stock"];
             this.Category = (int)row["category"];
+            this.discount = (int)row["discount"];
         }
     }
 }

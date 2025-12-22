@@ -13,11 +13,13 @@ namespace MovieManager.DTO
         private int idCustomer;
         private string payment_method;
         private int bill_statius;
+        private int idVoucher;
 
         public int IdBill { get => idBill; set => idBill = value; }
         public int IdCustomer { get => idCustomer; set => idCustomer = value; }
         public string Payment_method { get => payment_method; set => payment_method = value; }
         public int Bill_statius { get => bill_statius; set => bill_statius = value; }
+        public int IdVoucher { get => idVoucher; set => idVoucher = value; }
 
         public Bill(DataRow row)
         {
@@ -33,6 +35,7 @@ namespace MovieManager.DTO
             }
             this.payment_method = (string)row["payment_method"];
             this.bill_statius = Convert.ToInt32(row["bill_status"]);
+            this.idVoucher = (int)row["idVoucher"];
         }
 
         

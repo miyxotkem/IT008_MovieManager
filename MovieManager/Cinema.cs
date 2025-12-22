@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using MovieManager.DAO;
 using MovieManager.DTO;
+using Org.BouncyCastle.Math.Field;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace MovieManager
         private AccountDisplay accountDisplay;
         private StaffManage staffManage;
         private ShowTimeManage showTimeManage;
-
+        private Payment payment;
         public Cinema()
         {
             InitializeComponent(); 
@@ -58,7 +59,9 @@ namespace MovieManager
             staffManage = new StaffManage();
             staffManage.Dock = DockStyle.Fill;
             showTimeManage = new ShowTimeManage();
-            showTimeManage.Dock = DockStyle.Fill;   
+            showTimeManage.Dock = DockStyle.Fill;
+            payment = new Payment();
+            payment.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(movieManage);
             MainPanel.Controls.Add(snackManage);
             MainPanel.Controls.Add(movieDisplay);
@@ -67,6 +70,7 @@ namespace MovieManager
             MainPanel.Controls.Add(staffManage);
             MainPanel.Controls.Add(accountDisplay);
             MainPanel.Controls.Add(showTimeManage);
+            MainPanel.Controls.Add(payment);
             if (this.Tag is Account account)
             {
                 MovieManageButton.Enabled = account.Admin;
@@ -133,6 +137,8 @@ namespace MovieManager
                 CustomerManageButton.Text = "Customer Manage";
                 ShowTimeManageButton.Size = new Size(ShowTimeManageButton.Width + 150, ShowTimeManageButton.Height);
                 ShowTimeManageButton.Text = "ShowTime Manage";
+                PaymentButton.Size = new Size(PaymentButton.Width + 150, PaymentButton.Height);
+                PaymentButton.Text = "Payment Site";
                 //MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
                 //MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
                 //SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
@@ -173,6 +179,8 @@ namespace MovieManager
                 CustomerManageButton.Text = "";
                 ShowTimeManageButton.Size = new Size(ShowTimeManageButton.Width - 150, ShowTimeManageButton.Height);
                 ShowTimeManageButton.Text = "";
+                PaymentButton.Size = new Size(PaymentButton.Width - 150, PaymentButton.Height);
+                PaymentButton.Text = "";
                 //MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
                 //MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
                 //SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
@@ -340,6 +348,21 @@ namespace MovieManager
         public void ChangeMovieDisplayButton(bool state)
         {
             MovieDisplayButtonCinema.Checked =state;    
+        }
+
+        public void ChangePayMentButton(bool state)
+        {
+            PaymentButton.Checked = state;
+        }
+        private void PaymentButton_Click(object sender, EventArgs e)
+        {
+            if (PaymentButton.Checked)
+            {
+                payment.BringToFront();
+                payment.Reload();
+                if (sidebarzoom == true)
+                    SideBarZoomButtonCinema.PerformClick();
+            }
         }
     }
 }

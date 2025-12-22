@@ -29,19 +29,24 @@ namespace MovieManager.DAO
 
         private BillDAO() { }
 
-        public void CreateBill(int idCustomer)
+        public void CreateBill()
         {
             int data = -1;
-            string querry = "insert into Bill (idCustomer) values ( @id )";
-            if (idCustomer == -1) // --> Khách vãng lai
-            {
-                querry = "insert into Bill (idCustomer) values ( null )";
-                data = DataProvider.Instance.ExecuteNonQuery(querry);
-                return;
-            }    
-            data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { idCustomer });
+            string querry = "insert into Bill (idCustomer) values ( null )";
+            data = DataProvider.Instance.ExecuteNonQuery(querry);
         }
 
+        public Bill GetUncheckedBill()
+        {
+            Bill bill = null;
+            string querry = "select * from Bill where bill_status = 0";
+            DataTable table = DataProvider.Instance.ExecuteQuery(querry);
+            if (table.Rows.Count > 0)
+            {
+                bill = new Bill(table.Rows[0]);
+            }
+            return bill;
+        }
         public Bill GetIDBillFromIDCustomer(int idCustomer)
         {
             Bill bill = null;
@@ -79,6 +84,29 @@ namespace MovieManager.DAO
         {
             string querry = "update Bill set bill_status = 1, payment_method = @method where idBill = @id and bill_status = 0";
             int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { method, idBill });
+        }
+
+        public void UpdateCustomerID(int idBill, int idCus)
+        {
+            string query = "update Bill set idCustomer = @idCus where idBill = @id ";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] {idCus, idBill});
+        }
+
+        public bool CheckValidCustomer(int idBill)
+        {
+            string query = "select * from Bill where idBill = @id and idCustomer is not null";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { idBill });
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void ApplyVoucherForBill(int idBill, int idVoucher)
+        {
+            string query = "Update Bill set idVoucher = @idv where idBill = @idb ";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idVoucher, idBill });
         }
     }
 }

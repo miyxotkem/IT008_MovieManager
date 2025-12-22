@@ -84,8 +84,10 @@ CREATE TABLE Snack
 	name NVARCHAR(100),
 	price FLOAT,
 	stock INT,
-	category INT -- 0: food, 1: beverage
+	category INT, -- 0: food, 1: beverage
+	discount int
 )
+
 GO
 CREATE TABLE ShowTime (
 		idmovie INT,
@@ -115,7 +117,7 @@ create table Bill(
 	idCustomer int,
 	payment_method varchar(50) default 'Cash',
 	bill_status int default 0, --0: Unpaid   1: Paid
-
+	idVoucher int default -1, -- -1: Không có voucher 
 )
 
 go
@@ -185,6 +187,17 @@ GO
 SET DATEFORMAT dmy;
 GO
 
+create table Voucher 
+(
+	id int identity primary key, 
+	type int, -- 0: áp cho Bill    1: áp cho Ticket
+	code varchar(8),
+	discount int, -- % giảm 
+	max_money_discount float, -- Số tiền tối đa giảm được 
+	min_total_bill float -- Số tiền tối thiểu trên tổng bill để được áp mã 
+)
+
+go
 -- INSERT
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
 INSERT INTO dbo.Hall (name, location)VALUES (N'Lotte Cinema Thu Duc', N'5th Floor, Giga Mall');
@@ -541,6 +554,23 @@ VALUES
 (1, '15/12/2025 20:30:00', 99),
 (1, '15/12/2025 20:30:00', 100); 
 
+INSERT INTO Voucher (type, code, discount, max_money_discount, min_total_bill)
+VALUES 
+(0, 'WELCOME5', 5, 50000, 0),        -- Giảm 5% cho Bill, không giới hạn tối thiểu
+(0, 'BILL100K', 10, 20000, 100000),    -- Giảm 10% cho Bill từ 100k trở lên
+(0, 'BIGSALE', 20, 200000, 500000),    -- Giảm 20% cho Bill từ 500k trở lên
+(1, 'TICKET2', 15, 30000, 50000),      -- Giảm 15% cho Ticket từ 50k trở lên
+(1, 'VIPONLY', 50, 500000, 1000000),   -- Giảm 50% cho Ticket từ 1tr trở lên
+(1, 'FREETKT', 100, 100000, 0),        -- Giảm 100% (tối đa 100k) cho Ticket
+(0, 'PROMO99', 9, 99000, 99000),       -- Mã hỗn hợp số và chữ thường
+(0, 'SUMMER24', 25, 150000, 300000),   -- Mã có năm
+(1, 'abc123XY', 12, 45000, 200000),    -- Mã lẫn lộn hoa thường
+(0, 'LUCKY7', 7, 77000, 77000),       -- Mã may mắn
+(1, 'HSSV', 50, 10000000, 0)
+
+GO
+
+
 -- VIEW
 -- Bảng view liên kết account với staff
 create view AccountStaff as
@@ -723,6 +753,7 @@ select * from ShowTimeDetail
 select * from Bill
 select * from BillInfo
 select * from Ticket
+select * from Voucher
 update ShowTimeDetail
 set available = 0
 where available = 1
@@ -743,3 +774,7 @@ select * from Customer
 update Bill set bill_status = 1, payment_method = @method where idBill = @id and bill_status = 0
 
 update Bill set bill_status =1, payment_method = 'Banking' where idBill = 3
+
+select * from BillInfo
+
+update BillInfo set Quantity = Quantity + @quan where idBill = @id and Category = 'Food and Drink' and idDetail = @detail 

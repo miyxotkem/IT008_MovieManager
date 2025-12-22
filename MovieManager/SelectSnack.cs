@@ -63,12 +63,6 @@ namespace MovieManager
             this.Dispose();
         }
 
-        private void AddCustomerButton_Click(object sender, EventArgs e)
-        {
-            CustomerInput customerInput = new CustomerInput();
-            customerInput.ShowDialog();
-        }
-
         private void SelectSnack_Load(object sender, EventArgs e)
         {
             
@@ -76,17 +70,12 @@ namespace MovieManager
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            if (CustomerDAO.Instance.CurrentCustomer == null)
+            Bill bill = BillDAO.Instance.GetUncheckedBill();
+            if (bill == null) // không có bill
             {
-                CustomerDAO.Instance.CurrentCustomer = new Customer();  
-            }    
-            int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
-            Bill bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
-            if (bill == null) // chưa có bill -> Cần tạo bill
-            {
-                BillDAO.Instance.CreateBill(idCustomer);
-                bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
-            }    
+                BillDAO.Instance.CreateBill();
+                bill = BillDAO.Instance.GetUncheckedBill();
+            }
             if (bill != null && snack != null)
             {
                 CurBill = bill;
@@ -100,16 +89,22 @@ namespace MovieManager
                     }
                     catch
                     {
-                        MessageBox.Show("Invalid quantity.", "Notification");
+                        MessageBox.Show("Invalid quantity.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } 
                 }
                 if (Quantity > snack.Stock)
                 {
-                    MessageBox.Show("Out of stock.", "Notification");
+                    MessageBox.Show("Out of stock.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
+                }
+                int HavePastItem = 0;
+                HavePastItem = BillInfoDAO.Instance.StackItemInBillInfo(Quantity, bill.IdBill, snack.ID);
+                if (HavePastItem == 0) // chưa có item cũ  
+                {
+                    BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Food and Drink", snack.ID, Quantity, snack.Discount, snack.Price); // chưa có item
                 }    
-                BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Food and Drink", snack.ID, Quantity, 0, snack.Price);
-                MessageBox.Show("Successfully!", "Notification");
+                MessageBox.Show("Successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
             }    
         }
 
@@ -129,18 +124,11 @@ namespace MovieManager
 
         private void PreviousButtonForgetVerify_Click(object sender, EventArgs e)
         {
-            Payment payment = new Payment();
-            if (parentContainer != null)
+            if (parentContainer != null && parentContainer.Parent is Cinema cinema)
             {
-                parentContainer.Controls.Add(payment);
-                payment.Dock = DockStyle.Fill;
-                if (CurBill != null)
-                {
-                    payment.Tag = CurBill;
-                }    
-                payment.BringToFront();
+                cinema.ChangePayMentButton(true);
+                this.Dispose();
             }
-            this.Dispose();
         }
     }
 }

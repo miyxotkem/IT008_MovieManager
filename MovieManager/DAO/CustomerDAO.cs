@@ -47,6 +47,17 @@ namespace MovieManager.DAO
             return customer;
         }
 
+        public Customer GetCustomer(int idCus)
+        {
+            Customer customer = null;
+            string querry = "Select * from Customer where id = @id ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(querry, new object[] { idCus });
+            if (table.Rows.Count > 0)
+            {
+                customer = new Customer(table.Rows[0]);
+            }
+            return customer;
+        }
         public void AddCustomer(string phonenumber)
         {
             string querry = "insert into Customer (phone_number, money_spent) values ( @phone , 0)";

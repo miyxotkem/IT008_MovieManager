@@ -28,6 +28,7 @@ namespace MovieManager
         private Cinema cinema = null;
         private Bill CurBill = null;
         private bool HaveChooseSeat;
+        private int Discount = 0;
         public SelectMovie()
         {
             InitializeComponent();
@@ -171,19 +172,12 @@ namespace MovieManager
                 }    
             }
             List<Guna2GradientButton> list = screen.GetCurrentChooseButton();
-            Bill bill = null;
-            if (CustomerDAO.Instance.CurrentCustomer == null) // chưa nhập khách hàng mua --> Vãng lai
+            Bill bill = BillDAO.Instance.GetUncheckedBill();
+            if (bill == null) // không có bill
             {
-                CustomerDAO.Instance.CurrentCustomer = new Customer();
-            }
-            // Lấy/ Tạo mới Bill 
-            int idCustomer = CustomerDAO.Instance.CurrentCustomer.Id;
-            bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer); // lấy Bill của khách hàng đang mua hiện tại
-            if (bill == null) // chưa có bill --> Cần tạo mới
-            {
-                BillDAO.Instance.CreateBill(idCustomer);
-                bill = BillDAO.Instance.GetIDBillFromIDCustomer(idCustomer);
-            }
+                BillDAO.Instance.CreateBill();
+                bill = BillDAO.Instance.GetUncheckedBill();
+            }    
             if (BillInfoDAO.Instance.CheckExistingFilmInBill(bill.IdBill))
             {
                 MessageBox.Show("Please pay all the previous bill before choosing new films.", "Notification");
@@ -245,8 +239,8 @@ namespace MovieManager
                 // Thêm vào BillInfo 
                 if (bill != null && currentMovie != null)
                 {
-                    BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Ticket", currentMovie.ID, TotalSeat, 0, CommonPrice);
-                    MessageBox.Show("Successfully!", "Notification");
+                    BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Ticket", currentMovie.ID, TotalSeat, Discount, CommonPrice);
+                    MessageBox.Show("Successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }    
             } 
                 
@@ -303,6 +297,11 @@ namespace MovieManager
         private void SelectMovie_Load(object sender, EventArgs e)
         {
             HaveChooseSeat = false;
+        }
+
+        private void AddDiscountButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

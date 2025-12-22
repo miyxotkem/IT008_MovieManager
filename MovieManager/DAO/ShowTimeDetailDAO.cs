@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -66,6 +67,12 @@ namespace MovieManager.DAO
         public void ChooseSeat(int idMovie, DateTime start_time, int idSeat)
         {
             string querry = "Update ShowTimeDetail  set available = 1 where idMovie = @id and Start_time = @start and idSeat = @seat";
+            int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { idMovie, start_time, idSeat });
+        }
+
+        public void UnchooseSeat(int idMovie, DateTime start_time, int idSeat)
+        {
+            string querry = "Update ShowTimeDetail  set available = 0 where idMovie = @id and Start_time = @start and idSeat = @seat";
             int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] { idMovie, start_time, idSeat });
         }
     }
