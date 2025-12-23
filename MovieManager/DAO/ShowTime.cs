@@ -32,6 +32,20 @@ namespace MovieManager.DAO
             }
             return showtimeList;
         }
+
+        public ShowTime GetShowTime(int idMovie, DateTime Start_time)
+        {
+            ShowTime show = null;
+            string setdate = "set dateformat dmy";
+            int data = DataProvider.Instance.ExecuteNonQuery(setdate);
+            string query = "select * from Showtime where idmovie = @id and start_time = @start ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] {idMovie, Start_time});
+            if (table.Rows.Count > 0)
+            {
+                show = new ShowTime(table.Rows[0]);
+            }
+            return show;
+        }
     }
 }
 

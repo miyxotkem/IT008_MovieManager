@@ -354,6 +354,7 @@ namespace MovieManager
         {
             PaymentButton.Checked = state;
         }
+
         private void PaymentButton_Click(object sender, EventArgs e)
         {
             if (PaymentButton.Checked)

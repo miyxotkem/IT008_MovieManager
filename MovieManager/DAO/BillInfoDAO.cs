@@ -53,6 +53,17 @@ namespace MovieManager.DAO
             return list;
         }
 
+        public BillInfo GetBillInfoTicket(int idBill)
+        {
+            BillInfo billinfo = null;
+            string query = "select * from BillInfo where idBill = @id and Category = 'Ticket' ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { idBill });
+            if (table.Rows.Count>0)
+            {
+                billinfo = new BillInfo(table.Rows[0]);
+            }
+            return billinfo;
+        }
         public bool CheckExistingFilmInBill(int idBill)
         {
             string querry = "Select * from BillInfo where Category = 'Ticket' and idBill = @id ";

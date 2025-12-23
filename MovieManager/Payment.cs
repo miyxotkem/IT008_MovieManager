@@ -289,6 +289,21 @@ namespace MovieManager
                 MessageBox.Show("No ticket available.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             } 
+            // Có vé 
+            TicketDisplay ticketDisplay = new TicketDisplay();
+            this.Parent.Controls.Add(ticketDisplay);
+            ticketDisplay.Dock = DockStyle.Fill;
+            ticketDisplay.Reload();
+            List<Ticket> list = TicketDAO.Instance.GetTicketsFromBill(bill.IdBill);
+            if (list != null && list.Count > 0)
+            {
+                foreach (Ticket ticket in list)
+                {
+                    MovieTicket movieTicket = new MovieTicket(ticket);
+                    ticketDisplay.AddTicket(movieTicket);
+                }
+            }
+            ticketDisplay.BringToFront();
         }
 
         private void ExportButton_Click(object sender, EventArgs e)

@@ -31,5 +31,17 @@ namespace MovieManager.DAO
             }
             return StaffList;
         }
+
+        public Staff GetStaff(int id)
+        {
+            Staff staff = null;
+            string query = "select * from Staff where id = @id ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+            if (table.Rows.Count > 0)
+            {
+                staff = new Staff(table.Rows[0]);
+            }
+            return staff;
+        }
     }
 }

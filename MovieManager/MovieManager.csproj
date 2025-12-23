@@ -256,8 +256,10 @@
       <DependentUpon>Cinema.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\ForgetPassUsernameDAO.cs" />
+    <Compile Include="DAO\HallDAO.cs" />
     <Compile Include="DAO\HistoryDAO.cs" />
     <Compile Include="DAO\MovieDAO.cs" />
+    <Compile Include="DAO\ScreenDAO.cs" />
     <Compile Include="DAO\SeatDAO.cs" />
     <Compile Include="DAO\ShiftDAO.cs" />
     <Compile Include="DAO\ShowTime.cs" />
@@ -271,8 +273,10 @@
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
     <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\Hall.cs" />
     <Compile Include="DTO\History.cs" />
     <Compile Include="DTO\Movie.cs" />
+    <Compile Include="DTO\Screen.cs" />
     <Compile Include="DTO\Seat.cs" />
     <Compile Include="DTO\Shift.cs" />
     <Compile Include="DTO\ShowTime.cs" />
@@ -339,6 +343,12 @@
     </Compile>
     <Compile Include="MovieManage.Designer.cs">
       <DependentUpon>MovieManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieTicket.Designer.cs">
+      <DependentUpon>MovieTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="Payment.cs">
       <SubType>UserControl</SubType>
@@ -419,6 +429,12 @@
     <Compile Include="StaffManage.Designer.cs">
       <DependentUpon>StaffManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TicketDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TicketDisplay.Designer.cs">
+      <DependentUpon>TicketDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="VoucherInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +489,9 @@
     <EmbeddedResource Include="MovieManage.resx">
       <DependentUpon>MovieManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MovieTicket.resx">
+      <DependentUpon>MovieTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
@@ -513,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffManage.resx">
       <DependentUpon>StaffManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketDisplay.resx">
+      <DependentUpon>TicketDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VoucherInput.resx">
       <DependentUpon>VoucherInput.cs</DependentUpon>
@@ -572,6 +594,7 @@
     <None Include="Resources\pngtree-bank-transfer-icon-circle-donation-company-vector-picture-image_9731259.png" />
     <None Include="Resources\22-100723-151400-800-resize.jpg" />
     <None Include="Resources\sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
+    <None Include="Resources\images.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

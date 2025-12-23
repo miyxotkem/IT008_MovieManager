@@ -754,6 +754,7 @@ select * from Bill
 select * from BillInfo
 select * from Ticket
 select * from Voucher
+select * from Hall
 update ShowTimeDetail
 set available = 0
 where available = 1
@@ -777,4 +778,7 @@ update Bill set bill_status =1, payment_method = 'Banking' where idBill = 3
 
 select * from BillInfo
 
+select * from Screen
+select * from Hall
+select * from Staff
 update BillInfo set Quantity = Quantity + @quan where idBill = @id and Category = 'Food and Drink' and idDetail = @detail 
