@@ -93,6 +93,8 @@ namespace MovieManager
         DataProvider dp = new DataProvider();
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Confirm deletion?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                return;
             // Create a copy of the list to iterate safely
             foreach (var item in checkingStatus.ToList())
             {

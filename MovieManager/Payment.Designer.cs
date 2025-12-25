@@ -50,15 +50,13 @@
             // OutsidePanel
             // 
             this.OutsidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.OutsidePanel.Controls.Add(this.VoucherButton);
-            this.OutsidePanel.Controls.Add(this.AddCustomerButton);
-            this.OutsidePanel.Controls.Add(this.ReloadButton);
             this.OutsidePanel.Controls.Add(this.Container);
             this.OutsidePanel.Controls.Add(this.PaymentLabel);
             this.OutsidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OutsidePanel.Location = new System.Drawing.Point(0, 0);
+            this.OutsidePanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OutsidePanel.Name = "OutsidePanel";
-            this.OutsidePanel.Size = new System.Drawing.Size(1593, 923);
+            this.OutsidePanel.Size = new System.Drawing.Size(1792, 1154);
             this.OutsidePanel.TabIndex = 0;
             this.OutsidePanel.Resize += new System.EventHandler(this.guna2Panel1_Resize);
             // 
@@ -78,10 +76,10 @@
             this.VoucherButton.ForeColor = System.Drawing.Color.White;
             this.VoucherButton.Image = global::MovieManager.Properties.Resources.sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.VoucherButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.VoucherButton.Location = new System.Drawing.Point(50, 2);
+            this.VoucherButton.Location = new System.Drawing.Point(122, 810);
             this.VoucherButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VoucherButton.Name = "VoucherButton";
-            this.VoucherButton.Size = new System.Drawing.Size(41, 40);
+            this.VoucherButton.Size = new System.Drawing.Size(46, 50);
             this.VoucherButton.TabIndex = 15;
             this.VoucherButton.Click += new System.EventHandler(this.VoucherButton_Click);
             // 
@@ -101,10 +99,10 @@
             this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
             this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
             this.AddCustomerButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddCustomerButton.Location = new System.Drawing.Point(97, 2);
+            this.AddCustomerButton.Location = new System.Drawing.Point(175, 810);
             this.AddCustomerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddCustomerButton.Name = "AddCustomerButton";
-            this.AddCustomerButton.Size = new System.Drawing.Size(41, 40);
+            this.AddCustomerButton.Size = new System.Drawing.Size(46, 50);
             this.AddCustomerButton.TabIndex = 14;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
@@ -124,18 +122,21 @@
             this.ReloadButton.ForeColor = System.Drawing.Color.White;
             this.ReloadButton.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.Image")));
             this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.ReloadButton.Location = new System.Drawing.Point(3, 2);
+            this.ReloadButton.Location = new System.Drawing.Point(69, 810);
             this.ReloadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(41, 40);
+            this.ReloadButton.Size = new System.Drawing.Size(46, 50);
             this.ReloadButton.TabIndex = 13;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
             // 
             // Container
             // 
             this.Container.BackColor = System.Drawing.Color.Transparent;
-            this.Container.BorderRadius = 20;
+            this.Container.BorderRadius = 40;
+            this.Container.Controls.Add(this.VoucherButton);
             this.Container.Controls.Add(this.TitlePanel);
+            this.Container.Controls.Add(this.AddCustomerButton);
+            this.Container.Controls.Add(this.ReloadButton);
             this.Container.Controls.Add(this.NameLabel);
             this.Container.Controls.Add(this.TotalLabel);
             this.Container.Controls.Add(this.ResetButton);
@@ -143,33 +144,38 @@
             this.Container.Controls.Add(this.ViewButton);
             this.Container.Controls.Add(this.PayButton);
             this.Container.Controls.Add(this.ContentPanel);
-            this.Container.Location = new System.Drawing.Point(173, 122);
+            this.Container.Location = new System.Drawing.Point(195, 152);
+            this.Container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Container.Name = "Container";
-            this.Container.Size = new System.Drawing.Size(1246, 782);
+            this.Container.ShadowDecoration.BorderRadius = 40;
+            this.Container.ShadowDecoration.Enabled = true;
+            this.Container.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
+            this.Container.Size = new System.Drawing.Size(1402, 978);
             this.Container.TabIndex = 12;
             // 
             // TitlePanel
             // 
-            this.TitlePanel.Location = new System.Drawing.Point(55, 52);
+            this.TitlePanel.Location = new System.Drawing.Point(62, 65);
+            this.TitlePanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TitlePanel.Name = "TitlePanel";
-            this.TitlePanel.Size = new System.Drawing.Size(1135, 84);
+            this.TitlePanel.Size = new System.Drawing.Size(1277, 105);
             this.TitlePanel.TabIndex = 11;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(52, 19);
+            this.NameLabel.Location = new System.Drawing.Point(58, 24);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(152, 16);
+            this.NameLabel.Size = new System.Drawing.Size(185, 20);
             this.NameLabel.TabIndex = 10;
             this.NameLabel.Text = "Customer\'s name: Guest";
             // 
             // TotalLabel
             // 
             this.TotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLabel.Location = new System.Drawing.Point(451, 648);
+            this.TotalLabel.Location = new System.Drawing.Point(507, 810);
             this.TotalLabel.Name = "TotalLabel";
-            this.TotalLabel.Size = new System.Drawing.Size(740, 29);
+            this.TotalLabel.Size = new System.Drawing.Size(832, 36);
             this.TotalLabel.TabIndex = 0;
             this.TotalLabel.Text = "Total: 0";
             this.TotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,11 +199,11 @@
             this.ResetButton.ForeColor = System.Drawing.Color.White;
             this.ResetButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ResetButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ResetButton.Location = new System.Drawing.Point(55, 709);
+            this.ResetButton.Location = new System.Drawing.Point(62, 886);
             this.ResetButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ResetButton.Size = new System.Drawing.Size(153, 50);
+            this.ResetButton.Size = new System.Drawing.Size(172, 62);
             this.ResetButton.TabIndex = 9;
             this.ResetButton.Text = "Reset";
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
@@ -221,11 +227,11 @@
             this.ExportButton.ForeColor = System.Drawing.Color.White;
             this.ExportButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ExportButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ExportButton.Location = new System.Drawing.Point(687, 709);
+            this.ExportButton.Location = new System.Drawing.Point(773, 886);
             this.ExportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExportButton.Name = "ExportButton";
             this.ExportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ExportButton.Size = new System.Drawing.Size(153, 50);
+            this.ExportButton.Size = new System.Drawing.Size(172, 62);
             this.ExportButton.TabIndex = 7;
             this.ExportButton.Text = "Export";
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
@@ -249,11 +255,11 @@
             this.ViewButton.ForeColor = System.Drawing.Color.White;
             this.ViewButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.ViewButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ViewButton.Location = new System.Drawing.Point(862, 709);
+            this.ViewButton.Location = new System.Drawing.Point(970, 886);
             this.ViewButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ViewButton.Name = "ViewButton";
             this.ViewButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ViewButton.Size = new System.Drawing.Size(153, 50);
+            this.ViewButton.Size = new System.Drawing.Size(172, 62);
             this.ViewButton.TabIndex = 6;
             this.ViewButton.Text = "View Ticket";
             this.ViewButton.Click += new System.EventHandler(this.ViewButton_Click);
@@ -277,11 +283,11 @@
             this.PayButton.ForeColor = System.Drawing.Color.White;
             this.PayButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.PayButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.PayButton.Location = new System.Drawing.Point(1037, 709);
+            this.PayButton.Location = new System.Drawing.Point(1167, 886);
             this.PayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PayButton.Name = "PayButton";
             this.PayButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.PayButton.Size = new System.Drawing.Size(153, 50);
+            this.PayButton.Size = new System.Drawing.Size(172, 62);
             this.PayButton.TabIndex = 5;
             this.PayButton.Text = "Pay";
             this.PayButton.Click += new System.EventHandler(this.PayButton_Click);
@@ -290,9 +296,10 @@
             // 
             this.ContentPanel.AutoScroll = true;
             this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
-            this.ContentPanel.Location = new System.Drawing.Point(55, 142);
+            this.ContentPanel.Location = new System.Drawing.Point(62, 178);
+            this.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(1136, 481);
+            this.ContentPanel.Size = new System.Drawing.Size(1278, 601);
             this.ContentPanel.TabIndex = 1;
             // 
             // PaymentLabel
@@ -300,19 +307,20 @@
             this.PaymentLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PaymentLabel.AutoSize = true;
             this.PaymentLabel.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaymentLabel.Location = new System.Drawing.Point(628, 32);
+            this.PaymentLabel.Location = new System.Drawing.Point(697, 50);
             this.PaymentLabel.Name = "PaymentLabel";
-            this.PaymentLabel.Size = new System.Drawing.Size(336, 52);
+            this.PaymentLabel.Size = new System.Drawing.Size(398, 61);
             this.PaymentLabel.TabIndex = 6;
             this.PaymentLabel.Text = "PAYMENT SITE";
             // 
             // Payment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OutsidePanel);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Payment";
-            this.Size = new System.Drawing.Size(1593, 923);
+            this.Size = new System.Drawing.Size(1792, 1154);
             this.Load += new System.EventHandler(this.Payment_Load);
             this.OutsidePanel.ResumeLayout(false);
             this.OutsidePanel.PerformLayout();

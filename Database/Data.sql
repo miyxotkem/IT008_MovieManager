@@ -448,6 +448,9 @@ VALUES
 (N'Cơm bò sốt tiêu đen', 65000, 100, 0),
 (N'Cơm thịt heo chiên xù', 65000, 100, 0);
 
+UPDATE SNACK
+SET discount = 0
+
 INSERT INTO ShowTimeDetail (idMovie, Start_time, idSeat)
 VALUES
 (1, '15/12/2025 18:00:00', 1),
@@ -781,4 +784,7 @@ select * from BillInfo
 select * from Screen
 select * from Hall
 select * from Staff
+select * from customer
+select * from voucher
+select * from account
 update BillInfo set Quantity = Quantity + @quan where idBill = @id and Category = 'Food and Drink' and idDetail = @detail 

@@ -40,9 +40,9 @@
             this.PaymentLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PaymentLabel.AutoSize = true;
             this.PaymentLabel.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PaymentLabel.Location = new System.Drawing.Point(166, 9);
+            this.PaymentLabel.Location = new System.Drawing.Point(187, 50);
             this.PaymentLabel.Name = "PaymentLabel";
-            this.PaymentLabel.Size = new System.Drawing.Size(230, 52);
+            this.PaymentLabel.Size = new System.Drawing.Size(269, 61);
             this.PaymentLabel.TabIndex = 7;
             this.PaymentLabel.Text = "VOUCHER";
             // 
@@ -59,10 +59,10 @@
             this.ConfirmButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.ConfirmButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ConfirmButton.ForeColor = System.Drawing.Color.White;
-            this.ConfirmButton.Location = new System.Drawing.Point(195, 213);
+            this.ConfirmButton.Location = new System.Drawing.Point(219, 266);
             this.ConfirmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(172, 48);
+            this.ConfirmButton.Size = new System.Drawing.Size(194, 60);
             this.ConfirmButton.TabIndex = 12;
             this.ConfirmButton.Text = "Confirm";
             this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
@@ -70,9 +70,9 @@
             // PhoneNumberLabel
             // 
             this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(86, 101);
+            this.PhoneNumberLabel.Location = new System.Drawing.Point(96, 140);
             this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(101, 16);
+            this.PhoneNumberLabel.Size = new System.Drawing.Size(119, 20);
             this.PhoneNumberLabel.TabIndex = 10;
             this.PhoneNumberLabel.Text = "Voucher\'s code";
             // 
@@ -88,13 +88,13 @@
             this.VoucherTextbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.VoucherTextbox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.VoucherTextbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.VoucherTextbox.Location = new System.Drawing.Point(77, 119);
+            this.VoucherTextbox.Location = new System.Drawing.Point(86, 160);
             this.VoucherTextbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VoucherTextbox.Name = "VoucherTextbox";
             this.VoucherTextbox.PasswordChar = '\0';
             this.VoucherTextbox.PlaceholderText = "Input \"HSSV\" in case customer is a student";
             this.VoucherTextbox.SelectedText = "";
-            this.VoucherTextbox.Size = new System.Drawing.Size(409, 48);
+            this.VoucherTextbox.Size = new System.Drawing.Size(460, 60);
             this.VoucherTextbox.TabIndex = 11;
             // 
             // ExitButtonSignUp
@@ -108,26 +108,27 @@
             this.ExitButtonSignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ExitButtonSignUp.ForeColor = System.Drawing.Color.White;
             this.ExitButtonSignUp.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ExitButtonSignUp.Location = new System.Drawing.Point(526, 11);
+            this.ExitButtonSignUp.Location = new System.Drawing.Point(592, 14);
             this.ExitButtonSignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitButtonSignUp.Name = "ExitButtonSignUp";
             this.ExitButtonSignUp.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ExitButtonSignUp.Size = new System.Drawing.Size(24, 24);
+            this.ExitButtonSignUp.Size = new System.Drawing.Size(27, 30);
             this.ExitButtonSignUp.TabIndex = 13;
             this.ExitButtonSignUp.Click += new System.EventHandler(this.ExitButtonSignUp_Click);
             // 
             // VoucherInput
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ClientSize = new System.Drawing.Size(562, 317);
+            this.ClientSize = new System.Drawing.Size(632, 363);
             this.Controls.Add(this.ExitButtonSignUp);
             this.Controls.Add(this.ConfirmButton);
             this.Controls.Add(this.PhoneNumberLabel);
             this.Controls.Add(this.VoucherTextbox);
             this.Controls.Add(this.PaymentLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "VoucherInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VoucherInput";
