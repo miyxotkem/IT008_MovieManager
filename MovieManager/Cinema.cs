@@ -28,6 +28,7 @@ namespace MovieManager
         private StaffManage staffManage;
         private ShowTimeManage showTimeManage;
         private Payment payment;
+        private Statistics stats;
         public Cinema()
         {
             InitializeComponent(); 
@@ -62,6 +63,8 @@ namespace MovieManager
             showTimeManage.Dock = DockStyle.Fill;
             payment = new Payment();
             payment.Dock = DockStyle.Fill;
+            stats = new Statistics();
+            stats.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(movieManage);
             MainPanel.Controls.Add(snackManage);
             MainPanel.Controls.Add(movieDisplay);
@@ -71,6 +74,7 @@ namespace MovieManager
             MainPanel.Controls.Add(accountDisplay);
             MainPanel.Controls.Add(showTimeManage);
             MainPanel.Controls.Add(payment);
+            MainPanel.Controls.Add(stats);
             if (this.Tag is Account account)
             {
                 MovieManageButton.Enabled = account.Admin;
@@ -139,6 +143,8 @@ namespace MovieManager
                 ShowTimeManageButton.Text = "ShowTime Manage";
                 PaymentButton.Size = new Size(PaymentButton.Width + 150, PaymentButton.Height);
                 PaymentButton.Text = "Payment Site";
+                GraphDisplayButton.Size = new Size(GraphDisplayButton.Width + 150, GraphDisplayButton.Height);
+                GraphDisplayButton.Text = "Statistics";
                 //MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
                 //MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
                 //SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
@@ -181,6 +187,8 @@ namespace MovieManager
                 ShowTimeManageButton.Text = "";
                 PaymentButton.Size = new Size(PaymentButton.Width - 150, PaymentButton.Height);
                 PaymentButton.Text = "";
+                GraphDisplayButton.Size = new Size(GraphDisplayButton.Width - 150, GraphDisplayButton.Height);
+                GraphDisplayButton.Text = "";
                 //MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
                 //MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
                 //SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
@@ -364,6 +372,18 @@ namespace MovieManager
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
+        }
+
+        private void Statistic_Click(object sender, EventArgs e)
+        {
+            if (GraphDisplayButton.Checked)
+            {
+                stats.BringToFront();
+                if (sidebarzoom == true)
+                {
+                    SideBarZoomButtonCinema.PerformClick();
+                }    
+            }    
         }
     }
 }

@@ -32,6 +32,7 @@
             this.SideBarPanelCinema = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.CinemaShadow = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.MainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.GraphDisplayButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PaymentButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.AccountDisplayButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ShowTimeManageButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -47,6 +48,7 @@
             // 
             // SideBarPanelCinema
             // 
+            this.SideBarPanelCinema.Controls.Add(this.GraphDisplayButton);
             this.SideBarPanelCinema.Controls.Add(this.PaymentButton);
             this.SideBarPanelCinema.Controls.Add(this.AccountDisplayButton);
             this.SideBarPanelCinema.Controls.Add(this.ShowTimeManageButton);
@@ -72,6 +74,35 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1529, 844);
             this.MainPanel.TabIndex = 3;
+            // 
+            // GraphDisplayButton
+            // 
+            this.GraphDisplayButton.Animated = true;
+            this.GraphDisplayButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.GraphDisplayButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.GraphDisplayButton.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.GraphDisplayButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GraphDisplayButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GraphDisplayButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GraphDisplayButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GraphDisplayButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GraphDisplayButton.FillColor = System.Drawing.Color.White;
+            this.GraphDisplayButton.FillColor2 = System.Drawing.Color.White;
+            this.GraphDisplayButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GraphDisplayButton.ForeColor = System.Drawing.Color.Black;
+            this.GraphDisplayButton.Image = global::MovieManager.Properties.Resources.bar_chart_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.GraphDisplayButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GraphDisplayButton.ImageOffset = new System.Drawing.Point(10, 0);
+            this.GraphDisplayButton.ImageSize = new System.Drawing.Size(25, 25);
+            this.GraphDisplayButton.Location = new System.Drawing.Point(0, 328);
+            this.GraphDisplayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GraphDisplayButton.Name = "GraphDisplayButton";
+            this.GraphDisplayButton.Size = new System.Drawing.Size(89, 64);
+            this.GraphDisplayButton.TabIndex = 3;
+            this.GraphDisplayButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.GraphDisplayButton.TextOffset = new System.Drawing.Point(12, 0);
+            this.GraphDisplayButton.CheckedChanged += new System.EventHandler(this.Statistic_Click);
+            this.GraphDisplayButton.Click += new System.EventHandler(this.Statistic_Click);
             // 
             // PaymentButton
             // 
@@ -104,7 +135,6 @@
             // 
             // AccountDisplayButton
             // 
-            this.AccountDisplayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AccountDisplayButton.Animated = true;
             this.AccountDisplayButton.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.AccountDisplayButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
@@ -122,7 +152,7 @@
             this.AccountDisplayButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountDisplayButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.AccountDisplayButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.AccountDisplayButton.Location = new System.Drawing.Point(0, 640);
+            this.AccountDisplayButton.Location = new System.Drawing.Point(0, 704);
             this.AccountDisplayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AccountDisplayButton.Name = "AccountDisplayButton";
             this.AccountDisplayButton.Size = new System.Drawing.Size(89, 64);
@@ -151,7 +181,7 @@
             this.ShowTimeManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ShowTimeManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.ShowTimeManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.ShowTimeManageButton.Location = new System.Drawing.Point(0, 576);
+            this.ShowTimeManageButton.Location = new System.Drawing.Point(0, 640);
             this.ShowTimeManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowTimeManageButton.Name = "ShowTimeManageButton";
             this.ShowTimeManageButton.Size = new System.Drawing.Size(89, 64);
@@ -179,7 +209,7 @@
             this.CustomerManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CustomerManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.CustomerManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.CustomerManageButton.Location = new System.Drawing.Point(0, 512);
+            this.CustomerManageButton.Location = new System.Drawing.Point(0, 576);
             this.CustomerManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerManageButton.Name = "CustomerManageButton";
             this.CustomerManageButton.Size = new System.Drawing.Size(89, 64);
@@ -207,7 +237,7 @@
             this.StaffManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.StaffManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.StaffManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.StaffManageButton.Location = new System.Drawing.Point(0, 448);
+            this.StaffManageButton.Location = new System.Drawing.Point(0, 512);
             this.StaffManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StaffManageButton.Name = "StaffManageButton";
             this.StaffManageButton.Size = new System.Drawing.Size(89, 64);
@@ -235,7 +265,7 @@
             this.SnackManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SnackManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.SnackManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.SnackManageButton.Location = new System.Drawing.Point(0, 384);
+            this.SnackManageButton.Location = new System.Drawing.Point(0, 448);
             this.SnackManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackManageButton.Name = "SnackManageButton";
             this.SnackManageButton.Size = new System.Drawing.Size(89, 64);
@@ -263,7 +293,7 @@
             this.MovieManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.MovieManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.MovieManageButton.Location = new System.Drawing.Point(0, 320);
+            this.MovieManageButton.Location = new System.Drawing.Point(0, 384);
             this.MovieManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieManageButton.Name = "MovieManageButton";
             this.MovieManageButton.Size = new System.Drawing.Size(89, 64);
@@ -384,5 +414,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton ShowTimeManageButton;
         private Guna.UI2.WinForms.Guna2Panel MainPanel;
         private Guna.UI2.WinForms.Guna2GradientButton PaymentButton;
+        private Guna.UI2.WinForms.Guna2GradientButton GraphDisplayButton;
     }
 }

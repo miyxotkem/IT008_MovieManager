@@ -379,6 +379,18 @@
     <Compile Include="ScreenLayout1.Designer.cs">
       <DependentUpon>ScreenLayout1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScreenLayout2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenLayout2.Designer.cs">
+      <DependentUpon>ScreenLayout2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenLayout3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenLayout3.Designer.cs">
+      <DependentUpon>ScreenLayout3.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectMovie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -428,6 +440,12 @@
     </Compile>
     <Compile Include="StaffManage.Designer.cs">
       <DependentUpon>StaffManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
     <Compile Include="TicketDisplay.cs">
       <SubType>UserControl</SubType>
@@ -504,6 +522,12 @@
     <EmbeddedResource Include="ScreenLayout1.resx">
       <DependentUpon>ScreenLayout1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScreenLayout2.resx">
+      <DependentUpon>ScreenLayout2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenLayout3.resx">
+      <DependentUpon>ScreenLayout3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectMovie.resx">
       <DependentUpon>SelectMovie.cs</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +556,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffManage.resx">
       <DependentUpon>StaffManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TicketDisplay.resx">
       <DependentUpon>TicketDisplay.cs</DependentUpon>
@@ -595,6 +622,7 @@
     <None Include="Resources\22-100723-151400-800-resize.jpg" />
     <None Include="Resources\sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <None Include="Resources\images.png" />
+    <None Include="Resources\bar_chart_30dp_BLACK_FILL0_wght400_GRAD0_opsz24.png" />
     <Content Include="Resources\SideBar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

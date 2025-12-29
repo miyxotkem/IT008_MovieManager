@@ -119,6 +119,20 @@ namespace MovieManager
                     screen1.Reload(ListSeat);
                     screen1.Dock = DockStyle.Fill;
                     ScreenPanel.Controls.Add(screen1);
+                } else if (showtime.IDScreen == 2)
+                {
+                    ScreenLayout2 screen2 = new ScreenLayout2();
+                    screen2.Tag = showtime;
+                    screen2.Reload(ListSeat);
+                    screen2.Dock = DockStyle.Fill;
+                    ScreenPanel.Controls.Add(screen2);
+                } else if (showtime.IDScreen == 3)
+                {
+                    ScreenLayout3 screen3 = new ScreenLayout3();
+                    screen3.Tag = showtime;
+                    screen3.Reload(ListSeat);
+                    screen3.Dock = DockStyle.Fill;
+                    ScreenPanel.Controls.Add(screen3);
                 }    
             }    
         }
