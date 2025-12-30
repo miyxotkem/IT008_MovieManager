@@ -82,6 +82,7 @@ namespace MovieManager
                 CustomerManageButton.Enabled = account.Admin;   
                 StaffManageButton.Enabled = account.Admin;
                 ShowTimeManageButton.Enabled = account.Admin;
+                GraphDisplayButton.Enabled = account.Admin;
             }    
         }
         private void Cinema_Load(object sender, EventArgs e)
@@ -213,9 +214,10 @@ namespace MovieManager
 
         private void SignOut(object sender, EventArgs e)
         {
-            this.Hide();
-            SignInForm signInForm = new SignInForm();
-            signInForm.ShowDialog();
+            //this.Hide();
+            //SignInForm signInForm = new SignInForm();
+            //signInForm.ShowDialog();
+            this.Dispose();
         }
 
         public void MovieDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)

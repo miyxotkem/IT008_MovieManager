@@ -36,7 +36,8 @@ namespace MovieManager
 
         private void ExitButtonSignIn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Dispose();
         }
 
         private void MinimizeButtonSignIn_Click(object sender, EventArgs e)

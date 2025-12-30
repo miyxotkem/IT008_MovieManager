@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MimeKit.Tnef;
 using MovieManager.DTO;
+using OpenTK.Graphics.ES11;
 namespace MovieManager.DAO
 {
     public class BillDAO
@@ -107,6 +109,12 @@ namespace MovieManager.DAO
         {
             string query = "Update Bill set idVoucher = @idv where idBill = @idb ";
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idVoucher, idBill });
+        }
+
+        public void DeleteBill(int idBill)
+        {
+            string query = "Delete from Bill where idBill = @id ";
+            int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idBill });
         }
     }
 }
