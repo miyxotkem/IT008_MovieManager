@@ -83,16 +83,18 @@
             // CancelButton
             // 
             this.CancelButton.Animated = true;
+            this.CancelButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.CancelButton.BorderRadius = 14;
+            this.CancelButton.BorderThickness = 2;
             this.CancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.CancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.CancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.CancelButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.CancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.CancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.CancelButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.CancelButton.FillColor = System.Drawing.Color.Empty;
+            this.CancelButton.FillColor2 = System.Drawing.Color.Empty;
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CancelButton.ForeColor = System.Drawing.Color.White;
+            this.CancelButton.ForeColor = System.Drawing.Color.Black;
             this.CancelButton.Location = new System.Drawing.Point(1557, 891);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(193, 76);
@@ -481,16 +483,18 @@
             // 
             // RemoveButton
             // 
+            this.RemoveButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.RemoveButton.BorderRadius = 12;
+            this.RemoveButton.BorderThickness = 2;
             this.RemoveButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.RemoveButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.RemoveButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.RemoveButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.RemoveButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.RemoveButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.RemoveButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.RemoveButton.FillColor = System.Drawing.Color.Empty;
+            this.RemoveButton.FillColor2 = System.Drawing.Color.Empty;
             this.RemoveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RemoveButton.ForeColor = System.Drawing.Color.White;
+            this.RemoveButton.ForeColor = System.Drawing.Color.Black;
             this.RemoveButton.Location = new System.Drawing.Point(1525, 480);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(120, 60);

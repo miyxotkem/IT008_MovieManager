@@ -93,32 +93,27 @@ namespace MovieManager
         DataProvider dp = new DataProvider();
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (!checkingStatus.ContainsValue(true))
+            {
+                MessageBox.Show("Please select something to delete!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Confirm deletion?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                 return;
-            // Create a copy of the list to iterate safely
             foreach (var item in checkingStatus.ToList())
             {
                 ShowTime st = item.Key;
                 bool isChecked = item.Value;
 
                 if (!isChecked) continue;
-
-                // --- FIX 1: Fix the DateTime Mismatch ---
-                // We format the date to a string to ensure C# doesn't send 
-                // high-precision ticks that SQL cannot match.
                 string query = "DELETE FROM ShowTime WHERE idmovie = @id AND start_time = @time";
-
-                // Use standard SQL date format
                 string sqlTime = st.Start_time.ToString("yyyy-MM-dd HH:mm:ss");
 
                 object[] values = new object[] { st.IDMovie, sqlTime };
-
-                // --- FIX 2: Check if DB actually deleted it ---
                 int rowsAffected = dp.ExecuteNonQuery(query, values);
 
                 if (rowsAffected > 0)
                 {
-                    // Database delete successful, NOW remove from UI
                     checkingStatus.Remove(st);
                     RemoveControlByValues(flowLayoutPanel1, st);
                     RemoveControlByValues(flowLayoutPanel2, st);
@@ -130,27 +125,21 @@ namespace MovieManager
                 }
             }
         }
-
-        // Renamed to reflect that we check values, not just tags
         void RemoveControlByValues(FlowLayoutPanel panel, ShowTime stToDelete)
         {
             Control toRemove = null;
             foreach (Control pnl in panel.Controls)
             {
-                // Iterate children of the panel (Labels, Checkboxes)
                 foreach (Control child in pnl.Controls)
                 {
-                    // --- FIX 3: Compare Data Values, not Object References ---
                     if (child is CheckBox cb && cb.Tag is ShowTime stInBox)
                     {
-                        // Compare the ID and the Time explicitly
-                        // We use a small tolerance for time or string comparison to be safe
                         bool sameMovie = stInBox.IDMovie == stToDelete.IDMovie;
                         bool sameTime = stInBox.Start_time.ToString("yyyy-MM-dd HH:mm:ss") == stToDelete.Start_time.ToString("yyyy-MM-dd HH:mm:ss");
 
                         if (sameMovie && sameTime)
                         {
-                            toRemove = pnl; // Found the parent panel to remove
+                            toRemove = pnl;
                             break;
                         }
                     }

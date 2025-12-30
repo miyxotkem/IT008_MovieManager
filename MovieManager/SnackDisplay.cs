@@ -17,39 +17,91 @@ namespace MovieManager
 {
     public partial class SnackDisplay : UserControl
     {
-        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
-        //private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
+        //private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
         public SnackDisplay()
         {
             InitializeComponent();
-            LoadSnack();
+            this.SnackDisplayFlowLayoutPanel.Resize += (sender, e) => LoadSnack();
+        }
+        int itemsPerRow = 6;
+        int marginSize = 20;
+        int scrollbarBuffer = 30;
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (!this.DesignMode)
+            {
+                LoadSnack();
+            }
         }
         void LoadSnack()
         {
+            SnackDisplayFlowLayoutPanel.SuspendLayout();
+            SnackDisplayFlowLayoutPanel.Controls.Clear();
             List<Snack> snackList = SnackDAO.Instance.LoadSnackList();
             string baseDirectory = Application.StartupPath;
+            int totalMarginPerCard = marginSize * 2;
+            int cardWidth = (SnackDisplayFlowLayoutPanel.Width - scrollbarBuffer) / itemsPerRow - totalMarginPerCard;
             foreach (Snack snack in snackList)
             {
-                Panel pnl = new Panel()
+                Guna2CustomGradientPanel pnl = new Guna2CustomGradientPanel()
                 {
-                    Width = SnackDAO.Width,
-                    Height = SnackDAO.Height,
-                    Margin = new Padding(15)
+                    Width = cardWidth,
+                    Height = MovieDAO.Height - 50,
+                    Margin = new Padding(marginSize),
+                    BorderRadius = 14,
+                    FillColor = Color.White,
+                    ShadowDecoration =
+                    {
+                        Enabled = true,
+                        Depth = 10,
+                        Color = Color.Black,
+                        BorderRadius = 14
+                    }
                 };
+
+                Guna2Panel pnlText = new Guna2Panel()
+                {
+                    Height = 100,
+                    Dock = DockStyle.Bottom,
+                    FillColor = Color.FromArgb(175, 62, 62),
+                    BorderRadius = 14,
+                    Padding = new Padding(12),
+                    CustomizableEdges =
+                    {
+                        TopLeft = false,
+                        TopRight = false,
+                        BottomLeft = true,
+                        BottomRight = true
+                    }
+                };
+
                 Label lblTitle = new Label()
                 {
-                    Text = snack.Name.ToString(),
-                    Height = 150,
-                    Dock = DockStyle.Bottom,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    BackColor = Color.FromArgb(175, 62, 62),
+                    Text = snack.Name.ToUpper(),
+                    Font = new Font("Segoe UI", 11, FontStyle.Bold),
                     ForeColor = Color.White,
-                    Padding = new Padding(5)
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Top,
+                    Height = 50,
+                    TextAlign = ContentAlignment.TopLeft,
+                    AutoEllipsis = true
                 };
-                PictureBox pic = new PictureBox()
+
+                Guna2PictureBox pic = new Guna2PictureBox()
                 {
                     Dock = DockStyle.Fill,
-                    SizeMode = PictureBoxSizeMode.StretchImage
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Tag = snack,
+                    BorderRadius = 14,
+                    CustomizableEdges = 
+                    { 
+                        TopLeft = true, 
+                        TopRight = true, 
+                        BottomLeft = false, 
+                        BottomRight = false 
+                    }
                 };
                 try
                 {
@@ -71,11 +123,13 @@ namespace MovieManager
                     pic.BackColor = Color.Red;
                 }
                 pnl.Controls.Add(pic);
-                pnl.Controls.Add(lblTitle);
+                pnlText.Controls.Add(lblTitle);
+                pnl.Controls.Add(pnlText);
                 pic.Click += new EventHandler(panel_click);
                 pic.Tag = snack;
                 SnackDisplayFlowLayoutPanel.Controls.Add(pnl);
             }
+            SnackDisplayFlowLayoutPanel.ResumeLayout();
         }
 
         private void panel_click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using MovieManager.DAO;
+﻿using Guna.UI2.WinForms;
+using MovieManager.DAO;
 using MovieManager.DTO;
 using System;
 using System.Collections.Generic;
@@ -15,45 +16,104 @@ namespace MovieManager
 {
     public partial class MovieDisplay : UserControl
     {
-        //private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
-        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Posters";
+        private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
+        //private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Posters";
         public MovieDisplay()
         {
             InitializeComponent();
-            LoadMovie();            
+            this.MovieDisplayFlowLayoutPanel.Resize += (sender, e) => LoadMovie();
+        }
+        int itemsPerRow = 6;
+        int marginSize = 20;
+        int scrollbarBuffer = 30;
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (!this.DesignMode)
+            {
+                LoadMovie();
+            }
         }
         public void LoadMovie()
         {
+            MovieDisplayFlowLayoutPanel.SuspendLayout();
+            MovieDisplayFlowLayoutPanel.Controls.Clear();
             List<Movie> movieList = MovieDAO.Instance.LoadMovieList();
             string baseDirectory = Application.StartupPath;
+            int totalMarginPerCard = marginSize * 2;
+            int cardWidth = (MovieDisplayFlowLayoutPanel.Width - scrollbarBuffer) / itemsPerRow - totalMarginPerCard;
             foreach (Movie movie in movieList)
             {
-                Panel pnl = new Panel()
-                {
-                    Width = MovieDAO.Width,
+                 Guna2CustomGradientPanel pnl = new Guna2CustomGradientPanel()
+                 {
+                    Width = cardWidth,
                     Height = MovieDAO.Height,
-                    Margin = new Padding(15)
-                };
-                Label lblTitle = new Label()
+                    Margin = new Padding(marginSize),
+                    BorderRadius = 14,
+                    FillColor = Color.White,
+                    ShadowDecoration = 
+                    { 
+                        Enabled = true, 
+                        Depth = 10,
+                        Color = Color.Black,
+                        BorderRadius = 14 
+                    }
+                 };
+
+                Guna2Panel pnlText = new Guna2Panel()
                 {
-                    Text = movie.Title.ToString() + Environment.NewLine +
-                           movie.Genre.ToString() + Environment.NewLine +
-                           movie.Rated.ToString() + Environment.NewLine +
-                           movie.Language.ToString() + Environment.NewLine +
-                           movie.Duration.ToString() + Environment.NewLine +
-                           movie.Format.ToString(),
                     Height = 150,
                     Dock = DockStyle.Bottom,
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    BackColor = Color.FromArgb(175, 62, 62),
-                    ForeColor = Color.White,
-                    Padding = new Padding(5)
+                    FillColor = Color.FromArgb(175, 62, 62),
+                    BorderRadius = 14,
+                    Padding = new Padding(12),
+                    CustomizableEdges = 
+                    { 
+                        TopLeft = false, 
+                        TopRight = false, 
+                        BottomLeft = true, 
+                        BottomRight = true 
+                    }
                 };
-                PictureBox pic = new PictureBox()
+
+                Label lblTitle = new Label()
+                {
+                    Text = movie.Title.ToUpper(),
+                    Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                    ForeColor = Color.White,
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Top,
+                    Height = 50,
+                    TextAlign = ContentAlignment.TopLeft,
+                    AutoEllipsis = true
+                };
+
+                Label lblDetails = new Label()
+                {
+                    Text = $"{movie.Genre}\n" +
+                       $"Rate: {movie.Rated}  •  {movie.Language}\n" +
+                       $"{movie.Duration} min  •  {movie.Format}",
+                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
+                    ForeColor = Color.FromArgb(230, 230, 230),
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Fill,
+                    TextAlign = ContentAlignment.TopLeft,
+                    Padding = new Padding(0, 5, 0, 0)
+                };
+
+                Guna2PictureBox pic = new Guna2PictureBox()
                 {
                     Dock = DockStyle.Fill,
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Tag = movie
+                    Tag = movie,
+                    BorderRadius = 14,
+                    CustomizableEdges = 
+                    { 
+                        TopLeft = true, 
+                        TopRight = true, 
+                        BottomLeft = false, 
+                        BottomRight = false 
+                    }
                 };
                 try
                 {
@@ -73,10 +133,17 @@ namespace MovieManager
                     pic.BackColor = Color.Red;
                 }                
                 pic.Click += Panel_Click;
+                pnlText.Click += Panel_Click;
+                lblTitle.Click += Panel_Click;
+                lblDetails.Click += Panel_Click;
+                pnlText.Controls.Add(lblTitle);
+                pnlText.Controls.Add(lblDetails);
+                lblDetails.BringToFront();
                 pnl.Controls.Add(pic);
-                pnl.Controls.Add(lblTitle);
+                pnl.Controls.Add(pnlText);
                 MovieDisplayFlowLayoutPanel.Controls.Add(pnl);
             }
+            MovieDisplayFlowLayoutPanel.ResumeLayout();
         }
         public void Panel_Click(object sender, EventArgs e)
         {

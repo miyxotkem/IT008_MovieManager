@@ -375,6 +375,68 @@ VALUES
 (2, 'E', 9, N'SVIP'),
 (2, 'E', 10, N'SVIP');
 
+INSERT INTO dbo.Seat (idScreen, row, number, type)
+VALUES
+-- Row 1 (Row A - Normal)
+(3, 'A', 1, N'Normal'),
+(3, 'A', 2, N'Normal'),
+(3, 'A', 3, N'Normal'),
+(3, 'A', 4, N'Normal'),
+(3, 'A', 5, N'Normal'),
+(3, 'A', 6, N'Normal'),
+(3, 'A', 7, N'Normal'),
+(3, 'A', 8, N'Normal'),
+(3, 'A', 9, N'Normal'),
+(3, 'A', 10, N'Normal'),
+
+-- Row 2 (Row B - Normal)
+(3, 'B', 1, N'Normal'),
+(3, 'B', 2, N'Normal'),
+(3, 'B', 3, N'Normal'),
+(3, 'B', 4, N'Normal'),
+(3, 'B', 5, N'Normal'),
+(3, 'B', 6, N'Normal'),
+(3, 'B', 7, N'Normal'),
+(3, 'B', 8, N'Normal'),
+(3, 'B', 9, N'Normal'),
+(3, 'B', 10, N'Normal'),
+
+-- Row 3 (Row C - VIP)
+(3, 'C', 1, N'VIP'),
+(3, 'C', 2, N'VIP'),
+(3, 'C', 3, N'VIP'),
+(3, 'C', 4, N'VIP'),
+(3, 'C', 5, N'VIP'),
+(3, 'C', 6, N'VIP'),
+(3, 'C', 7, N'VIP'),
+(3, 'C', 8, N'VIP'),
+(3, 'C', 9, N'VIP'),
+(3, 'C', 10, N'VIP'),
+
+-- Row 4 (Row D - VIP)
+(3, 'D', 1, N'VIP'),
+(3, 'D', 2, N'VIP'),
+(3, 'D', 3, N'VIP'),
+(3, 'D', 4, N'VIP'),
+(3, 'D', 5, N'VIP'),
+(3, 'D', 6, N'VIP'),
+(3, 'D', 7, N'VIP'),
+(3, 'D', 8, N'VIP'),
+(3, 'D', 9, N'VIP'),
+(3, 'D', 10, N'VIP'),
+
+-- Row 5 (Row E - Couple & SVIP)
+(3, 'E', 1, N'Couple'),
+(3, 'E', 2, N'Couple'),
+(3, 'E', 3, N'Couple'),
+(3, 'E', 4, N'Couple'),
+(3, 'E', 5, N'Couple'),
+(3, 'E', 6, N'SVIP'),
+(3, 'E', 7, N'SVIP'),
+(3, 'E', 8, N'SVIP'),
+(3, 'E', 9, N'SVIP'),
+(3, 'E', 10, N'SVIP');
+
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TEE YOD: QUỶ ĂN TẠNG - PHẦN 3', N'N/A', N'N/A', '10/10/2025', N'Narit Yuvaboon', N'Tiếng Thái', 104, N'iMax', N'https://youtu.be/DMOGnGokm4c', N'Nadech Kugimiya, Denise Jelilcha Kapaun, Mim Rattawadee Wongthong, Junior Kajbhunditt Jaidee, ...');
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TAY ANH GIỮ MỘT VÌ SAO', N'N/A', N'N/A', '03/10/2025', N'Kim Sung Hoon', N'Tiếng Hàn', 117, N'N/A', N'https://youtu.be/ZsSYbAy2Ez8', N'Lee Kwang Soo, Hoàng Hà, Duy Khánh, Cù Thị Trà, Um Mun Suk, Lâm Thanh Mỹ, ...');
 INSERT INTO Movie (title, genre, rated, release_date, director, language, duration, format, trailer, actor)VALUES (N'TỬ CHIẾN TRÊN KHÔNG', N'N/A', N'N/A', '19/09/2025', N'Hàm Trần', N'Tiếng Việt', 118, N'4DX', N'https://youtu.be/h4O-GbuwwlM', N'Thái Hòa, Kaity Nguyễn, Thanh Sơn, Xuân Phúc, Võ Điền Gia Huy, Trần Ngọc Vàng, ...');

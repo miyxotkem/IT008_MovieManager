@@ -16,7 +16,8 @@ namespace MovieManager
 {
     public partial class SelectSnack : UserControl
     {
-        private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        //private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
         private Snack snack= null;
         private Control parentContainer = null;
         private Bill CurBill = null;

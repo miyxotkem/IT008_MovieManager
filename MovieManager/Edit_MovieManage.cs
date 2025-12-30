@@ -166,6 +166,7 @@ namespace MovieManager
                     File.Copy(path, actdest, true);
             }
             MovieChanged?.Invoke(this, EventArgs.Empty);
+            MessageBox.Show("Added successfully!");
             CancelButton.PerformClick();
         }
         public event EventHandler MovieChanged;

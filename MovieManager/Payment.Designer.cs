@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Payment));
             this.OutsidePanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Container = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.VoucherButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TitlePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AddCustomerButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.Container = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.TitlePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TotalLabel = new System.Windows.Forms.Label();
             this.ResetButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -60,75 +60,6 @@
             this.OutsidePanel.TabIndex = 0;
             this.OutsidePanel.Resize += new System.EventHandler(this.guna2Panel1_Resize);
             // 
-            // VoucherButton
-            // 
-            this.VoucherButton.Animated = true;
-            this.VoucherButton.BackColor = System.Drawing.Color.Transparent;
-            this.VoucherButton.BorderRadius = 4;
-            this.VoucherButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.VoucherButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.VoucherButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.VoucherButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.VoucherButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.VoucherButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.VoucherButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.VoucherButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.VoucherButton.ForeColor = System.Drawing.Color.White;
-            this.VoucherButton.Image = global::MovieManager.Properties.Resources.sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.VoucherButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.VoucherButton.Location = new System.Drawing.Point(122, 810);
-            this.VoucherButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.VoucherButton.Name = "VoucherButton";
-            this.VoucherButton.Size = new System.Drawing.Size(46, 50);
-            this.VoucherButton.TabIndex = 15;
-            this.VoucherButton.Click += new System.EventHandler(this.VoucherButton_Click);
-            // 
-            // AddCustomerButton
-            // 
-            this.AddCustomerButton.Animated = true;
-            this.AddCustomerButton.BackColor = System.Drawing.Color.Transparent;
-            this.AddCustomerButton.BorderRadius = 4;
-            this.AddCustomerButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AddCustomerButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AddCustomerButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddCustomerButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AddCustomerButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AddCustomerButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.AddCustomerButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.AddCustomerButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
-            this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.AddCustomerButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.AddCustomerButton.Location = new System.Drawing.Point(175, 810);
-            this.AddCustomerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AddCustomerButton.Name = "AddCustomerButton";
-            this.AddCustomerButton.Size = new System.Drawing.Size(46, 50);
-            this.AddCustomerButton.TabIndex = 14;
-            this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
-            // 
-            // ReloadButton
-            // 
-            this.ReloadButton.Animated = true;
-            this.ReloadButton.BackColor = System.Drawing.Color.Transparent;
-            this.ReloadButton.BorderRadius = 4;
-            this.ReloadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ReloadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ReloadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ReloadButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ReloadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ReloadButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.ReloadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ReloadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ReloadButton.ForeColor = System.Drawing.Color.White;
-            this.ReloadButton.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.Image")));
-            this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.ReloadButton.Location = new System.Drawing.Point(69, 810);
-            this.ReloadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ReloadButton.Name = "ReloadButton";
-            this.ReloadButton.Size = new System.Drawing.Size(46, 50);
-            this.ReloadButton.TabIndex = 13;
-            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
-            // 
             // Container
             // 
             this.Container.BackColor = System.Drawing.Color.Transparent;
@@ -153,6 +84,29 @@
             this.Container.Size = new System.Drawing.Size(1402, 978);
             this.Container.TabIndex = 12;
             // 
+            // VoucherButton
+            // 
+            this.VoucherButton.Animated = true;
+            this.VoucherButton.BackColor = System.Drawing.Color.Transparent;
+            this.VoucherButton.BorderRadius = 4;
+            this.VoucherButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.VoucherButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.VoucherButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.VoucherButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.VoucherButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.VoucherButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.VoucherButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.VoucherButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.VoucherButton.ForeColor = System.Drawing.Color.White;
+            this.VoucherButton.Image = global::MovieManager.Properties.Resources.sell_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.VoucherButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.VoucherButton.Location = new System.Drawing.Point(330, 886);
+            this.VoucherButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VoucherButton.Name = "VoucherButton";
+            this.VoucherButton.Size = new System.Drawing.Size(62, 62);
+            this.VoucherButton.TabIndex = 15;
+            this.VoucherButton.Click += new System.EventHandler(this.VoucherButton_Click);
+            // 
             // TitlePanel
             // 
             this.TitlePanel.Location = new System.Drawing.Point(62, 65);
@@ -161,10 +115,56 @@
             this.TitlePanel.Size = new System.Drawing.Size(1277, 105);
             this.TitlePanel.TabIndex = 11;
             // 
+            // AddCustomerButton
+            // 
+            this.AddCustomerButton.Animated = true;
+            this.AddCustomerButton.BackColor = System.Drawing.Color.Transparent;
+            this.AddCustomerButton.BorderRadius = 4;
+            this.AddCustomerButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddCustomerButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddCustomerButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddCustomerButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddCustomerButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddCustomerButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.AddCustomerButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.AddCustomerButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddCustomerButton.ForeColor = System.Drawing.Color.White;
+            this.AddCustomerButton.Image = global::MovieManager.Properties.Resources.group_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
+            this.AddCustomerButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.AddCustomerButton.Location = new System.Drawing.Point(409, 886);
+            this.AddCustomerButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AddCustomerButton.Name = "AddCustomerButton";
+            this.AddCustomerButton.Size = new System.Drawing.Size(62, 62);
+            this.AddCustomerButton.TabIndex = 14;
+            this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
+            // 
+            // ReloadButton
+            // 
+            this.ReloadButton.Animated = true;
+            this.ReloadButton.BackColor = System.Drawing.Color.Transparent;
+            this.ReloadButton.BorderRadius = 4;
+            this.ReloadButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ReloadButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ReloadButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ReloadButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.ReloadButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.ReloadButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ReloadButton.ForeColor = System.Drawing.Color.White;
+            this.ReloadButton.Image = ((System.Drawing.Image)(resources.GetObject("ReloadButton.Image")));
+            this.ReloadButton.ImageSize = new System.Drawing.Size(30, 30);
+            this.ReloadButton.Location = new System.Drawing.Point(251, 886);
+            this.ReloadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(62, 62);
+            this.ReloadButton.TabIndex = 13;
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(58, 24);
+            this.NameLabel.Location = new System.Drawing.Point(58, 31);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(185, 20);
             this.NameLabel.TabIndex = 10;

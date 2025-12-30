@@ -37,13 +37,12 @@
             this.FilterComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.FilterLabel = new System.Windows.Forms.Label();
-            this.ManageCustomer = new System.Windows.Forms.Label();
-            this.HistoryButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ReloadButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.FilterLabel = new System.Windows.Forms.Label();
             this.AddButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteSearchButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DeleteFilter = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.ManageCustomer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -107,7 +106,6 @@
             this.panel3.BorderRadius = 30;
             this.panel3.Controls.Add(this.FilterComboBox);
             this.panel3.Controls.Add(this.SearchTextBox);
-            this.panel3.Controls.Add(this.HistoryButton);
             this.panel3.Controls.Add(this.SearchLabel);
             this.panel3.Controls.Add(this.ReloadButton);
             this.panel3.Controls.Add(this.FilterLabel);
@@ -180,47 +178,6 @@
             this.SearchLabel.Text = "Search:";
             this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FilterLabel
-            // 
-            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
-            this.FilterLabel.Name = "FilterLabel";
-            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
-            this.FilterLabel.TabIndex = 0;
-            this.FilterLabel.Text = "Filter:";
-            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ManageCustomer
-            // 
-            this.ManageCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ManageCustomer.AutoSize = true;
-            this.ManageCustomer.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageCustomer.Location = new System.Drawing.Point(634, 50);
-            this.ManageCustomer.Name = "ManageCustomer";
-            this.ManageCustomer.Size = new System.Drawing.Size(524, 61);
-            this.ManageCustomer.TabIndex = 5;
-            this.ManageCustomer.Text = "Manage Customer";
-            // 
-            // HistoryButton
-            // 
-            this.HistoryButton.Animated = true;
-            this.HistoryButton.BackColor = System.Drawing.Color.Transparent;
-            this.HistoryButton.BorderRadius = 4;
-            this.HistoryButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.HistoryButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.HistoryButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.HistoryButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.HistoryButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.HistoryButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.HistoryButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.HistoryButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.HistoryButton.ForeColor = System.Drawing.Color.White;
-            this.HistoryButton.Image = global::MovieManager.Properties.Resources.history_30dp_BLACK_FILL0_wght400_GRAD0_opsz24;
-            this.HistoryButton.ImageSize = new System.Drawing.Size(30, 30);
-            this.HistoryButton.Location = new System.Drawing.Point(782, 141);
-            this.HistoryButton.Name = "HistoryButton";
-            this.HistoryButton.Size = new System.Drawing.Size(106, 50);
-            this.HistoryButton.TabIndex = 3;
-            // 
             // ReloadButton
             // 
             this.ReloadButton.Animated = true;
@@ -242,6 +199,15 @@
             this.ReloadButton.Size = new System.Drawing.Size(106, 50);
             this.ReloadButton.TabIndex = 3;
             this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
+            // FilterLabel
+            // 
+            this.FilterLabel.Location = new System.Drawing.Point(42, 133);
+            this.FilterLabel.Name = "FilterLabel";
+            this.FilterLabel.Size = new System.Drawing.Size(64, 20);
+            this.FilterLabel.TabIndex = 0;
+            this.FilterLabel.Text = "Filter:";
+            this.FilterLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AddButton
             // 
@@ -309,6 +275,17 @@
             this.DeleteFilter.TabIndex = 3;
             this.DeleteFilter.Click += new System.EventHandler(this.DeleteFilter_Click);
             // 
+            // ManageCustomer
+            // 
+            this.ManageCustomer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ManageCustomer.AutoSize = true;
+            this.ManageCustomer.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageCustomer.Location = new System.Drawing.Point(634, 50);
+            this.ManageCustomer.Name = "ManageCustomer";
+            this.ManageCustomer.Size = new System.Drawing.Size(524, 61);
+            this.ManageCustomer.TabIndex = 5;
+            this.ManageCustomer.Text = "Manage Customer";
+            // 
             // CustomerManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -331,7 +308,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panel3;
         private Guna.UI2.WinForms.Guna2ComboBox FilterComboBox;
         private Guna.UI2.WinForms.Guna2TextBox SearchTextBox;
-        private Guna.UI2.WinForms.Guna2GradientButton HistoryButton;
         private System.Windows.Forms.Label SearchLabel;
         private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;
         private System.Windows.Forms.Label FilterLabel;

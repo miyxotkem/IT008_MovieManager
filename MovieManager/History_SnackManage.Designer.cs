@@ -32,11 +32,11 @@
             this.ExitButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.FLP = new System.Windows.Forms.FlowLayoutPanel();
-            this.HistoryLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.HistoryLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.FLP.SuspendLayout();
@@ -75,10 +75,14 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BorderRadius = 50;
             this.panel2.Controls.Add(this.FLP);
             this.panel2.Location = new System.Drawing.Point(287, 144);
             this.panel2.Name = "panel2";
+            this.panel2.ShadowDecoration.BorderRadius = 50;
+            this.panel2.ShadowDecoration.Enabled = true;
+            this.panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(3);
             this.panel2.Size = new System.Drawing.Size(926, 973);
             this.panel2.TabIndex = 6;
             // 
@@ -91,17 +95,6 @@
             this.FLP.Size = new System.Drawing.Size(879, 826);
             this.FLP.TabIndex = 0;
             // 
-            // HistoryLabel
-            // 
-            this.HistoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.HistoryLabel.AutoSize = true;
-            this.HistoryLabel.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HistoryLabel.Location = new System.Drawing.Point(516, 42);
-            this.HistoryLabel.Name = "HistoryLabel";
-            this.HistoryLabel.Size = new System.Drawing.Size(469, 61);
-            this.HistoryLabel.TabIndex = 5;
-            this.HistoryLabel.Text = "Import History";
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label2);
@@ -113,14 +106,14 @@
             this.panel3.Size = new System.Drawing.Size(876, 30);
             this.panel3.TabIndex = 0;
             // 
-            // NameLabel
+            // label2
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(93, 5);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(51, 20);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Name";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(450, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Name";
             // 
             // label1
             // 
@@ -131,14 +124,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // label2
+            // NameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(450, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(93, 5);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(51, 20);
+            this.NameLabel.TabIndex = 0;
+            this.NameLabel.Text = "Name";
+            // 
+            // HistoryLabel
+            // 
+            this.HistoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.HistoryLabel.AutoSize = true;
+            this.HistoryLabel.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistoryLabel.Location = new System.Drawing.Point(516, 42);
+            this.HistoryLabel.Name = "HistoryLabel";
+            this.HistoryLabel.Size = new System.Drawing.Size(469, 61);
+            this.HistoryLabel.TabIndex = 5;
+            this.HistoryLabel.Text = "Import History";
             // 
             // History_SnackManage
             // 
