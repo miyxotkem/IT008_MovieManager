@@ -161,5 +161,13 @@ namespace MovieManager
             this.Controls.Add(esm);
             esm.BringToFront();
         }
+
+        private void ReloadButton_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+            movies = MovieDAO.Instance.LoadMovieList();
+            LoadShowTime(movies);
+        }
     }
 }

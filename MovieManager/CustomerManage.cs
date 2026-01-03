@@ -115,7 +115,7 @@ namespace MovieManager
                 };
                 Guna2GradientButton edit = new Guna2GradientButton()
                 {
-                    Image = global::MovieManager.Properties.Resources.loyalty_30dp_BLACK_FILL0_wght400_GRAD0_opsz24,
+                    Image = global::MovieManager.Properties.Resources.manage_accounts_30dp_BLACK_FILL0_wght400_GRAD0_opsz24,
                     Animated = true,
                     Tag = customer.Id,
                     BorderRadius = 10,
@@ -140,6 +140,7 @@ namespace MovieManager
             if (btn != null && btn.Tag is int customerId)
             {
                 Edit_CustomerManage emm = new Edit_CustomerManage(customerId);
+                emm.CusChanged += (s, args) => sync();
                 emm.Location = new Point((this.Size.Width - emm.Width) / 2, (this.Size.Height - emm.Height) / 2);
                 this.Controls.Add(emm);
                 emm.BringToFront();
@@ -194,6 +195,7 @@ namespace MovieManager
         private void AddButton_Click(object sender, EventArgs e)
         {
             Edit_CustomerManage ecm = new Edit_CustomerManage();
+            ecm.CusChanged += (s, args) => sync();
             ecm.Location = new Point((this.Size.Width - ecm.Width) / 2, (this.Size.Height - ecm.Height) / 2);
             this.Controls.Add(ecm);
             ecm.BringToFront();

@@ -182,6 +182,7 @@ namespace MovieManager
             if (btn != null && btn.Tag is int snackId)
             {
                 Edit_SnackManage esm = new Edit_SnackManage(snackId);
+                esm.SnackChanged += (s, args) => sync();
                 esm.Location = new Point((this.Size.Width - esm.Width) / 2, (this.Size.Height - esm.Height) / 2);
                 this.Controls.Add(esm);
                 esm.BringToFront();
@@ -191,6 +192,7 @@ namespace MovieManager
         private void AddButton_Click(object sender, EventArgs e)
         {
                 Edit_SnackManage esm = new Edit_SnackManage();
+                esm.SnackChanged += (s, args) => sync();
                 esm.Location = new Point((this.Size.Width - esm.Width) / 2, (this.Size.Height - esm.Height) / 2);
                 this.Controls.Add(esm);
                 esm.BringToFront();

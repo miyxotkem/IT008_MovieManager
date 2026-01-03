@@ -180,6 +180,7 @@ namespace MovieManager
             if (btn != null && btn.Tag is int staffId)
             {
                 Edit_StaffManage emm = new Edit_StaffManage(staffId);
+                emm.StaffChanged += (s, args) => sync();
                 emm.Location = new Point((this.Size.Width - emm.Width) / 2, (this.Size.Height - emm.Height) / 2);
                 this.Controls.Add(emm);
                 emm.BringToFront();

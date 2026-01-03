@@ -170,6 +170,7 @@ namespace MovieManager
             if(btn != null && btn.Tag is int movieId)
             {
                 Edit_MovieManage emm = new Edit_MovieManage(movieId);
+                emm.MovieChanged += (s, args) => sync();
                 emm.Location = new Point((this.Size.Width - emm.Width) / 2, (this.Size.Height - emm.Height) / 2);
                 this.Controls.Add(emm);
                 emm.BringToFront();
@@ -313,6 +314,7 @@ namespace MovieManager
         private void AddButton_Click(object sender, EventArgs e)
         {
             Edit_MovieManage emm = new Edit_MovieManage();
+            emm.MovieChanged += (s, args) => sync();
             emm.Location = new Point((this.Size.Width - emm.Width) / 2, (this.Size.Height - emm.Height) / 2);
             this.Controls.Add(emm);
             emm.BringToFront();

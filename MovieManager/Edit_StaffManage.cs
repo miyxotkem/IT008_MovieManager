@@ -124,10 +124,11 @@ namespace MovieManager
                 };
                 dp.ExecuteNonQuery(query, values);
                 dp.ExecuteNonQuery(query2, values2);
+                StaffChanged?.Invoke(this, EventArgs.Empty);
                 CancelButton.PerformClick();
             }
         }
-
+        public event EventHandler StaffChanged;
         private void DeactiveButton_Click(object sender, EventArgs e)
         {
             if (activate == 1)

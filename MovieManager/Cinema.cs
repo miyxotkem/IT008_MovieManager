@@ -29,6 +29,7 @@ namespace MovieManager
         private ShowTimeManage showTimeManage;
         private Payment payment;
         private Statistics stats;
+        private VoucherManage voucher;
         public Cinema()
         {
             InitializeComponent(); 
@@ -65,6 +66,8 @@ namespace MovieManager
             payment.Dock = DockStyle.Fill;
             stats = new Statistics();
             stats.Dock = DockStyle.Fill;
+            voucher = new VoucherManage();
+            voucher.Dock = DockStyle.Fill;
             MainPanel.Controls.Add(movieManage);
             MainPanel.Controls.Add(snackManage);
             MainPanel.Controls.Add(movieDisplay);
@@ -75,6 +78,7 @@ namespace MovieManager
             MainPanel.Controls.Add(showTimeManage);
             MainPanel.Controls.Add(payment);
             MainPanel.Controls.Add(stats);
+            MainPanel.Controls.Add(voucher);
             if (this.Tag is Account account)
             {
                 MovieManageButton.Enabled = account.Admin;
@@ -82,6 +86,7 @@ namespace MovieManager
                 CustomerManageButton.Enabled = account.Admin;   
                 StaffManageButton.Enabled = account.Admin;
                 ShowTimeManageButton.Enabled = account.Admin;
+                VoucherManageButton.Enabled = account.Admin;
             }    
         }
         private void Cinema_Load(object sender, EventArgs e)
@@ -145,6 +150,8 @@ namespace MovieManager
                 PaymentButton.Text = "Payment Site";
                 GraphDisplayButton.Size = new Size(GraphDisplayButton.Width + 150, GraphDisplayButton.Height);
                 GraphDisplayButton.Text = "Statistics";
+                VoucherManageButton.Size = new Size(VoucherManageButton.Width + 150, VoucherManageButton.Height);
+                VoucherManageButton.Text = "Voucher Manage";
                 //MovieDisplay.Size = new Size(MovieDisplay.Width - 150, MovieDisplay.Height);
                 //MovieDisplay.Location = new Point(MovieDisplay.Location.X + 150, MovieDisplay.Location.Y);
                 //SnackDisplay.Size = new Size(SnackDisplay.Width - 150, SnackDisplay.Height);
@@ -189,6 +196,8 @@ namespace MovieManager
                 PaymentButton.Text = "";
                 GraphDisplayButton.Size = new Size(GraphDisplayButton.Width - 150, GraphDisplayButton.Height);
                 GraphDisplayButton.Text = "";
+                VoucherManageButton.Size = new Size(VoucherManageButton.Width - 150, VoucherManageButton.Height);
+                VoucherManageButton.Text = "";
                 //MovieDisplay.Size = new Size(MovieDisplay.Width + 150, MovieDisplay.Height);
                 //MovieDisplay.Location = new Point(MovieDisplay.Location.X - 150, MovieDisplay.Location.Y);
                 //SnackDisplay.Size = new Size(SnackDisplay.Width + 150, SnackDisplay.Height);
@@ -384,6 +393,18 @@ namespace MovieManager
                     SideBarZoomButtonCinema.PerformClick();
                 }    
             }    
+        }
+
+        private void VoucherManageButton_Click(object sender, EventArgs e)
+        {
+            if(VoucherManageButton.Checked)
+            {
+                voucher.BringToFront();
+                if (sidebarzoom == true)
+                {
+                    SideBarZoomButtonCinema.PerformClick();
+                }
+            }
         }
     }
 }

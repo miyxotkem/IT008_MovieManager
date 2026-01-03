@@ -20,7 +20,13 @@ namespace MovieManager.DAO
             private set { DataProvider.instance = value; }
         }
         public DataProvider() { }
-        private string connectionSTR = @"Data Source=.;Initial Catalog=MovieManager;Integrated Security=True;Encrypt=False;Trust Server Certificate=True";
+        private string connectionSTR = @"Data Source=.;Initial Catalog=MovieManager;Integrated Security=True;Encrypt=False;TrustServerCertificate=True";
+        public string ConnectionString
+        {
+            get { return connectionSTR; }
+            set { connectionSTR = value; }
+        }
+
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

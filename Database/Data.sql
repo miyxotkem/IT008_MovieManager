@@ -149,7 +149,6 @@ create table BillInfo(
 
 	foreign key(idBill) references Bill(idBill)
 )
-
 go
 
 CREATE TABLE Account
@@ -164,6 +163,7 @@ CREATE TABLE Account
 	FOREIGN KEY (idStaff) REFERENCES dbo.Staff(id)
 )
 GO
+
 CREATE TABLE ForgetPassword
 (
 	idStaff INT,
@@ -173,6 +173,7 @@ CREATE TABLE ForgetPassword
 	PRIMARY KEY (idStaff, verification)
 )
 GO
+
 CREATE TABLE History
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -182,8 +183,8 @@ CREATE TABLE History
 
 	FOREIGN KEY (idSnack) REFERENCES dbo.Snack(id)
 )
-
 GO
+
 SET DATEFORMAT dmy;
 GO
 
@@ -196,8 +197,8 @@ create table Voucher
 	max_money_discount float, -- Số tiền tối đa giảm được 
 	min_total_bill float -- Số tiền tối thiểu trên tổng bill để được áp mã 
 )
-
 go
+
 -- INSERT
 INSERT INTO dbo.Hall (name, location)VALUES (N'CGV Binh Duong', N'3rd Floor, Aeon Mall');
 INSERT INTO dbo.Hall (name, location)VALUES (N'Lotte Cinema Thu Duc', N'5th Floor, Giga Mall');
@@ -771,7 +772,10 @@ begin
 		values 
 				(@user , @pass, 0, @idStaff, 0)
 end 
-
+go
+create proc USP_GetVoucherList
+AS SELECT * FROM dbo.Voucher
+GO
 
 -- TEST - DONT EXEC THESE
 select *from Account

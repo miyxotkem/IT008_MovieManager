@@ -143,6 +143,7 @@ namespace MovieManager
                         File.Copy(path, actdest);
                     }
                 dp.ExecuteNonQuery(query, values);
+                SnackChanged?.Invoke(this, EventArgs.Empty);
                 CancelButton.PerformClick();
             }
         }
@@ -154,7 +155,7 @@ namespace MovieManager
                 MessageBox.Show("Forget something?");
                 return;
             }
-            string query = @"INSERT INTO SNACK VALUES ( @name , @price , @stock , @category );
+            string query = @"INSERT INTO SNACK VALUES ( @name , @price , @stock , @category , @def );
                             SELECT SCOPE_IDENTITY()";
             if (PriceTextBox.Text == "")
                 PriceTextBox.Text = "0";
@@ -167,7 +168,8 @@ namespace MovieManager
                     NameTextBox.Text,
                     float.Parse(PriceTextBox.Text),
                     Convert.ToInt32(StockTextBox.Text),
-                    CategoryComboBox.SelectedIndex
+                    CategoryComboBox.SelectedIndex,
+                    0
             };
             object result = dp.ExecuteScalar(query, values);
             string actdest = dest;

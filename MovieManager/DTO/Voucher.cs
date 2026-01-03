@@ -23,14 +23,18 @@ namespace MovieManager.DTO
         public float Max_money_discount { get => max_money_discount; set => max_money_discount = value; }
         public float Min_total_bill { get => min_total_bill; set => min_total_bill = value; }
 
+        public Voucher()
+        {
+
+        }
         public Voucher(DataRow row)
         {
             this.id = (int)row["id"];
             this.type = (int)row["type"];
             this.code = (string)row["code"];
             this.discount = (int)row["discount"];
-            this.max_money_discount = (float)Convert.ToDouble(row["max_money_discount"]);
-            this.min_total_bill = (float)Convert.ToDouble(row["min_total_bill"]);
+            this.max_money_discount = (float)Convert.ToSingle(row["max_money_discount"]);
+            this.min_total_bill = (float)Convert.ToSingle(row["min_total_bill"]);
         }
     }
 }

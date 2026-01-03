@@ -84,7 +84,7 @@ namespace MovieManager
                     main.Id
                 };
                 dp.ExecuteNonQuery(query, values);
-                CancelButton.PerformClick();
+                CusChanged?.Invoke(this, EventArgs.Empty);
                 string actdest = dest;
                 int snackId = main.Id;
                 if (snackId > 0)
@@ -113,6 +113,7 @@ namespace MovieManager
                             File.Delete(actdest);
                         File.Copy(path, actdest);
                     }
+                CancelButton.PerformClick();
             }
         }
         void Add_Click(object sender, EventArgs e)

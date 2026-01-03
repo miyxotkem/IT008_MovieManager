@@ -120,6 +120,7 @@ namespace MovieManager
                         File.Copy(path, actdest);
                     }
                 dp.ExecuteNonQuery(query, values);
+                MovieChanged?.Invoke(this, EventArgs.Empty);
                 CancelButton.PerformClick();
             }
         }
