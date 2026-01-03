@@ -854,3 +854,4 @@ select * from customer
 select * from voucher
 select * from account
 update BillInfo set Quantity = Quantity + @quan where idBill = @id and Category = 'Food and Drink' and idDetail = @detail 
+

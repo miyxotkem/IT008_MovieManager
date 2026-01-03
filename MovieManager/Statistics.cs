@@ -16,5 +16,11 @@ namespace MovieManager
         {
             InitializeComponent();
         }
+
+        private void guna2CustomGradientPanel1_Resize(object sender, EventArgs e)
+        {
+            ContainPanel.Left = (this.ClientSize.Width - ContainPanel.Width) / 2;
+            ContainPanel.Top = (this.ClientSize.Height - ContainPanel.Height) / 2;
+        }
     }
 }

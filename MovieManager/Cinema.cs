@@ -222,9 +222,10 @@ namespace MovieManager
 
         private void SignOut(object sender, EventArgs e)
         {
-            this.Hide();
-            SignInForm signInForm = new SignInForm();
-            signInForm.ShowDialog();
+            //this.Hide();
+            //SignInForm signInForm = new SignInForm();
+            //signInForm.ShowDialog();
+            this.Dispose();
         }
 
         public void MovieDisplayButtonCinema_CheckedChanged(object sender, EventArgs e)

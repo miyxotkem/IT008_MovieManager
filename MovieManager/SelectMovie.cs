@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -175,17 +176,24 @@ namespace MovieManager
             {
                 MessageBox.Show("Please choose film's start time first.", "Notification");
                 return;
-            }    
-            ScreenLayout1 screen = null;
+            }
+            List<Guna2GradientButton> list = null;
             foreach (Control ctr in ScreenPanel.Controls)
             {
-                if (ctr is ScreenLayout1 screenLayout)
+                if (ctr is ScreenLayout1 screenLayout1)
                 {
-                    screen = screenLayout;
+                    list = screenLayout1.GetCurrentChooseButton();
+                    break;
+                } else if (ctr is ScreenLayout2 screenLayout2)
+                {
+                    list = screenLayout2.GetCurrentChooseButton();
+                    break;
+                } else if (ctr is ScreenLayout3 screenLayout3)
+                {
+                    list = screenLayout3.GetCurrentChooseButton();
                     break;
                 }    
             }
-            List<Guna2GradientButton> list = screen.GetCurrentChooseButton();
             Bill bill = BillDAO.Instance.GetUncheckedBill();
             if (bill == null) // không có bill
             {
@@ -203,47 +211,50 @@ namespace MovieManager
             }    
             int TotalSeat = 0;
             float CommonPrice = 0;
-            foreach (Guna2GradientButton button in list)
+            if (list != null)
             {
-                if (button.FillColor == Choose)
+                foreach (Guna2GradientButton button in list)
                 {
-                    button.FillColor = Occupied;
-                    button.FillColor2 = Occupied;
-                    if (button.Tag is Seat seat)
+                    if (button.FillColor == Choose)
                     {
-                        HaveChooseSeat = true;
-                        TotalSeat++;
-                        // Đánh dấu ghế đã chọn 
-                        ShowTimeDetailDAO.Instance.ChooseSeat(CurrentShowTime.IDMovie, CurrentShowTime.Start_time, seat.IdSeat);
-                        // Cho ticket vào database 
-                        if (bill != null)
+                        button.FillColor = Occupied;
+                        button.FillColor2 = Occupied;
+                        if (button.Tag is Seat seat)
                         {
-                            float price = 0;
-                            if (seat.SeatType == "Normal")
+                            HaveChooseSeat = true;
+                            TotalSeat++;
+                            // Đánh dấu ghế đã chọn 
+                            ShowTimeDetailDAO.Instance.ChooseSeat(CurrentShowTime.IDMovie, CurrentShowTime.Start_time, seat.IdSeat);
+                            // Cho ticket vào database 
+                            if (bill != null)
                             {
-                                price = 70000;
-                            }
-                            else if (seat.SeatType == "VIP")
-                            {
-                                price = 90000;
-                            }
-                            else if (seat.SeatType == "SVIP")
-                            {
-                                price = 110000;
-                            }
-                            else if (seat.SeatType == "Couple")
-                            {
-                                price = 115000;
-                            }
-                            CommonPrice = price;
-                            if (cinema != null && cinema.Tag is Account account)
-                            {
-                                TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, account.Id, seat.IdSeat, bill.IdBill);
+                                float price = 0;
+                                if (seat.SeatType == "Normal")
+                                {
+                                    price = 70000;
+                                }
+                                else if (seat.SeatType == "VIP")
+                                {
+                                    price = 90000;
+                                }
+                                else if (seat.SeatType == "SVIP")
+                                {
+                                    price = 110000;
+                                }
+                                else if (seat.SeatType == "Couple")
+                                {
+                                    price = 115000;
+                                }
+                                CommonPrice = price;
+                                if (cinema != null && cinema.Tag is Account account)
+                                {
+                                    TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, account.Id, seat.IdSeat, bill.IdBill);
+                                }
                             }
                         }
                     }
                 }
-            }    
+            }
             if (!HaveChooseSeat)
             {
                 MessageBox.Show("Please choose your seat first.", "Notification");

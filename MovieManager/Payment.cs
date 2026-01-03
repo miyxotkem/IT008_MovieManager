@@ -362,8 +362,8 @@ namespace MovieManager
                 }
                 // Xóa vé 
                 TicketDAO.Instance.DeleteTicket(bill.IdBill);
-                // Xóa voucher 
-                BillDAO.Instance.ApplyVoucherForBill(bill.IdBill, -1);
+                // Xóa Bill 
+                BillDAO.Instance.DeleteBill(bill.IdBill);
             }
             Reload();
         }
