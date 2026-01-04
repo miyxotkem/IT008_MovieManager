@@ -31,11 +31,11 @@ namespace MovieManager.DAO
 
         private BillDAO() { }
 
-        public void CreateBill()
+        public void CreateBill(int idStaff)
         {
             int data = -1;
-            string querry = "insert into Bill (idCustomer) values ( null )";
-            data = DataProvider.Instance.ExecuteNonQuery(querry);
+            string querry = "insert into Bill (idCustomer, idStaff) values ( null , @id )";
+            data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] {idStaff});
         }
 
         public Bill GetUncheckedBill()
@@ -111,6 +111,17 @@ namespace MovieManager.DAO
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idVoucher, idBill });
         }
 
+        public Bill GetBill(int idBill)
+        {
+            Bill bill = null;
+            string query = "Select * from Bill where idBill = @id ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { idBill });
+            if (table.Rows.Count > 0)
+            {
+                bill = new Bill(table.Rows[0]);
+            }
+            return bill;
+        }
         public void DeleteBill(int idBill)
         {
             string query = "Delete from Bill where idBill = @id ";

@@ -194,11 +194,19 @@ namespace MovieManager
                     break;
                 }    
             }
+            Account account = null;
+            if (cinema != null)
+            {
+                account = (Account)cinema.Tag;
+            }    
             Bill bill = BillDAO.Instance.GetUncheckedBill();
             if (bill == null) // không có bill
             {
-                BillDAO.Instance.CreateBill();
-                bill = BillDAO.Instance.GetUncheckedBill();
+                if (account != null)
+                {
+                    BillDAO.Instance.CreateBill(account.Id);
+                    bill = BillDAO.Instance.GetUncheckedBill();
+                }
             }    
             if (BillInfoDAO.Instance.CheckExistingFilmInBill(bill.IdBill))
             {
@@ -246,9 +254,9 @@ namespace MovieManager
                                     price = 115000;
                                 }
                                 CommonPrice = price;
-                                if (cinema != null && cinema.Tag is Account account)
+                                if (account != null)
                                 {
-                                    TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, account.Id, seat.IdSeat, bill.IdBill);
+                                    TicketDAO.Instance.CreateTicket(price, CurrentShowTime.IDMovie, CurrentShowTime.Start_time, seat.IdSeat, bill.IdBill);
                                 }
                             }
                         }

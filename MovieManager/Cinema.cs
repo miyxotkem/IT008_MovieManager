@@ -43,51 +43,55 @@ namespace MovieManager
         }
         private void FirstLoad()
         {
+            // staff
             movieDisplay = new MovieDisplay();
             movieDisplay.Reload();
             movieDisplay.Dock = DockStyle.Fill;
             snackDisplay = new SnackDisplay();
             snackDisplay.Reload();
             snackDisplay.Dock = DockStyle.Fill;
-            movieManage = new MovieManage();
-            movieManage.Dock = DockStyle.Fill;
-            snackManage = new SnackManage();    
-            snackManage.Dock = DockStyle.Fill;
-            customerManage = new CustomerManage();  
-            customerManage.Dock = DockStyle.Fill;
             accountDisplay = new AccountDisplay();
-            if (user != null ) accountDisplay.Reload(user);
-            accountDisplay.Dock = DockStyle.Fill;   
-            staffManage = new StaffManage();
-            staffManage.Dock = DockStyle.Fill;
-            showTimeManage = new ShowTimeManage();
-            showTimeManage.Dock = DockStyle.Fill;
+            if (user != null) accountDisplay.Reload(user);
+            accountDisplay.Dock = DockStyle.Fill;
             payment = new Payment();
             payment.Dock = DockStyle.Fill;
-            stats = new Statistics();
-            stats.Dock = DockStyle.Fill;
-            voucher = new VoucherManage();
-            voucher.Dock = DockStyle.Fill;
-            MainPanel.Controls.Add(movieManage);
-            MainPanel.Controls.Add(snackManage);
             MainPanel.Controls.Add(movieDisplay);
             MainPanel.Controls.Add(snackDisplay);
-            MainPanel.Controls.Add(customerManage);
-            MainPanel.Controls.Add(staffManage);
             MainPanel.Controls.Add(accountDisplay);
-            MainPanel.Controls.Add(showTimeManage);
             MainPanel.Controls.Add(payment);
-            MainPanel.Controls.Add(stats);
-            MainPanel.Controls.Add(voucher);
+            // admin
             if (this.Tag is Account account)
             {
-                MovieManageButton.Enabled = account.Admin;
-                SnackManageButton.Enabled = account.Admin;
-                CustomerManageButton.Enabled = account.Admin;   
-                StaffManageButton.Enabled = account.Admin;
-                ShowTimeManageButton.Enabled = account.Admin;
-                VoucherManageButton.Enabled = account.Admin;
-            }    
+                MovieManageButton.Visible = account.Admin;
+                SnackManageButton.Visible = account.Admin;
+                CustomerManageButton.Visible = account.Admin;
+                StaffManageButton.Visible = account.Admin;
+                ShowTimeManageButton.Visible = account.Admin;
+                GraphDisplayButton.Visible = account.Admin;
+                VoucherManageButton.Visible = account.Admin;
+                if (!account.Admin) return;
+                movieManage = new MovieManage();
+                movieManage.Dock = DockStyle.Fill;
+                snackManage = new SnackManage();
+                snackManage.Dock = DockStyle.Fill;
+                customerManage = new CustomerManage();
+                customerManage.Dock = DockStyle.Fill;
+                staffManage = new StaffManage();
+                staffManage.Dock = DockStyle.Fill;
+                showTimeManage = new ShowTimeManage();
+                showTimeManage.Dock = DockStyle.Fill;
+                stats = new Statistics();
+                stats.Dock = DockStyle.Fill;
+                voucher = new VoucherManage();
+                voucher.Dock = DockStyle.Fill;
+                MainPanel.Controls.Add(movieManage);
+                MainPanel.Controls.Add(snackManage);
+                MainPanel.Controls.Add(customerManage);
+                MainPanel.Controls.Add(staffManage);
+                MainPanel.Controls.Add(showTimeManage);
+                MainPanel.Controls.Add(stats);
+                MainPanel.Controls.Add(voucher);
+            }     
         }
         private void Cinema_Load(object sender, EventArgs e)
         {
@@ -254,13 +258,6 @@ namespace MovieManager
 
         public void MovieManageButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.Tag is Account account)
-            {
-                if (!account.Admin)
-                {
-                    MovieManageButton.Enabled = false;
-                }
-            }
             if (MovieManageButton.Checked)
             {
                 //MovieManage.BringToFront();
@@ -272,13 +269,6 @@ namespace MovieManager
 
         public void SnackManageButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.Tag is Account account)
-            {
-                if (!account.Admin)
-                {
-                    SnackManageButton.Enabled = false;
-                }
-            }
             if (SnackManageButton.Checked)
             {
                 //SnackManage.BringToFront();
@@ -301,13 +291,6 @@ namespace MovieManager
 
         public void StaffManageButton_Click(object sender, EventArgs e)
         {
-            if (this.Tag is Account account)
-            {
-                if (!account.Admin)
-                {
-                    StaffManageButton.Enabled = false;
-                }
-            }
             if (StaffManageButton.Checked)
             {
                 //StaffManage.BringToFront();
@@ -319,13 +302,6 @@ namespace MovieManager
 
         public void CustomerManageButton_Click(object sender, EventArgs e)
         {
-            if (this.Tag is Account account)
-            {
-                if (!account.Admin)
-                {
-                    CustomerManageButton.Enabled = false;
-                }
-            }
             if (CustomerManageButton.Checked)
             {
                 //CustomerManage.BringToFront();
@@ -336,14 +312,7 @@ namespace MovieManager
         }
 
         private void ShowTimeManageButton_Click(object sender, EventArgs e)
-        {
-            if (this.Tag is Account account)
-            {
-                if (!account.Admin)
-                {
-                    ShowTimeManageButton.Enabled = false;
-                }
-            }
+        { 
             if (ShowTimeManageButton.Checked)
             {
                 //ShowTimeManage.BringToFront();

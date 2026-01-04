@@ -38,7 +38,6 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.TotalLabel = new System.Windows.Forms.Label();
             this.ResetButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.ExportButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ViewButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PayButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ContentPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -70,7 +69,6 @@
             this.Container.Controls.Add(this.NameLabel);
             this.Container.Controls.Add(this.TotalLabel);
             this.Container.Controls.Add(this.ResetButton);
-            this.Container.Controls.Add(this.ExportButton);
             this.Container.Controls.Add(this.ViewButton);
             this.Container.Controls.Add(this.PayButton);
             this.Container.Controls.Add(this.ContentPanel);
@@ -205,34 +203,6 @@
             this.ResetButton.Text = "Reset";
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
-            // ExportButton
-            // 
-            this.ExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportButton.Animated = true;
-            this.ExportButton.BackColor = System.Drawing.Color.Transparent;
-            this.ExportButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.ExportButton.BorderRadius = 12;
-            this.ExportButton.BorderThickness = 1;
-            this.ExportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ExportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ExportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ExportButton.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ExportButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ExportButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.ExportButton.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.ExportButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ExportButton.ForeColor = System.Drawing.Color.White;
-            this.ExportButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.ExportButton.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.ExportButton.Location = new System.Drawing.Point(687, 709);
-            this.ExportButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ExportButton.Name = "ExportButton";
-            this.ExportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            this.ExportButton.Size = new System.Drawing.Size(153, 50);
-            this.ExportButton.TabIndex = 7;
-            this.ExportButton.Text = "Export";
-            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
-            // 
             // ViewButton
             // 
             this.ViewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -333,7 +303,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel Container;
         private System.Windows.Forms.FlowLayoutPanel ContentPanel;
         private Guna.UI2.WinForms.Guna2GradientButton PayButton;
-        private Guna.UI2.WinForms.Guna2GradientButton ExportButton;
         private Guna.UI2.WinForms.Guna2GradientButton ViewButton;
         private System.Windows.Forms.Label TotalLabel;
         private Guna.UI2.WinForms.Guna2GradientButton ReloadButton;

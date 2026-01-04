@@ -17,8 +17,8 @@ namespace MovieManager
 {
     public partial class SnackDisplay : UserControl
     {
-        //private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
-        private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
+        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        //private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
         public SnackDisplay()
         {
             InitializeComponent();

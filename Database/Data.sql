@@ -115,9 +115,13 @@ GO
 create table Bill(
 	idBill int identity primary key, 
 	idCustomer int,
+	idStaff int,
+	purchase_date DATE DEFAULT GETDATE(),
 	payment_method varchar(50) default 'Cash',
 	bill_status int default 0, --0: Unpaid   1: Paid
 	idVoucher int default -1, -- -1: Không có voucher 
+
+	foreign key (idStaff) references Staff(id)
 )
 
 go
@@ -126,14 +130,11 @@ CREATE TABLE Ticket
 (
 	id INT IDENTITY PRIMARY KEY,
 	price FLOAT CHECK(price >= 0),
-	purchase_date DATE DEFAULT GETDATE(),
 	idmovie INT,
 	Start_time DateTime,
-	idstaff INT,
 	idSeat int,
 	idBill int,
 	FOREIGN KEY (idmovie, Start_time, idSeat) REFERENCES ShowTimeDetail(idMovie, Start_time,idSeat),
-	FOREIGN KEY (idstaff) REFERENCES dbo.Staff(id),
 	foreign key (idBill) references Bill(idBill)
 )
 GO
@@ -773,6 +774,7 @@ begin
 				(@user , @pass, 0, @idStaff, 0)
 end 
 go
+
 create proc USP_GetVoucherList
 AS SELECT * FROM dbo.Voucher
 GO

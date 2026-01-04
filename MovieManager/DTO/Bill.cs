@@ -11,6 +11,8 @@ namespace MovieManager.DTO
     {
         private int idBill;
         private int idCustomer;
+        private int idStaff;
+        private DateTime purchase_date;
         private string payment_method;
         private int bill_statius;
         private int idVoucher;
@@ -20,6 +22,8 @@ namespace MovieManager.DTO
         public string Payment_method { get => payment_method; set => payment_method = value; }
         public int Bill_statius { get => bill_statius; set => bill_statius = value; }
         public int IdVoucher { get => idVoucher; set => idVoucher = value; }
+        public int IdStaff { get => idStaff; set => idStaff = value; }
+        public DateTime Purchase_date { get => purchase_date; set => purchase_date = value; }
 
         public Bill(DataRow row)
         {
@@ -33,6 +37,8 @@ namespace MovieManager.DTO
             {
                 this.idCustomer = Convert.ToInt32(idCus);
             }
+            this.idStaff = Convert.ToInt32(row["idStaff"]);
+            this.purchase_date = (DateTime)row["purchase_date"];
             this.payment_method = (string)row["payment_method"];
             this.bill_statius = Convert.ToInt32(row["bill_status"]);
             this.idVoucher = (int)row["idVoucher"];

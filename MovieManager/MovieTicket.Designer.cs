@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ContentPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,8 +52,9 @@
             this.DateLabel = new System.Windows.Forms.Label();
             this.CinemaAddressLabel = new System.Windows.Forms.Label();
             this.CinemaLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ScreenLabel = new System.Windows.Forms.Label();
+            this.FormatLabel = new System.Windows.Forms.Label();
             this.ContentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -61,6 +63,8 @@
             // ContentPanel
             // 
             this.ContentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            this.ContentPanel.Controls.Add(this.FormatLabel);
+            this.ContentPanel.Controls.Add(this.ScreenLabel);
             this.ContentPanel.Controls.Add(this.pictureBox1);
             this.ContentPanel.Controls.Add(this.label7);
             this.ContentPanel.Controls.Add(this.label6);
@@ -91,10 +95,20 @@
             this.ContentPanel.Size = new System.Drawing.Size(658, 948);
             this.ContentPanel.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MovieManager.Properties.Resources.images1;
+            this.pictureBox1.Location = new System.Drawing.Point(121, 850);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(417, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(130, 761);
+            this.label7.Location = new System.Drawing.Point(130, 798);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(398, 16);
             this.label7.TabIndex = 23;
@@ -103,7 +117,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(241, 721);
+            this.label6.Location = new System.Drawing.Point(241, 758);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 16);
             this.label6.TabIndex = 22;
@@ -112,7 +126,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 685);
+            this.label5.Location = new System.Drawing.Point(34, 722);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(591, 16);
             this.label5.TabIndex = 21;
@@ -123,7 +137,7 @@
             // 
             this.PriceDiscountLabel.AutoSize = true;
             this.PriceDiscountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceDiscountLabel.Location = new System.Drawing.Point(368, 650);
+            this.PriceDiscountLabel.Location = new System.Drawing.Point(368, 687);
             this.PriceDiscountLabel.Name = "PriceDiscountLabel";
             this.PriceDiscountLabel.Size = new System.Drawing.Size(99, 20);
             this.PriceDiscountLabel.TabIndex = 20;
@@ -133,7 +147,7 @@
             // 
             this.Price.AutoSize = true;
             this.Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Price.Location = new System.Drawing.Point(48, 650);
+            this.Price.Location = new System.Drawing.Point(48, 687);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(178, 20);
             this.Price.TabIndex = 19;
@@ -143,7 +157,7 @@
             // 
             this.DiscountLabel.AutoSize = true;
             this.DiscountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DiscountLabel.Location = new System.Drawing.Point(368, 604);
+            this.DiscountLabel.Location = new System.Drawing.Point(368, 641);
             this.DiscountLabel.Name = "DiscountLabel";
             this.DiscountLabel.Size = new System.Drawing.Size(42, 20);
             this.DiscountLabel.TabIndex = 18;
@@ -153,7 +167,7 @@
             // 
             this.Discount.AutoSize = true;
             this.Discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Discount.Location = new System.Drawing.Point(48, 604);
+            this.Discount.Location = new System.Drawing.Point(48, 641);
             this.Discount.Name = "Discount";
             this.Discount.Size = new System.Drawing.Size(81, 20);
             this.Discount.TabIndex = 17;
@@ -163,7 +177,7 @@
             // 
             this.PriceLabel.AutoSize = true;
             this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PriceLabel.Location = new System.Drawing.Point(368, 558);
+            this.PriceLabel.Location = new System.Drawing.Point(368, 595);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(108, 20);
             this.PriceLabel.TabIndex = 16;
@@ -173,7 +187,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(48, 558);
+            this.label.Location = new System.Drawing.Point(48, 595);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(103, 20);
             this.label.TabIndex = 15;
@@ -182,7 +196,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 530);
+            this.label3.Location = new System.Drawing.Point(34, 567);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(591, 16);
             this.label3.TabIndex = 14;
@@ -192,7 +206,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 514);
+            this.label4.Location = new System.Drawing.Point(34, 551);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(591, 16);
             this.label4.TabIndex = 13;
@@ -309,16 +323,6 @@
             this.CinemaLabel.TabIndex = 1;
             this.CinemaLabel.Text = "Cinema\'s Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MovieManager.Properties.Resources.images1;
-            this.pictureBox1.Location = new System.Drawing.Point(121, 813);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(417, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -331,6 +335,26 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // ScreenLabel
+            // 
+            this.ScreenLabel.AutoSize = true;
+            this.ScreenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScreenLabel.Location = new System.Drawing.Point(48, 520);
+            this.ScreenLabel.Name = "ScreenLabel";
+            this.ScreenLabel.Size = new System.Drawing.Size(88, 25);
+            this.ScreenLabel.TabIndex = 25;
+            this.ScreenLabel.Text = "Screen:";
+            // 
+            // FormatLabel
+            // 
+            this.FormatLabel.AutoSize = true;
+            this.FormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormatLabel.Location = new System.Drawing.Point(367, 520);
+            this.FormatLabel.Name = "FormatLabel";
+            this.FormatLabel.Size = new System.Drawing.Size(86, 25);
+            this.FormatLabel.TabIndex = 26;
+            this.FormatLabel.Text = "Format:";
             // 
             // MovieTicket
             // 
@@ -374,5 +398,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label ScreenLabel;
+        private System.Windows.Forms.Label FormatLabel;
     }
 }

@@ -16,8 +16,8 @@ namespace MovieManager
 {
     public partial class MovieDisplay : UserControl
     {
-        private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
-        //private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Posters";
+        //private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Posters";
+        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Posters";
         public MovieDisplay()
         {
             InitializeComponent();

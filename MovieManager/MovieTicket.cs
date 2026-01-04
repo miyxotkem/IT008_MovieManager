@@ -14,7 +14,6 @@ namespace MovieManager
 {
     public partial class MovieTicket : UserControl
     {
-        private Ticket ticket = null;
         public MovieTicket()
         {
             InitializeComponent();
@@ -25,6 +24,11 @@ namespace MovieManager
             InitializeComponent();
             if (ticket != null)
             {
+                Bill bill = BillDAO.Instance.GetBill(ticket.IdBill);
+                if (bill != null)
+                {
+                    DateLabel.Text = bill.Purchase_date.ToString("dd-MM-yyyy hh:mm:ss tt");
+                }    
                 ShowTime show = ShowTimeDAO.Instance.GetShowTime(ticket.IdMovie, ticket.Start_time);
                 if (show != null)
                 {
@@ -37,10 +41,11 @@ namespace MovieManager
                             CinemaLabel.Text = hall.Name;
                             CinemaAddressLabel.Text = hall.Location;
                         }
+                        ScreenLabel.Text = "Screen: " + screen.Number;
+                        FormatLabel.Text = "Format: " + screen.Type;
                     }
                 }    
-                DateLabel.Text = ticket.Purchase_date.ToString("dd-MM-yyyy hh:mm:ss tt");
-                Staff staff = StaffDAO.Instance.GetStaff(ticket.IdStaff);
+                Staff staff = StaffDAO.Instance.GetStaff(bill.IdStaff);
                 if (staff != null)
                 {
                     StaffNameLabel.Text = "Staff: " + staff.Name;

@@ -72,10 +72,18 @@ namespace MovieManager
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             Bill bill = BillDAO.Instance.GetUncheckedBill();
+            Account account = null;
+            if (parentContainer != null &&  parentContainer.Parent is Cinema cinema)
+            {
+                account = (Account)cinema.Tag;
+            }    
             if (bill == null) // không có bill
             {
-                BillDAO.Instance.CreateBill();
-                bill = BillDAO.Instance.GetUncheckedBill();
+                if (account != null)
+                {
+                    BillDAO.Instance.CreateBill(account.Id);
+                    bill = BillDAO.Instance.GetUncheckedBill();
+                }
             }
             if (bill != null && snack != null)
             {
