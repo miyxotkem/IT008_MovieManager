@@ -16,6 +16,8 @@ namespace MovieManager.DTO
         private string payment_method;
         private int bill_statius;
         private int idVoucher;
+        private float money_spent_on_movie;
+        private float money_spent_on_snack;
 
         public int IdBill { get => idBill; set => idBill = value; }
         public int IdCustomer { get => idCustomer; set => idCustomer = value; }
@@ -24,6 +26,8 @@ namespace MovieManager.DTO
         public int IdVoucher { get => idVoucher; set => idVoucher = value; }
         public int IdStaff { get => idStaff; set => idStaff = value; }
         public DateTime Purchase_date { get => purchase_date; set => purchase_date = value; }
+        public float Money_spent_on_movie { get => money_spent_on_movie; set => money_spent_on_movie = value; }
+        public float Money_spent_on_snack { get => money_spent_on_snack; set => money_spent_on_snack = value; }
 
         public Bill(DataRow row)
         {
@@ -42,6 +46,8 @@ namespace MovieManager.DTO
             this.payment_method = (string)row["payment_method"];
             this.bill_statius = Convert.ToInt32(row["bill_status"]);
             this.idVoucher = (int)row["idVoucher"];
+            this.money_spent_on_movie = (float)Convert.ToDouble(row["money_spent_on_movie"]);
+            this.money_spent_on_snack = (float)Convert.ToDouble(row["money_spent_on_snack"]);
         }
 
         

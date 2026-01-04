@@ -17,6 +17,8 @@ namespace MovieManager
     {
         private float Total = 0;
         private float Total_before_discount = 0;
+        private float Total_on_movie = 0;
+        private float Total_on_snack = 0;
         private Voucher voucher = null;
         public Payment()
         {
@@ -114,6 +116,8 @@ namespace MovieManager
         {
             Total = 0;
             Total_before_discount = 0;
+            Total_on_movie = 0;
+            Total_on_snack = 0;
             ContentPanel.Controls.Clear();
             Bill bill = BillDAO.Instance.GetUncheckedBill();
             if (bill != null)
@@ -205,11 +209,21 @@ namespace MovieManager
                         {
                             float max_money = Math.Min(v.Max_money_discount, CurPrice * v.Discount / 100);
                             CurPrice = Math.Max(0, CurPrice - max_money);
+                            Total_on_movie += CurPrice;
                         }
                         else
                         {
                             CurPrice = CurPrice * (100 - info.Discount) / 100;
                             Total_before_discount += CurPrice;
+                            if (info.Category == "Ticket")
+                            {
+                                Total_on_movie += CurPrice;
+                            }
+                            else
+                            {
+                                Total_on_snack += CurPrice;
+                            } 
+                                
                         } 
                         Label priceper = new Label()
                         {
@@ -248,6 +262,9 @@ namespace MovieManager
                 if (voucher.Type == 0) // áp dụng cho Bill
                 {
                     float max_money = Math.Min(Total * voucher.Discount / 100, voucher.Max_money_discount);
+                    // tính mỗi cái giảm bao nhiêu 
+                    Total_on_movie = Total_on_movie - (Total_on_movie / Total * max_money); 
+                    Total_on_snack = Total_on_snack - (Total_on_snack / Total * max_money); 
                     Total = Math.Max(0, Total - max_money);
                 }    
             }    
@@ -265,7 +282,7 @@ namespace MovieManager
                 MessageBox.Show("No unchecked bill at this moment.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }    
-            PaymentMethod pay = new PaymentMethod(Total);
+            PaymentMethod pay = new PaymentMethod(Total, Total_on_movie, Total_on_snack);
             if (this.Tag is Bill bill)
             {
                 pay.Tag = bill;

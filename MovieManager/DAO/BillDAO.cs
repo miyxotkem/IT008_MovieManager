@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Identity.Client;
 using MimeKit.Tnef;
 using MovieManager.DTO;
 using OpenTK.Graphics.ES11;
@@ -126,6 +127,46 @@ namespace MovieManager.DAO
         {
             string query = "Delete from Bill where idBill = @id ";
             int data = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idBill });
+        }
+
+        public List<Bill> GetListBillInYear(int year)
+        {
+            List<Bill> list = new List<Bill>();
+            string query = "Select * from Bill where year(purchase_date) = @year ";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+            if (table.Rows.Count > 0)
+            {
+                foreach(DataRow row in table.Rows)
+                {
+                    Bill bill = new Bill(row);
+                    list.Add(bill);
+                } 
+                    
+            }
+            return list;
+        }
+
+        public List<Bill> GetListBillInMonth(int month, int year)
+        {
+            List<Bill> list = new List<Bill>();
+            string query = "Select * from Bill where year(purchase_date) = @year and month(purchase_date) = @month";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { year , month});
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    Bill bill = new Bill(row);
+                    list.Add(bill);
+                }
+
+            }
+            return list;
+        }
+
+        public void UpdateBillMoney(int idBill, float movie, float snack)
+        {
+            string query = "Update Bill set money_spent_on_movie = @movie , money_spent_on_snack = @snack where idBill = @id ";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { movie, snack, idBill });
         }
     }
 }

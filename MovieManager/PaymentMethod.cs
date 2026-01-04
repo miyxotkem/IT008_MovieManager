@@ -17,6 +17,8 @@ namespace MovieManager
     public partial class PaymentMethod : Form
     {
         private float Total = 0;
+        private float Total_on_movie = 0;
+        private float Total_on_snack = 0;
         private void Initial()
         {
             ApplePayButton.Tag = "ApplePay";
@@ -32,11 +34,13 @@ namespace MovieManager
             Initial();
         }
 
-        public PaymentMethod(float Total)
+        public PaymentMethod(float Total, float Total_on_movie, float Total_on_snack)
         {
             InitializeComponent();
             Initial();
             this.Total = Total;
+            this.Total_on_movie = Total_on_movie;
+            this.Total_on_snack =Total_on_snack;
         }
         private string Method = "Cash";
 
@@ -78,7 +82,8 @@ namespace MovieManager
                 if (BillDAO.Instance.CheckValidCustomer(bill.IdBill))
                 {
                     CustomerDAO.Instance.IncreaseCustomerSpend(bill.IdCustomer, Total);
-                }    
+                }
+                BillDAO.Instance.UpdateBillMoney(bill.IdBill, Total_on_movie, Total_on_snack);
                 this.Dispose();
             }
             else

@@ -120,6 +120,8 @@ create table Bill(
 	payment_method varchar(50) default 'Cash',
 	bill_status int default 0, --0: Unpaid   1: Paid
 	idVoucher int default -1, -- -1: Không có voucher 
+	money_spent_on_movie float default 0, -- Sử dụng cho statistics 
+	money_spent_on_snack float default 0,
 
 	foreign key (idStaff) references Staff(id)
 )
