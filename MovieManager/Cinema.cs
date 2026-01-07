@@ -33,6 +33,7 @@ namespace MovieManager
         public Cinema()
         {
             InitializeComponent(); 
+            this.DoubleBuffered = true;
         }
 
         public Cinema(string username)
@@ -40,6 +41,7 @@ namespace MovieManager
             InitializeComponent();
             //AccountDisplay.Reload(username);
             user = username;
+            this.DoubleBuffered =true;
         }
         private void FirstLoad()
         {
@@ -131,6 +133,7 @@ namespace MovieManager
         bool sidebarzoom = false;
         private void ZoomButtonCinema_Click(object sender, EventArgs e)
         {
+            
             if (sidebarzoom == false)
             {
                 SideBarPanelCinema.Size = new Size(SideBarPanelCinema.Width + 150, SideBarPanelCinema.Height);
@@ -222,6 +225,7 @@ namespace MovieManager
                 signout.Visible = false;
                 sidebarzoom = false;
             }
+            
         }
 
         private void SignOut(object sender, EventArgs e)

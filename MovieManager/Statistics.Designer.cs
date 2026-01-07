@@ -79,11 +79,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.RelationChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.MovieLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.SnackLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.IncomeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -104,7 +104,6 @@
             this.cbbValueDetail = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbTypeDetail = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ManageStaff = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2GroupBox7 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -118,6 +117,7 @@
             this.TopCustomerChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbbValueRank = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbTypeRank = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ManageStaff = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.ContainPanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -159,6 +159,7 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1593, 923);
             this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             this.guna2CustomGradientPanel1.Resize += new System.EventHandler(this.guna2CustomGradientPanel1_Resize);
             // 
             // ContainPanel
@@ -252,11 +253,11 @@
             // guna2GroupBox3
             // 
             this.guna2GroupBox3.BorderRadius = 20;
-            this.guna2GroupBox3.Controls.Add(this.label7);
+            this.guna2GroupBox3.Controls.Add(this.MovieLabel);
             this.guna2GroupBox3.Controls.Add(this.label6);
-            this.guna2GroupBox3.Controls.Add(this.label4);
+            this.guna2GroupBox3.Controls.Add(this.SnackLabel);
             this.guna2GroupBox3.Controls.Add(this.label2);
-            this.guna2GroupBox3.Controls.Add(this.label3);
+            this.guna2GroupBox3.Controls.Add(this.TotalLabel);
             this.guna2GroupBox3.Controls.Add(this.label1);
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -267,14 +268,14 @@
             this.guna2GroupBox3.Text = "Overall";
             this.guna2GroupBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label7
+            // MovieLabel
             // 
-            this.label7.Location = new System.Drawing.Point(101, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(223, 23);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "200.000.000 VNĐ";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MovieLabel.Location = new System.Drawing.Point(101, 55);
+            this.MovieLabel.Name = "MovieLabel";
+            this.MovieLabel.Size = new System.Drawing.Size(223, 23);
+            this.MovieLabel.TabIndex = 6;
+            this.MovieLabel.Text = "200.000.000 VNĐ";
+            this.MovieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -286,14 +287,14 @@
             this.label6.Text = "Movie:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // SnackLabel
             // 
-            this.label4.Location = new System.Drawing.Point(101, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 23);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "200.000.000 VNĐ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SnackLabel.Location = new System.Drawing.Point(101, 92);
+            this.SnackLabel.Name = "SnackLabel";
+            this.SnackLabel.Size = new System.Drawing.Size(223, 23);
+            this.SnackLabel.TabIndex = 4;
+            this.SnackLabel.Text = "200.000.000 VNĐ";
+            this.SnackLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -305,14 +306,14 @@
             this.label2.Text = "Snack:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // TotalLabel
             // 
-            this.label3.Location = new System.Drawing.Point(101, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(223, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "200.000.000 VNĐ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TotalLabel.Location = new System.Drawing.Point(101, 130);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(223, 23);
+            this.TotalLabel.TabIndex = 2;
+            this.TotalLabel.Text = "200.000.000 VNĐ";
+            this.TotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -377,6 +378,7 @@
             this.cbbValue.Name = "cbbValue";
             this.cbbValue.Size = new System.Drawing.Size(161, 36);
             this.cbbValue.TabIndex = 1;
+            this.cbbValue.SelectedIndexChanged += new System.EventHandler(this.cbbValue_SelectedIndexChanged);
             // 
             // cbbType
             // 
@@ -616,18 +618,6 @@
             this.tabPage3.Text = "RANKING";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // ManageStaff
-            // 
-            this.ManageStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ManageStaff.AutoSize = true;
-            this.ManageStaff.BackColor = System.Drawing.Color.Transparent;
-            this.ManageStaff.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageStaff.Location = new System.Drawing.Point(660, 23);
-            this.ManageStaff.Name = "ManageStaff";
-            this.ManageStaff.Size = new System.Drawing.Size(272, 52);
-            this.ManageStaff.TabIndex = 6;
-            this.ManageStaff.Text = "STATISTICS";
-            // 
             // guna2CustomGradientPanel4
             // 
             this.guna2CustomGradientPanel4.BorderRadius = 20;
@@ -826,6 +816,18 @@
             this.cbbTypeRank.Size = new System.Drawing.Size(161, 36);
             this.cbbTypeRank.TabIndex = 0;
             // 
+            // ManageStaff
+            // 
+            this.ManageStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ManageStaff.AutoSize = true;
+            this.ManageStaff.BackColor = System.Drawing.Color.Transparent;
+            this.ManageStaff.Font = new System.Drawing.Font("Stencil", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageStaff.Location = new System.Drawing.Point(660, 23);
+            this.ManageStaff.Name = "ManageStaff";
+            this.ManageStaff.Size = new System.Drawing.Size(272, 52);
+            this.ManageStaff.TabIndex = 6;
+            this.ManageStaff.Text = "STATISTICS";
+            // 
             // Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -881,12 +883,12 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private System.Windows.Forms.DataVisualization.Charting.Chart RelationChart;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label MovieLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label SnackLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart IncomeChart;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;

@@ -26,35 +26,113 @@ namespace MovieManager
             ContainPanel.Top = (this.ClientSize.Height - ContainPanel.Height) / 2;
         }
 
+        private void Overall()
+        {
+            RelationChart.Series["Series1"].Points.Clear();
+            RelationChart.Series["Series2"].Points.Clear();
+            RelationChart.Series["Series1"].LegendText = "Movie";
+            RelationChart.Series["Series2"].LegendText = "Snack";
+            RelationChart.Series["Series1"].Color = Color.Red;
+            RelationChart.Series["Series2"].Color = Color.Blue;
+            RelationChart.ChartAreas[0].AxisX.Interval = 1;
+            RelationChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            int year = Convert.ToInt32(cbbValue.Items[cbbValue.SelectedIndex]);
+            float MoneyForTicket = 0;
+            float MoneyForSnack = 0;
+            if (cbbType.Items[cbbType.SelectedIndex].ToString() == "None")
+            {
+                List<Bill> list = BillDAO.Instance.GetListBillInYear(year);
+                if (list != null)
+                {
+                    foreach (Bill bill in list)
+                    {
+                        MoneyForTicket += bill.Money_spent_on_movie;
+                        MoneyForSnack += bill.Money_spent_on_snack;
+                    }
+                }
+              
+                for (int i = 1; i <= 12; i++) // lấy theo từng tháng 
+                {
+                    List<Bill> billList = BillDAO.Instance.GetListBillInMonth(i, year);
+                    float Movie = 0f;
+                    float Snack = 0f;
+                    foreach (Bill bill in billList)
+                    {
+                        Movie += bill.Money_spent_on_movie;
+                        Snack += bill.Money_spent_on_snack;
+                    }
+
+                    // hiển thị dữ liệu lên chart 
+                    int Index = RelationChart.Series["Series1"].Points.AddXY(i, Convert.ToDouble(Movie));
+                    int Index2 = RelationChart.Series["Series2"].Points.AddXY(i, Convert.ToDouble(Snack));
+                }
+            }
+            else
+            {
+                int month = Convert.ToInt32(cbbType.Items[cbbType.SelectedIndex]);
+                List<Bill> list = BillDAO.Instance.GetListBillInMonth(month, year);
+                if (list != null)
+                {
+                    foreach (Bill bill in list)
+                    {
+                        MoneyForTicket += bill.Money_spent_on_movie;
+                        MoneyForSnack += bill.Money_spent_on_snack;
+                    }
+                }
+
+                int NumberDate = GetDate(month, year);
+                for (int i=1;i<=NumberDate;i++)
+                {
+                    List<Bill> billList = BillDAO.Instance.GetListBillInDay(i, month, year);
+                    float Movie = 0f;
+                    float Snack = 0f;
+                    foreach (Bill bill in billList)
+                    {
+                        Movie += bill.Money_spent_on_movie;
+                        Snack += bill.Money_spent_on_snack;
+                    }
+
+                    // hiển thị dữ liệu lên chart 
+                    int Index = RelationChart.Series["Series1"].Points.AddXY(i, Convert.ToDouble(Movie));
+                    int Index2 = RelationChart.Series["Series2"].Points.AddXY(i, Convert.ToDouble(Snack));
+                }    
+
+            }
+            IncomeChart.Series["Series1"].Points.Clear(); // Xóa dữ liệu cũ sạch sẽ
+
+            // 1. Thêm điểm dữ liệu mới vào biểu đồ
+            int index = IncomeChart.Series["Series1"].Points.AddY(Convert.ToDouble(MoneyForTicket));
+
+            // 2. Tùy chỉnh điểm dữ liệu vừa thêm thông qua index
+            IncomeChart.Series["Series1"].Points[index].Color = Color.FromArgb(218, 108, 108);
+            IncomeChart.Series["Series1"].Points[index].LegendText = "Movie";
+            IncomeChart.Series["Series1"].Points[index].Label = "#PERCENT";
+
+            index = IncomeChart.Series["Series1"].Points.AddY(Convert.ToDouble(MoneyForSnack));
+            IncomeChart.Series["Series1"].Points[index].Color = Color.FromArgb(234, 235, 208);
+            IncomeChart.Series["Series1"].Points[index].LegendText = "Snack";
+            IncomeChart.Series["Series1"].Points[index].Label = "#PERCENT";
+
+            // cập nhật label 
+            MovieLabel.Text = MoneyForTicket.ToString("c");
+            SnackLabel.Text = MoneyForSnack.ToString("c");
+            TotalLabel.Text = (MoneyForTicket + MoneyForSnack).ToString("c");
+
+            RelationChart.Update();
+            IncomeChart.Update();
+        }
+
+        private int GetDate(int month, int year)
+        {
+            return DateTime.DaysInMonth(year, month);
+        }
         private void cbbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cbbType.SelectedIndex != -1 && cbbValue.SelectedIndex != -1)
-            //{
-            //    float TotalMoneyOnMovie = 0f;
-            //    float TotalMoneyOnSnack = 0f;
-            //    float TotalMoneyOnBill = 0f;
-            //    if (cbbType.Items[cbbType.SelectedIndex].ToString() == "None") // chỉ xét theo năm 
-            //    {
-            //        int year = Convert.ToInt32(cbbValue.Items[cbbValue.SelectedIndex]);
-            //        List<Bill> list = BillDAO.Instance.GetListBillInYear(year);
-            //        foreach (Bill bill in list) // duyệt qua từng Bill 
-            //        {
-            //            // Lấy voucher áp cho Bill này 
-            //            Voucher voucher = VoucherDAO.Instance.GetVoucherFromID(bill.IdVoucher);
-            //            // lấy BillInfo của từng Bill
-            //            List<BillInfo> billInfos = BillInfoDAO.Instance.GetListBillInfoFromBillID(bill.IdBill);
-            //            foreach(BillInfo info in billInfos) // duyệt qua từng BillInfo 
-            //            {
+            if (cbbType.SelectedIndex != -1 && cbbValue.SelectedIndex != -1)
+            {
+                Overall();
+            }
 
-            //            }    
-            //        }    
-            //    }
-            //    else
-            //    {
-
-            //    } 
-                    
-            //}    
         }
 
         private void ReloadButton_Click(object sender, EventArgs e)
@@ -125,6 +203,19 @@ namespace MovieManager
             cbbValue.SelectedIndex = 0;
             cbbValueDetail.SelectedIndex = 0;
             cbbValueRank.SelectedIndex = 0;
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbbValue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbType.SelectedIndex != -1 && cbbValue.SelectedIndex != -1)
+            {
+                Overall();
+            }
         }
     }
 }

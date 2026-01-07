@@ -851,6 +851,7 @@ update Bill set bill_status =1, payment_method = 'Banking' where idBill = 3
 
 select * from BillInfo
 
+select * from snack
 select * from Screen
 select * from Hall
 select * from Staff
@@ -859,3 +860,6 @@ select * from voucher
 select * from account
 update BillInfo set Quantity = Quantity + @quan where idBill = @id and Category = 'Food and Drink' and idDetail = @detail 
 
+set dateformat dmy
+
+select * from Bill wher day(

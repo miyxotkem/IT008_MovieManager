@@ -132,7 +132,7 @@ namespace MovieManager.DAO
         public List<Bill> GetListBillInYear(int year)
         {
             List<Bill> list = new List<Bill>();
-            string query = "Select * from Bill where year(purchase_date) = @year ";
+            string query = "Select * from Bill where year(purchase_date) = @year  and bill_status = 1 ";
             DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { year });
             if (table.Rows.Count > 0)
             {
@@ -149,8 +149,25 @@ namespace MovieManager.DAO
         public List<Bill> GetListBillInMonth(int month, int year)
         {
             List<Bill> list = new List<Bill>();
-            string query = "Select * from Bill where year(purchase_date) = @year and month(purchase_date) = @month";
+            string query = "Select * from Bill where year(purchase_date) = @year and month(purchase_date) = @month  and bill_status = 1";
             DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { year , month});
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    Bill bill = new Bill(row);
+                    list.Add(bill);
+                }
+
+            }
+            return list;
+        }
+
+        public List<Bill> GetListBillInDay(int day, int month, int year)
+        {
+            List<Bill> list = new List<Bill>();
+            string query = "Select * from Bill where year(purchase_date) = @year and month(purchase_date) = @month and day(purchase_date) = @day  and bill_status = 1";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] { year, month, day });
             if (table.Rows.Count > 0)
             {
                 foreach (DataRow row in table.Rows)
@@ -168,5 +185,7 @@ namespace MovieManager.DAO
             string query = "Update Bill set money_spent_on_movie = @movie , money_spent_on_snack = @snack where idBill = @id ";
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { movie, snack, idBill });
         }
+
+
     }
 }
