@@ -186,6 +186,112 @@ namespace MovieManager.DAO
             DataProvider.Instance.ExecuteNonQuery(query, new object[] { movie, snack, idBill });
         }
 
+        public List<KeyValuePair<int, float>> GetTop5Movie(int month, int year)
+        {
+            List<KeyValuePair<int, float>> list = new List<KeyValuePair<int, float>>();
+            DataTable table = new DataTable();
+            if (month  == 0)
+            {
+                string query = "select top 5 info.idDetail, sum(bi.Money_spent_on_movie) as Total from BillInfo info join Bill bi on info.idBill = bi.idBill where info.Category = 'Ticket' and bi.bill_status = 1 and year(bi.purchase_date) = @year  group by info.idDetail ";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+            }
+            else
+            {
+                string query = "select top 5 info.idDetail, sum(bi.Money_spent_on_movie) as Total from BillInfo info join Bill bi on info.idBill = bi.idBill where info.Category = 'Ticket' and bi.bill_status = 1 and year(bi.purchase_date) = @year and month(bi.purchase_date) = @month  group by info.idDetail";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year, month });
+            } 
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    int id = Convert.ToInt32(row["idDetail"]);
+                    float total = (float)Convert.ToDouble(row["Total"]);
+                    KeyValuePair<int, float> key = new KeyValuePair<int, float>(id, total);
+                    list.Add(key);
+                } 
+            }    
+            return list;
+        }
 
+        public List<KeyValuePair<int, float>> GetTop5Snack(int month, int year)
+        {
+            List<KeyValuePair<int, float>> list = new List<KeyValuePair<int, float>>();
+            DataTable table = new DataTable();
+            if (month == 0)
+            {
+                string query = "select top 5 info.idDetail, sum(bi.Money_spent_on_movie) as Total from BillInfo info join Bill bi on info.idBill = bi.idBill where info.Category <> 'Ticket' and bi.bill_status = 1 and year(bi.purchase_date) = @year  group by info.idDetail ";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+            }
+            else
+            {
+                string query = "select top 5 info.idDetail, sum(bi.Money_spent_on_movie) as Total from BillInfo info join Bill bi on info.idBill = bi.idBill where info.Category <> 'Ticket' and bi.bill_status = 1 and year(bi.purchase_date) = @year and month(bi.purchase_date) = @month  group by info.idDetail";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year, month });
+            }
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    int id = Convert.ToInt32(row["idDetail"]);
+                    float total = (float)Convert.ToDouble(row["Total"]);
+                    KeyValuePair<int, float> key = new KeyValuePair<int, float>(id, total);
+                    list.Add(key);
+                }
+            }
+            return list;
+        }
+
+        public List<KeyValuePair<int, float>> GetTop5Customer(int month, int year)
+        {
+            List<KeyValuePair<int, float>> list = new List<KeyValuePair<int, float>>();
+            DataTable table = new DataTable();
+            if (month == 0)
+            {
+                string query = "select top 5 bi.idCustomer, sum (bi.Money_spent_on_movie + bi.Money_spent_on_snack) as Total from Bill bi join Customer cus on cus.id = bi.idCustomer where bi.bill_status = 1 and year(bi.purchase_date) = @year group by bi.idCustomer ";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+            }
+            else
+            {
+                string query = "select top 5 bi.idCustomer, sum (bi.Money_spent_on_movie + bi.Money_spent_on_snack) as Total from Bill bi join Customer cus on cus.id = bi.idCustomer where bi.bill_status = 1 and year(bi.purchase_date) = @year and month(bi.purchase_date) = @month group by bi.idCustomer ";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year, month });
+            }
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    int id = Convert.ToInt32(row["idCustomer"]);
+                    float total = (float)Convert.ToDouble(row["Total"]);
+                    KeyValuePair<int, float> key = new KeyValuePair<int, float>(id, total);
+                    list.Add(key);
+                }
+            }
+            return list;
+        }
+
+        public List<KeyValuePair<int, float>> GetTop5Staff(int month, int year)
+        {
+            List<KeyValuePair<int, float>> list = new List<KeyValuePair<int, float>>();
+            DataTable table = new DataTable();
+            if (month == 0)
+            {
+                string query = "select top 5 bi.idStaff, sum (bi.Money_spent_on_movie + bi.Money_spent_on_snack) as Total from Bill bi join Staff cus on cus.id = bi.idStaff where bi.bill_status = 1 and year(bi.purchase_date) = @year group by bi.idStaff ";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+            }
+            else
+            {
+                string query = "select top 5 bi.idStaff, sum (bi.Money_spent_on_movie + bi.Money_spent_on_snack) as Total from Bill bi join Staff cus on cus.id = bi.idStaff where bi.bill_status = 1 and year(bi.purchase_date) = @year and month(bi.purchase_date) = @month group by bi.idStaff ";
+                table = DataProvider.Instance.ExecuteQuery(query, new object[] { year, month });
+            }
+            if (table.Rows.Count > 0)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    int id = Convert.ToInt32(row["idStaff"]);
+                    float total = (float)Convert.ToDouble(row["Total"]);
+                    KeyValuePair<int, float> key = new KeyValuePair<int, float>(id, total);
+                    list.Add(key);
+                }
+            }
+            return list;
+        }
     }
 }

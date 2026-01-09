@@ -122,6 +122,341 @@ namespace MovieManager
             IncomeChart.Update();
         }
 
+        private void Detail(int month, int year)
+        {
+            MovieContainPanel.Controls.Clear();
+            SnackContainPanel.Controls.Clear();
+            // xóa dữ liệu của Chart
+            MovieChart.Series["Series1"].Points.Clear();
+            SnackChart.Series["Series1"].Points.Clear();
+            MovieChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            MovieChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            MovieChart.ChartAreas[0].AxisX.Interval = 1;
+            SnackChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            SnackChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            SnackChart.ChartAreas[0].AxisX.Interval = 1;
+            MovieChart.Series["Series1"].LabelFormat = "#,##0 'đ'";
+            SnackChart.Series["Series1"].LabelFormat = "#,##0 'đ'";
+            MovieChart.Series["Series1"]["BarLabelStyle"] = "Top";
+            SnackChart.Series["Series1"]["BarLabelStyle"] = "Top";
+            List <KeyValuePair<int, float>> list = BillDAO.Instance.GetTop5Movie(month, year);
+            List<KeyValuePair<int, float>> listSnack = BillDAO.Instance.GetTop5Snack(month, year);
+            if (list != null && list.Count > 0)
+            {
+                int index = 0;
+                foreach (KeyValuePair<int, float> item in list)
+                {
+                    index++;
+                    int id = item.Key;
+                    float value = item.Value;
+                    Movie movie = MovieDAO.Instance.GetMovieFromIDMovie(id);
+                    if (movie != null)
+                    {
+                        int Index = MovieChart.Series["Series1"].Points.AddXY(index, Convert.ToDouble(value));
+                        MovieChart.Series["Series1"].Points[Index].Color = Color.FromArgb(218, 108, 108);
+                        MovieChart.Series["Series1"].Points[Index].IsValueShownAsLabel = true;
+                        FlowLayoutPanel panel = new FlowLayoutPanel()
+                        {
+                            Height = 35,
+                            Width = 750
+                        };
+                        Label stt = new Label()
+                        {
+                            Height = 30,
+                            Width = 80,
+                            Text = index.ToString(),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label title = new Label()
+                        {
+                            Height = 30,
+                            Width = 300,
+                            Text = movie.Title,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label genre = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = movie.Genre,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label rated = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = movie.Rated,
+                            Font = new Font(Font, FontStyle.Bold),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label Total = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = value.ToString("c"),
+                            Font = new Font(Font, FontStyle.Bold),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        panel.Controls.Add(stt);
+                        panel.Controls.Add(title);
+                        panel.Controls.Add(genre);
+                        panel.Controls.Add(rated);
+                        panel.Controls.Add(Total);
+                        MovieContainPanel.Controls.Add(panel);
+                    }    
+                }    
+            }    
+            if (listSnack != null && listSnack.Count > 0)
+            {
+                int index = 0;
+                foreach (KeyValuePair<int, float> item in listSnack)
+                {
+                    index++;
+                    int id = item.Key;
+                    float value = item.Value;
+                    Snack snack = SnackDAO.Instance.GetSnackFromIDSnack(id);
+                    if (snack != null)
+                    {
+                        int Index = SnackChart.Series["Series1"].Points.AddXY(index, Convert.ToDouble(value));
+                        SnackChart.Series["Series1"].Points[Index].Color = Color.FromArgb(218, 108, 108);
+                        SnackChart.Series["Series1"].Points[Index].IsValueShownAsLabel = true;
+                        SnackChart.Series["Series1"].Points[Index].LabelFormat = "#,##0 'đ'";
+                        FlowLayoutPanel panel = new FlowLayoutPanel()
+                        {
+                            Height = 35,
+                            Width = 550
+                        };
+                        Label stt = new Label()
+                        {
+                            Height = 30,
+                            Width = 80,
+                            Text = index.ToString(),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label title = new Label()
+                        {
+                            Height = 30,
+                            Width = 200,
+                            Text = snack.Name,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label genre = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = (snack.Category == 0 ? "Food": "Beverage"),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label Total = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = value.ToString("c"),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        panel.Controls.Add(stt);
+                        panel.Controls.Add(title);
+                        panel.Controls.Add(genre);
+                        panel.Controls.Add(Total);
+                        SnackContainPanel.Controls.Add(panel);
+                    }
+                }    
+            }
+            MovieChart.ChartAreas[0].RecalculateAxesScale(); // Ép chart tính toán lại quy mô
+            double mMax = MovieChart.ChartAreas[0].AxisY.Maximum;
+            MovieChart.ChartAreas[0].AxisY.Maximum = mMax * 1.2; // Tăng thêm 20% khoảng trống
+
+            SnackChart.ChartAreas[0].RecalculateAxesScale();
+            double sMax = SnackChart.ChartAreas[0].AxisY.Maximum;
+            SnackChart.ChartAreas[0].AxisY.Maximum = sMax * 1.2;
+            MovieChart.Update();
+            SnackChart.Update();
+        }
+
+        private void Ranking(int month, int year)
+        {
+            CustomerContain.Controls.Clear();
+            StaffContain.Controls.Clear();
+            // xóa dữ liệu của chart 
+            CustomerChart.Series["Series1"].Points.Clear();
+            StaffChart.Series["Series1"].Points.Clear();
+            CustomerChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            CustomerChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            CustomerChart.ChartAreas[0].AxisX.Interval = 1;
+            StaffChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            StaffChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+            StaffChart.ChartAreas[0].AxisX.Interval = 1;
+            CustomerChart.Series["Series1"].LabelFormat = "#,##0 'đ'";
+            StaffChart.Series["Series1"].LabelFormat = "#,##0 'đ'";
+            CustomerChart.Series["Series1"]["BarLabelStyle"] = "Top";
+            StaffChart.Series["Series1"]["BarLabelStyle"] = "Top";
+            List<KeyValuePair<int , float>> listCustomer = BillDAO.Instance.GetTop5Customer(month, year);
+            List<KeyValuePair<int, float>> listStaff = BillDAO.Instance.GetTop5Staff(month, year);
+            if (listCustomer != null && listCustomer.Count > 0)
+            {
+                int index = 0;
+                foreach (KeyValuePair<int, float> item in listCustomer)
+                {
+                    index++;
+                    FlowLayoutPanel panel = new FlowLayoutPanel()
+                    {
+                        Height = 35,
+                        Width = 850
+                    };
+                    int id = item.Key;
+                    float value = item.Value;
+                    Customer customer = CustomerDAO.Instance.GetCustomer(id);
+                    if (customer != null)
+                    {
+                        int Index = CustomerChart.Series["Series1"].Points.AddXY(index, Convert.ToDouble(value));
+                        CustomerChart.Series["Series1"].Points[Index].Color = Color.FromArgb(218, 108, 108);
+                        CustomerChart.Series["Series1"].Points[Index].IsValueShownAsLabel = true;
+                        CustomerChart.Series["Series1"].Points[Index].LabelFormat = "#,##0 'đ'";
+                        Label stt = new Label()
+                        {
+                            Height = 30,
+                            Width = 80,
+                            Text = index.ToString(),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label title = new Label()
+                        {
+                            Height = 30,
+                            Width = 200,
+                            Text = customer.Name,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label email = new Label()
+                        {
+                            Height = 30,
+                            Width = 200,
+                            Text = customer.Email,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label phone = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = customer.Phonenumber,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        string member = "New";
+                        int mem = customer.Membership;
+                        if (mem == 1)
+                        {
+                            member = "Bronze";
+                        }    else if (mem == 2)
+                        {
+                            member = "Silver";
+                        } else if (mem == 3)
+                        {
+                            member = "Gold";
+                        } else if (mem == 4)
+                        {
+                            member = "Platinum";
+                        } else if (mem == 5)
+                        {
+                            member = "VIP PRO";
+                        }    
+                        Label membership = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = member,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label Total = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = value.ToString("c"),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        panel.Controls.Add(stt);
+                        panel.Controls.Add(title);
+                        panel.Controls.Add(email);
+                        panel.Controls.Add(phone);
+                        panel.Controls.Add(membership);
+                        panel.Controls.Add(Total);
+                        CustomerContain.Controls.Add(panel);
+                    }   
+                }    
+            } 
+            if (listStaff != null && listStaff.Count > 0)
+            {
+                int index = 0;
+                foreach (KeyValuePair<int, float> item in listStaff)
+                {
+                    index++;
+                    int id = item.Key;
+                    float value = item.Value;
+                    FlowLayoutPanel panel = new FlowLayoutPanel()
+                    {
+                        Height = 35,
+                        Width = 850
+                    };
+                    Staff staff = StaffDAO.Instance.GetStaff(id);
+                    if (staff != null)
+                    {
+                        int Index = StaffChart.Series["Series1"].Points.AddXY(index, Convert.ToDouble(value));
+                        StaffChart.Series["Series1"].Points[Index].Color = Color.FromArgb(218, 108, 108);
+                        StaffChart.Series["Series1"].Points[Index].IsValueShownAsLabel = true;
+                        StaffChart.Series["Series1"].Points[Index].LabelFormat = "#,##0 'đ'";
+                        Label stt = new Label()
+                        {
+                            Height = 30,
+                            Width = 80,
+                            Text = index.ToString(),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label title = new Label()
+                        {
+                            Height = 30,
+                            Width = 200,
+                            Text = staff.Name,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label email = new Label()
+                        {
+                            Height = 30,
+                            Width = 200,
+                            Text = staff.Contact_info,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label role = new Label()
+                        {
+                            Height = 30,
+                            Width = 200,
+                            Text = staff.Role,
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        Label Total = new Label()
+                        {
+                            Height = 30,
+                            Width = 100,
+                            Text = value.ToString("c"),
+                            TextAlign = ContentAlignment.MiddleCenter
+                        };
+                        panel.Controls.Add(stt);
+                        panel.Controls.Add(title);
+                        panel.Controls.Add(email);
+                        panel.Controls.Add(role);
+                        panel.Controls.Add(Total);
+                        StaffContain.Controls.Add(panel);
+                    }    
+                }    
+            }
+            CustomerChart.ChartAreas[0].RecalculateAxesScale(); // Ép chart tính toán lại quy mô
+            double mMax = CustomerChart.ChartAreas[0].AxisY.Maximum;
+            CustomerChart.ChartAreas[0].AxisY.Maximum = mMax * 1.2; // Tăng thêm 20% khoảng trống
+
+            StaffChart.ChartAreas[0].RecalculateAxesScale();
+            double sMax = StaffChart.ChartAreas[0].AxisY.Maximum;
+            StaffChart.ChartAreas[0].AxisY.Maximum = sMax * 1.2;
+            CustomerChart.Update();
+            StaffChart.Update();
+                
+        }
         private int GetDate(int month, int year)
         {
             return DateTime.DaysInMonth(year, month);
@@ -157,7 +492,16 @@ namespace MovieManager
 
         private void cbbTypeDetail_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cbbTypeDetail.SelectedIndex != -1 && cbbValueDetail.SelectedIndex != -1)
+            {
+                int year = Convert.ToInt32(cbbValueDetail.Items[cbbValueDetail.SelectedIndex]);
+                int month = 0;
+                if (cbbTypeDetail.Items[cbbTypeDetail.SelectedIndex].ToString() != "None")
+                {
+                    month = Convert.ToInt32(cbbTypeDetail.Items[cbbTypeDetail.SelectedIndex]);
+                }
+                Detail(month, year);
+            }    
         }
 
         private void ReloadButtonDetail_Click(object sender, EventArgs e)
@@ -197,14 +541,238 @@ namespace MovieManager
                 cbbValueDetail.Items.Add((cur-i).ToString());
                 cbbValueRank.Items.Add((cur - i).ToString());
             }
+            LoadTitleMovie();
+            LoadTitleSnack();
+            LoadTitleCustomer();
+            LoadTitleStaff();
             cbbType.SelectedIndex = 0;
             cbbTypeDetail.SelectedIndex = 0;
             cbbTypeRank.SelectedIndex = 0;
             cbbValue.SelectedIndex = 0;
             cbbValueDetail.SelectedIndex = 0;
             cbbValueRank.SelectedIndex = 0;
+            
         }
 
+        private void LoadTitleMovie()
+        {
+            FlowLayoutPanel panel = new FlowLayoutPanel()
+            {
+                Height = 35,
+                Width = 750
+            };
+            Label stt = new Label()
+            {
+                Height = 30,
+                Width = 80,
+                Text = "No.",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label title = new Label()
+            {
+                Height = 30,
+                Width = 300,
+                Text = "Title",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label genre = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Genre",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label rated = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Rated",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label Total = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Total Revenue",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            panel.Controls.Add(stt);
+            panel.Controls.Add(title);
+            panel.Controls.Add(genre);
+            panel.Controls.Add(rated);
+            panel.Controls.Add(Total);
+            MovieTitlePanel.Controls.Add(panel);
+        }
+
+        private void LoadTitleSnack()
+        {
+            FlowLayoutPanel panel = new FlowLayoutPanel()
+            {
+                Height = 35,
+                Width = 550
+            };
+            Label stt = new Label()
+            {
+                Height = 30,
+                Width = 80,
+                Text = "No.",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label title = new Label()
+            {
+                Height = 30,
+                Width = 200,
+                Text = "Name",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label genre = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Category",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label Total = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Total Revenue",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            panel.Controls.Add(stt);
+            panel.Controls.Add(title);
+            panel.Controls.Add(genre);
+            panel.Controls.Add(Total);
+            SnackTitlePanel.Controls.Add(panel);
+        }
+
+        private void LoadTitleCustomer()
+        {
+            FlowLayoutPanel panel = new FlowLayoutPanel()
+            {
+                Height = 35,
+                Width = 850
+            };
+            Label stt = new Label()
+            {
+                Height = 30,
+                Width = 80,
+                Text = "No.",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label title = new Label()
+            {
+                Height = 30,
+                Width = 200,
+                Text = "Name",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label email = new Label()
+            {
+                Height = 30,
+                Width = 200,
+                Text = "Email",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label phone = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Phone Number",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label membership = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Membership",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label Total = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Money Spent",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            panel.Controls.Add(stt);
+            panel.Controls.Add(title);
+            panel.Controls.Add(email);
+            panel.Controls.Add(phone);
+            panel.Controls.Add(membership);
+            panel.Controls.Add(Total);
+            CustomerTitle.Controls.Add(panel);
+        }
+
+        private void LoadTitleStaff()
+        {
+            FlowLayoutPanel panel = new FlowLayoutPanel()
+            {
+                Height = 35,
+                Width = 850
+            };
+            Label stt = new Label()
+            {
+                Height = 30,
+                Width = 80,
+                Text = "No.",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label title = new Label()
+            {
+                Height = 30,
+                Width = 200,
+                Text = "Name",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label email = new Label()
+            {
+                Height = 30,
+                Width = 200,
+                Text = "Email",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label role = new Label()
+            {
+                Height = 30,
+                Width = 200,
+                Text = "Role",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            Label Total = new Label()
+            {
+                Height = 30,
+                Width = 100,
+                Text = "Total Revenue",
+                Font = new Font(Font, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            panel.Controls.Add(stt);
+            panel.Controls.Add(title);
+            panel.Controls.Add(email);
+            panel.Controls.Add(role);
+            panel.Controls.Add(Total);
+            StaffTitle.Controls.Add(panel);
+        }
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -215,6 +783,48 @@ namespace MovieManager
             if (cbbType.SelectedIndex != -1 && cbbValue.SelectedIndex != -1)
             {
                 Overall();
+            }
+        }
+
+        private void cbbValueDetail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbTypeDetail.SelectedIndex != -1 && cbbValueDetail.SelectedIndex != -1)
+            {
+                int year = Convert.ToInt32(cbbValueDetail.Items[cbbValueDetail.SelectedIndex]);
+                int month = 0;
+                if (cbbTypeDetail.Items[cbbTypeDetail.SelectedIndex].ToString() != "None")
+                {
+                    month = Convert.ToInt32(cbbTypeDetail.Items[cbbTypeDetail.SelectedIndex]);
+                }
+                Detail(month, year);
+            }
+        }
+
+        private void cbbTypeRank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbTypeRank.SelectedIndex != -1 && cbbValueRank.SelectedIndex != -1)
+            {
+                int year = Convert.ToInt32(cbbValueRank.Items[cbbValueRank.SelectedIndex]);
+                int month = 0;
+                if (cbbTypeRank.Items[cbbTypeRank.SelectedIndex].ToString() != "None")
+                {
+                    month = Convert.ToInt32(cbbTypeRank.Items[cbbTypeRank.SelectedIndex]);
+                }
+                Ranking(month, year);
+            }    
+        }
+
+        private void cbbValueRank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbTypeRank.SelectedIndex != -1 && cbbValueRank.SelectedIndex != -1)
+            {
+                int year = Convert.ToInt32(cbbValueRank.Items[cbbValueRank.SelectedIndex]);
+                int month = 0;
+                if (cbbTypeRank.Items[cbbTypeRank.SelectedIndex].ToString() != "None")
+                {
+                    month = Convert.ToInt32(cbbTypeRank.Items[cbbTypeRank.SelectedIndex]);
+                }
+                Ranking(month, year);
             }
         }
     }

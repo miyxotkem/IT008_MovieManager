@@ -28,49 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint11 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint12 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint13 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint14 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint15 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint16 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint17 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint18 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint19 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint20 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint21 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint22 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint23 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint24 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint49 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint50 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint51 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint52 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint53 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint54 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint55 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint56 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint57 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint58 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint59 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint60 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint61 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint62 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint63 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint64 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint65 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint66 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint67 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint68 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 70D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint69 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint70 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint71 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint72 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 40D);
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.ContainPanel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -98,23 +98,23 @@
             this.MovieTitlePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MovieContainPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.SnackChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.MovieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbbValueDetail = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbTypeDetail = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2GroupBox7 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.StaffContain = new System.Windows.Forms.FlowLayoutPanel();
+            this.StaffTitle = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2GroupBox8 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.CustomerTitle = new System.Windows.Forms.FlowLayoutPanel();
+            this.CustomerContain = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2GroupBox9 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.TopStaffChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.StaffChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2GroupBox10 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.TopCustomerChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.CustomerChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cbbValueRank = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbbTypeRank = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ManageStaff = new System.Windows.Forms.Label();
@@ -132,17 +132,17 @@
             this.guna2GroupBox6.SuspendLayout();
             this.guna2GroupBox5.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SnackChart)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieChart)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.guna2CustomGradientPanel4.SuspendLayout();
             this.guna2GroupBox7.SuspendLayout();
             this.guna2GroupBox8.SuspendLayout();
             this.guna2GroupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TopStaffChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffChart)).BeginInit();
             this.guna2GroupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TopCustomerChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerChart)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -225,27 +225,27 @@
             // 
             // RelationChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.RelationChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.RelationChart.Legends.Add(legend1);
+            chartArea13.Name = "ChartArea1";
+            this.RelationChart.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.RelationChart.Legends.Add(legend13);
             this.RelationChart.Location = new System.Drawing.Point(422, 81);
             this.RelationChart.Name = "RelationChart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.LegendText = "Movie";
-            series1.Name = "Series1";
-            dataPoint1.LegendText = "Movie";
-            series1.Points.Add(dataPoint1);
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.LegendText = "Snack";
-            series2.Name = "Series2";
-            series2.Points.Add(dataPoint2);
-            this.RelationChart.Series.Add(series1);
-            this.RelationChart.Series.Add(series2);
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series15.Legend = "Legend1";
+            series15.LegendText = "Movie";
+            series15.Name = "Series1";
+            dataPoint49.LegendText = "Movie";
+            series15.Points.Add(dataPoint49);
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series16.Legend = "Legend1";
+            series16.LegendText = "Snack";
+            series16.Name = "Series2";
+            series16.Points.Add(dataPoint50);
+            this.RelationChart.Series.Add(series15);
+            this.RelationChart.Series.Add(series16);
             this.RelationChart.Size = new System.Drawing.Size(975, 572);
             this.RelationChart.TabIndex = 7;
             this.RelationChart.Text = "chart3";
@@ -340,25 +340,25 @@
             // 
             // IncomeChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.IncomeChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.IncomeChart.Legends.Add(legend2);
+            chartArea14.Name = "ChartArea1";
+            this.IncomeChart.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.IncomeChart.Legends.Add(legend14);
             this.IncomeChart.Location = new System.Drawing.Point(26, 50);
             this.IncomeChart.Name = "IncomeChart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            dataPoint3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint3.Label = "#PERCENT";
-            dataPoint3.LegendText = "Movie";
-            dataPoint4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
-            dataPoint4.Label = "#PERCENT";
-            dataPoint4.LegendText = "Snack";
-            series3.Points.Add(dataPoint3);
-            series3.Points.Add(dataPoint4);
-            this.IncomeChart.Series.Add(series3);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series17.Legend = "Legend1";
+            series17.Name = "Series1";
+            dataPoint51.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint51.Label = "#PERCENT";
+            dataPoint51.LegendText = "Movie";
+            dataPoint52.Color = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(208)))));
+            dataPoint52.Label = "#PERCENT";
+            dataPoint52.LegendText = "Snack";
+            series17.Points.Add(dataPoint51);
+            series17.Points.Add(dataPoint52);
+            this.IncomeChart.Series.Add(series17);
             this.IncomeChart.Size = new System.Drawing.Size(298, 275);
             this.IncomeChart.TabIndex = 3;
             this.IncomeChart.Text = "chart2";
@@ -438,16 +438,18 @@
             // 
             // SnackContainPanel
             // 
-            this.SnackContainPanel.Location = new System.Drawing.Point(33, 105);
+            this.SnackContainPanel.AutoScroll = true;
+            this.SnackContainPanel.Location = new System.Drawing.Point(33, 139);
             this.SnackContainPanel.Name = "SnackContainPanel";
-            this.SnackContainPanel.Size = new System.Drawing.Size(587, 231);
+            this.SnackContainPanel.Size = new System.Drawing.Size(587, 197);
             this.SnackContainPanel.TabIndex = 2;
             // 
             // SnackTitlePanel
             // 
+            this.SnackTitlePanel.AutoScroll = true;
             this.SnackTitlePanel.Location = new System.Drawing.Point(33, 58);
             this.SnackTitlePanel.Name = "SnackTitlePanel";
-            this.SnackTitlePanel.Size = new System.Drawing.Size(587, 41);
+            this.SnackTitlePanel.Size = new System.Drawing.Size(587, 75);
             this.SnackTitlePanel.TabIndex = 1;
             // 
             // guna2GroupBox5
@@ -466,22 +468,24 @@
             // 
             // MovieTitlePanel
             // 
+            this.MovieTitlePanel.AutoScroll = true;
             this.MovieTitlePanel.Location = new System.Drawing.Point(33, 58);
             this.MovieTitlePanel.Name = "MovieTitlePanel";
-            this.MovieTitlePanel.Size = new System.Drawing.Size(587, 41);
+            this.MovieTitlePanel.Size = new System.Drawing.Size(587, 75);
             this.MovieTitlePanel.TabIndex = 0;
             // 
             // MovieContainPanel
             // 
-            this.MovieContainPanel.Location = new System.Drawing.Point(33, 105);
+            this.MovieContainPanel.AutoScroll = true;
+            this.MovieContainPanel.Location = new System.Drawing.Point(33, 139);
             this.MovieContainPanel.Name = "MovieContainPanel";
-            this.MovieContainPanel.Size = new System.Drawing.Size(587, 231);
+            this.MovieContainPanel.Size = new System.Drawing.Size(587, 197);
             this.MovieContainPanel.TabIndex = 1;
             // 
             // guna2GroupBox4
             // 
             this.guna2GroupBox4.BorderRadius = 20;
-            this.guna2GroupBox4.Controls.Add(this.chart2);
+            this.guna2GroupBox4.Controls.Add(this.SnackChart);
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox4.Location = new System.Drawing.Point(745, 82);
@@ -491,45 +495,45 @@
             this.guna2GroupBox4.Text = "Top Snack";
             this.guna2GroupBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chart2
+            // SnackChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea3);
-            legend3.Enabled = false;
-            legend3.Name = "Legend1";
-            this.chart2.Legends.Add(legend3);
-            this.chart2.Location = new System.Drawing.Point(33, 50);
-            this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            dataPoint5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint5.Label = "#PERCENT";
-            dataPoint5.LegendText = "Movie";
-            dataPoint6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint6.Label = "#PERCENT";
-            dataPoint6.LegendText = "Snack";
-            dataPoint7.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint7.Label = "#PERCENT";
-            dataPoint7.LabelFormat = "";
-            dataPoint8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint8.Label = "#PERCENT";
-            dataPoint9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint9.Label = "#PERCENT";
-            series4.Points.Add(dataPoint5);
-            series4.Points.Add(dataPoint6);
-            series4.Points.Add(dataPoint7);
-            series4.Points.Add(dataPoint8);
-            series4.Points.Add(dataPoint9);
-            this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(587, 172);
-            this.chart2.TabIndex = 4;
-            this.chart2.Text = "chart2";
+            chartArea15.Name = "ChartArea1";
+            this.SnackChart.ChartAreas.Add(chartArea15);
+            legend15.Enabled = false;
+            legend15.Name = "Legend1";
+            this.SnackChart.Legends.Add(legend15);
+            this.SnackChart.Location = new System.Drawing.Point(33, 50);
+            this.SnackChart.Name = "SnackChart";
+            series18.ChartArea = "ChartArea1";
+            series18.Legend = "Legend1";
+            series18.Name = "Series1";
+            dataPoint53.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint53.Label = "#PERCENT";
+            dataPoint53.LegendText = "Movie";
+            dataPoint54.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint54.Label = "#PERCENT";
+            dataPoint54.LegendText = "Snack";
+            dataPoint55.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint55.Label = "#PERCENT";
+            dataPoint55.LabelFormat = "";
+            dataPoint56.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint56.Label = "#PERCENT";
+            dataPoint57.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint57.Label = "#PERCENT";
+            series18.Points.Add(dataPoint53);
+            series18.Points.Add(dataPoint54);
+            series18.Points.Add(dataPoint55);
+            series18.Points.Add(dataPoint56);
+            series18.Points.Add(dataPoint57);
+            this.SnackChart.Series.Add(series18);
+            this.SnackChart.Size = new System.Drawing.Size(587, 172);
+            this.SnackChart.TabIndex = 4;
+            this.SnackChart.Text = "chart2";
             // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderRadius = 20;
-            this.guna2GroupBox2.Controls.Add(this.chart1);
+            this.guna2GroupBox2.Controls.Add(this.MovieChart);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(32, 82);
@@ -539,40 +543,40 @@
             this.guna2GroupBox2.Text = "Top Movie";
             this.guna2GroupBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // chart1
+            // MovieChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Enabled = false;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(33, 50);
-            this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            dataPoint10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint10.Label = "#PERCENT";
-            dataPoint10.LegendText = "Movie";
-            dataPoint11.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint11.Label = "#PERCENT";
-            dataPoint11.LegendText = "Snack";
-            dataPoint12.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint12.Label = "#PERCENT";
-            dataPoint12.LabelFormat = "";
-            dataPoint13.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint13.Label = "#PERCENT";
-            dataPoint14.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint14.Label = "#PERCENT";
-            series5.Points.Add(dataPoint10);
-            series5.Points.Add(dataPoint11);
-            series5.Points.Add(dataPoint12);
-            series5.Points.Add(dataPoint13);
-            series5.Points.Add(dataPoint14);
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(587, 172);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "chart2";
+            chartArea16.Name = "ChartArea1";
+            this.MovieChart.ChartAreas.Add(chartArea16);
+            legend16.Enabled = false;
+            legend16.Name = "Legend1";
+            this.MovieChart.Legends.Add(legend16);
+            this.MovieChart.Location = new System.Drawing.Point(33, 50);
+            this.MovieChart.Name = "MovieChart";
+            series19.ChartArea = "ChartArea1";
+            series19.Legend = "Legend1";
+            series19.Name = "Series1";
+            dataPoint58.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint58.Label = "#PERCENT";
+            dataPoint58.LegendText = "Movie";
+            dataPoint59.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint59.Label = "#PERCENT";
+            dataPoint59.LegendText = "Snack";
+            dataPoint60.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint60.Label = "#PERCENT";
+            dataPoint60.LabelFormat = "";
+            dataPoint61.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint61.Label = "#PERCENT";
+            dataPoint62.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint62.Label = "#PERCENT";
+            series19.Points.Add(dataPoint58);
+            series19.Points.Add(dataPoint59);
+            series19.Points.Add(dataPoint60);
+            series19.Points.Add(dataPoint61);
+            series19.Points.Add(dataPoint62);
+            this.MovieChart.Series.Add(series19);
+            this.MovieChart.Size = new System.Drawing.Size(587, 172);
+            this.MovieChart.TabIndex = 3;
+            this.MovieChart.Text = "chart2";
             // 
             // cbbValueDetail
             // 
@@ -589,6 +593,7 @@
             this.cbbValueDetail.Name = "cbbValueDetail";
             this.cbbValueDetail.Size = new System.Drawing.Size(161, 36);
             this.cbbValueDetail.TabIndex = 1;
+            this.cbbValueDetail.SelectedIndexChanged += new System.EventHandler(this.cbbValueDetail_SelectedIndexChanged);
             // 
             // cbbTypeDetail
             // 
@@ -635,8 +640,8 @@
             // guna2GroupBox7
             // 
             this.guna2GroupBox7.BorderRadius = 20;
-            this.guna2GroupBox7.Controls.Add(this.flowLayoutPanel1);
-            this.guna2GroupBox7.Controls.Add(this.flowLayoutPanel2);
+            this.guna2GroupBox7.Controls.Add(this.StaffContain);
+            this.guna2GroupBox7.Controls.Add(this.StaffTitle);
             this.guna2GroupBox7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox7.Location = new System.Drawing.Point(745, 340);
@@ -646,25 +651,27 @@
             this.guna2GroupBox7.Text = "Staff Detail";
             this.guna2GroupBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // flowLayoutPanel1
+            // StaffContain
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 105);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(587, 231);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.StaffContain.AutoScroll = true;
+            this.StaffContain.Location = new System.Drawing.Point(33, 139);
+            this.StaffContain.Name = "StaffContain";
+            this.StaffContain.Size = new System.Drawing.Size(587, 197);
+            this.StaffContain.TabIndex = 2;
             // 
-            // flowLayoutPanel2
+            // StaffTitle
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(33, 58);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(587, 41);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.StaffTitle.AutoScroll = true;
+            this.StaffTitle.Location = new System.Drawing.Point(33, 58);
+            this.StaffTitle.Name = "StaffTitle";
+            this.StaffTitle.Size = new System.Drawing.Size(587, 75);
+            this.StaffTitle.TabIndex = 1;
             // 
             // guna2GroupBox8
             // 
             this.guna2GroupBox8.BorderRadius = 20;
-            this.guna2GroupBox8.Controls.Add(this.flowLayoutPanel3);
-            this.guna2GroupBox8.Controls.Add(this.flowLayoutPanel4);
+            this.guna2GroupBox8.Controls.Add(this.CustomerTitle);
+            this.guna2GroupBox8.Controls.Add(this.CustomerContain);
             this.guna2GroupBox8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox8.Location = new System.Drawing.Point(32, 340);
@@ -674,24 +681,26 @@
             this.guna2GroupBox8.Text = "Customer Detail";
             this.guna2GroupBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // flowLayoutPanel3
+            // CustomerTitle
             // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(33, 58);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(587, 41);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.CustomerTitle.AutoScroll = true;
+            this.CustomerTitle.Location = new System.Drawing.Point(33, 58);
+            this.CustomerTitle.Name = "CustomerTitle";
+            this.CustomerTitle.Size = new System.Drawing.Size(587, 75);
+            this.CustomerTitle.TabIndex = 0;
             // 
-            // flowLayoutPanel4
+            // CustomerContain
             // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(33, 105);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(587, 231);
-            this.flowLayoutPanel4.TabIndex = 1;
+            this.CustomerContain.AutoScroll = true;
+            this.CustomerContain.Location = new System.Drawing.Point(33, 139);
+            this.CustomerContain.Name = "CustomerContain";
+            this.CustomerContain.Size = new System.Drawing.Size(587, 197);
+            this.CustomerContain.TabIndex = 1;
             // 
             // guna2GroupBox9
             // 
             this.guna2GroupBox9.BorderRadius = 20;
-            this.guna2GroupBox9.Controls.Add(this.TopStaffChart);
+            this.guna2GroupBox9.Controls.Add(this.StaffChart);
             this.guna2GroupBox9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox9.Location = new System.Drawing.Point(745, 82);
@@ -701,45 +710,45 @@
             this.guna2GroupBox9.Text = "Top Staff";
             this.guna2GroupBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TopStaffChart
+            // StaffChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.TopStaffChart.ChartAreas.Add(chartArea5);
-            legend5.Enabled = false;
-            legend5.Name = "Legend1";
-            this.TopStaffChart.Legends.Add(legend5);
-            this.TopStaffChart.Location = new System.Drawing.Point(33, 50);
-            this.TopStaffChart.Name = "TopStaffChart";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            dataPoint15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint15.Label = "#PERCENT";
-            dataPoint15.LegendText = "Movie";
-            dataPoint16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint16.Label = "#PERCENT";
-            dataPoint16.LegendText = "Snack";
-            dataPoint17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint17.Label = "#PERCENT";
-            dataPoint17.LabelFormat = "";
-            dataPoint18.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint18.Label = "#PERCENT";
-            dataPoint19.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint19.Label = "#PERCENT";
-            series6.Points.Add(dataPoint15);
-            series6.Points.Add(dataPoint16);
-            series6.Points.Add(dataPoint17);
-            series6.Points.Add(dataPoint18);
-            series6.Points.Add(dataPoint19);
-            this.TopStaffChart.Series.Add(series6);
-            this.TopStaffChart.Size = new System.Drawing.Size(587, 172);
-            this.TopStaffChart.TabIndex = 4;
-            this.TopStaffChart.Text = "chart3";
+            chartArea17.Name = "ChartArea1";
+            this.StaffChart.ChartAreas.Add(chartArea17);
+            legend17.Enabled = false;
+            legend17.Name = "Legend1";
+            this.StaffChart.Legends.Add(legend17);
+            this.StaffChart.Location = new System.Drawing.Point(33, 50);
+            this.StaffChart.Name = "StaffChart";
+            series20.ChartArea = "ChartArea1";
+            series20.Legend = "Legend1";
+            series20.Name = "Series1";
+            dataPoint63.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint63.Label = "#PERCENT";
+            dataPoint63.LegendText = "Movie";
+            dataPoint64.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint64.Label = "#PERCENT";
+            dataPoint64.LegendText = "Snack";
+            dataPoint65.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint65.Label = "#PERCENT";
+            dataPoint65.LabelFormat = "";
+            dataPoint66.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint66.Label = "#PERCENT";
+            dataPoint67.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint67.Label = "#PERCENT";
+            series20.Points.Add(dataPoint63);
+            series20.Points.Add(dataPoint64);
+            series20.Points.Add(dataPoint65);
+            series20.Points.Add(dataPoint66);
+            series20.Points.Add(dataPoint67);
+            this.StaffChart.Series.Add(series20);
+            this.StaffChart.Size = new System.Drawing.Size(587, 172);
+            this.StaffChart.TabIndex = 4;
+            this.StaffChart.Text = "chart3";
             // 
             // guna2GroupBox10
             // 
             this.guna2GroupBox10.BorderRadius = 20;
-            this.guna2GroupBox10.Controls.Add(this.TopCustomerChart);
+            this.guna2GroupBox10.Controls.Add(this.CustomerChart);
             this.guna2GroupBox10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox10.Location = new System.Drawing.Point(32, 82);
@@ -749,40 +758,40 @@
             this.guna2GroupBox10.Text = "Top Customer";
             this.guna2GroupBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TopCustomerChart
+            // CustomerChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.TopCustomerChart.ChartAreas.Add(chartArea6);
-            legend6.Enabled = false;
-            legend6.Name = "Legend1";
-            this.TopCustomerChart.Legends.Add(legend6);
-            this.TopCustomerChart.Location = new System.Drawing.Point(33, 50);
-            this.TopCustomerChart.Name = "TopCustomerChart";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            dataPoint20.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint20.Label = "#PERCENT";
-            dataPoint20.LegendText = "Movie";
-            dataPoint21.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint21.Label = "#PERCENT";
-            dataPoint21.LegendText = "Snack";
-            dataPoint22.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint22.Label = "#PERCENT";
-            dataPoint22.LabelFormat = "";
-            dataPoint23.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint23.Label = "#PERCENT";
-            dataPoint24.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            dataPoint24.Label = "#PERCENT";
-            series7.Points.Add(dataPoint20);
-            series7.Points.Add(dataPoint21);
-            series7.Points.Add(dataPoint22);
-            series7.Points.Add(dataPoint23);
-            series7.Points.Add(dataPoint24);
-            this.TopCustomerChart.Series.Add(series7);
-            this.TopCustomerChart.Size = new System.Drawing.Size(587, 172);
-            this.TopCustomerChart.TabIndex = 3;
-            this.TopCustomerChart.Text = "chart2";
+            chartArea18.Name = "ChartArea1";
+            this.CustomerChart.ChartAreas.Add(chartArea18);
+            legend18.Enabled = false;
+            legend18.Name = "Legend1";
+            this.CustomerChart.Legends.Add(legend18);
+            this.CustomerChart.Location = new System.Drawing.Point(33, 50);
+            this.CustomerChart.Name = "CustomerChart";
+            series21.ChartArea = "ChartArea1";
+            series21.Legend = "Legend1";
+            series21.Name = "Series1";
+            dataPoint68.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint68.Label = "#PERCENT";
+            dataPoint68.LegendText = "Movie";
+            dataPoint69.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint69.Label = "#PERCENT";
+            dataPoint69.LegendText = "Snack";
+            dataPoint70.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint70.Label = "#PERCENT";
+            dataPoint70.LabelFormat = "";
+            dataPoint71.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint71.Label = "#PERCENT";
+            dataPoint72.Color = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            dataPoint72.Label = "#PERCENT";
+            series21.Points.Add(dataPoint68);
+            series21.Points.Add(dataPoint69);
+            series21.Points.Add(dataPoint70);
+            series21.Points.Add(dataPoint71);
+            series21.Points.Add(dataPoint72);
+            this.CustomerChart.Series.Add(series21);
+            this.CustomerChart.Size = new System.Drawing.Size(587, 172);
+            this.CustomerChart.TabIndex = 3;
+            this.CustomerChart.Text = "chart2";
             // 
             // cbbValueRank
             // 
@@ -799,6 +808,7 @@
             this.cbbValueRank.Name = "cbbValueRank";
             this.cbbValueRank.Size = new System.Drawing.Size(161, 36);
             this.cbbValueRank.TabIndex = 1;
+            this.cbbValueRank.SelectedIndexChanged += new System.EventHandler(this.cbbValueRank_SelectedIndexChanged);
             // 
             // cbbTypeRank
             // 
@@ -815,6 +825,7 @@
             this.cbbTypeRank.Name = "cbbTypeRank";
             this.cbbTypeRank.Size = new System.Drawing.Size(161, 36);
             this.cbbTypeRank.TabIndex = 0;
+            this.cbbTypeRank.SelectedIndexChanged += new System.EventHandler(this.cbbTypeRank_SelectedIndexChanged);
             // 
             // ManageStaff
             // 
@@ -853,17 +864,17 @@
             this.guna2GroupBox6.ResumeLayout(false);
             this.guna2GroupBox5.ResumeLayout(false);
             this.guna2GroupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SnackChart)).EndInit();
             this.guna2GroupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MovieChart)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.guna2CustomGradientPanel4.ResumeLayout(false);
             this.guna2GroupBox7.ResumeLayout(false);
             this.guna2GroupBox8.ResumeLayout(false);
             this.guna2GroupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TopStaffChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StaffChart)).EndInit();
             this.guna2GroupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TopCustomerChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -893,7 +904,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart IncomeChart;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart MovieChart;
         private Guna.UI2.WinForms.Guna2ComboBox cbbValueDetail;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTypeDetail;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox6;
@@ -903,18 +914,18 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private System.Windows.Forms.FlowLayoutPanel SnackContainPanel;
         private System.Windows.Forms.FlowLayoutPanel SnackTitlePanel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart SnackChart;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox7;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel StaffContain;
+        private System.Windows.Forms.FlowLayoutPanel StaffTitle;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox8;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel CustomerTitle;
+        private System.Windows.Forms.FlowLayoutPanel CustomerContain;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox9;
-        private System.Windows.Forms.DataVisualization.Charting.Chart TopStaffChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart StaffChart;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart TopCustomerChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CustomerChart;
         private Guna.UI2.WinForms.Guna2ComboBox cbbValueRank;
         private Guna.UI2.WinForms.Guna2ComboBox cbbTypeRank;
     }

@@ -862,4 +862,17 @@ update BillInfo set Quantity = Quantity + @quan where idBill = @id and Category 
 
 set dateformat dmy
 
-select * from Bill wher day(
+select top 5 info.idDetail, sum(bi.Money_spent_on_movie) as Total 
+from BillInfo info join Bill bi on info.idBill = bi.idBill 
+where info.Category = 'Ticket' and bi.bill_status = 1 and year(bi.purchase_date) = @year 
+group by info.idDetail 
+
+select top 5 bi.idCustomer, sum (bi.Money_spent_on_movie + bi.Money_spent_on_snack) as Total 
+from Bill bi join Customer cus on cus.id = bi.idCustomer
+where bi.bill_status = 1
+group by bi.idCustomer
+
+select top 5 bi.idStaff, sum (bi.Money_spent_on_movie + bi.Money_spent_on_snack) as Total 
+from Bill bi join Staff st on st.id = bi.idStaff
+where bi.bill_status = 1
+group by bi.idStaff
