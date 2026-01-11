@@ -243,6 +243,7 @@ namespace MovieManager
                 //MovieDisplay.BringToFront();
                 //MovieDisplay.Reload();
                 movieDisplay.BringToFront();
+                movieDisplay.Reload();
                 if(sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
@@ -253,8 +254,8 @@ namespace MovieManager
             if (SnackDisplayButtonCinema.Checked)
             {
                 //SnackDisplay.BringToFront();
-                //SnackDisplay.Reload();
                 snackDisplay.BringToFront();
+                snackDisplay.Reload();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }
@@ -321,6 +322,7 @@ namespace MovieManager
             {
                 //ShowTimeManage.BringToFront();
                 showTimeManage.BringToFront();
+                showTimeManage.Reload();
                 if (sidebarzoom == true)
                     SideBarZoomButtonCinema.PerformClick();
             }

@@ -77,7 +77,7 @@
             this.NameTextBox.PlaceholderText = "";
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.Size = new System.Drawing.Size(460, 60);
-            this.NameTextBox.TabIndex = 2;
+            this.NameTextBox.TabIndex = 0;
             // 
             // PriceLabel
             // 
@@ -106,7 +106,7 @@
             this.PriceTextBox.PlaceholderText = "";
             this.PriceTextBox.SelectedText = "";
             this.PriceTextBox.Size = new System.Drawing.Size(369, 60);
-            this.PriceTextBox.TabIndex = 2;
+            this.PriceTextBox.TabIndex = 1;
             this.PriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceTextBox_KeyPress);
             // 
             // StockLabel
@@ -190,7 +190,7 @@
             this.CategoryComboBox.Location = new System.Drawing.Point(700, 490);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(459, 36);
-            this.CategoryComboBox.TabIndex = 6;
+            this.CategoryComboBox.TabIndex = 4;
             // 
             // SnackPic
             // 
@@ -221,7 +221,7 @@
             this.CancelButton.Location = new System.Drawing.Point(1267, 685);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(193, 76);
-            this.CancelButton.TabIndex = 3;
+            this.CancelButton.TabIndex = 7;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -265,7 +265,7 @@
             this.AddPic.Location = new System.Drawing.Point(268, 571);
             this.AddPic.Name = "AddPic";
             this.AddPic.Size = new System.Drawing.Size(168, 60);
-            this.AddPic.TabIndex = 4;
+            this.AddPic.TabIndex = 5;
             this.AddPic.Text = "Upload";
             this.AddPic.Click += new System.EventHandler(this.AddPic_Click);
             // 
@@ -306,7 +306,7 @@
             this.ApplyButton.Location = new System.Drawing.Point(1045, 685);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(193, 76);
-            this.ApplyButton.TabIndex = 4;
+            this.ApplyButton.TabIndex = 6;
             this.ApplyButton.Text = "Apply";
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
@@ -328,7 +328,7 @@
             this.ImportTextBox.PlaceholderText = "";
             this.ImportTextBox.SelectedText = "";
             this.ImportTextBox.Size = new System.Drawing.Size(160, 60);
-            this.ImportTextBox.TabIndex = 2;
+            this.ImportTextBox.TabIndex = 3;
             this.ImportTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ImportTextBox_KeyPress);
             // 
             // ImportLabel

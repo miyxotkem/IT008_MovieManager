@@ -94,7 +94,7 @@
             this.RemoveImageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RemoveImageButton.Name = "RemoveImageButton";
             this.RemoveImageButton.Size = new System.Drawing.Size(180, 60);
-            this.RemoveImageButton.TabIndex = 9;
+            this.RemoveImageButton.TabIndex = 8;
             this.RemoveImageButton.Text = "Remove";
             this.RemoveImageButton.Click += new System.EventHandler(this.RemoveImageButton_Click);
             // 
@@ -116,7 +116,7 @@
             this.UploadImageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UploadImageButton.Name = "UploadImageButton";
             this.UploadImageButton.Size = new System.Drawing.Size(180, 60);
-            this.UploadImageButton.TabIndex = 9;
+            this.UploadImageButton.TabIndex = 5;
             this.UploadImageButton.Text = "Upload";
             this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
             // 
@@ -160,7 +160,7 @@
             this.ApplyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(194, 76);
-            this.ApplyButton.TabIndex = 8;
+            this.ApplyButton.TabIndex = 6;
             this.ApplyButton.Text = "Apply";
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
@@ -263,7 +263,7 @@
             this.MoneySpentTextBox.PlaceholderText = "";
             this.MoneySpentTextBox.SelectedText = "";
             this.MoneySpentTextBox.Size = new System.Drawing.Size(220, 60);
-            this.MoneySpentTextBox.TabIndex = 4;
+            this.MoneySpentTextBox.TabIndex = 3;
             // 
             // PhoneNumberTextBox
             // 
@@ -284,7 +284,7 @@
             this.PhoneNumberTextBox.PlaceholderText = "";
             this.PhoneNumberTextBox.SelectedText = "";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(460, 60);
-            this.PhoneNumberTextBox.TabIndex = 4;
+            this.PhoneNumberTextBox.TabIndex = 2;
             this.PhoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumberTextBox_KeyPress);
             // 
             // EmailTextBox
@@ -306,7 +306,7 @@
             this.EmailTextBox.PlaceholderText = "";
             this.EmailTextBox.SelectedText = "";
             this.EmailTextBox.Size = new System.Drawing.Size(460, 60);
-            this.EmailTextBox.TabIndex = 4;
+            this.EmailTextBox.TabIndex = 1;
             // 
             // NameTextBox
             // 
@@ -327,7 +327,7 @@
             this.NameTextBox.PlaceholderText = "";
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.Size = new System.Drawing.Size(460, 60);
-            this.NameTextBox.TabIndex = 4;
+            this.NameTextBox.TabIndex = 0;
             // 
             // UploadFileDialog
             // 

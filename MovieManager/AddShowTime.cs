@@ -21,6 +21,7 @@ using System.Linq;
             public AddShowTime()
             {
                 InitializeComponent();
+                StartTimeDTP.Value = DateTime.Now;
                 foreach (Movie movie in movies)
                     MovieCB.Items.Add(movie.Title);
                 FromDTP.Value = DateTime.Now;

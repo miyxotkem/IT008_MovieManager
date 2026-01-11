@@ -89,7 +89,7 @@
             this.PromoteAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PromoteAdmin.Name = "PromoteAdmin";
             this.PromoteAdmin.Size = new System.Drawing.Size(180, 60);
-            this.PromoteAdmin.TabIndex = 9;
+            this.PromoteAdmin.TabIndex = 4;
             this.PromoteAdmin.Click += new System.EventHandler(this.PromoteAdmin_Click);
             // 
             // DeactiveButton
@@ -112,7 +112,7 @@
             this.DeactiveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeactiveButton.Name = "DeactiveButton";
             this.DeactiveButton.Size = new System.Drawing.Size(180, 60);
-            this.DeactiveButton.TabIndex = 9;
+            this.DeactiveButton.TabIndex = 7;
             this.DeactiveButton.Click += new System.EventHandler(this.DeactiveButton_Click);
             // 
             // CancelButton
@@ -134,7 +134,7 @@
             this.CancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(194, 76);
-            this.CancelButton.TabIndex = 7;
+            this.CancelButton.TabIndex = 6;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -155,7 +155,7 @@
             this.ApplyButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(194, 76);
-            this.ApplyButton.TabIndex = 8;
+            this.ApplyButton.TabIndex = 5;
             this.ApplyButton.Text = "Apply";
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
@@ -186,7 +186,7 @@
             this.ShiftComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShiftComboBox.Name = "ShiftComboBox";
             this.ShiftComboBox.Size = new System.Drawing.Size(460, 36);
-            this.ShiftComboBox.TabIndex = 5;
+            this.ShiftComboBox.TabIndex = 3;
             // 
             // ShiftLabel
             // 
@@ -243,7 +243,7 @@
             this.RoleTextBox.PlaceholderText = "";
             this.RoleTextBox.SelectedText = "";
             this.RoleTextBox.Size = new System.Drawing.Size(460, 60);
-            this.RoleTextBox.TabIndex = 4;
+            this.RoleTextBox.TabIndex = 2;
             // 
             // EmailTextBox
             // 
@@ -265,7 +265,7 @@
             this.EmailTextBox.PlaceholderText = "";
             this.EmailTextBox.SelectedText = "";
             this.EmailTextBox.Size = new System.Drawing.Size(460, 60);
-            this.EmailTextBox.TabIndex = 4;
+            this.EmailTextBox.TabIndex = 1;
             // 
             // NameTextBox
             // 
@@ -287,7 +287,7 @@
             this.NameTextBox.PlaceholderText = "";
             this.NameTextBox.SelectedText = "";
             this.NameTextBox.Size = new System.Drawing.Size(460, 60);
-            this.NameTextBox.TabIndex = 4;
+            this.NameTextBox.TabIndex = 0;
             // 
             // Edit_StaffManage
             // 

@@ -76,7 +76,7 @@
             this.ApplyButton.Location = new System.Drawing.Point(1335, 891);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(193, 76);
-            this.ApplyButton.TabIndex = 0;
+            this.ApplyButton.TabIndex = 12;
             this.ApplyButton.Text = "Apply";
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
@@ -98,7 +98,7 @@
             this.CancelButton.Location = new System.Drawing.Point(1557, 891);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(193, 76);
-            this.CancelButton.TabIndex = 0;
+            this.CancelButton.TabIndex = 13;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -129,7 +129,7 @@
             this.TitleTextBox.PlaceholderText = "";
             this.TitleTextBox.SelectedText = "";
             this.TitleTextBox.Size = new System.Drawing.Size(460, 60);
-            this.TitleTextBox.TabIndex = 2;
+            this.TitleTextBox.TabIndex = 0;
             // 
             // ReleaseDateTimePicker
             // 
@@ -174,11 +174,12 @@
             "Mystery",
             "Western",
             "Crime",
-            "Biographical"});
+            "Biographical",
+            "Family"});
             this.GenreComboBox.Location = new System.Drawing.Point(155, 200);
             this.GenreComboBox.Name = "GenreComboBox";
             this.GenreComboBox.Size = new System.Drawing.Size(460, 36);
-            this.GenreComboBox.TabIndex = 4;
+            this.GenreComboBox.TabIndex = 1;
             // 
             // RatedComboBox
             // 
@@ -201,7 +202,7 @@
             this.RatedComboBox.Location = new System.Drawing.Point(155, 300);
             this.RatedComboBox.Name = "RatedComboBox";
             this.RatedComboBox.Size = new System.Drawing.Size(460, 36);
-            this.RatedComboBox.TabIndex = 4;
+            this.RatedComboBox.TabIndex = 2;
             // 
             // DirectorTextBox
             // 
@@ -221,7 +222,7 @@
             this.DirectorTextBox.PlaceholderText = "";
             this.DirectorTextBox.SelectedText = "";
             this.DirectorTextBox.Size = new System.Drawing.Size(460, 60);
-            this.DirectorTextBox.TabIndex = 2;
+            this.DirectorTextBox.TabIndex = 4;
             // 
             // LanguageTextBox
             // 
@@ -241,7 +242,7 @@
             this.LanguageTextBox.PlaceholderText = "";
             this.LanguageTextBox.SelectedText = "";
             this.LanguageTextBox.Size = new System.Drawing.Size(460, 60);
-            this.LanguageTextBox.TabIndex = 2;
+            this.LanguageTextBox.TabIndex = 5;
             // 
             // FormatComboBox
             // 
@@ -263,7 +264,7 @@
             this.FormatComboBox.Location = new System.Drawing.Point(770, 100);
             this.FormatComboBox.Name = "FormatComboBox";
             this.FormatComboBox.Size = new System.Drawing.Size(460, 36);
-            this.FormatComboBox.TabIndex = 4;
+            this.FormatComboBox.TabIndex = 7;
             // 
             // TrailerTextBox
             // 
@@ -283,7 +284,7 @@
             this.TrailerTextBox.PlaceholderText = "";
             this.TrailerTextBox.SelectedText = "";
             this.TrailerTextBox.Size = new System.Drawing.Size(460, 60);
-            this.TrailerTextBox.TabIndex = 2;
+            this.TrailerTextBox.TabIndex = 8;
             // 
             // ActorTextBox
             // 
@@ -304,7 +305,7 @@
             this.ActorTextBox.PlaceholderText = "";
             this.ActorTextBox.SelectedText = "";
             this.ActorTextBox.Size = new System.Drawing.Size(460, 160);
-            this.ActorTextBox.TabIndex = 2;
+            this.ActorTextBox.TabIndex = 9;
             // 
             // BriefTextBox
             // 
@@ -325,7 +326,7 @@
             this.BriefTextBox.PlaceholderText = "";
             this.BriefTextBox.SelectedText = "";
             this.BriefTextBox.Size = new System.Drawing.Size(460, 257);
-            this.BriefTextBox.TabIndex = 2;
+            this.BriefTextBox.TabIndex = 10;
             // 
             // GenreLabel
             // 
@@ -399,7 +400,7 @@
             this.DurationTextBox.PlaceholderText = "";
             this.DurationTextBox.SelectedText = "";
             this.DurationTextBox.Size = new System.Drawing.Size(460, 60);
-            this.DurationTextBox.TabIndex = 2;
+            this.DurationTextBox.TabIndex = 6;
             this.DurationTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DurationTextBox_KeyPress);
             // 
             // FormatLabel
@@ -457,7 +458,7 @@
             this.UploadButton.Location = new System.Drawing.Point(1385, 480);
             this.UploadButton.Name = "UploadButton";
             this.UploadButton.Size = new System.Drawing.Size(120, 60);
-            this.UploadButton.TabIndex = 5;
+            this.UploadButton.TabIndex = 11;
             this.UploadButton.Text = "Upload";
             this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
             // 
@@ -498,7 +499,7 @@
             this.RemoveButton.Location = new System.Drawing.Point(1525, 480);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(120, 60);
-            this.RemoveButton.TabIndex = 5;
+            this.RemoveButton.TabIndex = 14;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 

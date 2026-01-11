@@ -163,6 +163,8 @@ namespace MovieManager
         private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ofd.RestoreDirectory = true;
             ofd.Filter = "Excel Files|*.xlsx;*.xls";
             if (ofd.ShowDialog() == DialogResult.OK)
             {

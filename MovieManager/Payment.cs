@@ -351,6 +351,7 @@ namespace MovieManager
             {
                 if (BillDAO.Instance.CheckValidCustomer(bill.IdBill))
                 {
+                    bill = BillDAO.Instance.GetUncheckedBill();
                     Customer cus = CustomerDAO.Instance.GetCustomer(bill.IdCustomer);
                     NameLabel.Text = "Customer's name: " + cus.Name;
                 }

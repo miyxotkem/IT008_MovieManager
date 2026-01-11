@@ -40,7 +40,7 @@ namespace MovieManager
             {
                 // Thông báo không có 
                 MessageBox.Show("No valid customer.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CustomerDAO.Instance.CurrentCustomer = new Customer();
+
             }
             else
             {

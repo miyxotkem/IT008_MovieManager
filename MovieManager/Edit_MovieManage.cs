@@ -24,6 +24,7 @@ namespace MovieManager
         {
             InitializeComponent();
             ApplyButton.Text = "Add";
+            ReleaseDateTimePicker.Value = DateTime.Now;
             ApplyButton.Click -= ApplyButton_Click;
             ApplyButton.Click += Add_Click;
         }

@@ -169,5 +169,10 @@ namespace MovieManager
             movies = MovieDAO.Instance.LoadMovieList();
             LoadShowTime(movies);
         }
+
+        public void Reload()
+        {
+            LoadShowTime(movies);
+        }
     }
 }
