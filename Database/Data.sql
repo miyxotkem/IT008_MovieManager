@@ -781,6 +781,41 @@ create proc USP_GetVoucherList
 AS SELECT * FROM dbo.Voucher
 GO
 
+CREATE PROCEDURE UpdateMembershipRank
+AS
+BEGIN
+    UPDATE Customer
+    SET membership = CASE 
+        WHEN money_spent >= 5000000 THEN 5
+        WHEN money_spent >= 4000000 THEN 4
+        WHEN money_spent >= 3000000 THEN 3
+        WHEN money_spent >= 2000000 THEN 2
+        WHEN money_spent >= 1000000 THEN 1
+        ELSE 0 
+    END;
+END;
+GO
+
+
+CREATE PROCEDURE UpdateSingleCustomerRank
+    @CustomerId INT
+AS
+BEGIN
+    UPDATE Customer
+    SET membership = CASE 
+        WHEN money_spent >= 5000000 THEN 5
+        WHEN money_spent >= 4000000 THEN 4
+        WHEN money_spent >= 3000000 THEN 3
+        WHEN money_spent >= 2000000 THEN 2
+        WHEN money_spent >= 1000000 THEN 1
+        ELSE 0
+    END
+    WHERE id = @CustomerId; 
+END;
+
+
+
+
 -- TEST - DONT EXEC THESE
 select *from Account
 select * from Staff

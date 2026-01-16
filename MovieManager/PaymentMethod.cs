@@ -82,6 +82,7 @@ namespace MovieManager
                 if (BillDAO.Instance.CheckValidCustomer(bill.IdBill))
                 {
                     CustomerDAO.Instance.IncreaseCustomerSpend(bill.IdCustomer, Total);
+                    CustomerDAO.Instance.UpdateSingleCustomerMembership(bill.IdCustomer);
                 }
                 BillDAO.Instance.UpdateBillMoney(bill.IdBill, Total_on_movie, Total_on_snack);
                 this.Dispose();

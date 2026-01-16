@@ -69,5 +69,17 @@ namespace MovieManager.DAO
             string querry = "update Customer set money_spent = money_spent + @amount where id = @id ";
             int data = DataProvider.Instance.ExecuteNonQuery(querry, new object[] {amount,  idCustomer});
         }
+
+        public void UpdateAllCustomerMemebership()
+        {
+            string query = "Exec UpdateMembershipRank";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public void UpdateSingleCustomerMembership(int idCus)
+        {
+            string query = "Exec UpdateSingleCustomerRank @id ";
+            DataProvider.Instance.ExecuteQuery(query, new object[] { idCus });  
+        }
     }
 }
