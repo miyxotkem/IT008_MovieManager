@@ -88,7 +88,7 @@
             this.GraphDisplayButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.GraphDisplayButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.GraphDisplayButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.GraphDisplayButton.Location = new System.Drawing.Point(0, 410);
+            this.GraphDisplayButton.Location = new System.Drawing.Point(0, 970);
             this.GraphDisplayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GraphDisplayButton.Name = "GraphDisplayButton";
             this.GraphDisplayButton.Size = new System.Drawing.Size(100, 80);
@@ -146,7 +146,7 @@
             this.AccountDisplayButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.AccountDisplayButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.AccountDisplayButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.AccountDisplayButton.Location = new System.Drawing.Point(0, 960);
+            this.AccountDisplayButton.Location = new System.Drawing.Point(0, 410);
             this.AccountDisplayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AccountDisplayButton.Name = "AccountDisplayButton";
             this.AccountDisplayButton.Size = new System.Drawing.Size(100, 80);
@@ -175,7 +175,7 @@
             this.VoucherManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.VoucherManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.VoucherManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.VoucherManageButton.Location = new System.Drawing.Point(0, 880);
+            this.VoucherManageButton.Location = new System.Drawing.Point(0, 890);
             this.VoucherManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VoucherManageButton.Name = "VoucherManageButton";
             this.VoucherManageButton.Size = new System.Drawing.Size(100, 80);
@@ -203,7 +203,7 @@
             this.ShowTimeManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ShowTimeManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.ShowTimeManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.ShowTimeManageButton.Location = new System.Drawing.Point(0, 800);
+            this.ShowTimeManageButton.Location = new System.Drawing.Point(0, 570);
             this.ShowTimeManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowTimeManageButton.Name = "ShowTimeManageButton";
             this.ShowTimeManageButton.Size = new System.Drawing.Size(100, 80);
@@ -231,7 +231,7 @@
             this.CustomerManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CustomerManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.CustomerManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.CustomerManageButton.Location = new System.Drawing.Point(0, 720);
+            this.CustomerManageButton.Location = new System.Drawing.Point(0, 810);
             this.CustomerManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CustomerManageButton.Name = "CustomerManageButton";
             this.CustomerManageButton.Size = new System.Drawing.Size(100, 80);
@@ -259,7 +259,7 @@
             this.StaffManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.StaffManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.StaffManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.StaffManageButton.Location = new System.Drawing.Point(0, 640);
+            this.StaffManageButton.Location = new System.Drawing.Point(0, 730);
             this.StaffManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StaffManageButton.Name = "StaffManageButton";
             this.StaffManageButton.Size = new System.Drawing.Size(100, 80);
@@ -287,7 +287,7 @@
             this.SnackManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SnackManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.SnackManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.SnackManageButton.Location = new System.Drawing.Point(0, 560);
+            this.SnackManageButton.Location = new System.Drawing.Point(0, 650);
             this.SnackManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SnackManageButton.Name = "SnackManageButton";
             this.SnackManageButton.Size = new System.Drawing.Size(100, 80);
@@ -315,7 +315,7 @@
             this.MovieManageButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MovieManageButton.ImageOffset = new System.Drawing.Point(10, 0);
             this.MovieManageButton.ImageSize = new System.Drawing.Size(25, 25);
-            this.MovieManageButton.Location = new System.Drawing.Point(0, 480);
+            this.MovieManageButton.Location = new System.Drawing.Point(0, 490);
             this.MovieManageButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MovieManageButton.Name = "MovieManageButton";
             this.MovieManageButton.Size = new System.Drawing.Size(100, 80);

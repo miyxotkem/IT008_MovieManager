@@ -23,6 +23,36 @@ namespace MovieManager
         }
         void HistoryLoad()
         {
+            Panel pnl = new Panel()
+            {
+                Width = 800,
+                Height = 30
+            };
+            Label n = new Label()
+            {
+                Location = new Point(50, 10),
+                Width = 200,
+                Text = "Name",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label s = new Label()
+            {
+                Location = new Point(250, 10),
+                Width = 150,
+                Text = "Stock",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            Label d = new Label()
+            {
+                Location = new Point(400, 10),
+                Width = 150,
+                Text = "Date",
+                Font = new Font(Font, FontStyle.Bold)
+            };
+            pnl.Controls.Add(n);
+            pnl.Controls.Add(s);
+            pnl.Controls.Add(d);
+            panel3.Controls.Add(pnl);
             foreach (History history in histories.AsEnumerable().Reverse())
             {
                 Panel panel = new Panel()
@@ -38,7 +68,7 @@ namespace MovieManager
                 Label name = new Label()
                 {
                     AutoSize = false,
-                    Width = 300,
+                    Width = 200,
                     Location = new Point(50, 0),
                     Text = text,
                     TextAlign = ContentAlignment.MiddleLeft
@@ -46,17 +76,17 @@ namespace MovieManager
                 Label quantity = new Label()
                 {
                     AutoSize = false,
-                    Width = 100,
-                    Location = new Point(350, 0),
+                    Width = 150,
+                    Location = new Point(250, 0),
                     Text = history.Quantity.ToString(),
                     TextAlign = ContentAlignment.MiddleLeft
                 };
                 Label date = new Label()
                 {
                     AutoSize = false,
-                    Width = 100,
-                    Location = new Point(450, 0),
-                    Text = history.Date.ToString(),
+                    Width = 150,
+                    Location = new Point(400, 0),
+                    Text = history.Date.ToString("dd/MM/yyyy"),
                     TextAlign = ContentAlignment.MiddleLeft
                 };
                 panel.Controls.Add(name);

@@ -375,7 +375,7 @@
             // cbbValue
             // 
             this.cbbValue.BackColor = System.Drawing.Color.Transparent;
-            this.cbbValue.BorderRadius = 20;
+            this.cbbValue.BorderRadius = 10;
             this.cbbValue.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbValue.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -393,7 +393,7 @@
             // cbbType
             // 
             this.cbbType.BackColor = System.Drawing.Color.Transparent;
-            this.cbbType.BorderRadius = 20;
+            this.cbbType.BorderRadius = 10;
             this.cbbType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -442,7 +442,7 @@
             this.guna2GroupBox6.Controls.Add(this.SnackTitlePanel);
             this.guna2GroupBox6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox6.Location = new System.Drawing.Point(838, 425);
+            this.guna2GroupBox6.Location = new System.Drawing.Point(860, 425);
             this.guna2GroupBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox6.Name = "guna2GroupBox6";
             this.guna2GroupBox6.Size = new System.Drawing.Size(734, 436);
@@ -507,7 +507,7 @@
             this.guna2GroupBox4.Controls.Add(this.SnackChart);
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox4.Location = new System.Drawing.Point(838, 102);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(860, 102);
             this.guna2GroupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.Size = new System.Drawing.Size(734, 304);
@@ -604,7 +604,7 @@
             // cbbValueDetail
             // 
             this.cbbValueDetail.BackColor = System.Drawing.Color.Transparent;
-            this.cbbValueDetail.BorderRadius = 20;
+            this.cbbValueDetail.BorderRadius = 10;
             this.cbbValueDetail.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbValueDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbValueDetail.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -622,7 +622,7 @@
             // cbbTypeDetail
             // 
             this.cbbTypeDetail.BackColor = System.Drawing.Color.Transparent;
-            this.cbbTypeDetail.BorderRadius = 20;
+            this.cbbTypeDetail.BorderRadius = 10;
             this.cbbTypeDetail.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTypeDetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTypeDetail.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -671,7 +671,7 @@
             this.guna2GroupBox7.Controls.Add(this.StaffTitle);
             this.guna2GroupBox7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox7.Location = new System.Drawing.Point(838, 425);
+            this.guna2GroupBox7.Location = new System.Drawing.Point(860, 425);
             this.guna2GroupBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox7.Name = "guna2GroupBox7";
             this.guna2GroupBox7.Size = new System.Drawing.Size(734, 436);
@@ -736,7 +736,7 @@
             this.guna2GroupBox9.Controls.Add(this.StaffChart);
             this.guna2GroupBox9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox9.Location = new System.Drawing.Point(838, 102);
+            this.guna2GroupBox9.Location = new System.Drawing.Point(860, 102);
             this.guna2GroupBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GroupBox9.Name = "guna2GroupBox9";
             this.guna2GroupBox9.Size = new System.Drawing.Size(734, 304);
@@ -833,7 +833,7 @@
             // cbbValueRank
             // 
             this.cbbValueRank.BackColor = System.Drawing.Color.Transparent;
-            this.cbbValueRank.BorderRadius = 20;
+            this.cbbValueRank.BorderRadius = 10;
             this.cbbValueRank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbValueRank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbValueRank.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -851,7 +851,7 @@
             // cbbTypeRank
             // 
             this.cbbTypeRank.BackColor = System.Drawing.Color.Transparent;
-            this.cbbTypeRank.BorderRadius = 20;
+            this.cbbTypeRank.BorderRadius = 10;
             this.cbbTypeRank.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbbTypeRank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTypeRank.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));

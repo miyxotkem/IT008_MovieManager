@@ -472,21 +472,6 @@ namespace MovieManager
 
         private void ReloadButton_Click(object sender, EventArgs e)
         {
-            if (cbbType.SelectedIndex == -1 || cbbValue.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please choose appropriate time to summarize.","Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (cbbType.SelectedIndex != -1)
-                {
-                    cbbType.Focus();
-                }
-                else
-                {
-                    cbbValue.Focus();
-                } 
-                    
-                return;
-            }   
-            
 
         }
 
@@ -826,6 +811,16 @@ namespace MovieManager
                 }
                 Ranking(month, year);
             }
+        }
+        
+        public void Reload()
+        {
+            cbbTypeDetail_SelectedIndexChanged(this, EventArgs.Empty);
+            cbbTypeRank_SelectedIndexChanged(this, EventArgs.Empty);
+            cbbType_SelectedIndexChanged(this, EventArgs.Empty);
+            cbbValueDetail_SelectedIndexChanged(this, EventArgs.Empty);
+            cbbValueRank_SelectedIndexChanged(this, EventArgs.Empty);
+            cbbValue_SelectedIndexChanged(this, EventArgs.Empty);
         }
     }
 }

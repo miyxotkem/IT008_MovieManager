@@ -85,7 +85,7 @@ namespace MovieManager
                         if (shift.Id == main.Idshift)
                             ShiftComboBox.SelectedIndex = shift.Id - 1;
                     string ID = staff.Id.ToString("000");
-                    string fileName = "NV" + ID + ".png";
+                    string fileName = "NV" + ID + ".jpg";
                     string DesPath = Path.Combine(Source, fileName);
                     if (File.Exists(DesPath))
                     {

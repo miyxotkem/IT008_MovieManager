@@ -364,6 +364,7 @@ namespace MovieManager
             if (GraphDisplayButton.Checked)
             {
                 stats.BringToFront();
+                stats.Reload();
                 if (sidebarzoom == true)
                 {
                     SideBarZoomButtonCinema.PerformClick();

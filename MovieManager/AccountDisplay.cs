@@ -16,8 +16,8 @@ namespace MovieManager
     public partial class AccountDisplay : UserControl
     {
         private string ChoosePath = null;
-        private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
-        //private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Avatars";
+        //private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
+        private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Avatars";
         private string CurUsername = "";
         private string CurFullname = "";
         private string CurEmail = "";
@@ -51,7 +51,7 @@ namespace MovieManager
                 CurEmail = accountInfo.Email;
                 int idStaff = Convert.ToInt32(IDTextBox.Text);
                 string id = idStaff.ToString("000");
-                string fileName = "NV" + id + ".png";
+                string fileName = "NV" + id + ".jpg";
                 string DesPath = Path.Combine(Source, fileName);
                 if (File.Exists(DesPath))
                 {
@@ -89,7 +89,7 @@ namespace MovieManager
             if (ChoosePath != null)
             {
                 string id = idStaff.ToString("000");
-                string fileName = "NV" + id + ".png";
+                string fileName = "NV" + id + ".jpg";
                 string DesPath = Path.Combine(Source, fileName);
                 if (File.Exists(DesPath))
                 {
@@ -111,7 +111,7 @@ namespace MovieManager
 
         private void UpImageButtonAccount_Click(object sender, EventArgs e)
         {
-            AvatarUpLoad.Filter = "Avater (*.png)|*.png";
+            AvatarUpLoad.Filter = "Avater (*.jpg)|*.jpg";
             if (AvatarUpLoad.ShowDialog() == DialogResult.OK)
             {
                 string fileName = AvatarUpLoad.FileName;
@@ -137,7 +137,7 @@ namespace MovieManager
             emailTextBox.Text = CurEmail;
             int idStaff = Convert.ToInt32(IDTextBox.Text);
             string id = idStaff.ToString("000");
-            string fileName = "NV" + id + ".png";
+            string fileName = "NV" + id + ".jpg";
             string DesPath = Path.Combine(Source, fileName);
             if (File.Exists(DesPath))
             {

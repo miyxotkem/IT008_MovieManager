@@ -172,6 +172,8 @@ namespace MovieManager
 
         public void Reload()
         {
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
             LoadShowTime(movies);
         }
     }

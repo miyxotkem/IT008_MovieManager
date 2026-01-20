@@ -49,7 +49,7 @@ namespace MovieManager
                         Location = new Point(80, 30),
                         Width = 250,
                         Font = new Font("Microsoft Sans Serif", 15f),
-                        Text = showtime.Start_time.ToString("HH:mm dd/mm/yyyy")
+                        Text = showtime.Start_time.ToString("HH:mm dd/MM/yyyy")
                     };
                     CheckBox delete = new CheckBox()
                     {
