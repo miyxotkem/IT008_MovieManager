@@ -88,6 +88,7 @@ CREATE TABLE Snack
 	discount int
 )
 
+
 GO
 CREATE TABLE ShowTime (
 		idmovie INT,

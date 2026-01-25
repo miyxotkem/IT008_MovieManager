@@ -46,6 +46,12 @@ namespace MovieManager.DAO
             }    
             return snack;
         }
+
+        public void UpdateStock(int idSnack, int Quantity)
+        {
+            string query = "Update Snack set stock = stock - @quan where id = @id ";
+            DataProvider.Instance.ExecuteScalar(query, new object[] {Quantity,  idSnack}); 
+        }
     }
 }
 

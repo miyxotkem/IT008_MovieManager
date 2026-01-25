@@ -20,8 +20,8 @@ namespace MovieManager
         private List<Shift> shifts = ShiftDAO.Instance.LoadShiftList();
         private List<Account> accounts = AccountDAO.Instance.LoadAccountList();
         private Staff main = null;
-        //private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
-        private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Avatars";
+        private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
+        //private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Avatars";
         public Edit_StaffManage()
         {
             InitializeComponent();

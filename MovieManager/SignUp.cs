@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,12 +49,40 @@ namespace MovieManager
             }
             return true;
         }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void SignUpButtonSignUp_Click(object sender, EventArgs e)
         {
             if (CheckFillInformation()) // Da nhap du thong tin
             {
                 string UserEmail = EmailTextBoxSignUp.Text;
                 string FullName = FullNameTextBoxSignUp.Text;
+                string UserName = UsernameTextBoxSignUp.Text;
+                if (!IsValidEmail(UserEmail))
+                {
+                    MessageBox.Show("Invalid email address.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    EmailTextBoxSignUp.BorderColor = Color.Red;
+                    epEmail.SetError(EmailTextBoxSignUp, "Invalid email address.");
+                    return;
+                }    
+                if (AccountDAO.Instance.CheckAccountExist(UserName))
+                {
+                    MessageBox.Show("Username has already been used.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UsernameTextBoxSignUp.BorderColor = Color.Red;
+                    epUsername.SetError(UsernameTextBoxSignUp, "Username has already been used.");
+                    return;
+                }    
                 try
                 {
                     // 1. Tạo nội dung thư
@@ -97,7 +126,7 @@ namespace MovieManager
                     message.Body = bodyBuilder.ToMessageBody();
 
                     // 3. Kết nối và gửi
-                    using (var client = new SmtpClient())
+                    using (var client = new MailKit.Net.Smtp.SmtpClient())
                     {
                         // Kết nối đến máy chủ SMTP của Gmail qua cổng 587 (TLS)
                         client.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
@@ -122,7 +151,6 @@ namespace MovieManager
                     // Đã gửi thành công
                     MessageBox.Show("Successful! Please check your email.", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     string Pass = PasswordTextBoxSignUp.Text;
-                    string UserName = UsernameTextBoxSignUp.Text;
                     AccountDAO.Instance.AddAccountFromSignUp(UserName, Pass, FullName, UserEmail);  
                     try
                     {
@@ -161,7 +189,7 @@ namespace MovieManager
                         message.Body = bodyBuilder.ToMessageBody();
 
                         // 3. Kết nối và gửi
-                        using (var client = new SmtpClient())
+                        using (var client = new MailKit.Net.Smtp.SmtpClient())
                         {
                             // Kết nối đến máy chủ SMTP của Gmail qua cổng 587 (TLS)
                             client.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);

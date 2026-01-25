@@ -16,8 +16,8 @@ namespace MovieManager
 {
     public partial class SelectSnack : UserControl
     {
-        //private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
-        private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
+        private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
+        //private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
         private Snack snack= null;
         private Control parentContainer = null;
         private Bill CurBill = null;
@@ -111,7 +111,8 @@ namespace MovieManager
                 if (HavePastItem == 0) // chưa có item cũ  
                 {
                     BillInfoDAO.Instance.AddBillInfoIntoBillID(bill.IdBill, "Food and Drink", snack.ID, Quantity, snack.Discount, snack.Price); // chưa có item
-                }    
+                }
+                SnackDAO.Instance.UpdateStock(snack.ID, Quantity);
                 MessageBox.Show("Successfully!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
             }    

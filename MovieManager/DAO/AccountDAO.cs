@@ -60,5 +60,12 @@ namespace MovieManager.DAO
             }
             return AccountList;
         }
+
+        public bool CheckAccountExist(string user)
+        {
+            string query = "Select * from Account where username = @user";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query, new object[] {user});
+            return table.Rows.Count > 0;
+        }
     }
 }

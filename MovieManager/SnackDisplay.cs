@@ -24,7 +24,7 @@ namespace MovieManager
     {
         private ConcurrentQueue<(string Path, Guna2PictureBox Pic)> loadQueue = new ConcurrentQueue<(string, Guna2PictureBox)>();
         private bool isProcessingQueue = false;
-        private string imageFolder = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Snacks";
+        private string imageFolder = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Snacks";
         private Color colorBackground = Color.FromArgb(240, 240, 240);
         private Color colorCardBg = Color.White;
         private Color colorHeader = Color.FromArgb(175, 62, 62);

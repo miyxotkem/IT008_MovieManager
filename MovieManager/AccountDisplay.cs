@@ -16,8 +16,8 @@ namespace MovieManager
     public partial class AccountDisplay : UserControl
     {
         private string ChoosePath = null;
-        //private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
-        private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Avatars";
+        private string Source = @"D:\Truongpham-code\DoAn_IT008\MovieManager\MovieManager\Avatars";
+        //private string Source = @"C:\Users\Thinh Phat\Documents\UIT\MovieManager\MovieManager\Avatars";
         private string CurUsername = "";
         private string CurFullname = "";
         private string CurEmail = "";
