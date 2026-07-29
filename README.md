@@ -117,12 +117,12 @@ If you would like to contribute:
 
 ## 👨‍💻 Team & Collaborators
 
-**Thinh Phat Ho**
+**Thinh Phat Ho**  
 *Software Engineering Student @ UIT*
 * **GitHub:** [@miyxotkem](https://github.com/miyxotkem)
 * **Focus:** Full-Stack .NET, System Architecture & API Design
 
-**Pham Dan Truong**
+**Pham Dan Truong**  
 *Software Engineering Student @ UIT*
 * **GitHub:** [@thichcodedao2006](https://github.com/thichcodedao2006)
 * **Focus:** Full-Stack .NET, System Architecture & API Design
