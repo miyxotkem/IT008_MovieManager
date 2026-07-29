@@ -16,7 +16,7 @@
 
 **IT008_MovieManager** is a comprehensive desktop software solution engineered to streamline the management of cinematic databases. Developed as part of the software engineering curriculum (IT008), this application emphasizes **tight architectural design**, robust **CRUD operations**, and complex **relational database schemas**.
 
-It provides a seamless, intuitive Graphical User Interface (GUI) for administrators to manage movies, genres, directors, and related metadata efficiently.
+It provides a seamless, intuitive Graphical User Interface (GUI) for administrators to manage movies, genres, directors, and related metadata efficiently while maintaining strict data integrity.
 
 ---
 
@@ -24,9 +24,19 @@ It provides a seamless, intuitive Graphical User Interface (GUI) for administrat
 
 - **Advanced CRUD Operations:** Seamlessly Create, Read, Update, and Delete movie records with real-time database synchronization.
 - **Relational Data Management:** Complex queries and joins managed through T-SQL to handle interconnected data (e.g., mapping movies to multiple genres or actors).
-- **Search & Filter Algorithms:** Fast and optimized searching capabilities to instantly locate specific titles or filter by criteria.
-- **Robust Software Architecture:** Built using standardized software engineering principles to ensure maintainability, scalability, and clean code separation between the UI and database layers.
-- **Secure Database Connections:** Safe execution of SQL queries to prevent basic injection attacks and ensure data integrity.
+- **Search & Filter Algorithms:** Fast and optimized searching capabilities to instantly locate specific titles, release years, or filter by specific criteria.
+- **Data Validation:** Strict input validation on the frontend to prevent SQL execution errors and maintain database health.
+- **Secure Database Connections:** Safe execution of parameterized SQL queries to prevent SQL injection attacks.
+
+---
+
+## 🏛️ System Architecture
+
+This project is built using a strict **3-Tier Architecture** to ensure a clean separation of concerns, making the codebase highly scalable and easy to maintain.
+
+1. **Presentation Layer (GUI):** Built with Windows Forms (WinForms). Handles all user interactions, input capturing, and data presentation.
+2. **Business Logic Layer (BLL):** Acts as the bridge between the UI and the database. It processes the raw data, applies business rules, and handles computations.
+3. **Data Access Layer (DAL):** Dedicated entirely to communicating with the SQL Server database. Executes stored procedures, handles connection strings, and maps SQL data to C# objects.
 
 ---
 
@@ -42,13 +52,14 @@ It provides a seamless, intuitive Graphical User Interface (GUI) for administrat
 
 ---
 
-## 📸 Interface Preview
+## 🗄️ Database Schema Overview
 
-<div align="center">
-  <!-- NOTE TO DEVELOPER: Upload your screenshots to the repo and replace the links below! -->
-  <img src="https://via.placeholder.com/600x350/0d1117/e50914?text=Upload+Dashboard+Screenshot+Here" alt="Dashboard" width="48%">
-  <img src="https://via.placeholder.com/600x350/0d1117/e50914?text=Upload+Database+View+Screenshot+Here" alt="Database View" width="48%">
-</div>
+The underlying SQL Server database is normalized to ensure zero data redundancy. Core tables include:
+
+*   **`Movies`**: Stores core metadata (`MovieID`, `Title`, `ReleaseDate`, `Duration`, `Rating`).
+*   **`Genres`**: Master list of film genres (`GenreID`, `GenreName`).
+*   **`Directors`**: Database of filmmakers (`DirectorID`, `FullName`, `DOB`).
+*   **`Movie_Genres`**: Junction table resolving the Many-to-Many relationship between Movies and Genres.
 
 ---
 
@@ -66,3 +77,52 @@ Follow these instructions to set up the project on your local machine for develo
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/miyxotkem/IT008_MovieManager.git](https://github.com/miyxotkem/IT008_MovieManager.git)
+   ```
+
+2. **Setup the Database:**
+   - Open SQL Server Management Studio (SSMS).
+   - Locate the `Database.sql` script inside the `/Database` folder of this repository.
+   - Execute the script to automatically generate the tables, relationships, and insert sample data.
+
+3. **Configure the Connection String:**
+   - Open the `IT008_MovieManager.sln` solution in Visual Studio.
+   - Locate the `App.config` file in the main startup project.
+   - Update the SQL Server connection string to match your local server credentials:
+   ```xml
+   <connectionStrings>
+       <add name="MovieManagerDB" 
+            connectionString="Data Source=YOUR_SERVER_NAME;Initial Catalog=MovieDB;Integrated Security=True" 
+            providerName="System.Data.SqlClient" />
+   </connectionStrings>
+   ```
+
+4. **Build and Run:**
+   - Set the UI project as the **Startup Project**.
+   - Press `F5` or click **Start** in Visual Studio to build and compile the application.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! 
+If you would like to contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeatureName`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeatureName`).
+5. Open a Pull Request.
+
+---
+
+## 👨‍💻 Team & Collaborators
+
+**Thinh Phat Ho** (@miyxotkem)
+*Software Engineering Student @ UIT*
+* **GitHub:** [@miyxotkem](https://github.com/miyxotkem)
+* **Focus:** Full-Stack .NET, System Architecture & API Design
+
+**Pham Dan Truong** (@thichcodedao2006)
+*Software Engineering Student @ UIT*
+* **GitHub:** [@miyxotkem](https://github.com/miyxotkem)
+* **Focus:** Full-Stack .NET, System Architecture & API Design
