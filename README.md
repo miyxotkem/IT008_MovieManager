@@ -124,5 +124,5 @@ If you would like to contribute:
 
 **Pham Dan Truong**
 *Software Engineering Student @ UIT*
-* **GitHub:** [@miyxotkem](https://github.com/@thichcodedao2006)
+* **GitHub:** [@thichcodedao2006](https://github.com/thichcodedao2006)
 * **Focus:** Full-Stack .NET, System Architecture & API Design
