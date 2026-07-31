@@ -1,15 +1,15 @@
 <!-- HEADER BANNER -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:e50914&height=200&section=header&text=🎬%20Movie%20Manager&fontSize=55&fontColor=ffffff&desc=Cinema%20Ticket%20Booking%20%26%20Management%20System&descAlignY=75" width="100%" alt="Movie Manager Banner" />
-</p>
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:000000,100:e50914&amp;height=200&amp;section=header&amp;text=🎬%20Movie%20Manager&amp;fontSize=55&amp;fontColor=ffffff&amp;desc=Cinema%20Ticket%20Booking%20%26%20Management%20System&amp;descAlignY=75" width="100%" alt="Movie Manager Banner" />
+</div>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" />
-  <img src="https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/Framework-WinForms-5C2D91?style=for-the-badge&logo=.net&logoColor=white" alt="WinForms" />
-  <img src="https://img.shields.io/badge/Database-SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" />
-  <img src="https://img.shields.io/badge/Graphics-OpenTK-000000?style=for-the-badge&logo=opengl&logoColor=white" alt="OpenTK" />
-</p>
+<div align="center">
+  <img src="https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows" />
+  <img src="https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&amp;logo=c-sharp&amp;logoColor=white" alt="C#" />
+  <img src="https://img.shields.io/badge/Framework-WinForms-5C2D91?style=for-the-badge&amp;logo=.net&amp;logoColor=white" alt="WinForms" />
+  <img src="https://img.shields.io/badge/Database-SQL%20Server-CC2927?style=for-the-badge&amp;logo=microsoft-sql-server&amp;logoColor=white" alt="SQL Server" />
+  <img src="https://img.shields.io/badge/Graphics-OpenTK-000000?style=for-the-badge&amp;logo=opengl&amp;logoColor=white" alt="OpenTK" />
+</div>
 
 ---
 
@@ -168,7 +168,7 @@ If you would like to contribute:
 * **GitHub:** [@miyxotkem](https://github.com/miyxotkem)
 * **Focus:** Full-Stack .NET, System Architecture & API Design
 
-**Phạm Đan Trường*  
+**Phạm Đan Trường**  
 *Software Engineering Student @ UIT*
 * **GitHub:** [@thichcodedao2006](https://github.com/thichcodedao2006)
 * **Focus:** Full-Stack .NET, System Architecture & API Design
